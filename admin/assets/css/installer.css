@@ -1,0 +1,38 @@
+#elInstaller_steps {
+	font-weight: 500;
+	padding: 3em 2em;
+	padding-inline-end: 0;
+	display: grid;
+	gap: 2em;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+}
+
+	#elInstaller_steps li{
+		display: flex;
+		align-items: center;
+		gap: .8em;
+	}
+
+	#elInstaller_steps svg{
+		width: 1em;
+		height: auto;
+		fill: currentColor;
+	}
+
+	.elInstaller_steps__done {
+		color: var(--i-color_positive);
+	}
+
+	.elInstaller_steps__current {
+		color: var(--i-color_hard);
+	}
+
+	.elInstaller_steps__future {
+		color: var(--i-color_soft);
+	}
+
+	.elInstaller_steps__future svg{
+		opacity: .3;
+	}

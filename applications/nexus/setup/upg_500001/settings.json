@@ -1,0 +1,30 @@
+{
+    "added": [
+        "cm_store_view"
+    ],
+    "edited": [],
+    "removed": [
+        "customer_fields",
+        "easypost_address",
+        "easypost_api_key",
+        "easypost_delivery_adjustment",
+        "easypost_phone",
+        "easypost_price_adjustment",
+        "easypost_show_rates",
+        "easypost_tax",
+        "nexus_autoresolve_applicable",
+        "nexus_autoresolve_days",
+        "nexus_autoresolve_departments",
+        "nexus_autoresolve_notify",
+        "nexus_autoresolve_status",
+        "nexus_donate_loggedin",
+        "nexus_reg_group",
+        "nexus_revw_sa",
+        "nexus_severities",
+        "nexus_sout_autoreply",
+        "nexus_sout_chrome",
+        "nexus_sout_from",
+        "nexus_support_satisfaction",
+        "reply_request_resolved"
+    ]
+}

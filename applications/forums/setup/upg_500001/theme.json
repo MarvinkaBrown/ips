@@ -1,0 +1,77 @@
+{
+    "html": {
+        "added": [],
+        "edited": [
+            "front\/forums\/topicRow",
+            "front\/forums\/topicRowSnippet",
+            "front\/global\/row",
+            "front\/index\/forumGridItem",
+            "front\/index\/forumRow",
+            "front\/index\/simplifiedTopicRow",
+            "front\/index\/simplifiedTopicRowSnippet",
+            "front\/topics\/postContainer",
+            "front\/widgets\/postFeed",
+            "front\/widgets\/topicFeed",
+            "front\/widgets\/topicFeedRow",
+            "front\/forums\/forumDisplay",
+            "front\/forums\/popularQuestionRow",
+            "front\/forums\/questionRow",
+            "front\/forums\/topicRow",
+            "front\/forums\/topicRowSnippet",
+            "front\/global\/commentTableHeader",
+            "front\/index\/forumRow",
+            "front\/index\/index",
+            "front\/index\/simplifiedTopicRow",
+            "front\/index\/simplifiedTopicRowSnippet",
+            "front\/topics\/activity",
+            "front\/widgets\/pollWidget",
+            "front\/widgets\/topicFeed",
+            "front\/widgets\/topicFeedRow",
+            "front\/forums\/clubForums",
+            "front\/forums\/forumDisplay",
+            "front\/forums\/forumTable",
+            "front\/forums\/topicRow",
+            "front\/index\/index",
+            "front\/index\/simplifiedForumTable",
+            "front\/submit\/createTopicForm",
+            "front\/topics\/topic",
+            "front\/topics\/topicSolutionMessage",
+            "front\/widgets\/topicFeedRow",
+            "front\/submit\/createTopicModOptions",
+            "front\/forums\/topicRowSnippet",
+            "front\/widgets\/topicFeedRow",
+            "front\/forums\/qaForum",
+            "front\/forums\/topicHover",
+            "front\/forums\/topicRow",
+            "front\/index\/simplifiedTopicRow",
+            "front\/submit\/createTopicForm",
+            "front\/topics\/activity",
+            "front\/topics\/topic",
+            "front\/widgets\/forumStatistics",
+            "front\/widgets\/hotTopics",
+            "front\/widgets\/poll",
+            "front\/widgets\/pollWidget",
+            "front\/widgets\/postFeed",
+            "front\/widgets\/topicFeed",
+            "front\/widgets\/topicFeedRow"
+        ],
+        "removed": []
+    },
+    "css": {
+        "added": [],
+        "edited": [
+            "front\/forums.css",
+            "front\/forums.css",
+            "front\/topics.css"
+        ],
+        "removed": [
+            "front\/embed.css",
+            "front\/posts.css"
+        ]
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

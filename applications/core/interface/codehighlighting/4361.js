@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcodehighlighting=self.webpackChunkcodehighlighting||[]).push([[4361],{4361:(e,n,t)=>{t.r(n),t.d(n,{default:()=>a});const a=function(e){return{name:"Node REPL",contains:[{className:"meta.prompt",starts:{end:/ |$/,starts:{end:"$",subLanguage:"javascript"}},variants:[{begin:/^>(?=[ ]|$)/},{begin:/^\.\.\.(?=[ ]|$)/}]}]}}}}]);

@@ -1,0 +1,26 @@
+{
+    "normal": {
+        "added": [
+            "attachment_image_size__no_thumbnails"
+        ],
+        "edited": [
+            "attachment_image_size",
+            "attachment_image_size_desc"
+        ],
+        "removed": []
+    },
+    "js": {
+        "added": [
+            "editor_tool--width-fullwidth",
+            "editor_tool--width-big",
+            "editor_tool--width-medium",
+            "editor_tool--width-small",
+            "editor_tool--width-automatic",
+            "editor_tool--width-custom",
+            "editor_tool--width-image-desc",
+            "editor_tool--width-resize-message"
+        ],
+        "edited": [],
+        "removed": []
+    }
+}

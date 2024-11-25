@@ -1,0 +1,56 @@
+<?php
+/**
+ * @brief		Approval reason plugin
+ * @author		<a href='https://www.invisioncommunity.com'>Invision Power Services, Inc.</a>
+ * @copyright	(c) Invision Power Services, Inc.
+ * @license		https://www.invisioncommunity.com/legal/standards/
+ * @package		Invision Community
+{subpackage}
+ * @since		{date}
+ */
+
+namespace IPS\{app}\extensions\core\ApprovalReason;
+
+/* To prevent PHP errors (extending class does not exist) revealing path */
+
+use IPS\core\Approval as ApprovalClass;
+use IPS\Extensions\ApprovalReasonAbstract;
+use function defined;
+
+if ( !defined( '\IPS\SUITE_UNIQUE_KEY' ) )
+{
+	header( ( $_SERVER['SERVER_PROTOCOL'] ?? 'HTTP/1.0' ) . ' 403 Forbidden' );
+	exit;
+}
+
+/**
+ * Approval reason plugin
+ */
+class {class} extends ApprovalReasonAbstract
+{
+	/**
+	 * Reason Key
+	 *
+	 * @return	string
+	 */
+	public function reasonKey(): string
+	{
+		return '';
+	}
+
+	/**
+	 * Parse Reason
+	 * Return an array with 2 elements: lang (the language string to use)
+	 * and sprintf (an array of replacements)
+	 *
+	 * @param	ApprovalClass	$approval	Approval row
+	 * @return	array
+	 */
+	public function parseReason( ApprovalClass $approval ): array
+	{
+		return array(
+			'lang'		=> '',
+			'sprintf'	=> array()
+		);
+	}
+}

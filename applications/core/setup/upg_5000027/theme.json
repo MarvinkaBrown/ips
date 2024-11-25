@@ -1,0 +1,70 @@
+{
+    "html": {
+        "added": [],
+        "edited": [
+            "admin\/api\/webhookselector",
+            "global\/forms\/autocomplete",
+            "admin\/forms\/checkbox",
+            "global\/forms\/checkboxset",
+            "global\/forms\/color",
+            "global\/forms\/date",
+            "global\/forms\/dateRange",
+            "global\/forms\/interval",
+            "global\/forms\/matrixRows",
+            "global\/forms\/number",
+            "front\/forms\/popupRegisterTemplate",
+            "admin\/forms\/radio",
+            "admin\/forms\/select",
+            "front\/forms\/select",
+            "global\/forms\/text",
+            "global\/forms\/textarea",
+            "global\/forms\/uploadFile",
+            "global\/forms\/widthheight",
+            "front\/global\/footer",
+            "front\/global\/globalTemplate",
+            "front\/global\/loginPopupForm",
+            "front\/global\/navColumn",
+            "front\/global\/prefix",
+            "front\/global\/reactionOverview",
+            "front\/modcp\/report",
+            "admin\/promotion\/imageMaximums",
+            "front\/system\/loginForm",
+            "front\/system\/register",
+            "front\/tags\/contentTableRows",
+            "front\/themeeditor\/themeEditorTemplate"
+        ],
+        "removed": []
+    },
+    "css": {
+        "added": [],
+        "edited": [
+            "global\/framework\/1-1-reset.css",
+            "global\/framework\/1-2-settings.css",
+            "global\/framework\/1-4-colors.css",
+            "global\/framework\/3-boxes.css",
+            "global\/framework\/3-buttons.css",
+            "global\/framework\/3-color-scheme-changer.css",
+            "global\/framework\/3-data-tables.css",
+            "global\/framework\/3-editor.css",
+            "global\/framework\/3-entries.css",
+            "global\/framework\/3-images.css",
+            "global\/framework\/3-page-header.css",
+            "global\/framework\/3-richtext.css",
+            "global\/framework\/3-tags.css",
+            "global\/framework\/3-typography.css",
+            "global\/framework\/4-breadcrumb.css",
+            "global\/framework\/4-header.css",
+            "global\/framework\/4-mobile-footer.css",
+            "global\/framework\/4-navigation-panel.css",
+            "global\/framework\/4-offcanvas.css",
+            "global\/framework\/5-flex-grid-gap.css",
+            "global\/framework\/5-margin.css"
+        ],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

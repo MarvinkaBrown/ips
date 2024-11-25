@@ -1,0 +1,60 @@
+{
+    "html": {
+        "added": [],
+        "edited": [
+            "front\/clubs\/directory",
+            "front\/clubs\/members",
+            "global\/editor\/image",
+            "global\/forms\/checkbox",
+            "front\/global\/comment",
+            "front\/global\/commentContainer",
+            "global\/global\/dynamicChart",
+            "front\/global\/mobileFooterBar",
+            "front\/global\/review",
+            "front\/global\/reviewContainer",
+            "front\/global\/sharemenu",
+            "front\/modcp\/approvalQueueItemWrapper",
+            "front\/modcp\/deletedRows",
+            "front\/modcp\/hiddenTableRow",
+            "front\/modcp\/hiddenTableRows",
+            "front\/modcp\/report",
+            "front\/modcp\/reportTableDescription",
+            "front\/modcp\/reportToggle",
+            "front\/modcp\/template",
+            "front\/modcp\/warnHovercard",
+            "front\/modcp\/warningRevoke",
+            "front\/profile\/profile",
+            "front\/search\/member",
+            "front\/streams\/stream",
+            "front\/system\/warningRow",
+            "front\/tags\/overview",
+            "front\/widgets\/tags"
+        ],
+        "removed": [
+            "front\/forms\/statusPopupTemplate",
+            "front\/forms\/statusTemplate",
+            "front\/forms\/statusWidgetForm"
+        ]
+    },
+    "css": {
+        "added": [],
+        "edited": [
+            "global\/framework\/3-badges.css",
+            "global\/framework\/3-buttons.css",
+            "global\/framework\/3-data-tables.css",
+            "global\/framework\/3-editor.css",
+            "global\/framework\/3-grid.css",
+            "global\/framework\/3-images.css",
+            "global\/framework\/3-inputs.css",
+            "global\/framework\/3-messages.css",
+            "front\/styles\/messaging.css",
+            "front\/styles\/profiles.css"
+        ],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

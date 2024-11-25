@@ -1,0 +1,40 @@
+{
+    "html": {
+        "added": [],
+        "edited": [
+            "admin\/developer\/blockFooter",
+            "admin\/developer\/duplicateSearchKeywords",
+            "admin\/developer\/missingSearchKeywords",
+            "admin\/developer\/missingStrings",
+            "admin\/developer\/missingTemplates",
+            "global\/forms\/color",
+            "global\/global\/includeJS",
+            "front\/global\/navBarItems",
+            "front\/global\/navColumn",
+            "front\/global\/navColumnChildren",
+            "front\/global\/navColumnItems",
+            "front\/global\/userBar"
+        ],
+        "removed": []
+    },
+    "css": {
+        "added": [],
+        "edited": [
+            "front\/core.css",
+            "global\/framework\/1-2-settings.css",
+            "global\/framework\/1-4-colors.css",
+            "global\/framework\/3-data-tables.css",
+            "global\/framework\/3-images.css",
+            "global\/framework\/3-inputs.css",
+            "global\/framework\/3-richtext.css",
+            "global\/framework\/4-header.css",
+            "global\/framework\/4-navigation-panel.css"
+        ],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

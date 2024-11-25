@@ -1,0 +1,29 @@
+{
+    "html": {
+        "added": [],
+        "edited": [
+            "front\/events\/event",
+            "front\/events\/featured",
+            "front\/events\/featuredEvent",
+            "front\/events\/nearMe",
+            "front\/events\/online",
+            "front\/events\/searchResultsWrapper",
+            "front\/overview\/searchBar",
+            "front\/view\/coverPhotoOverlay",
+            "front\/view\/eventSidebar"
+        ],
+        "removed": []
+    },
+    "css": {
+        "added": [],
+        "edited": [
+            "front\/calendar.css"
+        ],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

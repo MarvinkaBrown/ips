@@ -1,0 +1,15 @@
+{
+    "files": {
+        "added": [],
+        "edited": [
+            "blog\/front\/controllers\/view\/ips.view.manageCategories.js",
+            "blog\/front\/templates\/ips.templates.view.js"
+        ],
+        "removed": []
+    },
+    "orders": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

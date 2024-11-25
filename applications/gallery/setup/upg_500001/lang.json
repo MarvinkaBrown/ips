@@ -1,0 +1,19 @@
+{
+    "normal": {
+        "added": [
+            "can_view_reports_gallery_image",
+            "can_view_reports_gallery_album",
+            "can_view_reports_gallery_album_review",
+            "filedata__image_description"
+        ],
+        "edited": [
+            "gallery_image_is_nsfw"
+        ],
+        "removed": []
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

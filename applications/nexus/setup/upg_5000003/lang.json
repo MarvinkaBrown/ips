@@ -1,0 +1,15 @@
+{
+    "normal": {
+        "added": [],
+        "edited": [
+            "cm_store_view_grid",
+            "cm_store_view_list"
+        ],
+        "removed": []
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

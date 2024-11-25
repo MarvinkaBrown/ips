@@ -1,0 +1,22 @@
+{
+    "id": 107724,
+    "name": "4.7.14",
+    "steps": {
+        "queries": false,
+        "lang": true,
+        "theme": true,
+        "themeSettings": true,
+        "javascript": true,
+        "emailTemplates": true,
+        "acpSearchKeywords": true,
+        "settings": true,
+        "tasks": true,
+        "modules": true,
+        "widgets": true,
+        "customOptions": false,
+        "customRoutines": false
+    },
+    "forceMainUpgrader": true,
+    "forceManualDownloadNoCiC": false,
+    "forceManualDownloadCiC": false
+}

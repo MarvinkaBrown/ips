@@ -1,0 +1,22 @@
+{
+    "id": 5000027,
+    "name": "5.0.0 Beta 2",
+    "steps": {
+        "queries": false,
+        "lang": true,
+        "theme": true,
+        "themeeditor": true,
+        "javascript": true,
+        "emailTemplates": false,
+        "acpSearchKeywords": false,
+        "settings": true,
+        "tasks": false,
+        "modules": false,
+        "widgets": false,
+        "customOptions": false,
+        "customRoutines": true
+    },
+    "forceMainUpgrader": true,
+    "forceManualDownloadNoCiC": false,
+    "forceManualDownloadCiC": false
+}

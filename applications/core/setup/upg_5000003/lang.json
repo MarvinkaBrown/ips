@@ -1,0 +1,17 @@
+{
+    "normal": {
+        "added": [
+            "theme_editor_revert"
+        ],
+        "edited": [],
+        "removed": []
+    },
+    "js": {
+        "added": [
+            "core_pagebuilder_area-move-up",
+            "core_pagebuilder_area-move-down"
+        ],
+        "edited": [],
+        "removed": []
+    }
+}

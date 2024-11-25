@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcodehighlighting=self.webpackChunkcodehighlighting||[]).push([[6856],{6856:(h,e,i)=>{i.r(e),i.d(e,{default:()=>c});const c=i(1012).Z}}]);

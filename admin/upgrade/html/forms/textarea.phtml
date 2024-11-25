@@ -1,0 +1,42 @@
+<ips:template parameters="$name, $value='', $required, $maxlength=NULL, $disabled=FALSE, $class='', $placeholder='', $nullLang=NULL, $tags=array()" />
+{{if !empty( $tags )}}
+<div class='ipsColumns' data-controller='core.global.editor.customtags' data-tagFieldType='text' data-tagFieldID='{$name}'>
+	<div class='ipsColumns__primary'>
+		<div data-role="editor">
+{{endif}}
+<textarea
+	name="{$name}"
+	id='{expression="preg_replace('/[^a-zA-Z0-9\-_]/', '_', $name)"}'
+	value="{$value}"
+	class="ipsInput--fullWidth {$class}"
+	{{if $maxlength !== NULL}}maxlength="{$maxlength}"{{endif}}
+	{{if $required === TRUE}}required aria-required='true'{{endif}}
+	{{if $disabled}}disabled aria-disabled='true'{{endif}}
+	{{if $placeholder}}placeholder="{$placeholder}"{{endif}}
+>{$value}</textarea>
+{{if !empty( $tags )}}
+	</div>
+{{endif}}
+{{if $nullLang}}
+	<div class="ipsFieldRow__inlineCheckbox">
+		{lang="or"}
+		<input type="checkbox" role='checkbox' data-control="unlimited" name="{$name}_null" id="{$name}_null" value="1" {{if $value === NULL}}checked{{endif}} {{if $disabled}}disabled{{endif}} aria-controls='{$name}' aria-labelledby='{$name}_null_label'>
+		<label for='{$name}_null' id='{$name}_null_label'>{lang="$nullLang"}</label>
+	</div>
+{{endif}}
+{{if !empty( $tags )}}
+	</div>
+	<div class='ipsColumns__secondary ipsComposeArea_sidebar'>
+		<h3 class='i-background_3 i-padding_2 ipsTitle ipsTitle--h4' data-role='tagsHeader'>{lang="editor_tags"}</h3>
+		<ul class='ipsScrollbar' data-role='tagsList'>
+		{{foreach $tags as $tagKey => $tagValue }}
+			<li class='i-padding_2'>
+				<label class="ipsJS_show" data-tagKey="{$tagKey}">{$tagKey}</label>
+				<div class='ipsJS_hide i-color_soft'><strong>{$tagKey}</strong></div>
+				<div class='i-color_soft i-font-size_-1'>{$tagValue}</div>
+			</li>
+		{{endforeach}}
+		</ul>
+	</div>
+</div>
+{{endif}}

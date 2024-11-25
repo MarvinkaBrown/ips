@@ -1,0 +1,20 @@
+{
+    "files": {
+        "added": [],
+        "edited": [
+            "global\/framework\/common\/ui\/ips.ui.addressForm.js",
+            "global\/framework\/common\/ui\/ips.ui.controls.js",
+            "global\/framework\/common\/ui\/ips.ui.copy.js",
+            "global\/framework\/common\/ui\/ips.ui.editorv5.js",
+            "global\/front\/controllers\/core\/ips.core.app.js",
+            "core\/front\/controllers\/core\/ips.core.followButton.js",
+            "core\/front\/controllers\/widgets\/ips.widgets.sidebar.js"
+        ],
+        "removed": []
+    },
+    "orders": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "html": {
+        "added": [],
+        "edited": [
+            "front\/browse\/categories",
+            "front\/browse\/category",
+            "front\/browse\/categoryMenu",
+            "front\/browse\/featuredFile",
+            "front\/browse\/index",
+            "front\/browse\/rows",
+            "admin\/dashboard\/overview",
+            "front\/nexus\/chooseProduct",
+            "front\/submit\/topic",
+            "front\/view\/multipleFiles",
+            "front\/view\/pendingView",
+            "front\/view\/view",
+            "front\/widgets\/downloadsCommentFeed",
+            "front\/widgets\/downloadsReviewFeed",
+            "front\/widgets\/fileFeed",
+            "front\/widgets\/topDownloads",
+            "front\/widgets\/topSubmitters"
+        ],
+        "removed": []
+    },
+    "css": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

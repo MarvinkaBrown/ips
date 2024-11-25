@@ -1,0 +1,27 @@
+{
+    "1": {
+        "method": "addColumn",
+        "params": [
+            "core_sys_lang",
+            {
+                "name": "lang_file",
+                "type": "VARCHAR",
+                "length": 255,
+                "decimals": null,
+                "values": null,
+                "allow_null": true,
+                "default": null,
+                "comment": "The file location of the compiled JS language strings",
+                "unsigned": false,
+                "auto_increment": false
+            }
+        ]
+    },
+    "2": {
+        "method": "dropColumn",
+        "params": [
+            "core_content_promote",
+            "promote_short_link"
+        ]
+    }
+}

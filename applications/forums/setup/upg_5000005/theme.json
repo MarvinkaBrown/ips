@@ -1,0 +1,20 @@
+{
+    "html": {
+        "added": [],
+        "edited": [],
+        "removed": [
+            "admin\/settings\/popularNow",
+            "front\/widgets\/hotTopics"
+        ]
+    },
+    "css": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

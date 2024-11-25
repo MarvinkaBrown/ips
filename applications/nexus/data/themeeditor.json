@@ -1,0 +1,23 @@
+{
+    "settings": {
+        "layout_store_view": {
+            "key": "layout_store_view",
+            "type": "select",
+            "name": "Store View",
+            "desc": "Default layout for the store categories",
+            "refresh": true,
+            "options": [
+                [
+                    "list",
+                    "List"
+                ],
+                [
+                    "grid",
+                    "Grid"
+                ]
+            ],
+            "default": "grid",
+            "cat": "pageLayouts"
+        }
+    }
+}

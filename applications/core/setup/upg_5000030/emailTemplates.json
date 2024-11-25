@@ -1,0 +1,10 @@
+{
+    "added": [
+        "notification_report_outcome",
+        "notification_report_content_author"
+    ],
+    "edited": [
+        "_genericContent"
+    ],
+    "removed": []
+}

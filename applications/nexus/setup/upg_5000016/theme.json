@@ -1,0 +1,27 @@
+{
+    "html": {
+        "added": [
+            "front\/global\/mobileFooterBar",
+            "front\/global\/mobileHeaderBar",
+            "front\/global\/userNav"
+        ],
+        "edited": [
+            "front\/clients\/purchases",
+            "front\/store\/category",
+            "front\/store\/giftCard",
+            "front\/store\/package",
+            "front\/subscription\/table"
+        ],
+        "removed": []
+    },
+    "css": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

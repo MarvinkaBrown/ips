@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcodehighlighting=self.webpackChunkcodehighlighting||[]).push([[8511],{8511:(t,e,i)=>{i.r(e),i.d(e,{default:()=>n});const n=function(t){return{name:"Plain text",aliases:["text","txt"],disableAutodetect:!0}}}}]);

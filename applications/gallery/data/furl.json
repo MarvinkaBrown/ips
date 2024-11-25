@@ -1,0 +1,37 @@
+{
+	"topLevel": "gallery",
+	"pages": {
+		"gallery_category": {
+		    "friendly": "category/{#category}-{?}",
+		    "real": "app=gallery&module=gallery&controller=browse",
+		    "verify": "\\IPS\\gallery\\Category"
+	    },
+	    "gallery_album": {
+		    "friendly": "album/{#album}-{?}",
+		    "real": "app=gallery&module=gallery&controller=browse",
+		    "verify": "\\IPS\\gallery\\Album",
+		    "seoPagination": true
+	    },
+	    "gallery_categories": {
+	        "friendly": "categories",
+	        "real": "app=gallery&module=gallery&controller=browse&do=categories"
+	    },
+	    "gallery_rss": {
+		    "friendly": "images.xml",
+		    "real": "app=gallery&module=gallery&controller=browse&do=rss"
+	    },
+	    "gallery_image": {
+		    "friendly": "image/{#id}-{?}",
+		    "real": "app=gallery&module=gallery&controller=view",
+		    "verify": "\\IPS\\gallery\\Image"
+	    },
+	    "gallery_submit": {
+	        "friendly": "submit",
+	        "real": "app=gallery&module=gallery&controller=submit"
+	    },
+	    "gallery": {
+	        "friendly": "",
+	        "real": "app=gallery&module=gallery&controller=browse"
+	    }
+	  }
+}

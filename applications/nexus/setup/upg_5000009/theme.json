@@ -1,0 +1,59 @@
+{
+    "html": {
+        "added": [],
+        "edited": [
+            "admin\/billingagreements\/view",
+            "front\/checkout\/checkoutOrderSummary",
+            "front\/checkout\/confirmAndPay",
+            "front\/checkout\/orderReview",
+            "front\/clients\/alternatives",
+            "front\/clients\/billingAgreement",
+            "front\/clients\/billingAgreements",
+            "front\/clients\/credit",
+            "front\/clients\/invoice",
+            "front\/clients\/invoices",
+            "front\/clients\/paymentLog",
+            "front\/clients\/purchases",
+            "admin\/customers\/invoicesTable",
+            "admin\/customers\/notes",
+            "admin\/dashboard\/pendingActions",
+            "front\/global\/referralRulesCommission",
+            "admin\/invoices\/transactionsTable",
+            "admin\/invoices\/view",
+            "front\/purchases\/advertisement",
+            "front\/purchases\/giftvoucher",
+            "admin\/purchases\/hovercard",
+            "admin\/purchases\/lkey",
+            "admin\/purchases\/view",
+            "front\/store\/cartContents",
+            "front\/store\/cartHeader",
+            "front\/store\/categoryContents",
+            "front\/store\/giftCard",
+            "front\/store\/index",
+            "admin\/store\/productDeleteWarning",
+            "front\/store\/register",
+            "front\/subscription\/table",
+            "admin\/transactions\/view",
+            "front\/widgets\/bestSellers",
+            "front\/widgets\/donations",
+            "front\/widgets\/featuredProduct",
+            "front\/widgets\/latestProducts",
+            "front\/widgets\/pendingActions",
+            "front\/widgets\/recentCommerceReviews",
+            "front\/widgets\/subscriptions"
+        ],
+        "removed": []
+    },
+    "css": {
+        "added": [],
+        "edited": [
+            "admin\/customer.css"
+        ],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

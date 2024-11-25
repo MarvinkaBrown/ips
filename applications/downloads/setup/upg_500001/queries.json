@@ -1,0 +1,38 @@
+{
+    "1": {
+        "method": "addColumn",
+        "params": [
+            "downloads_categories",
+            {
+                "name": "cicon",
+                "type": "TEXT",
+                "length": null,
+                "decimals": null,
+                "values": null,
+                "allow_null": true,
+                "default": null,
+                "comment": "",
+                "unsigned": false,
+                "auto_increment": false
+            }
+        ]
+    },
+    "2": {
+        "method": "addColumn",
+        "params": [
+            "downloads_categories",
+            {
+                "name": "ccard_image",
+                "type": "VARCHAR",
+                "length": 255,
+                "decimals": null,
+                "values": null,
+                "allow_null": true,
+                "default": null,
+                "comment": "Card image file name",
+                "unsigned": false,
+                "auto_increment": false
+            }
+        ]
+    }
+}

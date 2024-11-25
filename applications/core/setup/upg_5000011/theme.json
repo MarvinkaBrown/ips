@@ -1,0 +1,43 @@
+{
+    "html": {
+        "added": [],
+        "edited": [
+            "global\/forms\/editorRawV5",
+            "front\/forms\/select",
+            "admin\/global\/appmenu",
+            "front\/global\/globalTemplate",
+            "front\/profile\/profile",
+            "front\/profile\/userBadgeOverview",
+            "front\/profile\/userContent",
+            "front\/profile\/userReputation",
+            "front\/profile\/userSolutions",
+            "front\/promote\/promotePublicTableRow",
+            "admin\/system\/manualUpgradeRequired",
+            "front\/system\/register",
+            "admin\/system\/upgradeDeltaFailed"
+        ],
+        "removed": []
+    },
+    "css": {
+        "added": [],
+        "edited": [
+            "front\/core.css",
+            "admin\/core\/global.css",
+            "admin\/core\/zzz-admin-only.css",
+            "global\/framework\/3-boxes.css",
+            "global\/framework\/3-cover-photo.css",
+            "global\/framework\/3-data-tables.css",
+            "global\/framework\/3-forms.css",
+            "global\/framework\/3-menus.css",
+            "global\/framework\/3-step-bar.css",
+            "global\/framework\/5-typography.css",
+            "front\/styles\/profiles.css"
+        ],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

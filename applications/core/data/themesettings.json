@@ -1,0 +1,14 @@
+[
+    {
+        "sc_key": "test",
+        "sc_type": "Text",
+        "sc_multiple": 0,
+        "sc_content": "[]",
+        "sc_app": "core",
+        "sc_default": "#3480bb",
+        "sc_tab_key": "",
+        "sc_title": "test",
+        "sc_order": 1,
+        "sc_condition": null
+    }
+]

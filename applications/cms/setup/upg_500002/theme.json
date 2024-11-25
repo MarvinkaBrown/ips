@@ -1,0 +1,26 @@
+{
+    "html": {
+        "added": [],
+        "edited": [
+            "front\/clubs\/index",
+            "admin\/media\/media",
+            "front\/revisions\/table",
+            "admin\/templates\/editor",
+            "admin\/templates\/templates",
+            "front\/widgets\/Codemirror"
+        ],
+        "removed": []
+    },
+    "css": {
+        "added": [],
+        "edited": [
+            "front\/database_index\/featured.css"
+        ],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

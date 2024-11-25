@@ -1,0 +1,20 @@
+{
+    "files": {
+        "added": [],
+        "edited": [
+            "downloads\/front\/controllers\/pending\/ips.pending.buttons.js",
+            "downloads\/front\/controllers\/submit\/ips.submit.main.js",
+            "downloads\/front\/controllers\/view\/ips.view.changeLog.js",
+            "downloads\/front\/controllers\/view\/ips.view.subscribe.js",
+            "downloads\/front\/templates\/ips.templates.submit.js"
+        ],
+        "removed": []
+    },
+    "orders": {
+        "added": [],
+        "edited": [
+            "global\/\/dev\/js\/\/library\/\/jquery"
+        ],
+        "removed": []
+    }
+}

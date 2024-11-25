@@ -1,0 +1,20 @@
+{
+    "1": {
+        "method": "addColumn",
+        "params": [
+            "cms_databases",
+            {
+                "name": "database_display_settings",
+                "type": "TEXT",
+                "length": null,
+                "decimals": null,
+                "values": null,
+                "allow_null": true,
+                "default": null,
+                "comment": "Layouts and Templates",
+                "unsigned": false,
+                "auto_increment": false
+            }
+        ]
+    }
+}

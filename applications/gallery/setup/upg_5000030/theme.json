@@ -1,0 +1,23 @@
+{
+    "html": {
+        "added": [],
+        "edited": [
+            "front\/browse\/categoryButtons",
+            "front\/global\/comment",
+            "front\/global\/commentContainer",
+            "front\/global\/review",
+            "front\/global\/reviewContainer"
+        ],
+        "removed": []
+    },
+    "css": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

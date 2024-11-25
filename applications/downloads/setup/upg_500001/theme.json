@@ -1,0 +1,52 @@
+{
+    "html": {
+        "added": [],
+        "edited": [
+            "front\/browse\/categoryRow",
+            "front\/widgets\/fileFeed",
+            "front\/widgets\/fileRow",
+            "front\/browse\/categoriesSidebar",
+            "front\/browse\/categoryRow",
+            "front\/browse\/featuredFile",
+            "front\/browse\/indexBlock",
+            "front\/global\/manageFollowRow",
+            "front\/widgets\/downloadStats",
+            "front\/widgets\/fileFeed",
+            "front\/widgets\/fileRow",
+            "front\/browse\/category",
+            "front\/browse\/featuredFile",
+            "front\/browse\/index",
+            "front\/browse\/indexBlock",
+            "front\/view\/view",
+            "front\/widgets\/fileFeed",
+            "front\/widgets\/fileRow",
+            "front\/widgets\/fileFeed",
+            "front\/browse\/featuredFile",
+            "front\/browse\/index",
+            "front\/browse\/indexBlock",
+            "front\/browse\/tableRow",
+            "front\/nexus\/chooseProduct",
+            "front\/view\/pendingView",
+            "front\/view\/view",
+            "front\/widgets\/downloadsCommentFeed",
+            "front\/widgets\/downloadsReviewFeed",
+            "front\/widgets\/downloadStats",
+            "front\/widgets\/fileFeed",
+            "front\/widgets\/fileRow",
+            "front\/widgets\/topDownloads",
+            "front\/widgets\/topSubmitterRow",
+            "front\/widgets\/topSubmitters"
+        ],
+        "removed": []
+    },
+    "css": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

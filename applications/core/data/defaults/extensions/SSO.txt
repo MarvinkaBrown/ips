@@ -1,0 +1,53 @@
+<?php
+/**
+ * @brief		SSO Extension
+ * @author		<a href='https://www.invisioncommunity.com'>Invision Power Services, Inc.</a>
+ * @copyright	(c) Invision Power Services, Inc.
+ * @license		https://www.invisioncommunity.com/legal/standards/
+{subpackage}
+ * @since		{date}
+ */
+
+namespace IPS\{app}\extensions\core\SSO;
+
+/* To prevent PHP errors (extending class does not exist) revealing path */
+
+use IPS\Extensions\SSOAbstract;
+use IPS\Session\Front;
+use IPS\Http\Url;
+use function defined;
+
+if ( !defined( '\IPS\SUITE_UNIQUE_KEY' ) )
+{
+	header( ( $_SERVER['SERVER_PROTOCOL'] ?? 'HTTP/1.0' ) . ' 403 Forbidden' );
+	exit;
+}
+
+/**
+ * SSO Extension
+ */
+class {class} extends SSOAbstract
+{	
+	/**
+	 * Custom logic executed on session init
+	 *
+	 * @param Front $session
+	 * @return void
+	 */
+	public function onSessionInit( Front $session ): void
+	{
+
+	}
+
+	/**
+	 * Custom logic executed on session read
+	 *
+	 * @param Front $session
+	 * @param string $result 	Initial result from the Session::read method
+	 * @return string
+	 */
+	public function onSessionRead( Front $session, string $result ): string
+	{
+	    return '';
+	}
+}

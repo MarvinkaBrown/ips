@@ -1,0 +1,1175 @@
+{
+    "categories": {
+        "lightDarkMode": {
+            "cat_name": "Light\/dark mode",
+            "cat_key": "lightDarkMode",
+            "cat_icon": "fa-solid fa-circle-half-stroke"
+        },
+        "logos": {
+            "cat_name": "Logos",
+            "cat_key": "logos",
+            "cat_icon": "fa-brands fa-html5"
+        },
+        "pageLayouts": {
+            "cat_name": "Page layouts",
+            "cat_key": "pageLayouts",
+            "cat_icon": "fa-solid fa-table-columns"
+        },
+        "typography": {
+            "cat_name": "Typography",
+            "cat_key": "typography",
+            "cat_icon": "fa-solid fa-text-height"
+        },
+        "header": {
+            "cat_name": "Header",
+            "cat_key": "header",
+            "cat_icon": "fa-solid fa-window-maximize"
+        },
+        "sidePanel": {
+            "cat_name": "Side panel",
+            "cat_key": "sidePanel",
+            "cat_icon": "fa-solid fa-table-columns"
+        },
+        "content": {
+            "cat_name": "Content",
+            "cat_key": "content",
+            "cat_icon": "fa-solid fa-rectangle-list"
+        },
+        "footer": {
+            "cat_name": "Footer",
+            "cat_key": "footer",
+            "cat_icon": "fa-solid fa-grip-lines"
+        },
+        "mobileNavigation": {
+            "cat_name": "Mobile navigation",
+            "cat_key": "mobileNavigation",
+            "cat_icon": "fa-solid fa-mobile-screen"
+        },
+        "navigationPanel": {
+            "cat_name": "Navigation panel",
+            "cat_key": "navigationPanel",
+            "cat_icon": "fa-solid fa-table-columns"
+        },
+        "global": {
+            "cat_name": "Global",
+            "cat_key": "global",
+            "cat_icon": "fa-solid fa-rectangle-list"
+        },
+        "textLogo": {
+            "cat_name": "Text Logo",
+            "cat_key": "textLogo",
+            "cat_icon": "fa-solid fa-text-height",
+            "cat_parent": "logos"
+        },
+        "imageLogoDesktop": {
+            "cat_name": "Image Logo (desktop)",
+            "cat_key": "imageLogoDesktop",
+            "cat_icon": "fa-solid fa-display",
+            "cat_parent": "logos"
+        },
+        "imageLogoMobile": {
+            "cat_name": "Image Logo (mobile)",
+            "cat_key": "imageLogoMobile",
+            "cat_icon": "fa-solid fa-mobile-screen",
+            "cat_parent": "logos"
+        },
+        "desktopHeader": {
+            "cat_name": "Desktop header",
+            "cat_key": "desktopHeader",
+            "cat_icon": "fa-solid fa-display",
+            "cat_parent": "header"
+        },
+        "mobileHeader": {
+            "cat_name": "Mobile header",
+            "cat_key": "mobileHeader",
+            "cat_icon": "fa-solid fa-mobile-screen",
+            "cat_parent": "header"
+        },
+        "desktopFooter": {
+            "cat_name": "Desktop footer",
+            "cat_key": "desktopFooter",
+            "cat_icon": "fa-solid fa-display",
+            "cat_parent": "footer"
+        },
+        "body": {
+            "cat_name": "Body",
+            "cat_key": "body",
+            "cat_icon": "fa-solid fa-arrows-left-right-to-line",
+            "cat_parent": "global"
+        },
+        "contentBoxes": {
+            "cat_name": "Content boxes",
+            "cat_key": "contentBoxes",
+            "cat_icon": "fa-solid fa-rectangle-list",
+            "cat_parent": "global"
+        },
+        "sidebar": {
+            "cat_name": "Sidebar",
+            "cat_key": "sidebar",
+            "cat_icon": "fa-solid fa-table-list",
+            "cat_parent": "global"
+        },
+        "avatars": {
+            "cat_name": "Avatars",
+            "cat_key": "avatars",
+            "cat_icon": "fa-solid fa-circle-user",
+            "cat_parent": "global"
+        },
+        "buttons": {
+            "cat_name": "Buttons",
+            "cat_key": "buttons",
+            "cat_icon": "fa-solid fa-hand-pointer",
+            "cat_parent": "global"
+        }
+    },
+    "settings": {
+        "set__i-default-scheme": {
+            "key": "set__i-default-scheme",
+            "type": "select",
+            "name": "Default color scheme",
+            "desc": "What color scheme should be shown to new users? If users have already chosen a preference, this setting won't affect them.",
+            "refresh": false,
+            "options": [
+                [
+                    "system",
+                    "System (auto)"
+                ],
+                [
+                    "light",
+                    "Light"
+                ],
+                [
+                    "dark",
+                    "Dark"
+                ]
+            ],
+            "default": "system",
+            "cat": "lightDarkMode"
+        },
+        "set__i-logo-text": {
+            "key": "set__i-logo-text",
+            "type": "text",
+            "name": "Text Logo",
+            "desc": "The text logo is used if an image logo hasn't been uploaded.",
+            "refresh": false,
+            "default": "{setting='board_name'}",
+            "cat": "textLogo"
+        },
+        "set__i-sidebar-width": {
+            "key": "set__i-sidebar-width",
+            "type": "range",
+            "name": "Sidebar width (px)",
+            "desc": "",
+            "refresh": false,
+            "min": 250,
+            "max": 450,
+            "step": 1,
+            "default": "350",
+            "cat": "sidebar"
+        },
+        "i-primary-button--co": {
+            "key": "i-primary-button--co",
+            "type": "color",
+            "name": "Primary button color",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-primary-contrast)",
+            "dark_default": "var(--i-primary-contrast)",
+            "cat": "buttons"
+        },
+        "set__i-mobile-icons-location": {
+            "key": "set__i-mobile-icons-location",
+            "type": "select",
+            "name": "Navigation icon location",
+            "desc": "The navigation icons provide convenient access to your navigation menu and account menu on small devices.",
+            "refresh": true,
+            "options": [
+                [
+                    "header",
+                    "Header"
+                ],
+                [
+                    "footer",
+                    "Footer"
+                ]
+            ],
+            "default": "footer",
+            "cat": "mobileNavigation"
+        },
+        "set__logo-light": {
+            "key": "set__logo-light",
+            "type": "image",
+            "name": "Logo (light theme)",
+            "desc": "",
+            "refresh": false,
+            "default": "{{if isset( \\IPS\\Theme::i()->logo['front']['url'] ) AND \\IPS\\Theme::i()->logo['front']['url'] !== null }}{{$logo = \\IPS\\File::get( 'core_Theme', \\IPS\\Theme::i()->logo['front']['url'] )->url;}}{$logo}{{endif}}",
+            "cat": "imageLogoDesktop"
+        },
+        "i-footer--co": {
+            "key": "i-footer--co",
+            "type": "color",
+            "name": "Footer text",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-base_4)",
+            "dark_default": "var(--i-base-contrast_4)",
+            "cat": "footer"
+        },
+        "set__mobile-logo-light": {
+            "key": "set__mobile-logo-light",
+            "type": "image",
+            "name": "Logo (light theme)",
+            "desc": "",
+            "refresh": false,
+            "default": "{{if isset( \\IPS\\Theme::i()->logo['mobile']['url'] ) AND \\IPS\\Theme::i()->logo['mobile']['url'] !== null }}{{$logo = \\IPS\\File::get( 'core_Theme', \\IPS\\Theme::i()->logo['mobile']['url'] )->url;}}{$logo}{{endif}}",
+            "cat": "imageLogoMobile"
+        },
+        "layout_global_view_mode": {
+            "key": "layout_global_view_mode",
+            "type": "select",
+            "name": "Page Layout",
+            "desc": "<strong>Classic<\/strong> is the traditional layout, with a horizontal header. <strong>Side Panel<\/strong> moves the logo and navigation into a vertical panel on the side of your page.",
+            "refresh": true,
+            "options": [
+                [
+                    "default",
+                    "Classic"
+                ],
+                [
+                    "side",
+                    "Side panel"
+                ]
+            ],
+            "default": "default",
+            "cat": "pageLayouts"
+        },
+        "set__i-font-family": {
+            "key": "set__i-font-family",
+            "type": "select",
+            "name": "Font-family",
+            "desc": "",
+            "refresh": false,
+            "options": [
+                [
+                    "var(--i-font-family_system-ui)",
+                    "System UI"
+                ],
+                [
+                    "var(--i-font-family_arial)",
+                    "Arial"
+                ],
+                [
+                    "var(--i-font-family_bitter)",
+                    "Bitter"
+                ],
+                [
+                    "var(--i-font-family_classical-humanist)",
+                    "Classical Humanist"
+                ],
+                [
+                    "var(--i-font-family_georgia)",
+                    "Georgia"
+                ],
+                [
+                    "var(--i-font-family_geometric-humanist)",
+                    "Geometric Humanist"
+                ],
+                [
+                    "var(--i-font-family_helvetica)",
+                    "Helvetica"
+                ],
+                [
+                    "var(--i-font-family_humanist)",
+                    "Humanist"
+                ],
+                [
+                    "var(--i-font-family_instrument-sans)",
+                    "Instrument Sans"
+                ],
+                [
+                    "var(--i-font-family_inter)",
+                    "Inter"
+                ],
+                [
+                    "var(--i-font-family_manrope)",
+                    "Manrope"
+                ],
+                [
+                    "var(--i-font-family_merriweather-sans)",
+                    "Merriweather Sans"
+                ],
+                [
+                    "var(--i-font-family_monospace-code)",
+                    "Monospace Code"
+                ],
+                [
+                    "var(--i-font-family_old-style)",
+                    "Old Style"
+                ],
+                [
+                    "var(--i-font-family_open-sans)",
+                    "Open Sans"
+                ],
+                [
+                    "var(--i-font-family_pathway-extreme)",
+                    "Pathway Extreme"
+                ],
+                [
+                    "var(--i-font-family_roboto-flex)",
+                    "Roboto Flex"
+                ],
+                [
+                    "var(--i-font-family_roboto-serif)",
+                    "Roboto Serif"
+                ],
+                [
+                    "var(--i-font-family_roboto-slab)",
+                    "Roboto Slab"
+                ],
+                [
+                    "var(--i-font-family_rounded-sans)",
+                    "Rounded Sans"
+                ],
+                [
+                    "var(--i-font-family_source-sans-3)",
+                    "Source Sans 3"
+                ],
+                [
+                    "var(--i-font-family_transitional)",
+                    "Transitional"
+                ],
+                [
+                    "var(--i-font-family_tahoma)",
+                    "Tahoma"
+                ],
+                [
+                    "var(--i-font-family_trebuchet-ms)",
+                    "Trebuchet MS"
+                ],
+                [
+                    "var(--i-font-family_verdana)",
+                    "Verdana"
+                ]
+            ],
+            "default": "var(--i-font-family_system-ui)",
+            "cat": "typography"
+        },
+        "set__i-design-border": {
+            "key": "set__i-design-border",
+            "type": "range",
+            "name": "Border width",
+            "desc": "",
+            "refresh": false,
+            "min": 0,
+            "max": "5",
+            "default": "1",
+            "cat": "contentBoxes"
+        },
+        "set__i-layout-width": {
+            "key": "set__i-layout-width",
+            "type": "range",
+            "name": "Max-width",
+            "desc": "",
+            "refresh": false,
+            "min": "980",
+            "max": "2500",
+            "default": "1500",
+            "cat": "body"
+        },
+        "set__i-sidebar-ui-header--he": {
+            "key": "set__i-sidebar-ui-header--he",
+            "type": "range",
+            "name": "Header height (desktop)",
+            "desc": "",
+            "refresh": false,
+            "min": "40",
+            "max": "150",
+            "default": "65",
+            "cat": "navigationPanel"
+        },
+        "set__i-position-logo": {
+            "key": "set__i-position-logo",
+            "type": "text",
+            "name": "Logo",
+            "desc": "",
+            "refresh": false,
+            "default": "4",
+            "cat": "desktopHeader"
+        },
+        "set__i-mobile-header--he": {
+            "key": "set__i-mobile-header--he",
+            "type": "range",
+            "name": "Header height (mobile)",
+            "desc": "",
+            "refresh": false,
+            "min": "40",
+            "max": "200",
+            "default": "70",
+            "cat": "mobileHeader"
+        },
+        "set__i-change-scheme": {
+            "key": "set__i-change-scheme",
+            "type": "checkbox",
+            "name": "Display color scheme toggle?",
+            "desc": "If enabled, users can choose their own preference between Light, Dark and System.",
+            "refresh": false,
+            "default": "1",
+            "cat": "lightDarkMode"
+        },
+        "set__i-logo-slogan": {
+            "key": "set__i-logo-slogan",
+            "type": "text",
+            "name": "Slogan",
+            "desc": "",
+            "refresh": false,
+            "default": "",
+            "cat": "textLogo"
+        },
+        "i-primary-button--ba-co": {
+            "key": "i-primary-button--ba-co",
+            "type": "color",
+            "name": "Primary button background",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-primary)",
+            "dark_default": "var(--i-primary)",
+            "cat": "buttons"
+        },
+        "set__i-mobile-footer-labels": {
+            "key": "set__i-mobile-footer-labels",
+            "type": "checkbox",
+            "name": "Show text labels in footer bar?",
+            "desc": "",
+            "refresh": false,
+            "default": "1",
+            "cat": "mobileNavigation"
+        },
+        "set__logo-dark": {
+            "key": "set__logo-dark",
+            "type": "image",
+            "name": "Logo (dark theme)",
+            "desc": "",
+            "refresh": false,
+            "default": "{{if isset( \\IPS\\Theme::i()->logo['front-dark']['url'] ) AND \\IPS\\Theme::i()->logo['front-dark']['url'] !== null }}{{$logo = \\IPS\\File::get( 'core_Theme', \\IPS\\Theme::i()->logo['front-dark']['url'] )->url;}}{$logo}{{endif}}",
+            "cat": "imageLogoDesktop"
+        },
+        "i-footer--ba-co": {
+            "key": "i-footer--ba-co",
+            "type": "color",
+            "name": "Footer background",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-base-contrast_4)",
+            "dark_default": "var(--i-base_2)",
+            "cat": "footer"
+        },
+        "set__mobile-logo-dark": {
+            "key": "set__mobile-logo-dark",
+            "type": "image",
+            "name": "Logo (dark theme)",
+            "desc": "",
+            "refresh": false,
+            "default": "{{if isset( \\IPS\\Theme::i()->logo['mobile-dark']['url'] ) AND \\IPS\\Theme::i()->logo['mobile-dark']['url'] !== null }}{{$logo = \\IPS\\File::get( 'core_Theme', \\IPS\\Theme::i()->logo['mobile-dark']['url'] )->url;}}{$logo}{{endif}}",
+            "cat": "imageLogoMobile"
+        },
+        "set__i-design-radius": {
+            "key": "set__i-design-radius",
+            "type": "range",
+            "name": "Border radius",
+            "desc": "",
+            "refresh": false,
+            "min": 0,
+            "max": "25",
+            "default": "6",
+            "cat": "contentBoxes"
+        },
+        "set__i-font-size": {
+            "key": "set__i-font-size",
+            "type": "range",
+            "name": "Font-size",
+            "desc": "Set the base font-size for typography. Some elements will use a smaller or larger version of this base size to maintain hierarchy.",
+            "refresh": false,
+            "min": "12",
+            "max": "18",
+            "step": ".25",
+            "default": "14",
+            "cat": "typography"
+        },
+        "set__i-flip-sidebar": {
+            "key": "set__i-flip-sidebar",
+            "type": "checkbox",
+            "name": "Flip sidebar position on large screens?",
+            "desc": "",
+            "refresh": false,
+            "default": "0",
+            "cat": "sidebar"
+        },
+        "i-dashHeader--ba-co": {
+            "key": "i-dashHeader--ba-co",
+            "type": "color",
+            "name": "Header background",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-base_1)",
+            "dark_default": "var(--i-base_2)",
+            "cat": "navigationPanel"
+        },
+        "set__i-position-navigation": {
+            "key": "set__i-position-navigation",
+            "type": "text",
+            "name": "Navigation",
+            "desc": "",
+            "refresh": false,
+            "default": "5",
+            "cat": "desktopHeader"
+        },
+        "i-headerMobile--ba-co": {
+            "key": "i-headerMobile--ba-co",
+            "type": "color",
+            "name": "Header background",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-base_1)",
+            "dark_default": "var(--i-base_2)",
+            "cat": "mobileHeader"
+        },
+        "i-headerMobile--co": {
+            "key": "i-headerMobile--co",
+            "type": "color",
+            "name": "Header text color",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-base-contrast_5)",
+            "dark_default": "var(--i-base-contrast_5)",
+            "cat": "mobileHeader"
+        },
+        "i-secondary-button--co": {
+            "key": "i-secondary-button--co",
+            "type": "color",
+            "name": "Secondary button color",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-secondary-contrast)",
+            "dark_default": "var(--i-secondary-contrast)",
+            "cat": "buttons"
+        },
+        "set__i-logo--fo-fa": {
+            "key": "set__i-logo--fo-fa",
+            "type": "select",
+            "name": "Font-family",
+            "desc": "",
+            "refresh": false,
+            "options": [
+                [
+                    "var(--i-font-family)",
+                    "Inherit"
+                ],
+                [
+                    "var(--i-font-family_system-ui)",
+                    "System UI"
+                ],
+                [
+                    "var(--i-font-family_arial)",
+                    "Arial"
+                ],
+                [
+                    "var(--i-font-family_bitter)",
+                    "Bitter"
+                ],
+                [
+                    "var(--i-font-family_classical-humanist)",
+                    "Classical Humanist"
+                ],
+                [
+                    "var(--i-font-family_georgia)",
+                    "Georgia"
+                ],
+                [
+                    "var(--i-font-family_geometric-humanist)",
+                    "Geometric Humanist"
+                ],
+                [
+                    "var(--i-font-family_helvetica)",
+                    "Helvetica"
+                ],
+                [
+                    "var(--i-font-family_humanist)",
+                    "Humanist"
+                ],
+                [
+                    "var(--i-font-family_instrument-sans)",
+                    "Instrument Sans"
+                ],
+                [
+                    "var(--i-font-family_inter)",
+                    "Inter"
+                ],
+                [
+                    "var(--i-font-family_manrope)",
+                    "Manrope"
+                ],
+                [
+                    "var(--i-font-family_merriweather-sans)",
+                    "Merriweather Sans"
+                ],
+                [
+                    "var(--i-font-family_monospace-code)",
+                    "Monospace Code"
+                ],
+                [
+                    "var(--i-font-family_old-style)",
+                    "Old Style"
+                ],
+                [
+                    "var(--i-font-family_open-sans)",
+                    "Open Sans"
+                ],
+                [
+                    "var(--i-font-family_pathway-extreme)",
+                    "Pathway Extreme"
+                ],
+                [
+                    "var(--i-font-family_roboto-flex)",
+                    "Roboto Flex"
+                ],
+                [
+                    "var(--i-font-family_roboto-serif)",
+                    "Roboto Serif"
+                ],
+                [
+                    "var(--i-font-family_roboto-slab)",
+                    "Roboto Slab"
+                ],
+                [
+                    "var(--i-font-family_rounded-sans)",
+                    "Rounded Sans"
+                ],
+                [
+                    "var(--i-font-family_source-sans-3)",
+                    "Source Sans 3"
+                ],
+                [
+                    "var(--i-font-family_transitional)",
+                    "Transitional"
+                ],
+                [
+                    "var(--i-font-family_tahoma)",
+                    "Tahoma"
+                ],
+                [
+                    "var(--i-font-family_trebuchet-ms)",
+                    "Trebuchet MS"
+                ],
+                [
+                    "var(--i-font-family_verdana)",
+                    "Verdana"
+                ]
+            ],
+            "default": "var(--i-font-family)",
+            "cat": "textLogo"
+        },
+        "set__i-position-user": {
+            "key": "set__i-position-user",
+            "type": "text",
+            "name": "User",
+            "desc": "",
+            "refresh": false,
+            "default": "6",
+            "cat": "desktopHeader"
+        },
+        "i-dashHeader--co": {
+            "key": "i-dashHeader--co",
+            "type": "color",
+            "name": "Header text",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-base-contrast_5)",
+            "dark_default": "var(--i-base-contrast_5)",
+            "cat": "navigationPanel"
+        },
+        "set__i-avatar-radius": {
+            "key": "set__i-avatar-radius",
+            "type": "checkbox",
+            "name": "Rounded avatars?",
+            "desc": "",
+            "refresh": false,
+            "default": "1",
+            "cat": "avatars"
+        },
+        "i-color_root": {
+            "key": "i-color_root",
+            "type": "color",
+            "name": "Text color",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-base-contrast_3)",
+            "dark_default": "var(--i-base-contrast_3)",
+            "cat": "typography"
+        },
+        "set__i-mobile-logo--he": {
+            "key": "set__i-mobile-logo--he",
+            "type": "range",
+            "name": "Height (%)",
+            "desc": "",
+            "refresh": false,
+            "min": 10,
+            "max": 100,
+            "step": 1,
+            "default": "70",
+            "cat": "imageLogoMobile"
+        },
+        "set__i-design-shadow": {
+            "key": "set__i-design-shadow",
+            "type": "range",
+            "name": "Shadow",
+            "desc": "",
+            "refresh": false,
+            "min": 0,
+            "max": "10",
+            "default": "2",
+            "cat": "contentBoxes"
+        },
+        "i-mobileFooter--ba-co": {
+            "key": "i-mobileFooter--ba-co",
+            "type": "color",
+            "name": "Footer: background",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-base_1)",
+            "dark_default": "var(--i-base_3)",
+            "cat": "mobileNavigation"
+        },
+        "set__i-logo--he": {
+            "key": "set__i-logo--he",
+            "type": "range",
+            "name": "Maximum logo height (%)",
+            "desc": "Adjust the max-height of your desktop logo.",
+            "refresh": false,
+            "min": 10,
+            "max": 100,
+            "step": 1,
+            "default": "70",
+            "cat": "imageLogoDesktop"
+        },
+        "i-secondary-button--ba-co": {
+            "key": "i-secondary-button--ba-co",
+            "type": "color",
+            "name": "Secondary button background",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-secondary)",
+            "dark_default": "var(--i-secondary)",
+            "cat": "buttons"
+        },
+        "set__i-logo--fo-we": {
+            "key": "set__i-logo--fo-we",
+            "type": "range",
+            "name": "Font-weight",
+            "desc": "",
+            "refresh": false,
+            "min": "100",
+            "max": "900",
+            "default": "500",
+            "cat": "textLogo"
+        },
+        "i-navPanelLinkHover--co": {
+            "key": "i-navPanelLinkHover--co",
+            "type": "color",
+            "name": "Link color (hover)",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-base_1)",
+            "dark_default": "var(--i-color_primary)",
+            "cat": "navigationPanel"
+        },
+        "set__i-position-breadcrumb": {
+            "key": "set__i-position-breadcrumb",
+            "type": "text",
+            "name": "Breadcrumb",
+            "desc": "",
+            "refresh": false,
+            "default": "7",
+            "cat": "desktopHeader"
+        },
+        "i-mobileFooter--co": {
+            "key": "i-mobileFooter--co",
+            "type": "color",
+            "name": "Footer: text color",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-base-contrast_4)",
+            "dark_default": "var(--i-base-contrast_4)",
+            "cat": "mobileNavigation"
+        },
+        "i-color_soft": {
+            "key": "i-color_soft",
+            "type": "color",
+            "name": "Text color (soft)",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-base-contrast_1)",
+            "dark_default": "var(--i-base-contrast_2)",
+            "cat": "typography"
+        },
+        "i-body--ba-co": {
+            "key": "i-body--ba-co",
+            "type": "color",
+            "name": "Body background",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-base_3)",
+            "dark_default": "var(--i-base_1)",
+            "cat": "body"
+        },
+        "set__i-link-panels": {
+            "key": "set__i-link-panels",
+            "type": "checkbox",
+            "name": "Enable clickable panels?",
+            "desc": "Clickable panels increase the click size of entries inside tables and grids.",
+            "refresh": false,
+            "default": "1",
+            "cat": "contentBoxes"
+        },
+        "set__i-sidebar-ui-logo--he": {
+            "key": "set__i-sidebar-ui-logo--he",
+            "type": "range",
+            "name": "Maximum logo height (%)",
+            "desc": "Adjust the max-height of your side panel logo.",
+            "refresh": false,
+            "min": 10,
+            "max": 100,
+            "step": 1,
+            "default": "70",
+            "cat": "imageLogoDesktop"
+        },
+        "i-button--bo-ra": {
+            "key": "i-button--bo-ra",
+            "type": "range",
+            "name": "Button border-radius",
+            "desc": "",
+            "refresh": false,
+            "min": 0,
+            "max": 40,
+            "step": 1,
+            "default": "8",
+            "cat": "buttons"
+        },
+        "set__i-desktop-logo--fo-si": {
+            "key": "set__i-desktop-logo--fo-si",
+            "type": "range",
+            "name": "Desktop font-size (px)",
+            "desc": "Adjust the font-size of your text logo on the desktop layout.",
+            "refresh": false,
+            "min": "10",
+            "max": "50",
+            "default": "18",
+            "cat": "textLogo"
+        },
+        "set__i-sticky-sidebar": {
+            "key": "set__i-sticky-sidebar",
+            "type": "checkbox",
+            "name": "Sticky sidebar?",
+            "desc": "",
+            "refresh": false,
+            "default": "1",
+            "cat": "sidebar"
+        },
+        "i-navPanelLinkActive--ba-co": {
+            "key": "i-navPanelLinkActive--ba-co",
+            "type": "color",
+            "name": "Link background (active)",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-primary)",
+            "dark_default": "var(--i-primary)",
+            "cat": "navigationPanel"
+        },
+        "set__i-position-search": {
+            "key": "set__i-position-search",
+            "type": "text",
+            "name": "Search",
+            "desc": "",
+            "refresh": false,
+            "default": "9",
+            "cat": "desktopHeader"
+        },
+        "i-mobileFooter-active--co": {
+            "key": "i-mobileFooter-active--co",
+            "type": "color",
+            "name": "Footer: Active button text",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-primary-contrast)",
+            "dark_default": "var(--i-primary-contrast)",
+            "cat": "mobileNavigation"
+        },
+        "i-color_hard": {
+            "key": "i-color_hard",
+            "type": "color",
+            "name": "Text color (hard)",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-base-contrast_6)",
+            "dark_default": "var(--i-base-contrast_6)",
+            "cat": "typography"
+        },
+        "i-box--ba-co": {
+            "key": "i-box--ba-co",
+            "type": "color",
+            "name": "Background",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-base_1)",
+            "dark_default": "var(--i-base_2)",
+            "cat": "contentBoxes"
+        },
+        "set__i-header-primary--he": {
+            "key": "set__i-header-primary--he",
+            "type": "range",
+            "name": "Primary header height",
+            "desc": "",
+            "refresh": false,
+            "min": "40",
+            "max": "400",
+            "default": "100",
+            "cat": "desktopHeader"
+        },
+        "set__i-sidebar-ui-logo--fo-si": {
+            "key": "set__i-sidebar-ui-logo--fo-si",
+            "type": "range",
+            "name": "Desktop font-size (px)",
+            "desc": "Adjust the font-size of your text logo on the desktop sidebar layout.",
+            "refresh": false,
+            "min": "10",
+            "max": "50",
+            "default": "20",
+            "cat": "textLogo"
+        },
+        "i-box--bo-co": {
+            "key": "i-box--bo-co",
+            "type": "color",
+            "name": "Border color",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-base_4)",
+            "dark_default": "var(--i-base_3)",
+            "cat": "contentBoxes"
+        },
+        "i-link--co": {
+            "key": "i-link--co",
+            "type": "color",
+            "name": "Link color",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-base-contrast_5)",
+            "dark_default": "var(--i-base-contrast_5)",
+            "cat": "typography"
+        },
+        "i-mobileFooter-active--ba-co": {
+            "key": "i-mobileFooter-active--ba-co",
+            "type": "color",
+            "name": "Footer: Active button background",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-primary)",
+            "dark_default": "var(--i-primary)",
+            "cat": "mobileNavigation"
+        },
+        "i-navPanel--ba-co": {
+            "key": "i-navPanel--ba-co",
+            "type": "color",
+            "name": "Background",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-base-contrast_5)",
+            "dark_default": "var(--i-base_2)",
+            "cat": "navigationPanel"
+        },
+        "set__i-mobile-logo--fo-si": {
+            "key": "set__i-mobile-logo--fo-si",
+            "type": "range",
+            "name": "Mobile font-size (px)",
+            "desc": "Adjust the font-size of your text logo on the mobile layout.",
+            "refresh": false,
+            "min": 10,
+            "max": 50,
+            "step": 1,
+            "default": "18",
+            "cat": "textLogo"
+        },
+        "i-link-hover--co": {
+            "key": "i-link-hover--co",
+            "type": "color",
+            "name": "Link color (hover)",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-color_primary)",
+            "dark_default": "var(--i-color_primary)",
+            "cat": "typography"
+        },
+        "i-navPanel--co": {
+            "key": "i-navPanel--co",
+            "type": "color",
+            "name": "Link color",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-base_3)",
+            "dark_default": "var(--i-base-contrast_3)",
+            "cat": "navigationPanel"
+        },
+        "set__i-header-secondary--he": {
+            "key": "set__i-header-secondary--he",
+            "type": "range",
+            "name": "Secondary header height",
+            "desc": "",
+            "refresh": false,
+            "min": "30",
+            "max": "150",
+            "default": "50",
+            "cat": "desktopHeader"
+        },
+        "i-boxHeader--ba-co": {
+            "key": "i-boxHeader--ba-co",
+            "type": "color",
+            "name": "Header background",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-base_1)",
+            "dark_default": "var(--i-base_2)",
+            "cat": "contentBoxes"
+        },
+        "i-boxHeader--co": {
+            "key": "i-boxHeader--co",
+            "type": "color",
+            "name": "Header text",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-base-contrast_6)",
+            "dark_default": "var(--i-base-contrast_6)",
+            "cat": "contentBoxes"
+        },
+        "set__i-user-content-font-size": {
+            "key": "set__i-user-content-font-size",
+            "type": "range",
+            "name": "User content font-size (%)",
+            "desc": "Increase the font-size of user submitted content, such as posts.",
+            "refresh": false,
+            "min": 100,
+            "max": 150,
+            "step": 1,
+            "default": "110",
+            "cat": "typography"
+        },
+        "i-navPanelLinkActive--co": {
+            "key": "i-navPanelLinkActive--co",
+            "type": "color",
+            "name": "Link color (active)",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-primary-contrast)",
+            "dark_default": "var(--i-primary-contrast)",
+            "cat": "navigationPanel"
+        },
+        "set__i-nav-bar-icons": {
+            "key": "set__i-nav-bar-icons",
+            "type": "checkbox",
+            "name": "Navigation icons?",
+            "desc": "Display icons next to navigation links?",
+            "refresh": false,
+            "default": "0",
+            "cat": "desktopHeader"
+        },
+        "i-widget-header--ba-co": {
+            "key": "i-widget-header--ba-co",
+            "type": "color",
+            "name": "Widget header background",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-base_1)",
+            "dark_default": "var(--i-base_2)",
+            "cat": "contentBoxes"
+        },
+        "i-headerTop--ba-co": {
+            "key": "i-headerTop--ba-co",
+            "type": "color",
+            "name": "Top header background",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-base-contrast_5)",
+            "dark_default": "var(--i-base_3)",
+            "cat": "desktopHeader"
+        },
+        "i-widget-header--co": {
+            "key": "i-widget-header--co",
+            "type": "color",
+            "name": "Widget header text",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-base-contrast_6)",
+            "dark_default": "var(--i-base-contrast_6)",
+            "cat": "contentBoxes"
+        },
+        "i-headerTop--co": {
+            "key": "i-headerTop--co",
+            "type": "color",
+            "name": "Top header text",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-base_1)",
+            "dark_default": "var(--i-base-contrast_6)",
+            "cat": "desktopHeader"
+        },
+        "i-headerPrimary--ba-co": {
+            "key": "i-headerPrimary--ba-co",
+            "type": "color",
+            "name": "Primary header background",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-base-contrast_4)",
+            "dark_default": "var(--i-base_3)",
+            "cat": "desktopHeader"
+        },
+        "i-headerPrimary--co": {
+            "key": "i-headerPrimary--co",
+            "type": "color",
+            "name": "Primary header text",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-base_1)",
+            "dark_default": "var(--i-base-contrast_6)",
+            "cat": "desktopHeader"
+        },
+        "i-headerSecondary--ba-co": {
+            "key": "i-headerSecondary--ba-co",
+            "type": "color",
+            "name": "Secondary header background",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-base-contrast_5)",
+            "dark_default": "var(--i-base_4)",
+            "cat": "desktopHeader"
+        },
+        "i-headerSecondary--co": {
+            "key": "i-headerSecondary--co",
+            "type": "color",
+            "name": "Secondary header text",
+            "desc": "",
+            "refresh": false,
+            "light_default": "var(--i-base_1)",
+            "dark_default": "var(--i-base-contrast_5)",
+            "cat": "desktopHeader"
+        },
+        "set__i-header-top--he": {
+            "key": "set__i-header-top--he",
+            "type": "range",
+            "name": "Top header height",
+            "desc": "",
+            "refresh": false,
+            "min": 40,
+            "max": 150,
+            "step": 1,
+            "default": "50",
+            "cat": "desktopHeader"
+        }
+    }
+}

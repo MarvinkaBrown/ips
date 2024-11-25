@@ -1,0 +1,81 @@
+{
+    "normal": {
+        "added": [
+            "menu__core_moderation_report",
+            "manage_automatic_rules",
+            "reporting_content_blurb",
+            "report_capture_guest_details",
+            "report_capture_guest_details_desc",
+            "report_guest_details_name_mandatory",
+            "report_guest_details_name_mandatory_desc",
+            "report_content_mandatory",
+            "report_content_mandatory_desc",
+            "mailsub__core_notification_report_outcome",
+            "report_outcome_email_blurb",
+            "report_outcome_email_prelude",
+            "notification__report_outcome",
+            "report_guest_details_store_days",
+            "report_guest_details_store_unlimited",
+            "report_capture_guest_details__warning",
+            "reporting_content_notifications_blurb",
+            "report_author_notification_title",
+            "acplog__report_author_notification_edited",
+            "acplog__report_author_notification_created",
+            "acplog__report_author_notification_deleted",
+            "report_notifications_title",
+            "report_notifications_text",
+            "report_notifications_title_desc",
+            "report_notifications_text_desc",
+            "modal_author__notification",
+            "modal_author_notification_desc",
+            "modal_author_notification_none",
+            "modal_author_notification_form_submit",
+            "mailsub__core_notification_report_content_author",
+            "report_message_placeholder_mandatory",
+            "filter_report_status_4",
+            "report_status_4",
+            "menu_report_status_4",
+            "report_guest_name",
+            "report_guest_email",
+            "report_modcp_change_submission_reason",
+            "report_type_change_log",
+            "report_type_changed",
+            "automaticmod_types_notify_complete",
+            "automaticmod_types_notify_complete_desc",
+            "automaticmod_types_notify_reject",
+            "automaticmod_types_notify_reject_desc",
+            "notifications__core_Moderation_reports",
+            "notifications__core_Moderation_reports_desc",
+            "report_toggle_status_confirm_title",
+            "report_status_changed",
+            "seo_reduce_links",
+            "seo_reduce_links_desc",
+            "cookie_theme_editor_vars_description",
+            "standard_emoji"
+        ],
+        "edited": [
+            "r__reportedContent",
+            "r__reportedContentTypes",
+            "moderation_reporttypes_desc",
+            "report_status_3",
+            "menu_report_status_3"
+        ],
+        "removed": [
+            "menu__core_moderation_reportedContentTypes"
+        ]
+    },
+    "js": {
+        "added": [
+            "report_status_change_confirm",
+            "iconpicker_prompt",
+            "editor_insert_line_before",
+            "editor_insert_line_after",
+            "editor_add_box_title",
+            "editor_giphy_prompt"
+        ],
+        "edited": [],
+        "removed": [
+            "reportStatusChanged"
+        ]
+    }
+}

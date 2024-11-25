@@ -1,0 +1,69 @@
+[
+	{
+		"method": "changeIndex",
+		"params": [
+			"core_reputation_index",
+			"item_lookup",
+			{
+				"type": "key",
+				"name": "item_lookup",
+				"columns": [
+					"rep_class",
+					"item_id",
+					"reaction"
+				],
+				"length": [
+					null,
+					null,
+					null
+				]
+			}
+		]
+	},
+	{
+		"method": "dropTable",
+		"params": [
+			"core_marketplace_tokens",
+			true
+		]
+	},
+	{
+		"method": "dropColumn",
+		"params": [
+			"core_applications",
+			"app_marketplace_id"
+		]
+	},
+	{
+		"method": "dropColumn",
+		"params": [
+			"core_themes",
+			"set_marketplace_id"
+		]
+	},
+	{
+		"method": "changeColumn",
+	        "params": [
+	           "core_saved_charts",
+	           "chart_timescale",
+	           {
+	               "name": "chart_timescale",
+				   "type": "ENUM",
+	               "length": null,
+	              "decimals": null,
+	               "values": [
+	                    "hourly",
+	                    "daily",
+	                    "weekly",
+	                    "monthly",
+	                    "none"
+	               ],
+                "allow_null": true,
+                "default": null,
+                "comment": "",
+                "unsigned": false,
+                "auto_increment": false
+            }
+        ]
+    }
+]

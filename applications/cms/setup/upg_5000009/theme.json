@@ -1,0 +1,26 @@
+{
+    "html": {
+        "added": [],
+        "edited": [
+            "front\/clubs\/index",
+            "admin\/databases\/fieldsWrapper",
+            "front\/revisions\/rows",
+            "front\/revisions\/table",
+            "front\/revisions\/view",
+            "front\/widgets\/DatabaseFilters",
+            "front\/widgets\/RecordFeed",
+            "front\/widgets\/Rss"
+        ],
+        "removed": []
+    },
+    "css": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

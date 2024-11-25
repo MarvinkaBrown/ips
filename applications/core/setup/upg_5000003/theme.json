@@ -1,0 +1,47 @@
+{
+    "html": {
+        "added": [],
+        "edited": [
+            "admin\/customization\/templateEditor",
+            "front\/global\/announcementContentTop",
+            "front\/global\/announcementSidebar",
+            "front\/global\/loadGuestColorScheme",
+            "front\/global\/widgetArea",
+            "front\/themeeditor\/settingCheckbox",
+            "front\/themeeditor\/settingColor",
+            "front\/themeeditor\/settingImage",
+            "front\/themeeditor\/settingRange",
+            "front\/themeeditor\/settingSelect",
+            "front\/themeeditor\/settingText",
+            "front\/themeeditor\/themeEditorTemplate",
+            "front\/widgets\/blockList"
+        ],
+        "removed": []
+    },
+    "css": {
+        "added": [],
+        "edited": [
+            "front\/core.css",
+            "global\/flags.css",
+            "global\/framework\/1-2-settings.css",
+            "global\/framework\/1-4-colors.css",
+            "global\/framework\/3-compose.css",
+            "global\/framework\/3-images.css",
+            "global\/framework\/3-menus.css",
+            "global\/framework\/3-misc.css",
+            "global\/framework\/3-popup.css",
+            "global\/framework\/3-richtext.css",
+            "global\/framework\/3-tabs.css",
+            "global\/framework\/3-toolbox.css",
+            "global\/framework\/4-navigation-panel.css",
+            "global\/framework\/5-background.css",
+            "front\/styles\/theme_editor.css"
+        ],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "files": {
+        "added": [],
+        "edited": [
+            "core\/admin\/controllers\/core\/ips.core.langString.js",
+            "core\/front\/controllers\/core\/ips.core.announcementBanner.js",
+            "global\/framework\/controllers\/editor\/ips.editor.customtags.js",
+            "global\/admin\/templates\/ips.core.templates.js"
+        ],
+        "removed": []
+    },
+    "orders": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

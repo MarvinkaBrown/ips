@@ -1,0 +1,16 @@
+{
+    "normal": {
+        "added": [
+            "ext__Club",
+            "file_storage_delete_move_in_progress",
+            "file_storage_delete_in_use"
+        ],
+        "edited": [],
+        "removed": []
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

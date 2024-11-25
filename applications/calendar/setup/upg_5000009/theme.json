@@ -1,0 +1,32 @@
+{
+    "html": {
+        "added": [],
+        "edited": [
+            "front\/events\/featured",
+            "front\/events\/nearMe",
+            "front\/events\/nearMeContent",
+            "front\/overview\/byMonth",
+            "front\/overview\/header",
+            "front\/overview\/wrapper",
+            "front\/submit\/calendarSelector",
+            "front\/submit\/datesForm",
+            "front\/submit\/submitForm",
+            "front\/view\/comments",
+            "front\/widgets\/recentReviews",
+            "front\/widgets\/upcomingEvents"
+        ],
+        "removed": []
+    },
+    "css": {
+        "added": [],
+        "edited": [
+            "front\/calendar.css"
+        ],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

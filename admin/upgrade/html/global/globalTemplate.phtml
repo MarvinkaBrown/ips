@@ -1,0 +1,119 @@
+<ips:template parameters="$title,$html,$initError=FALSE,$path=null" />
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>{$title}</title>
+		<link rel='stylesheet' href='../assets/css/reset.css' media='all'>
+		<link rel='stylesheet' href='../assets/fontawesome/css/all.min.css' media='all'>
+		<link rel='stylesheet' href='../assets/css/global.css' media='all'>
+		<link rel='stylesheet' href='../assets/css/layout.css' media='all'>
+		<link rel='stylesheet' href='../assets/css/messages.css' media='all'>
+		<link rel='stylesheet' href='../assets/css/misc.css' media='all'>
+		<link rel='stylesheet' href='../assets/css/forms.css' media='all'>
+		<link rel='stylesheet' href='../assets/css/typography.css' media='all'>
+		<link rel='stylesheet' href='../assets/css/buttons.css' media='all'>
+		<link rel='stylesheet' href='../assets/css/installer.css' media='all'>
+		<script type="text/javascript">
+			var IPS_TIMEOUT = 30;
+			var IPS_MR_ERROR = "{lang="js_confirm_mrerror"}";
+		</script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/multipleRedirect.js"></script>
+	</head>
+	<body class='ipsApp ipsApp_installer'>
+		<script>
+			$(document).ready(function(){
+			  $('input[name="101079_diagnostics_reporting_checkbox"]').attr("disabled","disabled");
+			});
+		</script>
+		<div id='ipsInstaller'>
+			<header class="ipsInstaller__header">
+				<a href='/' class="ipsInstaller__logo">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440.71 427.19"><path d="M236,353,439.83,0H.88l203.8,353A18.11,18.11,0,0,0,236,353Z"/><polygon points="0 427.19 128.95 427.19 0 203.83 0 427.19"/><polygon points="311.76 427.19 440.71 427.19 440.71 203.83 311.76 427.19"/></svg>
+					<span>{lang="upgrader_banner"} | NullForums.Net</span>
+				</a>
+			</header>
+			<main id='elInstaller_body'>
+				{{if !$initError and ( ( \IPS\Dispatcher::i()->step != 1 AND \IPS\Dispatcher::i()->step != 8 ) || \IPS\Request::i()->start )}}
+					<!-- <div class='i-padding_3 i-background_2'>
+						<h1 class='ipsType_pageTitle'>
+							{lang="step" sprintf="\IPS\Dispatcher::i()->step ?: 1"}: {$title}
+						</h1>
+					</div> -->
+					<div class='ipsColumns'>
+						<div class='ipsColumns__secondary'>
+							<ul id='elInstaller_steps'>
+								{{foreach array( 1 => 'login', 2 => 'healthcheck', 3 => 'license', 5 => 'upgradeoptions', 6 => 'confirm', 7 => 'upgrade' ) as $i => $lang}}
+									<li class='
+									{{if \IPS\Dispatcher::i()->step == $i or ( !\IPS\Dispatcher::i()->step and $i == 1 )}}
+										elInstaller_steps__current
+									{{elseif \IPS\Dispatcher::i()->step > $i}}
+										elInstaller_steps__done
+									{{else}}
+										elInstaller_steps__future
+									{{endif}}'>
+										{{if \IPS\Dispatcher::i()->step == $i or ( !\IPS\Dispatcher::i()->step and $i == 1 )}}
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM281 385c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l71-71L136 280c-13.3 0-24-10.7-24-24s10.7-24 24-24l182.1 0-71-71c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L393 239c9.4 9.4 9.4 24.6 0 33.9L281 385z"/></svg>
+										{{elseif \IPS\Dispatcher::i()->step > $i}}
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+										{{else}}
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg>
+										{{endif}}
+										<span>{lang="$lang"}</span>
+									</li>
+								{{endforeach}}
+							</ul>
+						</div>
+						<div class='ipsColumns__primary'>
+							{$html|raw}
+						</div>
+					</div>
+				{{elseif \IPS\Request::i()->controller === 'done'}}
+					<div class='ipsInstaller__padding i-text-align_center'>
+						<h1 class='ipsType_pageTitle' id='elInstaller_welcome'>{lang="done_banner"}</h1>
+						<p class='i-color_soft'>
+							{lang="upgrade_complete"}
+						</p>
+						{{if isset( $_SESSION['upgrade_postUpgrade'] )}}
+							{{foreach $_SESSION['upgrade_postUpgrade'] as $app => $setupSteps}}
+								{{foreach $_SESSION['upgrade_postUpgrade'][ $app ] as $step => $message}}
+									<p>
+										{$message|raw}
+									</p>
+								{{endforeach}}
+							{{endforeach}}
+							{{unset( $_SESSION['upgrade_postUpgrade'] );}}
+						{{endif}}
+						<div class="ipsButtons i-margin-top_5 i-margin-bottom_3">
+							<a href='{expression="\IPS\Settings::i()->base_url"}' class='ipsButton ipsButton--large ipsButton--primary'>{lang="go_to_suite"}</a>
+							<a href='{expression="rtrim( \IPS\Settings::i()->base_url, '/' ) . '/admin'"}' class='ipsButton ipsButton--large ipsButton--secondary'>{lang="go_to_acp"}</a>
+							<a href='https://nullforums.net' target="_blank" class='ipsButton ipsButton--large ipsButton--primary' style="background: blue;">NULLFORUMS.NET</a><br>
+						</div>
+						<div class="i-margin-top_3">
+							<a href="{expression="\IPS\Http\Url::ips('docs/docs')"}" target="_blank" rel="noopener">{lang="suite_docs"}</a>
+						</div>
+					</div>
+				{{else}}
+					<div class='ipsInstaller__padding i-text-align_center'>
+						<h1 class='ipsType_pageTitle' id='elInstaller_welcome'>{lang="start_banner"}</h1>
+						<p class='i-color_soft'>
+							{{if $initError}}
+								{$initError}
+							{{else}}
+								{lang="start_info"}
+							{{endif}}
+						</p>
+						<div class="ipsButtons i-margin-top_5">
+							<a href="{expression="\IPS\Http\Url::ips('docs/install_guide')"}" class='ipsButton' target="_blank" rel="noopener">{lang="install_docs"}</a>
+							{{if !$initError}}
+								<a href='{url="&start=1"}' class='ipsButton ipsButton--primary'>{lang="start_upgrade"}</a>
+							{{endif}}
+						</div>
+					</div>
+				{{endif}}
+			</main>
+		</div>
+		<div class="ipsInstaller__ip">Nulled by <a href="https://nullforums.net/" target="_blank">NullForums.net</a></div>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+{
+    "files": {
+        "added": [],
+        "edited": [
+            "global\/framework\/common\/ui\/ips.ui.filterBar.js",
+            "global\/framework\/common\/ui\/ips.ui.tabbar.js",
+            "global\/framework\/common\/utils\/ips.utils.lazyload.js",
+            "core\/front\/controllers\/clubs\/ips.clubs.navbar.js",
+            "global\/admin\/controllers\/core\/ips.core.dynamicChart.js",
+            "global\/front\/controllers\/core\/ips.core.comment.js",
+            "global\/front\/controllers\/core\/ips.core.commentFeed.js",
+            "global\/front\/controllers\/core\/ips.core.lightboxedImages.js",
+            "core\/global\/controllers\/core\/ips.core.2fa.js",
+            "core\/admin\/controllers\/members\/ips.members.moderatorPermissions.js",
+            "core\/front\/controllers\/search\/ips.search.filters.js",
+            "core\/front\/controllers\/widgets\/ips.widgets.sidebar.js",
+            "core\/admin\/templates\/ips.templates.members.js"
+        ],
+        "removed": []
+    },
+    "orders": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

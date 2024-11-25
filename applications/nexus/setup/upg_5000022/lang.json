@@ -1,0 +1,15 @@
+{
+    "normal": {
+        "added": [
+            "mailsub__nexus_acp_notification_ConfigurationError",
+            "mailsub__nexus_acp_notification_Maxmind"
+        ],
+        "edited": [],
+        "removed": []
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

@@ -1,0 +1,68 @@
+<?php
+/**
+ * @brief		Forms extension
+ * @author		<a href='https://www.invisioncommunity.com'>Invision Power Services, Inc.</a>
+ * @copyright	(c) Invision Power Services, Inc.
+ * @license		https://www.invisioncommunity.com/legal/standards/
+ * @package		Invision Community
+{subpackage}
+ * @since		{date}
+ */
+
+namespace IPS\{app}\extensions\core\Forms;
+
+/* To prevent PHP errors (extending class does not exist) revealing path */
+
+use IPS\Extensions\FormsAbstract;
+use IPS\Helpers\Form;
+use function defined;
+
+if ( !defined( '\IPS\SUITE_UNIQUE_KEY' ) )
+{
+	header( ( $_SERVER['SERVER_PROTOCOL'] ?? 'HTTP/1.0' ) . ' 403 Forbidden' );
+	exit;
+}
+
+/**
+ * Forms extension
+ */
+class {class} extends FormsAbstract
+{
+	/**
+	 * Identifies the form that will be extended.
+	 * Valid values: registration|checkout
+	 * @see Form::availableForExtension()
+	 * @return string
+	 */
+	public static function formType() : string
+	{
+		return {formType};
+	}
+
+	/**
+	 * Return an array of fields that will be added to the form
+	 * Additional parameters will be passed in depending on the form type
+	 * registration: no additional parameters
+	 * checkout: currently logged in member, current invoice
+	 *
+	 * @return array
+	 */
+	public function formElements() : array
+	{
+		return [];
+	}
+
+	/**
+	 * Handle the field values on save
+	 * Additional parameters will be passed in depending on the form type
+	 * registration: newly created member
+	 * checkout: currently logged in member, current invoice
+	 *
+	 * @param array $values
+	 * @return void
+	 */
+	public function processFormValues( array $values ) : void
+	{
+
+	}
+}

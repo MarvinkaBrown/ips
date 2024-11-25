@@ -1,0 +1,75 @@
+<?php
+/**
+ * @brief		Profile Completion Extension
+ * @author		<a href='https://www.invisioncommunity.com'>Invision Power Services, Inc.</a>
+ * @copyright	(c) Invision Power Services, Inc.
+ * @license		https://www.invisioncommunity.com/legal/standards/
+ * @package		Invision Community
+{subpackage}
+ * @since		{date}
+ */
+
+namespace IPS\{app}\extensions\core\ProfileSteps;
+
+use IPS\Extensions\ProfileStepsAbstract;
+use IPS\Helpers\Form;
+use IPS\Http\Url;
+use IPS\Member as MemberClass;
+use IPS\Member\ProfileStep;
+use function defined;
+
+/* To prevent PHP errors (extending class does not exist) revealing path */
+if ( !defined( '\IPS\SUITE_UNIQUE_KEY' ) )
+{
+	header( ( $_SERVER['SERVER_PROTOCOL'] ?? 'HTTP/1.0' ) . ' 403 Forbidden' );
+	exit;
+}
+
+/**
+ * Profile Completion Extension
+ */
+class {class} extends ProfileStepsAbstract
+{
+	/**
+	 * Available Actions to complete steps
+	 *
+	 * @return	array	array( 'key' => 'lang_string' )
+	 */
+	public static function actions(): array
+	{
+		return array( );
+	}
+
+	/**
+	 * Available sub actions to complete steps
+	 *
+	 * @return	array	array( 'key' => 'lang_string' )
+	 */
+	public static function subActions(): array
+	{
+		return array( );
+	}
+	
+	/**
+	 * Has a specific step been completed?
+	 *
+	 * @param	ProfileStep	    $step   The step to check
+	 * @param	MemberClass|NULL		$member The member to check, or NULL for currently logged in
+	 * @return	bool
+	 */
+	public function completed( ProfileStep $step, ?MemberClass $member = NULL ): bool
+	{
+		return FALSE;
+	}
+
+	/**
+	 * Wizard Steps
+	 *
+	 * @param	MemberClass|null	$member	Member or NULL for currently logged in member
+	 * @return	array|string
+	 */
+	public static function wizard( ?MemberClass $member = NULL ): array|string
+	{
+		return array(  );
+	}
+}

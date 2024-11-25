@@ -1,0 +1,53 @@
+<?php
+/**
+ * @brief		Account Settings Extension
+ * @author		<a href='https://www.invisioncommunity.com'>Invision Power Services, Inc.</a>
+ * @copyright	(c) Invision Power Services, Inc.
+ * @license		https://www.invisioncommunity.com/legal/standards/
+{subpackage}
+ * @since		{date}
+ */
+
+namespace IPS\{app}\extensions\core\AccountSettings;
+
+/* To prevent PHP errors (extending class does not exist) revealing path */
+
+use IPS\Extensions\AccountSettingsAbstract;
+use function defined;
+
+if ( !defined( '\IPS\SUITE_UNIQUE_KEY' ) )
+{
+	header( ( $_SERVER['SERVER_PROTOCOL'] ?? 'HTTP/1.0' ) . ' 403 Forbidden' );
+	exit;
+}
+
+/**
+ * AccountSettings Extension
+ */
+class {class} extends AccountSettingsAbstract
+{	
+	/**
+	 * @var string
+	 */
+	public static string $icon = 'cog';
+
+	/**
+	 * Return the key for the tab, or NULL if it should not be displayed
+	 *
+	 * @return string|null
+	 */
+	public function getTab() : string|null
+	{
+	    return '{tabKey}';
+	}
+
+	/**
+	 * Return the content for the main tab
+	 *
+	 * @return string
+	 */
+	public function getContent() : string
+	{
+	    return '';
+	}
+}

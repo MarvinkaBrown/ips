@@ -1,0 +1,19 @@
+{
+    "files": {
+        "added": [],
+        "edited": [
+            "blog\/front\/controllers\/view\/ips.view.manageCategories.js"
+        ],
+        "removed": []
+    },
+    "orders": {
+        "added": [
+            "global\/\/dev\/js\/\/framework\/",
+            "global\/\/dev\/js\/\/library\/",
+            "global\/\/dev\/js\/\/library\/\/jquery",
+            "global\/\/dev\/js\/\/library\/\/linkify"
+        ],
+        "edited": [],
+        "removed": []
+    }
+}

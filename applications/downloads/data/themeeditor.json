@@ -1,0 +1,23 @@
+{
+    "settings": {
+        "layout_downloads_categories": {
+            "key": "layout_downloads_categories",
+            "type": "select",
+            "name": "Downloads Category List",
+            "desc": "Change the default layout of the category list in Downloads",
+            "refresh": true,
+            "options": [
+                [
+                    "table",
+                    "Table"
+                ],
+                [
+                    "grid",
+                    "Grid"
+                ]
+            ],
+            "default": "table",
+            "cat": "pageLayouts"
+        }
+    }
+}

@@ -1,0 +1,2 @@
+;(function($,_,undefined){"use strict";ips.controller.register('downloads.front.pending.buttons',{initialize:function(){this.on('click','a',this.processButton);},processButton:function(e){if($(e.currentTarget).hasClass('ipsButton--disabled')){e.preventDefault();}
+$(e.currentTarget).addClass('ipsButton--disabled');}});}(jQuery,_));;

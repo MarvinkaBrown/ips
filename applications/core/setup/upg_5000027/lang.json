@@ -1,0 +1,35 @@
+{
+    "normal": {
+        "added": [
+            "notification_account_del_request_rejected",
+            "theme_editor_custom_css_done",
+            "theme_editor_custom_css_revert",
+            "theme_editor_lightness",
+            "theme_editor_chroma",
+            "theme_editor_hue",
+            "theme_light_mode",
+            "theme_dark_mode",
+            "theme_system"
+        ],
+        "edited": [],
+        "removed": [
+            "standard_emoji",
+            "emoji_style",
+            "emoji_style_desc",
+            "emoji_style_native",
+            "emoji_style_native_desc",
+            "emoji_style_twemoji",
+            "emoji_style_twemoji_desc",
+            "emoji_style_disabled",
+            "emoji_utf8mb4_required",
+            "emoji_utf8mb4_required_cic",
+            "emoji_shortcodes",
+            "emoji_shortcodes_desc"
+        ]
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

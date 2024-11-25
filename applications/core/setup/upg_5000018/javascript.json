@@ -1,0 +1,18 @@
+{
+    "files": {
+        "added": [],
+        "edited": [
+            "global\/framework\/common\/ui\/ips.ui.form.js",
+            "global\/framework\/common\/ui\/ips.ui.pageAction.js",
+            "global\/framework\/common\/ui\/ips.ui.tableOfContents.js",
+            "global\/framework\/common\/utils\/ips.utils.position.js",
+            "global\/front\/mixins\/ips.core.table.js"
+        ],
+        "removed": []
+    },
+    "orders": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

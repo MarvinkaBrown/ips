@@ -1,0 +1,18 @@
+{
+    "normal": {
+        "added": [
+            "acpsearch__upload_feed_calendar",
+            "acpsearch__add_feed_calendar",
+            "acpsearch__add_feed_member",
+            "acpsearch__upload_feed_member",
+            "acpsearch__feed_title"
+        ],
+        "edited": [],
+        "removed": []
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

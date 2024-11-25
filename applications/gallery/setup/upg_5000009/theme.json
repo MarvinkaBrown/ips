@@ -1,0 +1,31 @@
+{
+    "html": {
+        "added": [],
+        "edited": [
+            "front\/browse\/albumComments",
+            "front\/browse\/albums",
+            "front\/browse\/categories",
+            "front\/browse\/imageTable",
+            "front\/browse\/index",
+            "admin\/dashboard\/overview",
+            "front\/global\/featuredComments",
+            "front\/view\/comments",
+            "front\/view\/imageInfo",
+            "front\/widgets\/albums",
+            "front\/widgets\/imageFeed",
+            "front\/widgets\/recentComments",
+            "front\/widgets\/recentImageReviews"
+        ],
+        "removed": []
+    },
+    "css": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

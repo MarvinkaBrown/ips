@@ -1,0 +1,28 @@
+{
+    "normal": {
+        "added": [
+            "extension_comment_class"
+        ],
+        "edited": [
+            "menu_custom_menu",
+            "menu_manager_icon"
+        ],
+        "removed": [
+            "block_twitter",
+            "block_twitter_desc",
+            "twitter_name",
+            "twitter_style",
+            "twitter_light",
+            "twitter_dark",
+            "twitter_color",
+            "extension_commment_class"
+        ]
+    },
+    "js": {
+        "added": [
+            "core_pagebuilder_wrap__hide-images"
+        ],
+        "edited": [],
+        "removed": []
+    }
+}

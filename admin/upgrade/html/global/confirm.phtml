@@ -1,0 +1,11 @@
+<ips:template parameters="" />
+<div class='i-padding_4 i-text-align_center'>
+	<a href='{url="controller=upgrade&key={$_SESSION['uniqueKey']}"}' class='ipsButton ipsButton--large ipsButton--primary'>{lang="start_upgrade"}</a>
+	<div class='i-font-size_2 i-margin-top_3'>
+		{{if \IPS\CIC}}
+			{lang="upgrade_confirm_cic"}
+		{{else}}
+			{lang="upgrade_confirm"}
+		{{endif}}
+	</div>
+</div>

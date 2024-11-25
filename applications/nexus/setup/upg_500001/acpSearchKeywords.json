@@ -1,0 +1,36 @@
+{
+    "added": [
+        "app=nexus&module=payments&controller=paymentsettings",
+        "app=nexus&module=store&controller=filters",
+        "app=nexus&module=store&controller=settings",
+        "app=nexus&module=reports&controller=donations"
+    ],
+    "edited": [
+        "app=nexus&module=payments&controller=paymentsettings&tab=gateways"
+    ],
+    "removed": [
+        "app=core&module=applications&controller=enhancements&do=edit&id=nexus_EasyPost&searchResult=form_easypost_enable",
+        "app=nexus&module=payments&controller=paymentsettings&tab=review&searchResult=form_nexus_revw_sa_on",
+        "app=nexus&module=payments&controller=shipping",
+        "app=nexus&module=payments&controller=shippingrates",
+        "app=nexus&module=support&controller=reports",
+        "app=nexus&module=support&controller=reports&tab=feedback_ratings",
+        "app=nexus&module=support&controller=reports&tab=latest_feedback",
+        "app=nexus&module=support&controller=reports&tab=overview",
+        "app=nexus&module=support&controller=reports&tab=replies",
+        "app=nexus&module=support&controller=requests",
+        "app=nexus&module=support&controller=settings&tab=autoresolve",
+        "app=nexus&module=support&controller=settings&tab=customerfeedback",
+        "app=nexus&module=support&controller=settings&tab=departments",
+        "app=nexus&module=support&controller=settings&tab=fields",
+        "app=nexus&module=support&controller=settings&tab=incomingemail",
+        "app=nexus&module=support&controller=settings&tab=outgoingemail",
+        "app=nexus&module=support&controller=settings&tab=outgoingemail&searchResult=form_nexus_sout_autoreply",
+        "app=nexus&module=support&controller=settings&tab=outgoingemail&searchResult=form_nexus_sout_chrome",
+        "app=nexus&module=support&controller=settings&tab=outgoingemail&searchResult=form_nexus_sout_from",
+        "app=nexus&module=support&controller=settings&tab=severities",
+        "app=nexus&module=support&controller=settings&tab=statuses",
+        "app=nexus&module=support&controller=settings&tab=stockactions",
+        "app=nexus&module=support&controller=volume"
+    ]
+}

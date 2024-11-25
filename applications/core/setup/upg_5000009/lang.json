@@ -1,0 +1,40 @@
+{
+    "normal": {
+        "added": [
+            "sidebar_favorites",
+            "page_editor_cta",
+            "profile_step_registration",
+            "profile_step_registration_desc",
+            "dev_widget_searchterms",
+            "dev_widget_searchterms_desc",
+            "ext__ApprovalReason"
+        ],
+        "edited": [
+            "search_trigger",
+            "manage_blocks",
+            "block_tableofcontents_desc",
+            "dev_widget_allow_padding_desc"
+        ],
+        "removed": []
+    },
+    "js": {
+        "added": [
+            "sidebarManagerSearchPlaceholder",
+            "sidebarManagerSearchEmpty",
+            "cSidebarBlock_set-favorite",
+            "cSidebarBlock_unset-favorite",
+            "editor_tool--float-left",
+            "editor_tool--float-right",
+            "editor_tool--float-regular"
+        ],
+        "edited": [
+            "sidebarManager",
+            "sidebarManagerDesc",
+            "sidebarManagerDesc2",
+            "removeBlock",
+            "sidebarError",
+            "sidebar_fetch_blocks_error"
+        ],
+        "removed": []
+    }
+}

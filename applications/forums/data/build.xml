@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build>
+ <module key="admin/forums"><![CDATA[{"default_controller":null,"protected":0,"default":1}]]></module>
+ <module key="admin/stats"><![CDATA[{"default_controller":"topics","protected":0,"default":0}]]></module>
+ <module key="front/forums"><![CDATA[{"default_controller":"index","protected":0,"default":1}]]></module>
+ <task frequency="P0Y0M0DT0H5M0S">archive</task>
+ <task frequency="P0Y0M0DT0H5M0S">unarchive</task>
+ <task frequency="P0Y0M0DT6H0M0S">solvedNotifications</task>
+ <task frequency="P0Y0M1DT0H0M0S">solvedStatsAggregation</task>
+ <task frequency="P0Y0M1DT0H0M0S">expertUserNudge</task>
+ <setting key="archive_last_post_cloud"><![CDATA[{"key":"archive_last_post_cloud","default":"5","report":"full"}]]></setting>
+ <setting key="archive_on"><![CDATA[{"key":"archive_on","default":"0","report":"full"}]]></setting>
+ <setting key="archive_remote_sql_database"><![CDATA[{"key":"archive_remote_sql_database","default":"","report":"none"}]]></setting>
+ <setting key="archive_remote_sql_host"><![CDATA[{"key":"archive_remote_sql_host","default":"","report":"none"}]]></setting>
+ <setting key="archive_remote_sql_pass"><![CDATA[{"key":"archive_remote_sql_pass","default":"","report":"none"}]]></setting>
+ <setting key="archive_remote_sql_user"><![CDATA[{"key":"archive_remote_sql_user","default":"","report":"none"}]]></setting>
+ <setting key="archive_sql_port"><![CDATA[{"key":"archive_sql_port","default":"","report":"none"}]]></setting>
+ <setting key="archive_sql_socket"><![CDATA[{"key":"archive_sql_socket","default":"","report":"none"}]]></setting>
+ <setting key="archive_sql_tbl_prefix"><![CDATA[{"key":"archive_sql_tbl_prefix","default":"","report":"none"}]]></setting>
+ <setting key="email_truncate"><![CDATA[{"key":"email_truncate","default":"1","report":"full"}]]></setting>
+ <setting key="forum_post_use_minimal_editor"><![CDATA[{"key":"forum_post_use_minimal_editor","default":"0","report":"none"}]]></setting>
+ <setting key="forums_fluid_pinned"><![CDATA[{"key":"forums_fluid_pinned","default":"1","report":"full"}]]></setting>
+ <setting key="forums_helpful_highlight"><![CDATA[{"key":"forums_helpful_highlight","default":"5","report":"full"}]]></setting>
+ <setting key="forums_mod_actions_anon"><![CDATA[{"key":"forums_mod_actions_anon","default":"0","report":"full"}]]></setting>
+ <setting key="forums_posts_per_page"><![CDATA[{"key":"forums_posts_per_page","default":"25","report":"full"}]]></setting>
+ <setting key="forums_rss"><![CDATA[{"key":"forums_rss","default":"1","report":"full"}]]></setting>
+ <setting key="forums_solved_nudge_experts"><![CDATA[{"key":"forums_solved_nudge_experts","default":"5","report":"full"}]]></setting>
+ <setting key="forums_solved_topic_reengage"><![CDATA[{"key":"forums_solved_topic_reengage","default":"14","report":"full"}]]></setting>
+ <setting key="forums_topic_activity"><![CDATA[{"key":"forums_topic_activity","default":"[\"desktop\",\"mobile\"]","report":"full"}]]></setting>
+ <setting key="forums_topic_activity_desktop"><![CDATA[{"key":"forums_topic_activity_desktop","default":"sidebar","report":"full"}]]></setting>
+ <setting key="forums_topic_activity_features"><![CDATA[{"key":"forums_topic_activity_features","default":"[\"popularDays\", \"topPost\", \"uploads\"]","report":"none"}]]></setting>
+ <setting key="forums_topic_summary_post_count"><![CDATA[{"key":"forums_topic_summary_post_count","default":"10","report":"full"}]]></setting>
+ <setting key="forums_topics_activity_pages_show"><![CDATA[{"key":"forums_topics_activity_pages_show","default":"3","report":"full"}]]></setting>
+ <setting key="forums_topics_per_page"><![CDATA[{"key":"forums_topics_per_page","default":"25","report":"full"}]]></setting>
+ <setting key="forums_topics_show_meta"><![CDATA[{"key":"forums_topics_show_meta","default":"[\"time\", \"moderation\"]","report":"full"}]]></setting>
+ <widget key="forumStatistics"><![CDATA[{"class":"\\IPS\\Widget\\PermissionCache","restrict":[],"default_area":"","allow_reuse":false,"menu_style":"menu","embeddable":true}]]></widget>
+ <widget key="topicFeed"><![CDATA[{"class":"\\IPS\\Widget\\PermissionCache","restrict":["sidebar","cms"],"default_area":"","allow_reuse":true,"menu_style":"modal","embeddable":true}]]></widget>
+ <widget key="postFeed"><![CDATA[{"class":"\\IPS\\Widget\\PermissionCache","restrict":[],"default_area":"","allow_reuse":true,"menu_style":"modal","embeddable":true}]]></widget>
+ <widget key="poll"><![CDATA[{"class":"\\IPS\\Widget\\PermissionCache","restrict":["sidebar","cms"],"default_area":"","allow_reuse":true,"menu_style":"modal","embeddable":true}]]></widget>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=forums"><![CDATA[{"lang_key":"menu__forums_forums_forums","restriction":"forums_manage","keywords":["categories","edit forum","forum","forums"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=forums&amp;do=form&amp;searchResult=forum_solved_mode"><![CDATA[{"lang_key":"forum_solved_mode","restriction":"forums_manage","keywords":["answer","helpful","solution","support"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=forums&amp;searchResult=form_new_allow_anonymous"><![CDATA[{"lang_key":"allow_anonymous","restriction":"forums_manage","keywords":["anonymous","anonymously"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=forums&amp;searchResult=form_new_forum_allow_poll"><![CDATA[{"lang_key":"forum_allow_poll","restriction":"forums_manage","keywords":["allow polls","polls"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=forums&amp;searchResult=form_new_forum_description"><![CDATA[{"lang_key":"forum_description","restriction":"forums_manage","keywords":["description","forum description"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=forums&amp;searchResult=form_new_forum_inc_postcount"><![CDATA[{"lang_key":"forum_inc_postcount","restriction":"forums_manage","keywords":["content counts","increase content","increase content counts"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=forums&amp;searchResult=form_new_forum_name"><![CDATA[{"lang_key":"forum_name","restriction":"forums_manage","keywords":["forum name"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=forums&amp;searchResult=form_new_forum_parent_id"><![CDATA[{"lang_key":"forum_parent_id","restriction":"forums_manage","keywords":["parent","parent forum"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=forums&amp;searchResult=form_new_forum_show_rules"><![CDATA[{"lang_key":"forum_show_rules","restriction":"forums_manage","keywords":["rules","show rules"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=forums&amp;searchResult=form_new_forum_type"><![CDATA[{"lang_key":"forum_type","restriction":"forums_manage","keywords":["category","discussions","forum type","questions","redirect"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=forums&amp;searchResult=forum_best_answer"><![CDATA[{"lang_key":"bw_solved_set_by_moderator","restriction":"forums_manage","keywords":["answer","best answer","qa","solved"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=forums&amp;searchResult=forum_can_view_others"><![CDATA[{"lang_key":"forum_can_view_others","restriction":"forums_manage","keywords":["other users","see topics","topics"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=forums&amp;searchResult=forum_disable_sharelinks"><![CDATA[{"lang_key":"forum_disable_sharelinks","restriction":"forums_manage","keywords":["enable sharing","sharing"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=forums&amp;searchResult=forum_icon_choose"><![CDATA[{"lang_key":"forum_icon_choose","restriction":"forums_manage","keywords":["forum icon","icon"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=forums&amp;searchResult=forum_ipseo_priority"><![CDATA[{"lang_key":"forum_ipseo_priority","restriction":"forums_manage","keywords":["sitemap priority"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=forums&amp;searchResult=forum_password_on"><![CDATA[{"lang_key":"forum_password_on","restriction":"forums_manage","keywords":["password","password protected","protected"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=forums&amp;searchResult=forum_permission_custom_error"><![CDATA[{"lang_key":"forum_permission_custom_error","restriction":"forums_manage","keywords":["custom error","error","no permission"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=forums&amp;searchResult=forum_permission_showtopic"><![CDATA[{"lang_key":"forum_permission_showtopic","restriction":"forums_manage","keywords":["read permission","without permission"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=forums&amp;searchResult=forum_preview_posts"><![CDATA[{"lang_key":"forum_preview_posts","restriction":"forums_manage","keywords":["approved","must approved","posts must"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=forums&amp;searchResult=forum_sort_key"><![CDATA[{"lang_key":"forum_sort_key","restriction":"forums_manage","keywords":["default sort","sort order"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=savedActions"><![CDATA[{"lang_key":"menu__forums_forums_savedActions","restriction":"savedActions_manage","keywords":["multi moderation","multimod","saved actions"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=savedActions&amp;searchResult=form_new_mm_forums"><![CDATA[{"lang_key":"acpsearch__mm_forums","restriction":"savedActions_manage","keywords":["actions forums","multimod forums"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=savedActions&amp;searchResult=form_new_mm_title"><![CDATA[{"lang_key":"acpsearch__mm_title","restriction":"savedActions_manage","keywords":["actions name","multimod name","saved actions name"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=savedActions&amp;searchResult=form_new_topic_approve"><![CDATA[{"lang_key":"topic_approve","restriction":"savedActions_manage","keywords":["hide","properties","unhide"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=savedActions&amp;searchResult=form_new_topic_move"><![CDATA[{"lang_key":"topic_move","restriction":"savedActions_manage","keywords":["move","move forum"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=savedActions&amp;searchResult=form_new_topic_pin"><![CDATA[{"lang_key":"topic_pin","restriction":"savedActions_manage","keywords":["pin topic","properties","unpin topic"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=savedActions&amp;searchResult=form_new_topic_reply"><![CDATA[{"lang_key":"topic_reply","restriction":"savedActions_manage","keywords":["add reply"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=savedActions&amp;searchResult=form_new_topic_state"><![CDATA[{"lang_key":"topic_state","restriction":"savedActions_manage","keywords":["lock","properties lock","properties unlock","unlock"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=savedActions&amp;searchResult=form_new_topic_title_end"><![CDATA[{"lang_key":"topic_title_end","restriction":"savedActions_manage","keywords":["add end","add title","end title"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=savedActions&amp;searchResult=form_new_topic_title_st"><![CDATA[{"lang_key":"topic_title_st","restriction":"savedActions_manage","keywords":["add start","add title","start title"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=settings"><![CDATA[{"lang_key":"menu__forums_forums_settings","restriction":"settings_access","keywords":["forum settings"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=settings&amp;searchResult=form_forums_default_view"><![CDATA[{"lang_key":"forums_default_view","restriction":"settings_access","keywords":["fluid","grid","mode","table","view"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=settings&amp;searchResult=form_forums_helpful_highlight"><![CDATA[{"lang_key":"forums_helpful_highlight","restriction":"settings_access","keywords":["helpful","solution","solved"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=settings&amp;searchResult=form_forums_posts_per_page"><![CDATA[{"lang_key":"forums_posts_per_page","restriction":"settings_access","keywords":["posts per page"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=settings&amp;searchResult=form_forums_rss"><![CDATA[{"lang_key":"forums_rss","restriction":"settings_access","keywords":["rss export"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=settings&amp;searchResult=form_forums_solved_nudge_experts"><![CDATA[{"lang_key":"forums_solved_nudge_experts","restriction":"settings_access","keywords":["email","experts","notification","support"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=settings&amp;searchResult=form_forums_topic_activity"><![CDATA[{"lang_key":"forums_topic_activity","restriction":"settings_access","keywords":["desktop","topic","topic activity","topic overview"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=settings&amp;searchResult=form_forums_topic_activity_features"><![CDATA[{"lang_key":"forums_topic_activity_features","restriction":"settings_access","keywords":["attachments","top post","topic overview"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=settings&amp;searchResult=form_forums_topics_show_meta"><![CDATA[{"lang_key":"forums_topics_show_meta","restriction":"settings_access","keywords":["comments","posts"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=settings&amp;searchResult=forums_topic_activity_desktop"><![CDATA[{"lang_key":"forums_topic_activity_desktop","restriction":"settings_access","keywords":["desktop","tablet","topic overview"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=settings&amp;tab=archiving"><![CDATA[{"lang_key":"archiving","restriction":"archive_manage","keywords":["archive","archiving"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=settings&amp;tab=archiving&amp;searchResult=form_archive_on"><![CDATA[{"lang_key":"archive_on","restriction":"settings_access","keywords":["enable archiving"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=settings&amp;tab=settings"><![CDATA[{"lang_key":"forum_settings","restriction":"settings_access","keywords":["forum settings"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=forums&amp;controller=settings&amp;tab=settings&amp;searchResult=form_forums_solved_topic_reengage"><![CDATA[{"lang_key":"forums_solved_topic_reengage","restriction":"settings_access","keywords":["email","notification","solved"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=stats&amp;controller=posts"><![CDATA[{"lang_key":"menu__forums_stats_posts","restriction":"posts_manage","keywords":["New Post Statistics","new post stats","post statistics","post stats"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=stats&amp;controller=solved"><![CDATA[{"lang_key":"menu__forums_stats_solved","restriction":"topics_manage","keywords":["mark as solved","solution","solved"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=stats&amp;controller=solved&amp;tab=_default"><![CDATA[{"lang_key":"dynamic_chart_overview","restriction":"topics_manage","keywords":["solved","time to solved"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=stats&amp;controller=solved&amp;tab=percentage"><![CDATA[{"lang_key":"forums_solved_stats_percentage","restriction":"topics_manage","keywords":["solved"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=stats&amp;controller=solved&amp;tab=solved"><![CDATA[{"lang_key":"stats_topics_tab_solved","restriction":"topics_manage","keywords":["solved"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=stats&amp;controller=solved&amp;tab=time"><![CDATA[{"lang_key":"forums_solved_stats_time","restriction":"topics_manage","keywords":["solved"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=stats&amp;controller=topics"><![CDATA[{"lang_key":"menu__forums_stats_topics","restriction":"topics_manage","keywords":["new topic stats","topic statistics","topic stats"]}]]></acpsearch>
+ <acpsearch key="app=forums&amp;module=stats&amp;controller=solvers"><![CDATA[{"lang_key":"menu__forums_stats_solvers","restriction":"topics_manage","keywords":["solve","forum","solution"]}]]></acpsearch>
+ <themeeditorsetting key="layout_forums_forum"><![CDATA[{"key":"layout_forums_forum","type":"select","name":"Forum Index","desc":"Change the default layout of the forum index.","refresh":true,"options":[["table","Table"],["grid","Grid"],["fluid","Fluid"],["modern","Feed"]],"default":"grid","cat":"pageLayouts"}]]></themeeditorsetting>
+ <themeeditorsetting key="layout_forums_topic"><![CDATA[{"key":"layout_forums_topic","type":"select","name":"Topic list","desc":"Change the default layout of the topic list.","refresh":true,"options":[["list","Classic"],["snippet","Snippet"]],"default":"snippet","cat":"pageLayouts"}]]></themeeditorsetting>
+ <themeeditorsetting key="layout_forums_post"><![CDATA[{"key":"layout_forums_post","type":"select","name":"Topic view","desc":"Change the default layout of topics.","refresh":true,"options":[["classic","Normal"],["modern","Compact"]],"default":"classic","cat":"pageLayouts"}]]></themeeditorsetting>
+ <themeeditorsetting key="layout_forum_topic_view_firstpost"><![CDATA[{"key":"layout_forum_topic_view_firstpost","type":"checkbox","name":"Feature first post?","desc":"Feature the first post by showing it at the top of every page in the topic?","refresh":true,"default":"0","cat":"pageLayouts"}]]></themeeditorsetting>
+</build>

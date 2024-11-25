@@ -1,0 +1,32 @@
+<ips:template parameters="$requirements" />
+{{$canProceed = TRUE;}}
+<section class="ipsInstaller__padding">
+	{{foreach $requirements['requirements'] as $k => $_requirements}}
+		<h2 class="ipsType_sectionHead">{lang="requirements" sprintf="$k"}</h2>
+		<ul class="ipsList_checks">
+			{{foreach $_requirements as $item}}
+				{{if !$item['success']}}{{$canProceed = FALSE;}}{{endif}}
+				<li class="{{if $item['success']}}success{{else}}fail{{endif}}">{$item['message']}</li>
+			{{endforeach}}
+		</ul>
+	{{endforeach}}
+	{{if isset( $requirements['advice'] ) and \count( $requirements['advice'] )}}
+		<h2 class="ipsType_sectionHead">{lang="recommendations"}</h2>
+		<br><br>
+		<p class="ipsType_normal">{lang="recom_info"}</p>
+		<ul class="ipsList_checks">
+			{{foreach $requirements['advice'] as $items}}
+				{{foreach $items as $key => $item}}
+					<li class="{{if $key === 'php'}}fail{{else}}advisory{{endif}}">{$item}</li>
+				{{endforeach}}
+			{{endforeach}}
+		</ul>
+	{{endif}}
+	<div class='i-text-align_center'>
+		{{if $canProceed}}
+			<a href='{url="controller=license"}' class='ipsButton ipsButton--large ipsButton--primary'>{lang="continue"}</a>
+		{{else}}
+			<a href='' class='ipsButton ipsButton--large ipsButton--primary' disabled>{lang="proceed_anyways"}</a>
+		{{endif}}
+	</div>
+</section>

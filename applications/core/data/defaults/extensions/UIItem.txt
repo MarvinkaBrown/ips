@@ -1,0 +1,29 @@
+<?php
+
+namespace IPS\{app}\extensions\core\UIItem;
+
+use IPS\Content\Item as BaseItem;
+use IPS\Helpers\Badge\Icon;
+use IPS\Helpers\Form\FormAbstract;
+use IPS\Helpers\Table\Content;
+use IPS\Node\Model;
+use IPS\Output\UI\Item as UIItem;
+use function defined;
+
+/* To prevent PHP errors (extending class does not exist) revealing path */
+if ( !defined( '\IPS\SUITE_UNIQUE_KEY' ) )
+{
+	header( ( $_SERVER['SERVER_PROTOCOL'] ?? 'HTTP/1.0' ) . ' 403 Forbidden' );
+	exit;
+}
+
+/**
+ * @brief	Content UI extension: {class}
+ */
+class {class} extends UIItem
+{
+	/**
+	 * @brief	Class to extend
+	 */
+	 public static ?string $class = '{item}';
+}

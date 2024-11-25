@@ -1,0 +1,24 @@
+{
+    "added": [
+        "app=core&module=membersettings&controller=profiles&tab=profilesettings&searchResult=nexus_prune_history"
+    ],
+    "edited": [
+        "app=core&module=applications&controller=enhancements",
+        "app=core&module=applications&controller=menu",
+        "app=core&module=customization&controller=icons",
+        "app=core&module=discovery&controller=streams&do=allActivitySettings",
+        "app=core&module=members&controller=groups",
+        "app=core&module=members&controller=groups&searchResult=g_ppd_limit",
+        "app=core&module=members&controller=groups&searchResult=g_ppd_unit",
+        "app=core&module=members&controller=groups&searchResult=g_rep_max_positive",
+        "app=core&module=membersettings&controller=profiles&tab=profilesettings&searchResult=prune_member_history",
+        "app=core&module=overview&controller=mycharts",
+        "app=core&module=settings&controller=general&searchResult=form_site_social_profiles",
+        "app=core&module=settings&controller=general&searchResult=form_site_twitter_id",
+        "app=core&module=settings&controller=posting"
+    ],
+    "removed": [
+        "app=core&module=applications&controller=enhancements&do=edit&searchResult=pixabay_apikey",
+        "app=core&module=settings&controller=posting&searchResult=attachment_resample_size"
+    ]
+}

@@ -1,0 +1,62 @@
+{
+  "src/assets/icons/accordion.svg": {
+    "file": "assets/accordion-CYIGvCOe.js",
+    "name": "accordion",
+    "src": "src/assets/icons/accordion.svg",
+    "isDynamicEntry": true
+  },
+  "src/assets/icons/box.svg": {
+    "file": "assets/box-CYIGvCOe.js",
+    "name": "box",
+    "src": "src/assets/icons/box.svg",
+    "isDynamicEntry": true
+  },
+  "src/assets/icons/katex.svg": {
+    "file": "assets/katex-CEwnAn2c.js",
+    "name": "katex",
+    "src": "src/assets/icons/katex.svg",
+    "isDynamicEntry": true,
+    "assets": [
+      "assets/katex-DGOyP97K.svg"
+    ]
+  },
+  "src/assets/icons/spoiler.svg": {
+    "file": "assets/spoiler-BO0N64dY.js",
+    "name": "spoiler",
+    "src": "src/assets/icons/spoiler.svg",
+    "isDynamicEntry": true
+  },
+  "src/assets/icons/wrap.svg": {
+    "file": "assets/wrap-BOz3U5J1.js",
+    "name": "wrap",
+    "src": "src/assets/icons/wrap.svg",
+    "isDynamicEntry": true
+  },
+  "src/assets/icons/wrapInverted.svg": {
+    "file": "assets/wrapInverted-Bwt4Z3uu.js",
+    "name": "wrapInverted",
+    "src": "src/assets/icons/wrapInverted.svg",
+    "isDynamicEntry": true
+  },
+  "src/assets/icons/wrapNone.svg": {
+    "file": "assets/wrapNone-Cx3Ocot5.js",
+    "name": "wrapNone",
+    "src": "src/assets/icons/wrapNone.svg",
+    "isDynamicEntry": true
+  },
+  "src/main.jsx": {
+    "file": "assets/main-JrAf8-U8.js",
+    "name": "main",
+    "src": "src/main.jsx",
+    "isEntry": true,
+    "dynamicImports": [
+      "src/assets/icons/accordion.svg",
+      "src/assets/icons/box.svg",
+      "src/assets/icons/katex.svg",
+      "src/assets/icons/spoiler.svg",
+      "src/assets/icons/wrap.svg",
+      "src/assets/icons/wrapInverted.svg",
+      "src/assets/icons/wrapNone.svg"
+    ]
+  }
+}

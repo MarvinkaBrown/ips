@@ -1,0 +1,50 @@
+{
+    "html": {
+        "added": [],
+        "edited": [
+            "admin\/achievements\/rulesForm_addFilterButton",
+            "admin\/api\/referenceEndpoint",
+            "admin\/api\/referenceTemplate",
+            "front\/clubs\/header",
+            "front\/global\/globalTemplate",
+            "global\/global\/includeJS",
+            "front\/global\/mobileFooterBar",
+            "front\/global\/mobileNavigationChildren",
+            "front\/global\/navBar",
+            "front\/global\/navBarItems",
+            "front\/global\/pageHeader",
+            "front\/global\/sidebar",
+            "front\/messaging\/messageListRow",
+            "front\/modcp\/alertRow",
+            "front\/tags\/view",
+            "front\/themeeditor\/settingRange"
+        ],
+        "removed": []
+    },
+    "css": {
+        "added": [],
+        "edited": [
+            "global\/framework\/1-1-reset.css",
+            "global\/framework\/1-3-variables.css",
+            "global\/framework\/1-4-colors.css",
+            "global\/framework\/3-data-tables.css",
+            "global\/framework\/3-hidden-animations.css",
+            "global\/framework\/3-images.css",
+            "global\/framework\/3-inputs.css",
+            "global\/framework\/3-misc.css",
+            "global\/framework\/3-page-header.css",
+            "global\/framework\/3-popup.css",
+            "global\/framework\/4-global.css",
+            "global\/framework\/4-header.css",
+            "global\/framework\/4-offcanvas.css",
+            "front\/styles\/theme_editor.css",
+            "admin\/system\/api.css"
+        ],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

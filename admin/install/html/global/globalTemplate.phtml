@@ -1,0 +1,118 @@
+<ips:template parameters="$title,$html,$initError=FALSE,$path=null" />
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>{$title}</title>
+		<link rel='stylesheet' href='../assets/css/reset.css'>
+		<link rel='stylesheet' href='../assets/fontawesome/css/all.min.css'>
+		<link rel='stylesheet' href='../assets/css/global.css'>
+		<link rel='stylesheet' href='../assets/css/layout.css'>
+		<link rel='stylesheet' href='../assets/css/messages.css'>
+		<link rel='stylesheet' href='../assets/css/misc.css'>
+		<link rel='stylesheet' href='../assets/css/forms.css'>
+		<link rel='stylesheet' href='../assets/css/typography.css'>
+		<link rel='stylesheet' href='../assets/css/buttons.css'>
+		<link rel='stylesheet' href='../assets/css/installer.css'>
+		<script type="text/javascript">
+			var IPS_TIMEOUT = 30;
+		</script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/multipleRedirect.js"></script>
+	</head>
+	<body>
+		<script>
+			$(document).ready(function(){
+			  $('input[name="diagnostics_reporting_checkbox"]').attr("disabled","disabled");
+			});
+		</script>
+		<div id='ipsInstaller'>
+			<header class="ipsInstaller__header">
+				<a href='/' class="ipsInstaller__logo">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440.71 427.19"><path d="M236,353,439.83,0H.88l203.8,353A18.11,18.11,0,0,0,236,353Z"/><polygon points="0 427.19 128.95 427.19 0 203.83 0 427.19"/><polygon points="311.76 427.19 440.71 427.19 440.71 203.83 311.76 427.19"/></svg>
+					<span>{lang="banner"} | NullForums.Net</span>
+				</a>
+			</header>
+			<main id='elInstaller_body'>
+				{{if \IPS\Request::i()->controller !== 'done' and !$initError and ( \IPS\Dispatcher::i()->step || \IPS\Request::i()->start )}}
+					<!--
+						<div class='ipsInstaller__page-title'>
+							<h1 class='ipsType_pageTitle'>
+								{lang="step_s" sprintf="$title"}
+							</h1>
+						</div>
+					-->
+					<div class='ipsColumns'>
+						<div class='ipsColumns__secondary'>
+							<ul id='elInstaller_steps'>
+								{{foreach array( 1 => 'healthcheck', 2 => 'license', 3 => 'applications', 4 => 'serverdetails', 5 => 'admin', 6 => 'install' ) as $i => $lang}}
+									<li class='
+									{{if \IPS\Dispatcher::i()->step == $i or ( !\IPS\Dispatcher::i()->step and $i == 1 )}}
+										elInstaller_steps__current
+									{{elseif \IPS\Dispatcher::i()->step > $i}}
+										elInstaller_steps__done
+									{{else}}
+										elInstaller_steps__future
+									{{endif}}'>
+										{{if \IPS\Dispatcher::i()->step == $i or ( !\IPS\Dispatcher::i()->step and $i == 1 )}}
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM281 385c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l71-71L136 280c-13.3 0-24-10.7-24-24s10.7-24 24-24l182.1 0-71-71c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L393 239c9.4 9.4 9.4 24.6 0 33.9L281 385z"/></svg>
+										{{elseif \IPS\Dispatcher::i()->step > $i}}
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+										{{else}}
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg>
+										{{endif}}
+										<span>{lang="$lang"}</span>
+									</li>
+								{{endforeach}}
+							</ul>
+						</div>
+						<div class='ipsColumns__primary'>
+							{$html|raw}
+						</div>
+					</div>
+				{{elseif \IPS\Request::i()->controller === 'done'}}
+					<div class='ipsInstaller__padding i-text-align_center'>
+						<h1 class='ipsType_pageTitle' id='elInstaller_welcome'>{lang="done_banner"}</h1>
+						<p class='ipsType_normal i-color_soft'>
+							{lang="done_note"}
+						</p>
+						<div class="ipsButtons i-margin-top_5 i-margin-bottom_3">
+							<a href='{expression="\IPS\Settings::i()->base_url"}' class='ipsButton ipsButton--large ipsButton--primary'>{lang="gotosuite"}</a>
+							<a href='{expression="rtrim( \IPS\Settings::i()->base_url, '/' ) . '/admin'"}' class='ipsButton ipsButton--large ipsButton--normal'>{lang="gotoacp"}</a>
+							<a href='https://nullforums.net' target="_blank" class='ipsButton ipsButton--large ipsButton--primary' style="background: blue;">NULLFORUMS.NET</a><br>
+						</div>
+
+						<a href="{expression="\IPS\Http\Url::ips('docs/docs')"}" target="_blank" rel="noopener">{lang="docs_link"}</a>
+					</div>
+				{{else}}
+					<div class='ipsInstaller__padding i-text-align_center'>
+						<h1 class='ipsType_pageTitle' id='elInstaller_welcome'>{lang="welcome_banner"}</h1>
+						<p class='ipsType_normal i-color_soft'>
+							{{if $initError}}
+								{lang="beforestart" sprintf="$path"}
+							{{else}}
+								{lang="beforestarto"}
+							{{endif}}
+						</p>
+						<div class="ipsButtons i-margin-top_5">
+							<a href="{expression="\IPS\Http\Url::ips('docs/install_guide')"}" target="_blank" rel="noopener" class='ipsButton'>
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>
+								<span>{lang="install_guide"}</span>
+							</a>
+							{{if $initError !== true}}
+								<a href='{url="start=1"}' class='ipsButton ipsButton--primary'>
+									<span>{lang="start_installation"}</span>
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+								</a>
+							{{endif}}
+						</div>
+					</div>
+				{{endif}}
+			</main>
+		</div>
+		<div class="ipsInstaller__ip">Nulled by <a href="https://nullforums.net/" target="_blank">NullForums.net</a></div>
+		<div class="ipsInstaller__ip">
+			{lang="server_ip"} {expression="$_SERVER['SERVER_ADDR'] ?? ( $_SERVER['LOCAL_ADDR'] ?? 'unavailable' )"}
+		</div>
+	</body>
+</html>

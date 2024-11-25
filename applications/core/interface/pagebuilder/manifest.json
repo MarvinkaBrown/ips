@@ -1,0 +1,18 @@
+{
+  "src/css/svg.css": {
+    "file": "assets/main-51be5621.css",
+    "src": "src/css/svg.css"
+  },
+  "src/main.css": {
+    "file": "assets/main-51be5621.css",
+    "src": "src/css/svg.css"
+  },
+  "src/main.jsx": {
+    "css": [
+      "assets/main-51be5621.css"
+    ],
+    "file": "assets/main-b6d5f44d.js",
+    "isEntry": true,
+    "src": "src/main.jsx"
+  }
+}

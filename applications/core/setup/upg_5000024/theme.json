@@ -1,0 +1,41 @@
+{
+    "html": {
+        "added": [],
+        "edited": [
+            "global\/forms\/editorTags",
+            "front\/global\/announcementContentTop",
+            "front\/global\/announcementSidebar",
+            "front\/global\/announcementTop",
+            "front\/global\/globalTemplate",
+            "front\/global\/loginPopupForm",
+            "front\/global\/queryLog",
+            "front\/global\/reactionOverview",
+            "admin\/members\/prefixSuffix",
+            "front\/profile\/profileHeader",
+            "front\/system\/loginForm",
+            "front\/system\/reauthenticate",
+            "front\/system\/settingsLoginConnect",
+            "admin\/system\/systemLogView"
+        ],
+        "removed": [
+            "admin\/plugins\/details",
+            "admin\/plugins\/pluginRowDescription"
+        ]
+    },
+    "css": {
+        "added": [],
+        "edited": [
+            "admin\/customization\/languages.css",
+            "global\/framework\/3-data-tables.css",
+            "global\/framework\/3-images.css",
+            "global\/framework\/3-inputs.css",
+            "global\/framework\/3-messages.css"
+        ],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

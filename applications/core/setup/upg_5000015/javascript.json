@@ -1,0 +1,24 @@
+{
+    "files": {
+        "added": [],
+        "edited": [
+            "global\/library\/app.js",
+            "global\/framework\/common\/ui\/ips.ui.form.js",
+            "global\/framework\/common\/ui\/ips.ui.menu.js",
+            "global\/framework\/common\/ui\/ips.ui.tooltip.js",
+            "global\/framework\/common\/ui\/ips.ui.uploader.js",
+            "global\/framework\/common\/utils\/ips.utils.position.js",
+            "core\/admin\/controllers\/system\/ips.system.menuManager.js",
+            "global\/framework\/templates\/ips.core.templates.js",
+            "global\/admin\/ui\/ips.ui.tree.js"
+        ],
+        "removed": [
+            "global\/front\/controllers\/core\/ips.core.navBar.js"
+        ]
+    },
+    "orders": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

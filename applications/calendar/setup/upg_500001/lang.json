@@ -1,0 +1,21 @@
+{
+    "normal": {
+        "added": [
+            "can_view_reports_calendar_event",
+            "calendar_bm_filters",
+            "mf_rsvp",
+            "mf_rsvp_events",
+            "mf_rsvp_events_desc"
+        ],
+        "edited": [
+            "calendars_sg",
+            "calendars_sg_lc"
+        ],
+        "removed": []
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

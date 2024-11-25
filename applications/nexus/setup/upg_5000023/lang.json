@@ -1,0 +1,14 @@
+{
+    "normal": {
+        "added": [
+            "emailtpl_notification_donation_goal_reached"
+        ],
+        "edited": [],
+        "removed": []
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

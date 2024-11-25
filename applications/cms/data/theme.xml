@@ -1,0 +1,1966 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme name="Default" author_name="Invision Power Services, Inc" author_url="https://www.invisioncommunity.com">
+ <template template_group="blocks" template_name="embedCode" template_data="$block, $embedKey" template_location="admin" template_app="cms"><![CDATA[<div class="i-padding_3">
+	<div class="ipsMessage ipsMessage--info">
+    	{lang="embed_message"}
+	</div>
+	<div data-controller='cms.admin.pages.embed'>
+		<div class="i-margin-top_4">
+			<div class='ipsTitle ipsTitle--h4'>1. {lang="embed_1_title"}</div>
+			<p class="i-margin-block_2">{lang="embed_1_desc"}</p>
+			<div data-ipsCopy>
+				<label class="ipsInputLabel i-font-weight_500 i-margin-top_3 i-margin-bottom_2"><input type='checkbox' class="ipsInput" id='elEmbedInherit' checked><span>{lang="embed_1_toggle"}</span></label>
+				<textarea rows='2' spellcheck='false' id="embed_block" class='ipsInput ipsInput--fluid i-font-family_monospace' data-role='blockCode' readonly>&lt;div id='block_{$embedKey}' data-blockID='{$block->key}' class='ipsExternalWidget' data-inheritStyle='true'&gt;&lt;/div&gt;</textarea>
+				<div class="i-padding-block_2">
+					<button type="button" class="ipsButton ipsButton--inherit ipsButton--tiny" data-role="copyButton" data-clipboard-target="#embed_block">{lang="copy"}</button>
+				</div>						
+			</div>
+		</div>		
+		<div class="i-margin-top_4">
+			<div class='ipsTitle ipsTitle--h4'>2. {lang="embed_2_title"}</div>
+			<p class="i-margin-block_2">{lang="embed_2_desc"}</p>
+			<div data-ipsCopy>
+				<textarea rows='2' spellcheck='false' id="embed_loader" class='ipsInput ipsInput--fluid i-font-family_monospace' readonly>&lt;script type='text/javascript' src='{url="applications/cms/interface/external/external.js" base="none"}' id='ipsWidgetLoader'&gt;&lt;/script&gt;</textarea>
+				<div class="i-padding-block_2">
+					<button type="button" class="ipsButton ipsButton--inherit ipsButton--tiny" data-role="copyButton" data-clipboard-target="#embed_loader">{lang="copy"}</button>
+				</div>
+			</div>				
+		</div>
+	</div>
+</div>]]></template>
+ <template template_group="blocks" template_name="pluginSelector" template_data="$plugins, $id, $action, $elements, $hiddenValues, $actionButtons, $uploadField, $formClass='', $attributes=array(), $sidebar=''" template_location="admin" template_app="cms"><![CDATA[<div class='ipsBox'>
+	<form accept-charset='utf-8' action="{$action}" method="post">
+		<input type="hidden" name="{$id}_submitted" value="1">
+		{{foreach $hiddenValues as $k => $v}}
+			<input type="hidden" name="{$k}" value="{$v}">
+		{{endforeach}}
+		{{if $uploadField}}
+			<input type="hidden" name="MAX_FILE_SIZE" value="{$uploadField}">
+		{{endif}}
+
+		<div class='i-padding_3 i-background_dark'>{lang="content_block_plugin_select"}</div>
+		<div class='acpFormTabContent'>
+			<div class="ipsTabs__panel">
+				<ul class='ipsForm ipsForm--horizontal ipsForm--plugin-selector'>
+					{{foreach $plugins as $app => $data}}
+						{{foreach $data as $key => $obj}}
+							<li class='ipsFieldRow'>
+								<div class='ipsFieldRow__label'>
+									{$obj->title}
+									<span class='ipsBadge {{if $obj->type === 'feed'}}ipsBadge--style2{{else}}ipsBadge--style7{{endif}}'>{lang='content_block_type_{$obj->type}'}</span>
+								</div>
+								<div class='ipsFieldRow__content'>
+									<input id='elField_block_plugin' type="radio" role="radio" name="block_plugin" value="{$app}__{$obj->key}">
+									<div class='ipsFieldRow__desc'>
+										{$obj->description|raw}
+									</div>
+								</div>
+							</li>
+							{{if $obj->type === 'feed'}}
+								{{foreach $obj->contentTypes as $key => $lang }}
+									<li class='ipsFieldRow'>
+										<div class='ipsFieldRow__label'>
+											&nbsp;
+										</div>
+										<div class='ipsFieldRow__content'>
+											<input id='elField_block_plugin' type="radio" role="radio" name="contentType_{$app}__{$obj->key}" value="{$key}"> {$lang}
+											<div class='ipsFieldRow__desc'>
+												@todo this should be hidden until parent radio selected
+											</div>
+										</div>
+									</li>
+								{{endforeach}}
+							{{endif}}
+						{{endforeach}}
+					{{endforeach}}
+				</ul>
+			</div>
+			<div class="ipsSubmitRow">
+				{template="button" app="core" location="global" group="forms" params="'next', 'submit', null, 'ipsButton ipsButton--primary'"}
+			</div>
+		</div>
+	</form>
+</div>]]></template>
+ <template template_group="blocks" template_name="previewTemplateLink" template_data="$plugin" template_location="admin" template_app="cms"><![CDATA[<span data-role="viewTemplate" data-plugin="{$plugin}" class='ipsButton ipsButton--inherit ipsButton--tiny'>{lang="cms_block_view_template"}</span>]]></template>
+ <template template_group="blocks" template_name="rowHtml" template_data="$block" template_location="admin" template_app="cms"><![CDATA[{{if $block->category}}
+    <span class="ipsBadge ipsBadge--new">{lang="cms_block_list_key" sprintf="$block->key"}</span>
+    {{if $pages = $block->getPages()}}
+        <div class="i-flex i-gap_1 i-flex-wrap_wrap i-margin-top_2 i-link-color_inherit">
+            <span class="i-color_soft">{lang="cms_block_list_pages"}</span>
+            <ul class="ipsList ipsList--csv">
+                {{foreach $pages as $page}}
+                    <li class="i-color_hard"><a href="{$page->url()}" target="_blank">{lang="cms_page_{$page->id}"}</a></li>
+                {{endforeach}}
+            </ul>
+        </div>
+    {{endif}}
+{{endif}}]]></template>
+ <template template_group="clubs" template_name="clubCategoryView" template_data="$category, $club, $index" template_location="front" template_app="cms"><![CDATA[
+{{if \IPS\Settings::i()->clubs_header != 'sidebar'}}
+{template="header" group="clubs" app="core" params="$club, $category, 'full'"}
+{{endif}}
+
+{$index|raw}
+]]></template>
+ <template template_group="clubs" template_name="index" template_data="$database, $articles, $url, $pagination" template_location="front" template_app="cms"><![CDATA[
+<header class='ipsPageHeader ipsBox ipsPull'>
+    <div class="ipsPageHeader__row">
+        <div class='ipsPageHeader__primary'>
+            <h1 class='ipsPageHeader__title'>{$database->_title}</h1>
+            {{if $database->_description}}
+            <div class='ipsPageHeader__desc'>
+                {$database->_description}
+            </div>
+            {{endif}}
+        </div>
+        <div class="ipsButtons">
+            {{$catClass = 'IPS\cms\Categories' . $database->id; $category = $catClass::load( $database->default_category );}}
+            {template="follow" app="core" group="global" params="'cms','categories' . $database->id, $category->_id, \IPS\cms\Records::containerFollowerCount( $category )"}
+        </div>
+    </div>
+</header>
+
+{{if $database->can('add') or \IPS\Member::loggedIn()->member_id}}
+<ul class="ipsButtons ipsButtons--main ipsResponsive_hidePhone">
+    {{if $database->can('add')}}
+        <li>
+            <a class="ipsButton ipsButton--important" {{if $database->use_categories}}data-ipsDialog="1" data-ipsDialog-size="narrow" data-ipsDialog-title="{lang="cms_select_category"}"{{endif}} href="{$url->setQueryString( array( 'do' => 'form', 'd' => \IPS\cms\Databases\Dispatcher::i()->databaseId ) )}">{lang="cms_add_new_record_button" sprintf="$database->recordWord( 1 )"}</a>
+        </li>
+    {{endif}}
+</ul>
+{{endif}}
+
+<section>
+    {{if \count($articles)}}
+        {{foreach $articles as $id => $record}}
+            {template="entry" app="cms" location="database" group="category_articles" params="$record, $database"}
+        {{endforeach}}
+    {{else}}
+        <div class="ipsBox ipsBox--padding">{lang="cms_no_records_to_show" sprintf="\IPS\cms\Databases::load( \IPS\cms\Databases\Dispatcher::i()->databaseId )->recordWord()"}</div>
+    {{endif}}
+</section>
+{{if $database->featured_settings['pagination'] and ( $pagination['pages'] > 1 )}}
+{template="pagination" app="core" location="global" group="global" params="$url, $pagination['pages'], $pagination['page'], $database->featured_settings['perpage'], TRUE, 'page'"}
+{{endif}}]]></template>
+ <template template_group="databases" template_name="downloadDialog" template_data="$database" template_location="admin" template_app="cms"><![CDATA[<div class='ipsBox i-padding_3'>
+	<i class="fa-solid fa-download ipsAlert_icon"></i>
+	{lang="cms_download_db_explain"}
+	<ul class="ipsButtons ipsButtons--end ipsButtons--downloadDialog">
+		<li>
+			<a href='{url="app=cms&module=databases&controller=databases&do=download&id={$database->_id}&go=true"}' class='ipsButton ipsButton--secondary'>{lang="cms_download_db" sprintf="$database->_title"}</a>
+		</li>
+	</ul>
+</div>]]></template>
+ <template template_group="databases" template_name="fieldsWrapper" template_data="$tree" template_location="admin" template_app="cms"><![CDATA[<section class='ipsBox' data-ips-template="fieldsWrapper">
+	<h4 class='ipsBox__header'>{lang="content_fields_fixed_title"}</h4>
+	{$tree|raw}
+</section>]]></template>
+ <template template_group="databases" template_name="manageDatabaseName" template_data="$database, $row, $page" template_location="admin" template_app="cms"><![CDATA[<div class="i-flex">
+	<strong>{$database->_title}</strong>
+	{{if $page}}
+		<a class="i-margin-start_2 ipsBadge ipsBadge--style1" href="{$page->url()}" target="_blank" rel="noopener">{lang="cms_db_used_on_page" sprintf="$page->_title"}</a>
+	{{else}}
+	    <span class="i-margin-start_2 ipsBadge ipsBadge--negative"><i class='fas fa-warning'></i> {lang="database_no_page"}</span>
+	{{endif}}
+</div>
+<p class='i-color_soft'>{$database->_description}</p>]]></template>
+ <template template_group="databases" template_name="rebuildCommentCounts" template_data="$id" template_location="admin" template_app="cms"><![CDATA[
+<div class='ipsBox'>
+	<div class="i-padding_3">
+		{lang="database_rebuild_commentcount_desc"}
+		<p>
+			<a href='{url="app=cms&module=databases&controller=databases&do=rebuildCommentCounts&id={$id}&process=1" csrf="true"}' class="ipsButton ipsButton--primary">{lang="database_rebuild_commentcount_button"}</a>
+		</p>
+	</div>
+</div>]]></template>
+ <template template_group="databases" template_name="rebuildTopics" template_data="$id" template_location="admin" template_app="cms"><![CDATA[
+<div class='ipsBox'>
+	<div class="i-padding_3">
+		{lang="database_rebuild_topics_desc"}
+		<p>
+			<a href='{url="app=cms&module=databases&controller=databases&do=rebuildTopicContent&id={$id}&process=1" csrf="true"}' class="ipsButton ipsButton--primary">{lang="database_rebuild_topics_button"}</a>
+		</p>
+	</div>
+</div>]]></template>
+ <template template_group="databases" template_name="templateGoButton" template_data="$name" template_location="admin" template_app="cms"><![CDATA[&nbsp; <a href="#" data-template-view="{$name}" data-url="{url="app=cms&module=pages&controller=templates&t_location=database" base="admin"}">{lang="database_form_template_link"}</a>]]></template>
+ <template template_group="global" template_name="basicRelationship" template_data="$items" template_location="front" template_app="cms"><![CDATA[<ul class='ipsList ipsList--csv'>
+	{{foreach $items as $id => $item}}
+		<li><a href="{$item->url( "getPrefComment" )}">{$item->_title}</a></li>
+	{{endforeach}}
+</ul>]]></template>
+ <template template_group="global" template_name="commentTableHeader" template_data="$comment, $record" template_location="front" template_app="cms"><![CDATA[{{$iposted = $record->container()->contentPostedIn();}}
+{{$idField = $record::$databaseColumnId;}}
+<div>
+	<h3 class='ipsTitle ipsTitle--h3'>
+		{{if $record->unread()}}
+			<a href='{$record->url( 'getNewComment' )}' title='{lang="first_unread_post"}' data-ipsTooltip class='ipsIndicator {{if \in_array( $record->$idField, $iposted )}}ipsIndicator--participated{{endif}}'></a>
+		{{else}}
+			<span class='ipsIndicator ipsIndicator--read {{if \in_array( $record->$idField, $iposted )}}ipsIndicator--participated{{endif}}'></span>
+		{{endif}}
+		<a href='{$comment->url()}' title='{lang="view_this_cmsrecord" sprintf="\IPS\Member::loggedIn()->language()->addToStack( 'content_db_lang_sl_' . $record::$customDatabaseId, FALSE ), $record->_title"}'>{$record->_title}</a>
+		{{if $record->container()->allow_rating}}
+			{template="rating" group="global" location="front" app="core" params="'large', $record->rating_hits ? ( $record->rating_total / $record->rating_hits ) : 0"}
+		{{endif}}
+	</h3>
+	<p class='i-color_soft i-link-color_inherit'>{lang="in"} <a href='{$record->container()->url()}'>{$record->container()->_title}</a></p>
+</div>]]></template>
+ <template template_group="global" template_name="embedRecord" template_data="$item, $url" template_location="front" template_app="cms"><![CDATA[
+{{$image = NULL;}}
+<div class='ipsRichEmbed ipsRichEmbed--cms-record'>
+	{template="embedHeader" group="embed" app="core" params="$item, $item->mapped('title'), $item->mapped('date'), $url"}
+	{{if $item->record_image}}
+		{{$image = \IPS\File::get( "cms_Records", $item->record_image );}}
+	{{elseif $contentImage = $item->contentImages(1)}}
+		{{$attachType = key( $contentImage[0] );}}
+		{{$image = \IPS\File::get( $attachType, $contentImage[0][ $attachType ] );}}
+	{{endif}}
+
+	{{if $image}}
+		<a href='{$url}' class='ipsRichEmbed_masthead'>
+			<img src='{$image->url}' alt='' loading="lazy">
+		</a>
+	{{endif}}
+	<div class='ipsRichEmbed__content'>
+		<div class='ipsRichEmbed__snippet'>
+			{$item->truncated(TRUE)|raw}
+		</div>
+
+		{{if \count( $item->customFieldsForDisplay('listing') )}}
+			<div class='i-margin-top_2'>
+				{{foreach $item->customFieldsForDisplay('listing') as $fieldId => $fieldValue}}
+					{{if $fieldValue}}
+						{$fieldValue|raw}
+					{{endif}}
+				{{endforeach}}
+			</div>
+		{{endif}}
+
+		{template="embedItemStats" group="embed" app="core" params="$item, $item::database()->options['comments']"}
+	</div>
+</div>]]></template>
+ <template template_group="global" template_name="embedRecordComment" template_data="$comment, $item, $url" template_location="front" template_app="cms"><![CDATA[
+<div class='ipsRichEmbed ipsRichEmbed--cms-comment'>
+	{template="embedHeader" group="embed" app="core" params="$comment, $item->mapped('title'), $comment->mapped('date'), $url"}
+	<div class='ipsRichEmbed__content'>
+		<div class='ipsRichEmbed_originalItem'>
+			<div>
+				{{if $item->record_image}}
+					{{$image = \IPS\File::get( "cms_Records", $item->record_image );}}
+				{{elseif $contentImage = $item->contentImages(1)}}
+					{{$attachType = key( $contentImage[0] );}}
+					{{$image = \IPS\File::get( $attachType, $contentImage[0][ $attachType ] );}}
+				{{endif}}
+
+				{{if $image}}
+					<a href='{$url}' class='ipsRichEmbed_masthead'>
+						<img src='{$image->url}' alt='' loading="lazy">
+					</a>
+				{{endif}}
+				<div class='i-padding_3'>
+					{template="embedOriginalItem" group="embed" app="core" params="$item, TRUE, \IPS\Theme::i()->getTemplate( 'global', 'cms' )->embedRecordItemSnippet( $item ) "}
+				</div>
+			</div>
+		</div>
+
+		<div class='ipsRichEmbed__snippet'>
+			{$comment->truncated(TRUE)|raw}
+		</div>
+
+		{{if settings.reputation_enabled and \IPS\IPS::classUsesTrait( $comment, 'IPS\Content\Reactable' ) and \count( $comment->reactions() )}}
+			<ul class='ipsList ipsList--inline i-margin-top_2'>
+				<li>
+					{template="reactionOverview" app="core" group="global" params="$comment, TRUE, 'small'"}
+				</li>
+			</ul>
+		{{endif}}
+	</div>
+</div>]]></template>
+ <template template_group="global" template_name="embedRecordItemSnippet" template_data="$item" template_location="front" template_app="cms"><![CDATA[
+{{if \count( $item->customFieldsForDisplay('listing') )}}
+	<div class='i-margin-top_2'>
+		{{foreach $item->customFieldsForDisplay('listing') as $fieldId => $fieldValue}}
+			{{if $fieldValue}}
+				{$fieldValue|raw}
+			{{endif}}
+		{{endforeach}}
+	</div>
+{{endif}}]]></template>
+ <template template_group="global" template_name="embedRecordReview" template_data="$comment, $item, $url" template_location="front" template_app="cms"><![CDATA[
+<div class='ipsRichEmbed ipsRichEmbed--cms-review'>
+	{template="embedHeader" group="embed" app="core" params="$comment, $item->mapped('title'), $comment->mapped('date'), $url"}
+	<div class='ipsRichEmbed__content'>
+		<div class='ipsRichEmbed_originalItem'>
+			<div>
+				{{if $item->record_image}}
+					{{$image = \IPS\File::get( "cms_Records", $item->record_image );}}
+				{{elseif $contentImage = $item->contentImages(1)}}
+					{{$attachType = key( $contentImage[0] );}}
+					{{$image = \IPS\File::get( $attachType, $contentImage[0][ $attachType ] );}}
+				{{endif}}
+
+				{{if $image}}
+					<a href='{$url}' class='ipsRichEmbed_masthead'>
+						<img src='{$image->url}' alt='' loading="lazy">
+					</a>
+				{{endif}}
+				<div class='i-padding_3'>
+					{template="embedOriginalItem" group="embed" app="core" params="$item, TRUE, \IPS\Theme::i()->getTemplate( 'global', 'cms' )->embedRecordItemSnippet( $item ) "}
+				</div>
+			</div>
+		</div>
+
+		{template="rating" app="core" params="'veryLarge', $comment->mapped('rating')" group="global"} 
+		{{if $comment->mapped('votes_total')}}
+			<p>{$comment->helpfulLine()|raw}</p>
+		{{endif}}
+		<hr class='ipsHr'>
+		<div class='ipsRichEmbed__snippet'>
+			{$comment->truncated(TRUE)|raw}
+		</div>
+
+		{{if settings.reputation_enabled and \IPS\IPS::classUsesTrait( $comment, 'IPS\Content\Reactable' ) and \count( $comment->reactions() )}}
+			<ul class='ipsList ipsList--inline i-margin-top_2'>
+				<li>
+					{template="reactionOverview" app="core" group="global" params="$comment, TRUE, 'small'"}
+				</li>
+			</ul>
+		{{endif}}
+	</div>
+</div>]]></template>
+ <template template_group="global" template_name="recordResultSnippet" template_data="$indexData, $itemData, $url, $condensed" template_location="front" template_app="cms"><![CDATA[{{if $itemData['record_image']}}
+	<div class='ipsStreamItem__content-thumb ipsStreamItem__content-thumb--pages'>
+		{template="thumbImage" group="global" app="core" location="front" params="$itemData['record_image'], $indexData['index_title'], 'large', '', 'view_this', $url, 'cms_Records'"}
+	</div>
+{{endif}}
+{{if !$condensed}}
+	{{if trim( $indexData['index_content'] ) !== ''}}
+		<div class='ipsStreamItem__content-content ipsStreamItem__content-content--pages'>
+			<div {{if !( \IPS\Dispatcher::i()->application->directory == 'core' and \IPS\Dispatcher::i()->module and \IPS\Dispatcher::i()->module->key == 'search' )}}class='ipsRichText ipsTruncate_4'{{else}}class='ipsRichText' data-searchable data-findTerm{{endif}}>
+				{expression="\IPS\Content\Search\Result::preDisplay( $indexData['index_content'] )" raw="true"}
+			</div>
+		</div>
+	{{endif}}
+{{endif}}]]></template>
+ <template template_group="global" template_name="uploadDisplay" template_data="$file, $record, $downloadUrl, $cipher" template_location="front" template_app="cms"><![CDATA[{{if $file->isImage()}}
+	<img src="{$file->url}" class="ipsImage" data-ipsLightbox>
+{{else}}
+	{{if $record}}
+		<a href="{url="applications/cms/interface/file/file.php?record={$record->_id}&database={$record::$customDatabaseId}&fileKey={$cipher}&file=" base="none"}{expression="urlencode($file->originalFilename)"}">{$file->originalFilename}</a>
+	{{else}}
+		<a href="{$downloadUrl}">{$file->originalFilename}</a>
+	{{endif}}
+{{endif}}]]></template>
+ <template template_group="media" template_name="fileListing" template_data="$url, $item" template_location="admin" template_app="cms"><![CDATA[
+{{if $item instanceof \IPS\cms\Media}}
+	<li data-role='mediaItem' data-fileid='{$item->id}' data-uploaded='{datetime="$item->added" dateonly="true"}' data-path='{$item->full_path}' data-filename='{$item->filename}' data-url='{$item->url()}?_cb={expression="time()"}' data-fileType='{{if $item->is_image}}image{{else}}file{{endif}}'>
+		<div class='cMedia_item {{if $item->is_image}}cMedia_itemImage{{endif}}' title='{$item->filename}' data-ipsTooltip>
+			<div class='ipsThumb'>
+				{{if $item->is_image}}
+					<img src='{$item->url()}?_cb={expression="time()"}' alt="">
+				{{else}}
+					<i class='fa-solid fa-{$item->file_icon}'></i>
+				{{endif}}
+			</div>
+			<div class='cMedia_filename'><p class='ipsTruncate_1'>{$item->filename}</p></div>
+		</div>
+	</li>
+{{endif}}]]></template>
+ <template template_group="media" template_name="folderRow" template_data="$url, $row" template_location="admin" template_app="cms"><![CDATA[
+{{if !( $row instanceof \IPS\cms\Media )}}
+	<li class='ipsTreeList_inactiveBranch' data-role="mediaFolder" data-folderID='{$row->id}'>
+		<a href='{$url->setQueryString( array( 'root' => $row->id ) )}'>{$row->name}</a>
+		<ul></ul>				
+	</li>
+{{endif}}]]></template>
+ <template template_group="media" template_name="media" template_data="$tree" template_location="admin" template_app="cms"><![CDATA[
+{{$rootButtons = \call_user_func( $tree->getRootButtons );}}
+
+<div data-controller='cms.admin.media.main' class='cMedia_manager ipsBox'>
+	<div class='ipsColumns ipsColumns--lines'>
+		<div class='ipsColumns__secondary i-basis_360 i-background_1'>
+			<div class='cMedia__managerToolbar'>
+				{{if $rootButtons['add_folder']}}
+					<a href='{$rootButtons['add_folder']['link']}' data-ipsDialog data-ipsDialog-title='{lang="cms_add_media_folder"}' class='ipsButton ipsButton--secondary ipsButton--small ipsButton--wide' data-role='folderButton'><i class="fa-solid fa-folder-plus"></i> {lang="cms_add_media_folder"}</a>
+				{{endif}}
+			</div>
+			<i-tabs class="ipsTabs ipsTabs--stretch acpFormTabBar" id="ipsTabs_mediaSidebar" data-ipsTabBar data-ipsTabBar-contentarea="#elMedia_sidebar" data-ipstabbar-updateurl="false">
+				<div role='tablist'>
+					<button type="button" class="ipsTabs__tab" id="ipsTabs_mediaSidebar_folders" role="tab" aria-controls="ipsTabs_mediaSidebar_folders_panel" aria-selected="true" data-type="templates">{lang="media_folders"}</button>
+					<button type="button" class="ipsTabs__tab" id='ipsTabs_mediaSidebar_overview' role="tab" aria-controls="ipsTabs_mediaSidebar_overview_panel" aria-selected="false" data-type="css">{lang="media_file_overview"}</button>
+				</div>
+				{template="tabScrollers" app="core" group="global" location="global"}
+			</i-tabs>
+			<div id='elMedia_sidebar' class='i-background_1 ipsScrollbar'>
+				<div id='ipsTabs_mediaSidebar_folders_panel' class='ipsTabs__panel' role="tabpanel" aria-labelledby="ipsTabs_mediaSidebar_folders">
+					{{$roots = \call_user_func( $tree->getRoots );}}
+					<ul class='ipsTreeList' data-role='folderList'>
+						<li class='ipsTreeList_activeBranch ipsTreeList_activeNode' data-role="mediaFolder" data-folderID='0' data-loaded='true'>
+							<a href='{$tree->url->setQueryString( array('root' => 0 ) )}'>{lang="media_root_folder"}</a>
+							<ul>
+								{{foreach $roots as $id => $row}}
+									{template="folderRow" group="media" app="cms" params="$tree->url, $row"}
+								{{endforeach}}
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div id='ipsTabs_mediaSidebar_overview_panel' class='ipsTabs__panel i-padding_3' data-role='mediaSidebar' role="tabpanel" aria-labelledby="ipsTabs_mediaSidebar_overview" hidden>
+					<div data-role='itemInformation'>
+						<div class='cMedia_preview i-margin-bottom_3' data-role='itemPreview'></div>
+						<div class=''>
+							<strong class='ipsMinorTitle'>{lang="media_tag_title"}</strong>
+							<input type='text' class='ipsInput ipsInput--text ipsInput--fullWidth' value='' data-role='itemTag'>
+							<p class='i-font-size_-1 i-color_soft'>{lang="media_tag_desc"}</p>
+						</div>
+						
+						<hr class='ipsHr'>
+
+						<ul class='i-margin-top_2'>
+							<li class='i-margin-bottom_1'>
+								<h3 class='ipsMinorTitle'>{lang="media_filename"}</h3>
+								<p class='i-font-size_1' data-role='itemFilename'></p>
+							</li>
+                            <li class='i-margin-bottom_1'>
+                                <h3 class='ipsMinorTitle'>{lang='media_url'}</h3>
+                                <p class='i-font-size_1' data-role='itemUrl'></p>
+                                <p class='i-font-size_-1 i-color_soft'>{lang='media_url_desc'}</p>
+                            </li>
+							<li class='i-margin-bottom_1'>
+								<h3 class='ipsMinorTitle'>{lang="media_uploaded"}</h3>
+								<p class='i-font-size_1' data-role='itemUploaded'></p>
+							</li>
+							<li class='i-margin-bottom_1'>
+								<h3 class='ipsMinorTitle'>{lang="media_size"}</h3>
+								<p class='i-font-size_1' data-role='itemFilesize'></p>
+							</li>
+							<li class='i-margin-bottom_1' data-role='itemDimensionsRow'>
+								<h3 class='ipsMinorTitle'>{lang="media_dims"}</h3>
+								<p class='i-font-size_1' data-role='itemDimensions'></p>
+							</li>
+						</ul>
+
+						<hr class='ipsHr'>
+
+						<div class='i-margin-top_2'>
+							<a href='#' class='i-font-size_1' data-role='replaceFile' data-baseUrl="{url="app=cms&module=pages&controller=media&do=replace&id="}">{lang="replace_media_file"}</a>
+						</div>
+					</div>
+					<div data-role='multipleItems'>
+						<div class='i-padding_3 i-font-size_2 i-color_soft i-text-align_center i-margin-top_4' data-role='multipleItemsMessage'></div>
+					</div>
+				</div>
+			</div>			
+		</div>
+		<div class='ipsColumns__primary'>
+			<div class='cMedia__managerToolbar'>
+				<ul class='ipsButtons ipsButtons--start ipsButtons--media i-flex_11'>
+					{{if $rootButtons['add_page']}}
+						<li><a href='{url="app=cms&module=pages&controller=media&do=upload"}' data-ipsDialog data-ipsDialog-forceReload data-ipsDialog-remoteSubmit data-ipsDialog-title='{lang="cms_add_media"}' class='ipsButton ipsButton--primary ipsButton--small' data-role='uploadButton'><i class='fa-solid fa-cloud-arrow-up'></i> {lang="cms_add_media"}</a></li>
+					{{endif}}
+					<li class='ipsHide' data-action='deleteFolder'><a href='{url="app=cms&module=pages&controller=media&do=delete"}' data-ipsDialog data-ipsDialog-forceReload data-ipsDialog-remoteVerify="false" data-ipsDialog-title='{lang="delete"}' class='ipsButton ipsButton--negative ipsButton--small'><i class='fa-solid fa-xmark'></i> {lang="cms_delete_folder_media"}</a></li>
+					<li class='ipsHide' data-action='deleteSelected'><a href='#' class='ipsButton ipsButton--negative ipsButton--small'><i class='fa-solid fa-xmark'></i> {lang="cms_delete_selected_media"}</a></li>
+					<li class='ipsResponsive_showPhone'><hr class='ipsHr'></li>
+				</ul>
+				<input type='search' class='ipsInput ipsInput--text' data-role='mediaSearch' id='elMedia_searchField' placeholder='{lang="cms_search_media"}'>
+			</div>
+			<div class='i-padding_3 i-background_2 ipsScrollbar' data-role="fileListing" id='elMedia_fileList' data-showing='root'>
+				<ul class='ipsGrid ipsGrid--pages-media'>
+					{{foreach $roots as $id => $data}}
+						{template="fileListing" group="media" app="cms" params="$tree->url, $data"}
+					{{endforeach}}
+				</ul>
+			</div>
+			<div class='i-padding_3 i-background_2 ipsScrollbar ipsHide' data-role="searchResults" id='elMedia_searchResults'></div>
+		</div>
+	</div>
+</div>]]></template>
+ <template template_group="pages" template_name="globalWrap" template_data="$navigation, $content, $page" template_location="front" template_app="cms"><![CDATA[<div id="elCmsPageWrap" data-pageid="{$page->id}">
+{$content|raw}
+</div>]]></template>
+ <template template_group="pages" template_name="mainArea" template_data="$page, $widgets" template_location="front" template_app="cms"><![CDATA[{{foreach $widgets as $area => $areaWidgets}}
+<div>
+	{template="widgetContainer" group="pages" app="cms" params="$area, $widgets"}
+</div>
+{{endforeach}}]]></template>
+ <template template_group="pages" template_name="previewTemplateLink" template_data="" template_location="admin" template_app="cms"><![CDATA[<span data-role="viewTemplate" class='ipsButton ipsButton--inherit ipsButton--tiny'>{lang="cms_block_view_template"}</span>]]></template>
+ <template template_group="pages" template_name="widgetContainer" template_data="$id, $widgets, $orientation='horizontal'" template_location="front" template_app="cms"><![CDATA[{{if isset( \IPS\Output::i()->sidebar['widgetareas'][$id] )}}
+    {{$area = \IPS\Output::i()->sidebar['widgetareas'][$id];}}
+    {template="widgetArea" group="global" app="core" params="$area"}
+{{elseif array_key_exists( $id, $widgets ) or \IPS\Dispatcher::i()->application->canManageWidgets()}}
+    {{if isset( $widgets[ $id ] ) AND \is_string( $widgets[ $id ] )}}
+    {$widgets[ $id ]|raw}
+    {{else}}
+	<section class='cWidgetContainer cWidgetContainer--main {{if !\IPS\Request::i()->_blockManager and ! isset( $widgets[ $id ] )}}ipsHide{{endif}}' {{if \IPS\Dispatcher::i()->application->canManageWidgets()}}data-controller='core.front.widgets.area'{{endif}} data-role='widgetReceiver' data-orientation='{$orientation}' data-widgetArea='{$id}'>
+		<ul>
+			{{if isset( $widgets[ $id ] )}}
+				{{foreach $widgets[ $id ]->getAllWidgets() as $_widget}}
+				{{if $widget = \IPS\Widget::createWidgetFromStoredData( $_widget )}}
+				<li
+                    class='{{if \get_class( $widget ) != 'IPS\cms\widgets\Database'}}ipsWidget {{endif}}{{foreach $widget->getWrapperClasses() as $class}} {$class}{{endforeach}}' {{foreach $widget->dataAttributes() as $k => $v}} data-{$k}="{$v}"{{endforeach}}
+                    data-controller='core.front.widgets.block'
+                >
+                    {$widget|raw}
+                </li>
+                {{endif}}
+				{{endforeach}}
+			{{endif}}
+		</ul>
+	</section>
+	{{endif}}
+{{endif}}]]></template>
+ <template template_group="records" template_name="category" template_data="$category" template_location="admin" template_app="cms"><![CDATA[{{if $parent = $category->parent()}}
+	{{$databaseId = \IPS\Request::i()->database_id;}}
+	<a href="#" data-ipsHover-timeout="0.1" data-ipsHover-target="{url="app=cms&module=databases&controller=records&do=categoryTree&id={$category->_id}&database_id={$databaseId}"}" data-ipsHover class="i-color_soft">{$parent->_title}</a> <i class="i-color_soft fa-solid fa-angle-right"></i>
+{{endif}}
+{$category->_title}]]></template>
+ <template template_group="records" template_name="categorySelector" template_data="$form" template_location="admin" template_app="cms"><![CDATA[
+<div class='i-padding_3'>
+	{$form|raw}
+</div>]]></template>
+ <template template_group="records" template_name="categorySelector" template_data="$form" template_location="front" template_app="cms"><![CDATA[
+<div class='i-padding_3'>
+	{$form|raw}
+</div>]]></template>
+ <template template_group="records" template_name="categoryTree" template_data="$category, $parents" template_location="admin" template_app="cms"><![CDATA[<div class="i-padding_3">
+{{$databaseId = \IPS\Request::i()->database_id;}}
+{{foreach $parents as $cat}}
+	<a href="{url="app=cms&module=databases&controller=categories&do=form&id={$cat->_id}&database_id={$databaseId}"}" class="i-color_soft">{$cat->_title}</a> <i class="i-color_soft fa-solid fa-angle-right"></i>
+{{endforeach}}
+<a href="{url="app=cms&module=databases&controller=categories&do=form&id={$category->_id}&database_id={$databaseId}"}">{$category->_title}</a>
+</div>]]></template>
+ <template template_group="records" template_name="commentTemplate" template_data="$id, $action, $elements, $hiddenValues, $actionButtons, $uploadField, $class=''" template_location="front" template_app="cms"><![CDATA[{{$minimized = false;}}
+<form accept-charset='utf-8' class="ipsFormWrap ipsFormWrap--comment" action="{$action}" method="post" {{if $uploadField}}enctype="multipart/form-data"{{endif}}>
+	<input type="hidden" name="{$id}_submitted" value="1">
+	{{foreach $hiddenValues as $k => $v}}
+		<input type="hidden" name="{$k}" value="{$v}">
+	{{endforeach}}
+	{{if $uploadField}}
+		<input type="hidden" name="MAX_FILE_SIZE" value="{$uploadField}">
+		<input type="hidden" name="plupload" value="{expression="md5( mt_rand() )"}">
+	{{endif}}
+	<div class='ipsComposeArea'>
+		<div class='ipsComposeArea__photo'>{template="userPhoto" app="core" group="global" params="\IPS\Member::loggedIn(), 'fluid'"}</div>
+		<div class='ipsComposeArea_editor'>
+			{{foreach $elements as $collection}}
+				{{foreach $collection as $input}}
+					{{if $input->name == 'guest_name' or $input->name == 'guest_email'}}
+						<ul class='ipsForm ipsForm--vertical ipsForm--guest-comment'>
+							<li class='ipsFieldRow ipsFieldRow--fullWidth i-padding_0 i-margin-bottom_2'>
+								<div class="ipsFieldRow__content">{$input->html()|raw}</div>
+							</li>
+						</ul>
+					{{endif}}
+				{{endforeach}}
+			{{endforeach}}
+			{{foreach $elements as $collection}}
+				{{foreach $collection as $input}}
+					{{if $input instanceof \IPS\Helpers\Form\Editor}}
+						{{if $input->options['minimize'] !== NULL}}
+							{{$minimized = true;}}
+						{{endif}}
+						{$input->html( TRUE )|raw}
+							{{if $input->error}}
+							<br>
+							<span class="i-color_warning">{lang="$input->error"}</span>
+						{{endif}}
+					{{endif}}
+				{{endforeach}}
+			{{endforeach}}
+			<div class='i-flex i-align-items_center i-flex-wrap_wrap i-gap_3 i-margin-top_2' data-ipsEditor-toolList {{if $minimized}}hidden{{endif}}>
+				<ul class='i-flex_91 i-flex i-flex-wrap_wrap i-gap_4 i-row-gap_1'>
+					{{foreach $elements as $collection}}
+						{{foreach $collection as $input}}
+							{{if !($input instanceof \IPS\Helpers\Form\Editor) && $input->name != 'guest_name' && $input->name != 'guest_email' and ! mb_stristr( $input->name, 'content_field_' )}}
+								<li class='{{if !($input instanceof \IPS\Helpers\Form\Captcha)}}ipsComposeArea_formControl{{endif}}'>{$input->html()|raw}</li>
+							{{endif}}
+							{{if mb_stristr( $input->name, 'content_field_' )}}
+							{$input->rowHtml()|raw}
+							{{endif}}
+						{{endforeach}}
+					{{endforeach}}
+				</ul>
+				<ul class='ipsButtons i-flex_11'>
+					{{foreach $actionButtons as $button}}
+						<li>{$button|raw}</li>
+					{{endforeach}}
+				</ul>
+			</div>
+		</div>
+	</div>
+</form>]]></template>
+ <template template_group="records" template_name="customslug" template_data="$collection, $input, $category, $page, $database, $record" template_location="global" template_app="cms"><![CDATA[<li class="ipsFieldRow ipsJS_show i-color_soft" data-controller='cms.front.records.form' data-ipsTitleField="content_field_{$database->field_title}">
+	<div>
+		{{if $collection['record_static_furl']->error}}
+		<p class='i-color_warning'><i class='fa-solid fa-circle-exclamation'></i> {lang="$collection['record_static_furl']->error"}</p>
+		{{endif}}
+		<input type="checkbox" class="ipsHide" id="elInput_record_static_furl_set" name="record_static_furl_set_checkbox" {{if $collection['record_static_furl_set']->value}}checked="checked"{{endif}} value="1">
+		<input type="hidden" name="record_static_furl_set" value="{{if $collection['record_static_furl_set']->value}}1{{else}}0{{endif}}">
+		<i class='fa-solid fa-earth-americas'></i> <strong>{lang="url"}:</strong> <span data-ipsSlugUrl>{url="app=cms&module=pages&controller=page&path=$page->full_path" seoTemplate="content_page_path" seoTitle="$page->full_path"}</span><span data-ipsSlugCategory>{$category->full_path}</span><span data-ipsSlugSlug></span><span data-ipsSlugManual class="ipsHide">
+			/ <input type="text" class='ipsInput ipsInput--text ipsField_short ipsField_tinyText' name="record_static_furl" value="{{if $collection['record_static_furl']->value}}{$collection['record_static_furl']->value}{{endif}}">
+		</span><span data-ipsSlugExt>{{if $record !== NULL}}-r{$record->_id}{{else}}-r#{{endif}}</span>
+		<button data-ipsChange class="ipsButton ipsButton--tiny ipsButton--text" type="button">{lang="change"}</button>
+		<button data-ipsCancel class="ipsHide ipsButton ipsButton--tiny ipsButton--soft" type="button">{lang="cancel"}</button>
+	</div>
+</li>]]></template>
+ <template template_group="records" template_name="fieldBadge" template_data="$label, $value, $classes, $bgcolor=null, $color=null" template_location="global" template_app="cms"><![CDATA[<span class='ipsBadge {$classes}' style='{{if $bgcolor}}background:{$bgcolor};{{endif}}{{if $color}}color:{$color};{{endif}}'>{$label}: {$value|raw}</span>]]></template>
+ <template template_group="records" template_name="fieldDefault" template_data="$label, $value" template_location="global" template_app="cms"><![CDATA[<div class='i-color_soft'><strong>{$label}:</strong> {$value|raw}</div>]]></template>
+ <template template_group="records" template_name="soundcloud" template_data="$url, $params" template_location="global" template_app="cms"><![CDATA[<iframe {{foreach $params as $k => $v }}{$k}="{$v}" {{endforeach}} src="https://w.soundcloud.com/player/?url={$url}&amp;color=ff5500" loading='lazy'></iframe>]]></template>
+ <template template_group="records" template_name="spotify" template_data="$url, $params" template_location="global" template_app="cms"><![CDATA[<iframe src="https://embed.spotify.com/?uri={$url}" {{foreach $params as $k => $v }}{$k}="{$v}" {{endforeach}} allowtransparency="true" loading='lazy'></iframe>]]></template>
+ <template template_group="records" template_name="title" template_data="$row, $title" template_location="admin" template_app="cms"><![CDATA[{{if $row['record_future_date'] or $row['record_approved'] === -1 or $row['record_approved'] === 0 or $row['record_pinned'] === 1 or $row['record_featured'] === 1}}
+	<span class=''>
+	{{if $row['record_future_date']}}
+		{{$time  = \IPS\DateTime::ts( $row['record_publish_date'] );}}
+		<span class="ipsBadge ipsBadge--icon ipsBadge--small ipsBadge--warning" data-ipsTooltip title='{lang="content_future_date_blurb" sprintf="$time->localeDate(), $time->localeTime()"}'><i class='fa-regular fa-clock'></i></span>
+	{{endif}}
+	{{if $row['record_approved'] === -1}}
+		<span class="ipsBadge ipsBadge--icon ipsBadge--small ipsBadge--warning"><i class='fa-solid fa-eye-slash'></i></span>
+	{{endif}}
+	{{if $row['record_approved'] === 0}}
+		<span class="ipsBadge ipsBadge--icon ipsBadge--small ipsBadge--warning" data-ipsTooltip><i class='fa-solid fa-triangle-exclamation'></i></span>
+	{{endif}}
+	{{if $row['record_pinned'] === 1}}
+		<span class="ipsBadge ipsBadge--icon ipsBadge--small ipsBadge--positive" data-ipsTooltip title='{lang="pinned"}'><i class='fa-solid fa-thumbtack'></i></span>
+	{{endif}}
+	{{if $row['record_featured'] === 1}}
+		<span class="ipsBadge ipsBadge--icon ipsBadge--small ipsBadge--positive" data-ipsTooltip title='{lang="featured"}'><i class='fa-solid fa-star'></i></span>
+	{{endif}}
+	</span>
+{{endif}}
+{$title}]]></template>
+ <template template_group="records" template_name="youtube" template_data="$url, $params" template_location="global" template_app="cms"><![CDATA[<div class='ipsEmbeddedVideo' contenteditable="false" {{if isset( $params['width'] ) OR isset( $params['height'] )}}style="{{if isset( $params['width'] )}}width:{$params['width']}px;max-width:{$params['width']}px;{{endif}}{{if isset( $params['height'] )}}height:{$params['height']}px;{{endif}}"{{endif}}><div><iframe id="ytplayer" type="text/html" {{foreach $params as $k => $v }}{$k}="{$v}" {{endforeach}} src="{$url}" loading='lazy'></iframe></div></div>]]></template>
+ <template template_group="revisions" template_name="rows" template_data="$table, $headers, $rows" template_location="front" template_app="cms"><![CDATA[{{foreach $rows as $row}}
+	<article class='ipsEntry js-ipsEntry ipsEntry--simple ipsEntry--revisions'>
+		<header class='ipsEntry__header'>
+			<div class='ipsEntry__header-align'>
+				<div class='ipsPhotoPanel'>
+					<div>{template="userPhoto" app="core" group="global" params="$row['revision_member_id'], 'mini'"}</div>
+					<div class='ipsPhotoPanel__text'>
+						<h3 class='ipsPhotoPanel__primary'>
+							{$row['revision_member_id']->link()|raw}
+						</h3>
+						<p class='ipsPhotoPanel__secondary'>
+							{$row['revision_date']}
+						</p>
+					</div>
+				</div>
+				<div class='i-flex i-flex-wrap_wrap i-gap_3'>
+					<a href="{$table->baseUrl->setQueryString( array( 'do' => 'revisionView', 'revision_id' => $row['revision_id'], 'd' => \IPS\cms\Databases\Dispatcher::i()->databaseId ) )}">{lang="content_revision_button_view"}</a>
+					<a data-confirm href="{$table->baseUrl->csrf()->setQueryString( array( 'do' => 'revisionDelete', 'revision_id' => $row['revision_id'], 'd' => \IPS\cms\Databases\Dispatcher::i()->databaseId, 'ajax' => \IPS\Request::i()->isAjax() ) )}">{lang="content_revision_button_delete"}</a>
+				</div>
+			</div>
+		</header>
+		<div class='ipsEntry__post'>
+			{{$gotDiffs = FALSE;}}
+			<i-data>
+				<ul class='ipsData ipsData--table ipsData--revisions-rows'>
+					{{foreach $row['revision_data'] as $key => $diff}}
+						<li class='ipsData__item'>
+							<div class='ipsData__main'>
+								{{if $diff['original'] != $diff['current']}}
+									{{$gotDiffs = TRUE;}}
+									<h3 class='ipsTitle ipsTitle--h3 i-margin-bottom_2'>{$diff['field']->_title}</h3>
+									{{if !\in_array( $diff['field']->type, array( 'Editor', 'CodeMirror', 'TextArea' ) )}}
+										<div class='ipsSpanGrid' data-key='{$row['revision_id']}_{$key}' data-method='diff'>
+											<div class='ipsSpanGrid__6 i-padding_3'>
+												<h3 class='ipsTitle ipsTitle--h3'>Revision</h3>
+												<div data-original='{$row['revision_id']}_{$key}'>{$diff['field']->displayValue( $diff['original'] )}</div>
+											</div>
+											<div class='ipsSpanGrid__6 i-padding_3'>
+												<h3 class='ipsTitle ipsTitle--h3'>Current</h3>
+												<div data-current='{$row['revision_id']}_{$key}'>{$diff['field']->displayValue( $diff['current'] )}</div>
+											</div>
+										</div>
+									{{else}}
+										<div class='ipsSpanGrid'>
+											<div class='ipsSpanGrid__6 i-margin-bottom_2'><strong>{lang="content_record_revision_title_revision"}</strong></div>
+											<div class='ipsSpanGrid__6 i-margin-bottom_2'><strong>{lang="content_record_revision_title_record"}</strong></div>
+										</div>
+
+										<div class='ipsPagesDiff' data-key='{$row['revision_id']}_{$key}' data-method='merge'></div>
+										<textarea class='ipsInput ipsInput--text ipsHide' data-original='{$row['revision_id']}_{$key}'>{$diff['original']}</textarea>
+										<textarea class='ipsInput ipsInput--text ipsHide' data-current='{$row['revision_id']}_{$key}'>{$diff['current']}</textarea>
+									{{endif}}
+								{{endif}}
+							</div>
+						</li>
+					{{endforeach}}
+					{{if ! $gotDiffs}}
+						<li>
+							<p class="ipsMessage ipsMessage--info">{lang="record_no_revision_data"}</p>
+						</li>
+					{{endif}}
+				</ul>
+			</i-data>
+		</div>
+	</article>
+{{endforeach}}
+]]></template>
+ <template template_group="revisions" template_name="table" template_data="$table, $headers, $rows, $quickSearch" template_location="front" template_app="cms"><![CDATA[{{if ! \IPS\Request::i()->isAjax()}}
+<header class='ipsPageHeader ipsBox ipsPull ipsPageHeader--revisions-table'>
+	<h1 class='ipsPageHeader__title'>{lang="content_view_revisions"}</h1>
+</header>
+{{endif}}
+<div class='ipsBox' data-baseurl='{$table->baseUrl}' data-resort='{$table->resortKey}' data-controller='cms.front.records.revisions'>
+	{{if $table->title}}
+		<h2 class='ipsBox__header'>{lang="$table->title"}</h2>
+	{{endif}}
+	{{if $table->pages > 1}}
+		<div class="ipsButtonBar ipsButtonBar--top">
+			<div class="ipsButtonBar__pagination" data-role="tablePagination">
+				{template="pagination" group="global" app="core" location="global" params="$table->baseUrl, $table->pages, $table->page, $table->limit, TRUE, $table->getPaginationKey()"}
+			</div>
+		</div>
+	{{endif}}
+	{{if \count( $rows )}}
+		{template="$table->rowsTemplate[1]" params="$table, $headers, $rows" object="$table->rowsTemplate[0]"}
+	{{else}}
+		<p class='ipsEmptyMessage'>{lang="content_view_revisions_none"}</p>
+	{{endif}}
+	{{if $table->pages > 1}}
+		<div class="ipsButtonBar ipsButtonBar--bottom">
+			<div class="ipsButtonBar__pagination" data-role="tablePagination">
+				{template="pagination" group="global" app="core" location="global" params="$table->baseUrl, $table->pages, $table->page, $table->limit, TRUE, $table->getPaginationKey()"}
+			</div>
+		</div>
+	{{endif}}
+</div>]]></template>
+ <template template_group="revisions" template_name="view" template_data="$record, $revision, $conflicts, $id, $action, $elements, $hiddenValues, $actionButtons, $uploadField, $formClass='', $attributes=array(), $sidebar=''" template_location="front" template_app="cms"><![CDATA[<header class="ipsPageHeader ipsPageHeader--revisions-view">
+	<h1 class="ipsPageHeader__title">{lang="content_record_revision_title" sprintf="\IPS\DateTime::ts($revision->date)->relative(), $record->_title"}</h1>
+</header>
+<form accept-charset='utf-8' action="{$action}" method="post" {{if $uploadField}}enctype="multipart/form-data"{{endif}} data-ipsForm class="{$formClass}" {{foreach $attributes as $k => $v}}{$k}="{$v}"{{endforeach}}>
+	<input type="hidden" name="{$id}_submitted" value="1">
+	{{foreach $hiddenValues as $k => $v}}
+		{{if \is_array($v)}}
+			{{foreach $v as $_v}}
+				<input type="hidden" name="{$k}[]" value="{$_v}">
+			{{endforeach}}
+		{{else}}
+			<input type="hidden" name="{$k}" value="{$v}">
+		{{endif}}
+	{{endforeach}}
+	<ol data-controller='cms.front.records.revisions'>
+		{{foreach $conflicts as $key => $data}}
+		<li>
+			<h2 class="ipsTitle ipsTitle--h4 i-padding_3 i-background_3">
+				{$data['field']->_title}
+			</h2>
+			<i-data>
+				<ol class='ipsData ipsData--table ipsData--category' id='elTable_{$record->_id}' data-role="tableRows">
+					<li class="ipsData__item">
+					{{if isset( $data['diff']) OR $data['original'] != $data['current']}}
+						<div class="ipsData__main">
+							<table class="ipsTable diff restrict_height">
+								<tr>
+									<th><span data-conflict-id="{$key}" data-conflict-name="old">{lang="content_record_revision_title_revision"}</span></th>
+									<th><span data-conflict-id="{$key}" data-conflict-name="new">{lang="content_record_revision_title_record"} </span></th>
+								</tr>
+							</table>
+							<div data-conflict-id="{$key}">
+							{{if !\in_array( $data['field']->type, array( 'Editor', 'CodeMirror', 'TextArea' ) )}}
+								<div class='ipsSpanGrid' data-key='{$key}' data-method='diff'>
+									<div class='ipsSpanGrid__6 i-padding_3' data-original='{$key}'>{$data['field']->displayValue( $data['original'] )}</div>
+									<div class='ipsSpanGrid__6 i-padding_3' data-current='{$key}'>{$data['field']->displayValue( $data['current'] )}</div>
+								</div>
+							{{else}}
+								<div class='ipsPagesDiff' data-key='{$key}' data-method='merge'></div>
+								<textarea class='ipsInput ipsInput--text ipsHide' data-original='{$key}'>{$data['original']}</textarea>
+								<textarea class='ipsInput ipsInput--text ipsHide' data-current='{$key}'>{$data['current']}</textarea>
+							{{endif}}
+							</div>
+							{{if \count($elements)}}
+								<div class="i-background_3 i-padding_3">
+									<div class='ipsSpanGrid'>
+										<div class='ipsSpanGrid__6'>
+											<span class='' data-conflict-name="old">
+												{{foreach $elements as $collection}}
+													{{foreach $collection as $name => $input}}
+														{{if $name == 'conflict_' . $data['field']->id}}
+															{template="radio" location="global" app="core" group="forms" params="$name, 'old', FALSE, array( 'old' => \IPS\Member::loggedIn()->language()->addToStack('content_conflict_use_this_revision') ), FALSE, array(), array(), array(), '', NULL, NULL, 'oldrev'"}
+														{{endif}}
+													{{endforeach}}
+												{{endforeach}}
+											</span>
+										</div>
+										<div class='ipsSpanGrid__6'>
+											<span data-conflict-name="new">
+												{{foreach $elements as $collection}}
+													{{foreach $collection as $name => $input}}
+														{{if $name == 'conflict_' . $data['field']->id}}
+															{template="radio" location="global" app="core" group="forms" params="$name, NULL, FALSE, array( 'new' => \IPS\Member::loggedIn()->language()->addToStack('content_conflict_use_this_record') ), FALSE, array(), array(), array(), '', NULL, NULL, 'newrev'"}
+														{{endif}}
+													{{endforeach}}
+												{{endforeach}}
+											</span>
+										</div>
+									</div>
+								</div>
+							{{endif}}
+						</div>
+					{{else}}
+						<div class="ipsData__main">
+							{$data['revision']|raw}
+						</div>
+					{{endif}}
+					</li>
+				</ol>
+			</i-data>
+		</li>
+		{{endforeach}}
+	</ol>	
+	<div class="i-background_2 i-padding_3 i-text-align_center">
+		{expression="implode( '', $actionButtons)" raw="true"}
+	</div>
+</form>]]></template>
+ <template template_group="submit" template_name="createRecord" template_data="$form, $category, $title" template_location="front" template_app="cms"><![CDATA[
+{template="pageHeader" if="!\IPS\Request::i()->isAjax()" group="global" app="core" params="\IPS\Member::loggedIn()->language()->addToStack( $title )"}
+<hr class='ipsHr'>
+{$form|raw}]]></template>
+ <template template_group="submit" template_name="createRecordForm" template_data="$record, $category, $hasModOptions, $id, $action, $elements, $hiddenValues, $actionButtons, $uploadField, $class=''" template_location="front" template_app="cms"><![CDATA[{{$modOptions = array( 'create_record_state', 'record_publish_date', 'record_expiry_date', 'record_on_homepage', 'record_pinned', 'record_allow_comments', 'record_comment_cutoff' );}}
+<form accept-charset='utf-8' class="ipsFormWrap ipsFormWrap--create-record" action="{$action}" method="post" {{if $uploadField}}enctype="multipart/form-data"{{endif}}>
+	<input type="hidden" name="{$id}_submitted" value="1">
+	{{foreach $hiddenValues as $k => $v}}
+		<input type="hidden" name="{$k}" value="{$v}">
+	{{endforeach}}
+	{{if $uploadField}}
+		<input type="hidden" name="MAX_FILE_SIZE" value="{$uploadField}">
+		<input type="hidden" name="plupload" value="{expression="md5( mt_rand() )"}">
+	{{endif}}
+
+	{{if $hasModOptions}}
+		<div class='ipsColumns'>
+			<div class='ipsColumns__primary'>
+	{{endif}}
+
+	<div class='ipsBox'>
+		<h2 class='ipsBox__header'>{lang="topic_details"}</h2>
+		{{if \count( $elements ) > 1}}
+			{{if !empty( $errorTabs )}}
+				<p class="ipsMessage ipsMessage--error ipsJS_show">{lang="tab_error"}</p>
+			{{endif}}
+			<i-tabs class='ipsTabs' id='ipsTabs_{$id}' data-ipsTabBar data-ipsTabBar-contentArea='#ipsTabs_{$id}_content'>
+				<div role='tablist'>
+					{{$checkedTab = NULL;}}
+					{{foreach $elements as $name => $content}}
+						<a href='#ipsTabs_{$id}_{$name}_panel' id='ipsTabs_{$id}_{$name}' class="ipsTabs__tab" role="tab" aria-controls="ipsTabs_{$id}_{$name}_panel" aria-selected="{{if !$checkedTab}}true{{$checkedTab = $name;}}{{else}}false{{endif}}">{lang="$name"}</a>
+					{{endforeach}}
+				</div>
+				{template="tabScrollers" app="core" group="global" location="global"}
+			</i-tabs>
+			<div id='ipsTabs_{$id}_content' class='ipsTabs__panels ipsTabs__panels--padded'>
+				{{foreach $elements as $name => $contents}}
+					<div id='ipsTabs_{$id}_{$name}_panel' class="ipsTabs__panel" aria-labelledby="ipsTabs_{$id}_{$name}"  {{if $checkedTab != $name}}hidden{{endif}}>
+						
+						{{if $hasModOptions && $name == 'topic_mainTab'}}
+							<div class='ipsColumns'>
+								<div class='ipsColumns__primary'>
+						{{endif}}
+							<ul class='ipsForm {$class} ipsForm--vertical ipsForm--create-record'>
+								{{foreach $contents as $inputName => $input}}
+									{{if !\in_array( $inputName, $modOptions )}}
+										{$input|raw}
+									{{endif}}
+								{{endforeach}}
+							</ul>
+						{{if $hasModOptions && $name == 'topic_mainTab'}}
+								</div>
+								<div class='ipsColumns__secondary i-basis_280'>
+									<h2 class='ipsBox__header'>{lang="topic_moderator_options"}</h2>
+									<div class='i-background_2 i-padding_3'>
+										<ul class='ipsForm ipsForm--vertical ipsForm--create-record-mod'>
+											{{foreach $elements as $collection}}
+												{{foreach $collection as $inputName => $input}}
+													{{if \in_array( $inputName, $modOptions )}}
+														{$input|raw}
+													{{endif}}
+												{{endforeach}}
+											{{endforeach}}
+										</ul>
+									</div>
+								</div>
+							</div>
+						{{endif}}
+					</div>
+				{{endforeach}}
+			</div>		
+		{{else}}
+			<div class='i-padding_3'>
+				{{if $hasModOptions}}
+					<div class='ipsColumns'>
+						<div class='ipsColumns__primary'>
+				{{endif}}
+					<ul class='ipsForm {$class} ipsForm--vertical ipsForm--create-record'>
+						{{foreach $elements as $collection}}
+							{{foreach $collection as $inputName => $input}}
+								{{if !\in_array( $inputName, $modOptions )}}
+									{$input|raw}
+								{{endif}}
+							{{endforeach}}
+						{{endforeach}}
+					</ul>
+				{{if $hasModOptions}}
+						</div>
+						<div class='ipsColumns__secondary i-basis_280'>
+							<h2 class='ipsBox__header'>{lang="topic_moderator_options"}</h2>
+							<div class='i-background_2 i-padding_3'>
+								<ul class='ipsForm ipsForm--vertical ipsForm--create-record-mod'>
+									{{foreach $elements as $collection}}
+										{{foreach $collection as $inputName => $input}}
+											{{if \in_array( $inputName, $modOptions )}}
+												{$input|raw}
+											{{endif}}
+										{{endforeach}}
+									{{endforeach}}
+								</ul>
+							</div>
+						</div>
+					</div>
+				{{endif}}
+			</div>
+		{{endif}}
+		<div class='ipsSubmitRow'>
+			<button type='submit' class='ipsButton ipsButton--primary'>{lang="content_record_form_save"}</button>
+		</div>
+	</div>
+</form>]]></template>
+ <template template_group="submit" template_name="topic" template_data="$record" template_location="front" template_app="cms"><![CDATA[{{foreach $record->topicFields() as $id => $field}}
+{$field|raw}
+{{endforeach}}
+<br>
+<p><a href="{$record->url()}">{lang="content_view_record" sprintf="$record::database()->recordWord( 1 )"}</a></p>]]></template>
+ <template template_group="templates" template_name="addForm" template_data="$formHTML, $type" template_location="admin" template_app="cms"><![CDATA[<div data-type='{$type}'>
+	{$formHTML|raw}
+</div>]]></template>
+ <template template_group="templates" template_name="editor" template_data="$templates, $current" template_location="admin" template_app="cms"><![CDATA[<div class='ipsTabs__panel' id='ipsTabs_elTemplateEditor_tabbar_tab_{$current->key}_panel' role="tabpanel" aria-labelledby="tab_{$current->key}" data-role="templatePanel" data-fileid="{$current->key}" data-location="{$current->location}" data-group="{$current->group}" data-name="{$current->title}" data-type='{$current->type}' data-itemID='{$current->id}' data-inherited-value="{$current->_inherited}">
+	<input data-role="group" type="text" name="group_{$current->key}" class='ipsJS_hide ipsInput ipsInput--text' value="{$current->group}">
+	<input data-role="variables" type="text" name="variables_{$current->key}" class="ipsInput ipsInput--text ipsInput--fullWidth" value='{$current->params}' placeholder="{lang="skin_set_template_templatevars"}">
+	<input data-role="title" type="text" name="title_{$current->key}" class="ipsJS_hide ipsInput ipsInput--text ipsInput--fullWidth" value='{$current->title}' placeholder="{lang="content_template_editor_fields_title"}">
+	<textarea name="description_{$current->key}" class="ipsJS_hide" data-role="description">{$current->description}</textarea>
+	<textarea name="editor_{$current->key}" id="editor_{$current->key}" data-role="editor">{$current->content}</textarea>
+</div>]]></template>
+ <template template_group="templates" template_name="menu" template_data="$templates, $current, $request" template_location="admin" template_app="cms"><![CDATA[<ul class='cTemplateList' data-type='{$current->type}'>
+	{{foreach $templates as $type => $data}}
+	<li data-node="top" data-location="{$type}">
+		<details data-ipsdetails {{if $type == $request['t_location']}}open{{endif}} data-node="top" data-location="{$type}">
+			<summary>{lang="content_template_type_{$type}"}</summary>
+			<i-details-content>
+				<ul>
+					{{if isset( $templates[ $type ] ) and \is_array( $templates[ $type ] )}}
+						{{foreach $templates[ $type ] as $group => $childTemplates}}
+							<li data-group="{$group}" data-type="{$current->type}">
+								{{if $type == 'database' and ! \in_array( $group, array_values( \IPS\cms\Templates::$databaseDefaults ) )}}
+									<a class="ipsCms_templateOptions" href="{url="app=cms&module=pages&controller=templates&do=databaseTemplateGroupOptions&group={$group}&t_location={$type}"}" id="elTemplateEditor_options_{$group}" data-ipsDialog><i class="fa-solid fa-gear"></i></a>
+								{{endif}}
+								<details data-ipsdetails {{if $request['t_group'] == $group}}open{{endif}} data-group="{$group}" data-type="{$current->type}">
+									<summary>{expression="\IPS\cms\Templates::readableGroupName( $group )"}</summary>
+									<i-details-content>
+										<ul>
+											{{foreach $childTemplates as $key => $child}}
+												<li {{if $request['t_key'] == $child->key && !\IPS\Request::i()->isAjax()}}class="cTemplateList_activeNode"{{endif}} data-type="{$current->type}">
+													<a data-type="{$child->type}" data-location="{$child->location}" href='{url="app=cms&module=pages&controller=templates&t_location={$child->location}&t_group={$child->group}&t_key={$child->key}"}' data-action="openFile" data-group="{$child->group}" data-name="{$child->title}" data-inherited-value="{$child->_inherited}" data-key="{$child->key}" data-itemID="{$child->id}">{$child->title}</a>
+												</li>
+											{{endforeach}}
+										</ul>
+									</i-details-content>
+								</details>
+							</li>
+						{{endforeach}}
+					{{endif}}
+				</ul>
+			</i-details-content>
+		</details>
+	</li>
+	{{endforeach}}
+</ul>]]></template>
+ <template template_group="templates" template_name="templateConflict" template_data="$conflicts, $id, $action, $elements, $hiddenValues, $actionButtons, $uploadField, $formClass='', $attributes=array(), $sidebar=''" template_location="admin" template_app="cms"><![CDATA[<form accept-charset='utf-8' data-controller='core.admin.templates.conflict' action="{$action}" method="post" {{if $uploadField}}enctype="multipart/form-data"{{endif}} data-ipsForm class="{$formClass}" {{foreach $attributes as $k => $v}}{$k}="{$v}"{{endforeach}}>
+	<input type="hidden" name="{$id}_submitted" value="1">
+	{{foreach $hiddenValues as $k => $v}}
+		<input type="hidden" name="{$k}" value="{$v}">
+	{{endforeach}}
+
+	<p class="ipsMessage ipsMessage--error">{lang="theme_conflict_message"}</p>
+	
+	<div class="ipsBox">
+		{{foreach $conflicts as $cid => $data}}
+		<div class="i-padding_3 i-background_dark">{$data['conflict_location']}/{$data['conflict_group']}/{$data['conflict_title']}</div>
+		<table class="ipsTable diff restrict_height">
+			<tr>
+				<th><span data-conflict-id="{$cid}" data-conflict-name="old">{lang="theme_conflict_old_version"}</span></th>
+				<th><span data-conflict-id="{$cid}" data-conflict-name="new">{lang="theme_conflict_new_version"} </span></th>
+			</tr>
+		</table>
+		<div data-conflict-id="{$cid}">
+		{$data['diff']|raw}
+		</div>
+		<div class="i-background_2 i-padding_3">
+			<div class='ipsFluid i-basis_300'>
+				<div>
+					<span class='ipsButton ipsButton--primary' data-conflict-name="old">
+						{{foreach $elements as $collection}}
+							{{foreach $collection as $name => $input}}
+								{{if $name == 'conflict_' . $cid}}
+									<input id='elField_{$name}' type="radio" name="{$name}" value="old" checked="checked" />
+								{{endif}}
+							{{endforeach}}
+						{{endforeach}}
+						<strong>{lang="theme_conflict_use_this"}</strong>
+					</span>
+				</div>
+				<div>
+					<span class='ipsButton ipsButton--primary' data-conflict-name="new">
+						{{foreach $elements as $collection}}
+							{{foreach $collection as $name => $input}}
+								{{if $name == 'conflict_' . $cid}}
+									<input id='elField_{$name}'  type="radio" name="{$name}" value="new" />
+								{{endif}}
+							{{endforeach}}
+						{{endforeach}}
+						<strong>{lang="theme_conflict_use_this"}</strong>
+					</span>
+				</div>
+			</div>
+		</div>
+		{{endforeach}}
+	</div>
+	<div class="ipsSubmitRow">
+		{expression="implode( '', $actionButtons)" raw="true"}
+	</div>
+</form>]]></template>
+ <template template_group="templates" template_name="templates" template_data="$templates, $current, $request" template_location="admin" template_app="cms"><![CDATA[
+<form accept-charset='utf-8' action="{url="app=cms&module=pages&controller=templates&do=save"}" method="POST" id="editorForm">
+	<input type="hidden" name="csrfKey" value="{expression="\IPS\Session::i()->csrfKey"}">
+	<input type="hidden" name="t_location" value="{$current->location}">
+	<input type="hidden" name="t_key" value="{$current->key}">
+	<input type="hidden" name="t_id" value="{$current->id}">
+	
+	<div id='elTemplateEditor' class="ipsTemplateEditor ipsBox" data-controller='cms.admin.templates.main' data-normalURL="{url="app=cms&module=pages&controller=templates"}" data-ajaxURL="{url="app=cms&module=pages&controller=ajax"}">
+		<div class='ipsTemplateEditor__columns'>
+			<div class='ipsTemplateEditor__listColumn' data-role="fileList" data-controller='cms.admin.templates.fileList'>
+				<div class='cTemplateControls' id='elTemplateEditor_fileListControls'>
+					<div class="cTemplateControls__input">
+						<input type='text' data-role="templateSearch" placeholder="{lang="search_templates"}">
+						<a href='#elTemplateFilterMenu_menu' id='elTemplateFilterMenu' class='cTemplateControls__filter' data-ipsMenu data-ipsMenu-selectable><i class="fa-solid fa-filter"></i> <i class='fa-solid fa-caret-down'></i></a>
+					</div>
+					<ul id='elTemplateFilterMenu_menu' role='menu' class='ipsMenu ipsMenu_selectable ipsMenu_auto ipsMenu_withStem ipsHide'>
+						<li class='ipsMenu_item ipsMenu_itemChecked' data-ipsMenuValue='custom'><a href='#'>{lang="cms_theme_template_custom"}</a></li>
+						<li class='ipsMenu_item ipsMenu_itemChecked' data-ipsMenuValue='unmodified'><a href='#'>{lang="cms_theme_template_default"}</a></li>
+					</ul>
+					<ul id='elTemplateEditor_newItemMenu_menu' role='menu' class='ipsMenu ipsMenu_auto ipsMenu_withStem ipsHide'>
+						<li class='ipsMenu_item'><a role='menuitem' href='{url="app=cms&module=pages&controller=templates&do=addTemplate&type=block"}' data-ipsDialog data-ipsDialog-forceReload data-ipsDialog-title='{lang="content_template_add_template_block_title"}'>{lang="content_template_add_template_block"}</a></li>
+						<li class='ipsMenu_item'><a role='menuitem' href='{url="app=cms&module=pages&controller=templates&do=addTemplate&type=page"}' data-ipsDialog data-ipsDialog-forceReload data-ipsDialog-title='{lang="content_template_add_template_page_title""}'>{lang="content_template_add_template_page"}</a></li>
+						<li class='ipsMenu_item'><a role='menuitem' href='{url="app=cms&module=pages&controller=templates&do=addTemplate&type=database"}' data-ipsDialog data-ipsDialog-forceReload data-ipsDialog-title='{lang="content_template_add_template_database_title""}'>{lang="content_template_add_template_database"}</a></li>
+						<li class='ipsMenu_item'><a role='menuitem' href='{url="app=cms&module=pages&controller=templates&do=addTemplate&type=css"}' data-ipsDialog data-ipsDialog-forceReload data-ipsDialog-title='{lang="content_template_add_template_css_title""}'>{lang="content_template_add_template_css"}</a></li>
+						<li class='ipsMenu_item'><a role='menuitem' href='{url="app=cms&module=pages&controller=templates&do=addTemplate&type=js"}' data-ipsDialog data-ipsDialog-forceReload data-ipsDialog-title='{lang="content_template_add_template_js_title""}'>{lang="content_template_add_template_js"}</a></li>
+					</ul>
+				</div>
+				<i-tabs class='ipsTabs ipsTabs--stretch acpFormTabBar' id='elTemplateEditor_typeTabs' data-ipsTabBar data-ipsTabBar-contentArea='#elTemplateEditor_fileList' data-ipsTabBar-updateURL='false'>
+					<div role="tablist">
+						<a href='{url="app=cms&module=pages&controller=templates&do=manage&t_type=templates"}' class='ipsTabs__tab' role="tab" aria-selected="{{if $current->type == 'templates'}}true{{else}}false{{endif}}" data-tabURL='{url="app=cms&module=pages&controller=ajax&do=loadMenu&t_type=templates"}' data-type='templates'>{lang="theme_html"}</a>
+						<a href='{url="app=cms&module=pages&controller=templates&do=manage&t_type=css"}' class='ipsTabs__tab' role="tab" aria-selected="{{if $current->type == 'css'}}true{{else}}false{{endif}}" data-tabURL='{url="app=cms&module=pages&controller=ajax&do=loadMenu&t_type=css"}' data-type='css'>{lang="theme_css"}</a>
+						<a href='{url="app=cms&module=pages&controller=templates&do=manage&t_type=js"}' class='ipsTabs__tab' role="tab" aria-selected="{{if $current->type == 'js'}}true{{else}}false{{endif}}" data-tabURL='{url="app=cms&module=pages&controller=ajax&do=loadMenu&t_type=js"}' data-type='js'>{lang="theme_js"}</a>
+					</div>
+					{template="tabScrollers" app="core" group="global" location="global"}
+				</i-tabs>
+				<section id='elTemplateEditor_fileList'>
+					{template="menu" params="$templates, $current, $request" app="cms" location="admin" group="templates"}
+				</section>
+				<ul id='elTemplateEditor_info'>
+					<li class='cTemplateState_changed'> {lang="content_templates_modified"}</li>
+					<li class='cTemplateState_custom'> {lang="content_templates_custom"}</li>
+					<li class='cTemplateState_inherit'> {lang="content_templates_inherit"}</li>
+				</ul>
+				<div id='elTemplateEditor_newButton'>
+					<a href='#elTemplateEditor_newItemMenu_menu' id='elTemplateEditor_newItemMenu' class='ipsButton ipsButton--secondary ipsButton--small ipsButton--wide' data-ipsMenu data-ipsMenu-above>{lang="theme_template_new"} &nbsp;<i class='fa-solid fa-caret-down'></i></a>
+				</div>
+			</div>
+			<div class='ipsTemplateEditor__codeColumn'  data-controller='cms.admin.templates.fileEditor'>
+				<div class='cTemplateControls'>
+					<ul class='ipsTemplateEditor__editorToolbar' id='elTemplateEditor_panelToolbar'>
+						<li>
+							<a href='#elTemplateEditor_preferences_menu' id='elTemplateEditor_preferences' class='ipsButton ipsButton--inherit ipsButton--small' data-ipsMenu data-ipsMenu-selectable><i class='fa-solid fa-gear'></i> <i class='fa-solid fa-caret-down'></i></a>
+							<ul id='elTemplateEditor_preferences_menu' class='ipsMenu ipsMenu_selectable ipsMenu_auto ipsMenu_withStem ipsHide'>
+								<li class='ipsMenu_item' data-ipsMenuValue='wrap'><a href='#'>{lang="theme_wrap"}</a></li>
+								<li class='ipsMenu_item' data-ipsMenuValue='lines'><a href='#'>{lang="theme_show_line"}</a></li>
+								<li class='ipsMenu_item' data-ipsMenuValue='diff'><a href='#'>{lang="theme_show_original"}</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href='#' id='elTemplateEditor_variables' class='ipsButton ipsButton--inherit ipsButton--small' data-ipsDialog data-ipsDialog-title='{lang="content_template_editor_fields_title"}' data-ipsDialog-content="#elTemplateEditor_attributesDialog" data-ipsDialog-size='narrow'>{lang="theme_attributes"}</a>
+						</li>
+						<li>
+							<a href='{url="app=cms&module=pages&controller=templates&do=delete&t_location={$current->location}&t_key={$current->id}"}' class='ipsButton ipsButton--inherit ipsButton--small {{if $current->user_edited == 'original' or $current->user_edited === 0}}ipsButton--disabled{{endif}}' data-action="revert">{{if $current->user_created == 1}}{lang="delete"}{{else}}{lang="revert"}{{endif}}</a>
+						</li>
+						<li>
+							<button type='submit' class='ipsButton ipsButton--primary ipsButton--small' data-action="save">{lang="save"}</button>
+						</li>					
+						<li>
+							<span data-role='loading' class='ipsHide'><i class='ipsLoadingIcon'></i>  &nbsp;{lang="loading"}</span>
+						</li>
+					</ul>
+				</div>
+				<i-tabs id='elTemplateEditor_tabbar' class='ipsTabs acpFormTabBar' data-ipsTabBar data-ipsTabBar-contentArea='#elTemplateEditor_panels'>
+					<div role='tablist'>
+						<a href='#' class='ipsTabs__tab' id='tab_{$current->key}' role="tab" aria-controls="ipsTabs_elTemplateEditor_tabbar_tab_{$current->key}_panel" aria-selected="true" data-fileid='{$current->key}' data-type="{$current->type}" data-location='{$current->location}' data-group="{$current->group}">{$current->title} <span data-action='closeTab'><i class='fa-solid fa-xmark'></i></span></a>
+					</div>
+				</i-tabs>
+				<section data-role="templatePanelWrap" id='elTemplateEditor_panels' data-haseditor="{{if $current->id}}true{{else}}false{{endif}}">
+					{template="editor" params="$templates, $current" app="cms" location="admin" group="templates"}
+				</section>
+			</div>
+		</div>
+
+		<div id='elTemplateEditor_attributesDialog' class='ipsHide'>
+			<div data-controller='cms.admin.templates.variablesDialog'>
+				<div class='i-padding_3'>
+					<div class='ipsMessage ipsMessage--information'> 
+						{lang="template_variables_save_warning_msg"}
+					</div>
+					<p class='ipsType_textBlock' id='elTemplateEditor_attributes_title'>
+						{lang="content_template_editor_fields_params"}
+					</p>
+					<input class='ipsInput ipsInput--text ipsInput--fullWidth' data-role='variables' placeholder="&#36;foo=''">
+					<p class='ipsType_textBlock' id='elTemplateEditor_title_title'>
+						{lang="content_template_editor_fields_title"}
+					</p>
+					<input class='ipsInput ipsInput--text ipsInput--fullWidth' data-role='title'>
+					<p class='ipsType_textBlock' id='elTemplateEditor_group_title'>
+						{lang="content_template_editor_fields_container"}
+					</p>
+					{{foreach array('block','page', 'database') as $type }}
+						<select id="elContainer_{$type}_hidden" class='ipsHide' name="group" data-role="group" data-container-type="{$type}">
+						{{foreach \IPS\cms\Templates::getGroups( $type ) as $groupName}}
+							<option value="{$groupName}">{expression="\IPS\cms\Templates::readableGroupName( $groupName )"}</option>
+						{{endforeach}}
+						</select>
+					{{endforeach}}
+					<p class='ipsType_textBlock ipsHide'>
+						{lang="content_template_editor_fields_desc"}
+					</p>
+					<textarea class='ipsHide ipsInput ipsInput--text ipsInput--fullWidth' data-role='description'></textarea>
+					<input type='hidden' name='_variables_fileid' value=''>
+					<input type='hidden' name='_variables_location' value=''>
+				</div>
+				<div class='i-padding_3 i-background_3 i-text-align_end'>
+					<input type='submit' class='ipsButton ipsButton--primary' value='{lang="save"}'>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>]]></template>
+ <template template_group="templates" template_name="viewTemplate" template_data="$template" template_location="admin" template_app="cms"><![CDATA[<div class='i-padding_3'>
+	<strong>{lang="content_template_editor_fields_params"}:</strong> <span class='i-font-family_monospace'>{$template['template_params']}</span>
+	<pre data-controller='core.global.editor.customtags' class='i-font-family_monospace ipsScrollbar ipsTemplate_box' data-control="codemirror" data-mode="htmlmixed">
+		{$template['template_content']}
+	</pre>
+</div>]]></template>
+ <template template_group="widgets" template_name="Blocks" template_data="$content, $layout='table', $isCarousel=false" template_location="front" template_app="cms">{$content|raw}
+
+</template>
+ <template template_group="widgets" template_name="Categories" template_data="$url, $layout='table', $isCarousel=false" template_location="front" template_app="cms"><![CDATA[{{$catClass = '\IPS\cms\Categories' . \IPS\cms\Databases\Dispatcher::i()->databaseId;}}
+{{$categories = $catClass::roots();}}
+{{if !empty( $categories )}}
+	<div class='ipsWidget__header'>
+		<h3>{lang="categories"}</h3>
+		<a href="{$url->setQueryString('show','categories')}" class='ipsWidget__header-secondary'>{lang="cms_show_categories_short"}</a>
+	</div>
+	<div class='ipsSideMenu ipsSideMenu--truncate ipsCategoriesMenu'>
+		<ul class='ipsSideMenu__list'>
+			{{foreach $categories as $category}}
+				<li>
+					<a href="{$category->url()}" class='ipsSideMenu_item'>
+						<strong class='ipsSideMenu__text'>{$category->_title}</strong>
+						<span>{expression="\IPS\cms\Records::contentCount( $category )"}</span>
+					</a>
+					{{if $category->hasChildren()}}
+						<ul class="ipsSideMenu__list">
+							{{$counter = 0;}}
+							{{foreach $category->children() as $idx => $subcategory}}
+							{{$counter++;}}
+								<li>
+									{{if $counter >= 5}}
+										<a href='{$category->url()}' class='ipsSideMenu_item'><span class='i-color_soft i-font-size_-2'>{lang="and_x_more" pluralize="\count( $category->children() ) - 4"}</span></a>
+										{{break;}}
+									{{else}}
+										<a href="{$subcategory->url()}" class='ipsSideMenu_item'>
+											<span class='ipsSideMenu__text'>{$subcategory->_title}</span>
+											<span>{expression="\IPS\cms\Records::contentCount( $subcategory )"}</span>
+										</a>
+									{{endif}}
+								</li>
+							{{endforeach}}
+						</ul>
+					{{endif}}
+				</li>
+			{{endforeach}}
+		</ul>
+	</div>
+{{endif}}]]></template>
+ <template template_group="widgets" template_name="Codemirror" template_data="$content, $layout='table', $isCarousel=false" template_location="front" template_app="cms"><![CDATA[<div class='ipsWidget__content ipsWidget__padding'>
+	{$content|raw}
+</div>
+]]></template>
+ <template template_group="widgets" template_name="Database" template_data="$database, $layout='table', $isCarousel=false" template_location="front" template_app="cms"><![CDATA[{database="$database->id" title="$database->title"}]]></template>
+ <template template_group="widgets" template_name="DatabaseFilters" template_data="$database, $category, $form, $layout='table', $isCarousel=false" template_location="front" template_app="cms"><![CDATA[<h3 class='ipsWidget__header'>{lang="block_DatabaseFilters_title" sprintf="$category->_title"}</h3>
+<div class='ipsWidget__content'>
+	{$form|raw}
+</div>
+
+]]></template>
+ <template template_group="widgets" template_name="DatabaseNavigation" template_data="$database, $categories, $currentContainer=null, $layout='table', $isCarousel=false" template_location="front" template_app="cms"><![CDATA[<h3 class='ipsWidget__header'>{$database->_title}</h3>
+<div class='ipsWidget__content'>
+    <nav class="ipsWidget__nav" data-navType='database' data-navId='{$database->id}' data-controller='cms.front.blocks.navigation'>
+        {{if \is_array( $categories )}}
+            {{foreach $categories as $category}}
+                {template="navigationLine" app="cms" group="widgets" params="$category, null, $currentContainer"}
+            {{endforeach}}
+        {{else}}
+            {template="navigationLine" app="cms" group="widgets" params="$categories, $database->_title, $currentContainer"}
+        {{endif}}
+    </nav>
+</div>]]></template>
+ <template template_group="widgets" template_name="databaseNavigationItems" template_data="$items" template_location="front" template_app="cms"><![CDATA[{{foreach $items as $item}}
+  <a href='{$item->url()}'>{$item->mapped( 'title' )}</a>
+{{endforeach}}]]></template>
+ <template template_group="widgets" template_name="Editor" template_data="$content, $layout='table', $isCarousel=false" template_location="front" template_app="cms"><![CDATA[<div class='ipsWidget__content {{if isset($orientation) and $orientation == 'vertical'}}i-padding_3{{endif}}'>
+	{$content|raw}
+</div>
+]]></template>
+ <template template_group="widgets" template_name="FolderNavigation" template_data="$folders, $rootId, $pages=array(), $title=null, $currentContainer=null, $layout='table', $isCarousel=false" template_location="front" template_app="cms"><![CDATA[{{if $title}}
+<h3 class='ipsWidget__header'>{$title}</h3>
+{{endif}}
+<div class='ipsWidget__content'>
+    <nav class="ipsWidget__nav" data-navType='folder' data-navId='{$rootId}' data-controller='cms.front.blocks.navigation'>
+        {{if \is_array( $folders )}}
+            {{foreach $folders as $folder}}
+                {template="navigationLine" app="cms" group="widgets" params="$folder, null, $currentContainer"}
+            {{endforeach}}
+        {{else}}
+            {template="navigationLine" app="cms" group="widgets" params="$folders, $title, $currentContainer"}
+        {{endif}}
+        {{if $rootId == 0 AND \count( $pages )}}
+            <div>
+                {template="folderNavigationItems" app="cms" group="widgets" params="$pages"}
+            </div>
+        {{endif}}
+    </nav>
+</div>]]></template>
+ <template template_group="widgets" template_name="folderNavigationItems" template_data="$items" template_location="front" template_app="cms"><![CDATA[{{foreach $items as $item}}
+  <a href='{$item->url()}'>{$item->_title}</a>
+{{endforeach}}]]></template>
+ <template template_group="widgets" template_name="navigationLine" template_data="$container, $title=null, $currentContainer=null" template_location="front" template_app="cms"><![CDATA[<details {{if $container->_id == $currentContainer}}open="true"{{endif}} data-container="{$container->_id}">
+	<summary>{{if $title}}{$title}{{else}}{$container->_title}{{endif}}</summary>
+	{{if $container->hasChildren( 'view', null, false )}}
+		{{foreach $container->children( 'view', null, false ) as $child}}
+			{template="navigationLine" app="cms" group="widgets" params="$child, null, $currentContainer"}
+		{{endforeach}}
+	{{endif}}
+	<div data-role='containerItems'></div>
+</details>]]></template>
+ <template template_group="widgets" template_name="pagebuilderoembed" template_data="$video, $layout='table', $isCarousel=false" template_location="front" template_app="cms"><![CDATA[<div class='i-margin-inline_auto'>{$video|raw}</div>]]></template>
+ <template template_group="widgets" template_name="pagebuildertext" template_data="$text, $layout='table', $isCarousel=false" template_location="front" template_app="cms"><![CDATA[<div>{$text|raw}</div>]]></template>
+ <template template_group="widgets" template_name="pagebuilderupload" template_data="$images, $captions, $urls, $maxHeight, $layout='table', $isCarousel=false" template_location="front" template_app="cms"><![CDATA[
+{{if ! \is_array( $images )}}
+	<figure class="ipsFigure ipsFigure--contain" {{if $maxHeight}}style="--_height: {$maxHeight}px;"{{endif}}>
+		{{if isset( $urls[0] )}}
+			<a href="{$urls[0]}" class='ipsFigure__main' aria-label="{$captions[0]}">
+		{{else}}
+			<div class='ipsFigure__main'>
+		{{endif}}
+			<img src="{$images}" alt='' loading="lazy">
+		{{if isset( $urls[0] )}}
+			</a>
+		{{else}}
+			</div>
+		{{endif}}
+		{{if isset( $captions[0] )}}
+			<figcaption class="ipsFigure__footer i-text-align_center">{$captions[0]}</figcaption>
+		{{endif}}
+	</figure>
+
+{{else}}
+	{{$carouselID = 'page-builder-image-widget_' . mt_rand();}}
+	<ul class='ipsCarousel ipsCarousel--page-builder-image-widget' id='{$carouselID}' tabindex="0">
+		{{foreach $images as $id => $image}}
+			<li>
+				<figure class='ipsFigure ipsFigure--contain' style="--_backdrop: url('{$image}'); {{if $maxHeight}}--_height: {$maxHeight}px;{{endif}}">
+					{{if isset( $urls[ $id ] )}}
+						<a href="{$urls[ $id ]}" class='ipsFigure__main' aria-label="{$captions[0]}">
+					{{else}}
+						<div class='ipsFigure__main'>
+					{{endif}}
+						<img src="{$image}" alt='' loading="lazy">
+					{{if isset( $urls[ $id ] )}}
+						</a>
+					{{else}}
+						</div>
+					{{endif}}
+					{{if isset( $captions[ $id ] )}}
+						<figcaption class="ipsFigure__footer i-text-align_center">{$captions[ $id ]}</figcaption>
+					{{endif}}
+				</figure>
+			</li>
+		{{endforeach}}
+	</ul>
+	{template="carouselNavigation" group="global" app="core" params="$carouselID"}
+{{endif}}]]></template>
+ <template template_group="widgets" template_name="RecordFeed" template_data="$records, $title, $layout='table', $isCarousel=false" template_location="front" template_app="cms"><![CDATA[{{if !empty( $records ) }}
+	<header class='ipsWidget__header'>
+		<h3>{$title}</h3>
+		{{if $isCarousel}}
+			{{$carouselID = 'widget--cms-record-feed_' . mt_rand();}}
+			{template="carouselNavigation" group="global" app="core" params="$carouselID"}
+		{{endif}}
+	</header>
+	<div class='ipsWidget__content'>
+		<i-data>
+			<ul class='ipsData ipsData--{$layout} {{if $isCarousel}}ipsData--carousel{{endif}} ipsData--cms-record-feed' {{if $isCarousel}}id='{$carouselID}' tabindex="0"{{endif}}>
+				{template="recordRow" group="listing" location="database" app="cms" themeClass="IPS\cms\Theme" params="null, null, $records, $layout"}
+			</ul>
+		</i-data>
+	</div>
+{{endif}}]]></template>
+ <template template_group="widgets" template_name="Rss" template_data="$items, $title, $layout='table', $isCarousel=false" template_location="front" template_app="cms"><![CDATA[{{if !empty( $items ) }}
+	<h3 class='ipsWidget__header'>{$title}</h3>
+		<div class='ipsWidget__content'>
+			<i-data>
+				<ul class='ipsData ipsData--{$layout} ipsData--widget-rss'>
+					{{foreach $items as $item}}
+						<li class='ipsData__item'>
+							<a href="{$item['link']}" class="ipsLinkPanel" aria-hidden="true" tabindex="-1" target="_blank" rel="noopener"><span>{$item['title']}</span></a>
+							<div class="ipsData__content">
+								<div class='ipsData__main'>
+									<div class='ipsData__title'>
+										<h4><a href="{$item['link']}" target="_blank" rel="noopener">{$item['title']}</a></h4>
+									</div>
+									<div class='ipsData__meta'>{datetime="$item['date']"}</div>
+								</div>
+							</div>
+						</li>
+					{{endforeach}}
+				</ul>
+			</i-data>
+		</div>
+{{endif}}]]></template>
+ <template template_group="widgets" template_name="Wysiwyg" template_data="$content, $layout='table', $isCarousel=false" template_location="front" template_app="cms"><![CDATA[<div class='ipsWidget__content ipsWidget__padding ipsRichText' data-controller='core.front.core.lightboxedImages'>
+	{$content|raw}
+</div>
+]]></template>
+ <css css_location="admin" css_app="cms" css_attributes="" css_path="blocks" css_name="form.css">/* ----- */
+#elPages_block_preview_wrapper {
+	background: transparent;
+	z-index: 1;
+	margin-inline-start: 355px;
+}
+
+#elpages_block_preview {
+	width: 100%;
+	max-width: 600px;
+	min-width: 450px;
+	min-height: 230px;
+	margin: 10px 0;
+	border: 1px solid rgba(0,0,0,0.1);
+	position: relative;
+	background-color: #fcfcfc;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 40px 40px;
+	background-image: none;
+	z-index: 0;
+}</css>
+ <css css_location="front" css_app="cms" css_attributes="" css_path="database_index" css_name="featured.css">.ipsCmsEntries{
+	--i-column-gap: var(--i-sp_block);
+	display: grid;
+	gap: var(--i-column-gap);
+}
+
+	.ipsCmsEntries__item{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.ipsCmsEntries__align{
+		padding: var(--i-sp_3);
+		display: flex;
+		align-items: start;
+		flex-wrap: wrap;
+		gap: var(--i-sp_3);
+	}
+
+	.ipsCmsEntries__primary{
+		grid-column: 1 / -2;
+		
+		flex: 9999 1 50%;
+		display: grid;
+		gap: 1em;
+		align-content: start;
+	}
+
+	.ipsCmsEntries__fields{
+		color: var(--i-color_soft);
+	}
+		/* Hide custom fields if it's empty */
+		.ipsCmsEntries__fields:not(:has(*)){
+			display: none;
+		}
+		@supports not selector(a:has(b)){
+			.ipsCmsEntries__fields:-moz-only-whitespace{ display: none; }
+		}
+
+	.ipsCmsEntries__thumb{
+		flex: 1 1 280px;
+	}
+
+		.ipsCmsEntries__thumb .ipsThumb{
+			aspect-ratio: 16/9;
+		}
+
+	.ipsCmsEntries__meta{
+		margin-top: auto;
+	}
+
+
+/* Multi-columns */
+.ipsCmsEntries--2{
+	--ipsCmsEntries--grid: repeat(auto-fill, minmax(min(100%, max(300px, 100% / 2 - var(--i-column-gap))), 1fr));
+	grid-template-columns: var(--ipsCmsEntries--grid);
+}
+.ipsCmsEntries--3{
+	--ipsCmsEntries--grid: repeat(auto-fill, minmax(min(100%, max(300px, 100% / 3 - var(--i-column-gap))), 1fr));
+	grid-template-columns: var(--ipsCmsEntries--grid);
+}
+
+/* Stack */
+.ipsCmsEntries--stack .ipsCmsEntries__align{
+	justify-content: center;
+}
+
+.ipsCmsEntries--stack .ipsCmsEntries__thumb .ipsThumb{
+	aspect-ratio: auto;
+}
+
+/* Large image */
+.ipsCmsEntries--image .ipsCmsEntries__align{
+	display: grid;
+}
+
+.ipsCmsEntries--image .ipsCmsEntries__thumb{
+	order: -1;
+}
+
+.ipsCmsEntries--image .ipsCmsEntries__thumb .ipsThumb{
+	aspect-ratio: 16/9;
+}
+
+.ipsCmsEntries--image :is(.ipsCmsEntries__fields, .ipsCmsEntries__tags, .ipsCmsEntries__snippet){
+	display: none;
+}
+
+/* First featured */
+.ipsCmsEntries__item--featured{
+	grid-column: 1/-1;
+	container-type: inline-size;
+}
+
+	.ipsCmsEntries__item--featured .ipsCmsEntries__align{
+		display: grid;
+		grid-template-columns: var(--ipsCmsEntries--grid);
+	}
+
+	.ipsCmsEntries__item--featured .ipsCmsEntries__thumb{
+		flex: 1 1 33%
+	}
+
+	@container(max-width: 935px){
+		.ipsCmsEntries__item--featured .ipsCmsEntries__thumb{
+			flex: 1 1 calc(50% - var(--i-column-gap) * 2);
+			min-width: 250px;
+		}
+	}
+
+/* Non-featured inside a featured grid */
+.ipsCmsEntries--feature .ipsCmsEntries__item:not(.ipsCmsEntries__item--featured) .ipsCmsEntries__align{
+	display: grid;
+	align-content: start;
+}
+
+.ipsCmsEntries--feature .ipsCmsEntries__item:not(.ipsCmsEntries__item--featured) .ipsCmsEntries__thumb{
+	order: -1;
+}</css>
+ <css css_location="admin" css_app="cms" css_attributes="" css_path="media" css_name="media.css">.cMedia__managerToolbar {
+	background: var(--i-background_2);
+	border-bottom: 1px solid var(--i-background_4);
+	height: 66px;
+	padding: 10px;
+	display: flex;
+	align-items: center;
+}
+
+#elMedia_sidebar,
+#elMedia_fileList,
+#elMedia_searchResults {
+	overflow: auto;
+}
+
+#elMedia_searchField {
+	flex: 0 1 300px;
+}
+
+.ipsGrid--pages-media{
+	--i-basis: 140px;
+}
+
+.cMedia_item {
+	background: var(--i-background_1);
+	border: 1px solid var(--i-background_4);
+	border-radius: 5px;
+	padding: 5px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.cMedia_item:where(:hover){
+	border-color: var(--i-background_5);
+}
+
+.cMedia_itemSelected {
+	border-color: var(--i-primary);
+	background: var(--i-primary);
+	color: var(--i-primary-contrast);
+}
+
+.cMedia_itemDisabled,
+.cMedia_treeDisabled {
+	opacity: .3;
+	pointer-events: none;
+}
+
+	.cMedia_item .ipsThumb img{
+		object-fit: contain;
+	}
+
+	.cMedia_filename {
+		padding: 6px;
+	}
+
+/* Sidebar */
+.cMedia_preview{
+	padding: 10px;
+}
+
+	.cMedia_preview:not(:has(*)) { display: none !important; }
+	@supports not selector(a:has(b)){
+		.cMedia_preview:-moz-only-whitespace{ display: none !important; }
+	}
+
+	.cMedia_preview img {
+		cursor: zoom-in;
+		max-height: 200px;
+	}</css>
+ <css css_location="front" css_app="cms" css_attributes="" css_path="records" css_name="form.css">[data-ipsTitleField] {
+	overflow-wrap: break-word;
+}</css>
+ <css css_location="front" css_app="cms" css_attributes="" css_path="records" css_name="list.css">/* ----- */
+
+.ipsBadge img.ipsImage {
+	max-height: 20px;
+	max-width: 20px;
+}</css>
+ <css css_location="front" css_app="cms" css_attributes="" css_path="records" css_name="record.css">.ipsDatabaseFields{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 1em;
+}
+
+.ipsDatabaseFields .ipsBadge{
+	text-transform: none;
+	font-size: .9em;
+}
+
+
+.ipsBadge img.ipsImage {
+	max-height: 20px;
+	max-width: 20px;
+}
+
+.ipsPagesDiff {
+	margin-bottom: 5px;
+}</css>
+ <css css_location="admin" css_app="cms" css_attributes="" css_path="templates" css_name="templates.css"><![CDATA[.ipsTemplateEditor{
+	overflow: hidden; /* Trim border-radius of child elements */
+}
+
+/* Column UI */
+.ipsTemplateEditor__columns{
+	display: grid;
+	grid-template-columns: 280px 1fr;
+	/* Magic numbers */
+	height: calc(100vh - 200px);
+	min-height: 570px;
+}
+
+.ipsTemplateEditor__listColumn,
+.ipsTemplateEditor__codeColumn{
+	display: flex;
+	flex-direction: column;
+}
+
+:where(:is(.ipsTemplateEditor__listColumn, .ipsTemplateEditor__codeColumn) > *){
+	flex: 0 0 auto;
+}
+
+.ipsTemplateEditor__listColumn{
+	border-inline-end: 1px solid var(--i-background_4);
+}
+
+/* Search bar and filter */
+.cTemplateControls {
+	padding: .5em;
+	background: var(--i-background_2);
+	min-height: 60px; /* Set a min-height so the search bar and editor toolbar are aligned */
+	align-content: center;
+}
+
+	/* Pseudo input */
+	.cTemplateControls__input{
+		display: flex;
+		background: var(--i-background_1);
+		border: 1px solid var(--i-background_5);
+		border-radius: 8px;
+	}
+
+	/* Don't use :focus-within since the border color is changed even when the filter button is clicked */
+	.cTemplateControls__input:has([type="text"]:focus){
+		border-color: currentColor;
+	}
+
+	.cTemplateControls__input [type="text"]{
+		flex: 1 1 100%;
+		outline-width: 0;
+		padding: .8em 1em;
+	}
+
+	.cTemplateControls__filter{
+		flex: 0 0 auto;
+		display: flex;
+		align-items: center;
+		gap: .4em;
+		padding: 0 .7em;
+		color: var(--i-color_soft);
+	}
+
+	.cTemplateControls__filter:hover{
+		color: var(--i-color_hard);
+	}
+
+	.cTemplateControls__filter .fa-caret-down{
+		font-size: 10px;
+		opacity: .5;
+	}
+
+/* Icon legend at bottom of file list */
+#elTemplateEditor_info {
+	display: flex;
+	justify-content: space-evenly;
+	font-size: .8em;
+	background: var(--i-background_1);
+	padding: 1em 0;
+	border-top: 1px solid var(--i-background_3);
+}
+
+/* "Add" button at bottom of file list */
+#elTemplateEditor_newButton{
+	background: var(--i-background_2);
+	padding: .8em;
+}
+
+/* Buttons above editor (Revert, Save, etc) */
+.ipsTemplateEditor__editorToolbar {
+	display: flex;
+	justify-content: end;
+	gap: 10px;
+}
+
+/* Tabs */
+#elTemplateEditor .ipsTabs {
+	background: var(--i-background_2);
+	/* Always show the tab bar, even if a single tab exists */
+	display: block;
+}
+
+	/* Let the tabs wrap since we don't have the scroller feature here */
+	#elTemplateEditor_tabbar.ipsTabs [role="tablist"]{
+		flex-wrap: wrap;
+	}
+
+	/* Hide tab bar if there are zero tabs (ie. if all tabs are closed) */
+	#elTemplateEditor .ipsTabs:not(:has([role="tab"])){
+		display: none;
+	}
+
+/* Close tab button */
+#elTemplateEditor [data-action="closeTab"] {
+	font-size: 12px;
+	opacity: .5;
+	display: inline-grid;
+	width: 1.6em;
+	height: 1.6em;
+	line-height: 1;
+	place-content: center;
+	border-radius: 3px;
+	margin: -1em -.7em;
+	margin-inline-start: .5em;
+}
+
+	#elTemplateEditor [data-action="closeTab"]:hover {
+		opacity: 1;
+		background: color-mix(in srgb, currentColor 10%, transparent);
+	}
+
+/* Full height code editor */
+#elTemplateEditor_panels{
+	flex: 1 1 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+#elTemplateEditor .CodeMirror{
+	height: 100%;
+}
+
+#elTemplateEditor [data-role="editor"],
+#elTemplateEditor .CodeMirror {
+	border-width: 0;
+	border-radius: 0;
+	padding-bottom: 1em;
+}
+
+#elTemplateEditor [data-role="editor"] {
+	font-family: monospace;
+}
+
+	#elTemplateEditor [data-role="templatePanelWrap"] textarea {
+		height: 550px;
+	}
+
+/* Template Diff columns */
+.ipsTabs__panel:has(.cTemplateMergeHeaders){
+	display: flex;
+	flex-direction: column;
+}
+
+.cTemplateMergeHeaders {
+	border: 1px solid var(--i-background_4);
+	border-bottom: 0;
+	flex: 0 0 auto;
+	display: flex;
+	justify-content: space-between;
+}
+	.cTemplateMergeHeader,
+	.CodeMirror-merge-2pane .CodeMirror-merge-pane {
+		width: calc(50% - 40px);
+	}
+
+	.CodeMirror-merge-2pane .CodeMirror-merge-gap{
+		width: 80px;
+	}
+
+.CodeMirror-merge{
+	height: 100%;
+	border-width: 0;
+	display: flex;
+}
+
+.CodeMirror-merge-pane{
+	height: 100%;
+}
+
+
+/* FILE LISTING STYLES */
+#elTemplateEditor_fileList {
+	/* height: 550px; */
+	flex: 1 1 auto;
+	overflow: auto;
+}
+
+.cTemplateList{
+	padding: 8px;
+}
+
+.cTemplateList a:not(.ipsCms_templateOptions) {
+	padding: 5px 0;
+	display: block;
+	position: relative;
+	color: var(--i-color_soft);
+	border-radius: 6px;
+}
+
+	.cTemplateList a[href*="location=database"]:not(.ipsCms_templateOptions) {
+		/* margin-inline-end: 20px; */
+	}
+
+/* Item in sidebar */
+.cTemplateList li {
+	position: relative;
+}
+
+.cTemplateList > li > details > summary {
+	font-weight: 600;
+}
+
+.cTemplateList summary{
+	padding: .7em 1em;
+	border-radius: 6px;
+	display: flex;
+}
+
+.cTemplateList summary:hover{
+	background: var(--i-background_3);
+}
+
+.cTemplateList summary::before{
+	flex: 0 0 auto;
+	content: "+";
+	display: inline-block;
+	width: 1.5em;
+	opacity: .3;
+}
+
+.cTemplateList [open] > summary::before{
+	content: "-";
+}
+
+.cTemplateList i-details-content{
+	padding-inline-start: 1em;
+}
+
+a.ipsCms_templateOptions {
+	float: inline-end;
+	position: relative;
+	padding: .7em 8px;
+	color: var(--i-color_hard);
+	opacity: .1;
+	border-radius: 6px;
+}
+
+	li:hover > a.ipsCms_templateOptions {
+		opacity: .8;
+	}
+
+
+.cTemplateList li.cTemplateList_inactiveBranch > a:not(.ipsCms_templateOptions)::before,
+.cTemplateList li.cTemplateList_activeBranch > a:not(.ipsCms_templateOptions)::before {
+	font-family: var(--i-font-awesome);
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: auto;
+	font-weight: 900;
+	display: inline-block;	
+	line-height: 7px;
+	font-size: 14px;
+}
+	.cTemplateList li.cTemplateList_inactiveBranch > a:not(.ipsCms_templateOptions)::before,
+	.cTemplateList li.cTemplateList_activeBranch > a:not(.ipsCms_templateOptions)::before {
+		content: '\f0da';
+		margin-inline-end: 7px;
+	}
+	[dir="rtl"] .cTemplateList li.cTemplateList_inactiveBranch > a:not(.ipsCms_templateOptions)::before,
+	[dir="rtl"] .cTemplateList li.cTemplateList_activeBranch > a:not(.ipsCms_templateOptions)::before {
+		content: '\f0d9';
+	}
+
+	[dir="ltr"] .cTemplateList li.cTemplateList_activeBranch > a:not(.ipsCms_templateOptions)::before,
+	[dir="rtl"] .cTemplateList li.cTemplateList_activeBranch > a:not(.ipsCms_templateOptions)::before {
+		content: '\f0d7';
+	}
+
+.cTemplateList li.cTemplateList_inactiveBranch > ul {
+	display: none;
+}
+
+.cTemplateList li a:not(.ipsCms_templateOptions) {
+	padding-inline-start: 15px;
+}
+
+.cTemplateList li li a:not(.ipsCms_templateOptions) {
+	padding-inline-start: 30px;
+}
+
+	.cTemplateList li li li a {
+		padding-inline-start: 45px;
+	}
+
+		.cTemplateList li li li li a {
+			padding-inline-start: 70px;
+		}
+
+
+	
+.cTemplateList li.cTemplateList_activeNode > a:not(.ipsCms_templateOptions) {
+	background: #215e98;
+	background: var(--i-primary);
+	color: #fff;
+}
+
+.cTemplateList li:not( .cTemplateList_activeNode ) > a:hover {
+	background: var(--i-background_3);
+}
+
+/* INHERITED VALUES */
+a[data-inherited-value]::after {
+	position: absolute;
+	top: 9px;
+	inset-inline-end: 5px;
+}
+
+a[data-inherited-value]::after,
+#elTemplateEditor_info li::before {
+	font-size: 9px;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-family: monospace;
+	padding: 0 5px;
+	color: #b3b3b3;
+	line-height: 14px;
+	border-radius: 10px;
+}
+
+a[data-inherited-value="original"]::after {
+	display: none;
+}
+
+.cTemplateList:not(:hover) a[data-inherited-value]::after{
+	opacity: .1;
+}
+
+#elTemplateEditor_info li::before {
+	display: inline-block;
+	color: #fff;
+}
+
+.cTemplateList a[data-inherited-value="custom"]::after,
+.cTemplateState_custom::before {
+	content: 'C';
+	background: #c9c030;
+	color: #fff;
+}
+
+.cTemplateList a[data-inherited-value="inherit"]::after,
+.cTemplateState_inherit::before {
+	content: 'I';
+	background: #83b256;
+	color: #fff;
+}
+
+.cTemplateList a[data-inherited-value="changed"]::after,
+.cTemplateState_changed::before {
+	content: 'M';
+	background: #c93054;
+	color: #fff;
+}]]></css>
+ <css css_location="admin" css_app="cms" css_attributes="" css_path="templates" css_name="view.css">/* ----- */
+.ipsTemplate_box {
+	max-height: 300px;
+	overflow: auto;
+	border: 1px solid #ededed;
+}</css>
+</theme>

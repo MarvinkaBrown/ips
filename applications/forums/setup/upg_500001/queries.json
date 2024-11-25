@@ -1,0 +1,348 @@
+{
+    "1": {
+        "method": "dropColumn",
+        "params": [
+            "forums_forums",
+            [
+                "qa_rate_questions",
+                "qa_rate_answers",
+                "last_post",
+                "last_poster_id",
+                "last_poster_name",
+                "last_title",
+                "last_id",
+                "seo_last_title",
+                "seo_last_name",
+                "last_x_topic_ids",
+                "last_poster_anon",
+                "min_posts_post",
+                "min_posts_view"
+            ]
+        ]
+    },
+    "2": {
+        "method": "addColumn",
+        "params": [
+            "forums_forums",
+            {
+                "name": "last_post_data",
+                "type": "TEXT",
+                "length": null,
+                "decimals": null,
+                "values": null,
+                "allow_null": true,
+                "default": null,
+                "comment": "A JSON array of the last post data",
+                "unsigned": false,
+                "auto_increment": false
+            }
+        ]
+    },
+    "3": {
+        "method": "addColumn",
+        "params": [
+            "forums_posts",
+            {
+                "name": "post_score",
+                "type": "FLOAT",
+                "length": null,
+                "decimals": null,
+                "values": null,
+                "allow_null": true,
+                "default": null,
+                "comment": "",
+                "unsigned": false,
+                "auto_increment": false
+            }
+        ]
+    },
+    "4": {
+        "method": "addColumn",
+        "params": [
+            "forums_posts",
+            {
+                "name": "post_score_last_event",
+                "type": "BIGINT",
+                "length": null,
+                "decimals": null,
+                "values": null,
+                "allow_null": false,
+                "default": 0,
+                "comment": "Last time an event occurred which requires the post score to be recalculated",
+                "unsigned": true,
+                "auto_increment": false
+            }
+        ]
+    },
+    "5": {
+        "method": "addColumn",
+        "params": [
+            "forums_posts",
+            {
+                "name": "post_share_count",
+                "type": "BIGINT",
+                "length": null,
+                "decimals": null,
+                "values": null,
+                "allow_null": false,
+                "default": 0,
+                "comment": "",
+                "unsigned": true,
+                "auto_increment": false
+            }
+        ]
+    },
+    "6": {
+        "method": "addColumn",
+        "params": [
+            "forums_posts",
+            {
+                "name": "post_quote_count",
+                "type": "BIGINT",
+                "length": 0,
+                "decimals": null,
+                "values": [],
+                "allow_null": true,
+                "default": "0",
+                "comment": "",
+                "unsigned": true,
+                "auto_increment": false
+            }
+        ]
+    },
+    "7": {
+        "method": "addColumn",
+        "params": [
+            "forums_posts",
+            {
+                "name": "post_linked_count",
+                "type": "BIGINT",
+                "length": null,
+                "decimals": null,
+                "values": null,
+                "allow_null": false,
+                "default": 0,
+                "comment": "",
+                "unsigned": true,
+                "auto_increment": false
+            }
+        ]
+    },
+    "8": {
+        "method": "addColumn",
+        "params": [
+            "forums_posts",
+            {
+                "name": "post_reaction_count",
+                "type": "BIGINT",
+                "length": null,
+                "decimals": null,
+                "values": null,
+                "allow_null": true,
+                "default": "0",
+                "comment": "",
+                "unsigned": false,
+                "auto_increment": false
+            }
+        ]
+    },
+    "9": {
+        "method": "addColumn",
+        "params": [
+            "forums_topics",
+            {
+                "name": "topic_post_score_average",
+                "type": "FLOAT",
+                "length": null,
+                "decimals": null,
+                "values": null,
+                "allow_null": true,
+                "default": null,
+                "comment": "",
+                "unsigned": false,
+                "auto_increment": false
+            }
+        ]
+    },
+    "10": {
+        "method": "addColumn",
+        "params": [
+            "forums_topics",
+            {
+                "name": "topic_summary_date",
+                "type": "BIGINT",
+                "length": null,
+                "decimals": null,
+                "values": null,
+                "allow_null": true,
+                "default": null,
+                "comment": "",
+                "unsigned": true,
+                "auto_increment": false
+            }
+        ]
+    },
+    "11": {
+        "method": "addColumn",
+        "params": [
+            "forums_posts",
+            {
+                "name": "post_view_time",
+                "type": "INT",
+                "length": null,
+                "decimals": null,
+                "values": null,
+                "allow_null": false,
+                "default": 0,
+                "comment": "Average time this post was displayed on screen",
+                "unsigned": true,
+                "auto_increment": false
+            }
+        ]
+    },
+    "12": {
+        "method": "addColumn",
+        "params": [
+            "forums_posts",
+            {
+                "name": "post_view_time_view_count",
+                "type": "INT",
+                "length": null,
+                "decimals": null,
+                "values": null,
+                "allow_null": false,
+                "default": 0,
+                "comment": "The number of times (roughly) this post's content was displayed in a browser",
+                "unsigned": true,
+                "auto_increment": false
+            }
+        ]
+    },
+    "13": {
+        "method": "changeColumn",
+        "params": [
+            "forums_posts",
+            "post_field_t2",
+            {
+                "name": "post_field_t2",
+                "type": "TEXT",
+                "length": 0,
+                "decimals": null,
+                "values": [],
+                "allow_null": true,
+                "default": null,
+                "comment": "",
+                "unsigned": false,
+                "auto_increment": false
+            }
+        ]
+    },
+    "14": {
+        "method": "addColumn",
+        "params": [
+            "forums_posts",
+            {
+                "name": "post_force_in_summary",
+                "type": "TINYINT",
+                "length": null,
+                "decimals": null,
+                "values": null,
+                "allow_null": false,
+                "default": 0,
+                "comment": "",
+                "unsigned": true,
+                "auto_increment": false
+            }
+        ]
+    },
+    "15": {
+        "method": "addColumn",
+        "params": [
+            "forums_posts",
+            {
+                "name": "post_embed_count",
+                "type": "BIGINT",
+                "length": null,
+                "decimals": null,
+                "values": null,
+                "allow_null": false,
+                "default": 0,
+                "comment": "",
+                "unsigned": true,
+                "auto_increment": false
+            }
+        ]
+    },
+    "16": {
+        "method": "addIndex",
+        "params": [
+            "forums_forums",
+            {
+                "type": "key",
+                "name": "widget_performance",
+                "length": {
+                    "1": 20,
+                    "2": 160,
+                    "3": null
+                },
+                "columns": {
+                    "1": "password",
+                    "2": "password_override",
+                    "3": "can_view_others"
+                }
+            }
+        ]
+    },
+    "17": {
+        "method": "addColumn",
+        "params": [
+            "forums_topics",
+            {
+                "name": "assignment_id",
+                "type": "BIGINT",
+                "length": null,
+                "decimals": null,
+                "values": null,
+                "allow_null": true,
+                "default": null,
+                "comment": "",
+                "unsigned": true,
+                "auto_increment": false
+            }
+        ]
+    },
+    "18": {
+        "method": "addIndex",
+        "params": [
+            "forums_topics",
+            {
+                "type": "key",
+                "name": "assignment_id",
+                "columns": [
+                    "assignment_id"
+                ],
+                "length": [
+                    null
+                ]
+            }
+        ]
+    },
+    "19": {
+        "method": "addColumn",
+        "params": [
+            "forums_posts",
+            {
+                "name": "post_featured",
+                "type": "INT",
+                "length": null,
+                "decimals": null,
+                "values": null,
+                "allow_null": false,
+                "default": 0,
+                "comment": "",
+                "unsigned": true,
+                "auto_increment": false
+            }
+        ]
+    }
+}

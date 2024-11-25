@@ -1,0 +1,23 @@
+{
+    "files": {
+        "added": [
+            "global\/framework\/common\/utils\/ips.utils.lazyload.js"
+        ],
+        "edited": [
+            "global\/admin\/controllers\/core\/ips.core.dynamicChart.js",
+            "global\/front\/controllers\/core\/ips.core.comment.js",
+            "global\/front\/controllers\/core\/ips.core.lightboxedImages.js",
+            "core\/front\/controllers\/modcp\/ips.modcp.reportToggle.js",
+            "core\/admin\/controllers\/streams\/ips.streams.form.js",
+            "core\/front\/controllers\/streams\/ips.streams.main.js",
+            "core\/front\/controllers\/widgets\/ips.widgets.manager.js",
+            "global\/framework\/templates\/ips.core.templates.js"
+        ],
+        "removed": []
+    },
+    "orders": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

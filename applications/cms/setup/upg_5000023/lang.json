@@ -1,0 +1,15 @@
+{
+    "normal": {
+        "added": [
+            "filestorage__cms_Categories",
+            "filestorage__cms_PagesImages"
+        ],
+        "edited": [],
+        "removed": []
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

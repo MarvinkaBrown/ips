@@ -1,0 +1,15 @@
+{
+    "normal": {
+        "added": [],
+        "edited": [
+            "cms_new_db_template_group_index",
+            "cms_new_db_template_group_categories"
+        ],
+        "removed": []
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

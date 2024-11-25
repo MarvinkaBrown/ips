@@ -1,0 +1,39 @@
+{
+    "normal": {
+        "added": [
+            "ipb_embed_url_header",
+            "fb_ig_oembed_header",
+            "editor_r__external_image__desc",
+            "editor_r__internal_embed",
+            "editor_r__raw_embed__desc",
+            "editor_r__og_embed__desc",
+            "g_editor_mode_default"
+        ],
+        "edited": [
+            "posting_images",
+            "editor_r__external_image",
+            "g_editor_mode_sandboxed",
+            "g_editor_mode_regular",
+            "g_editor_mode_advanced",
+            "g_editor_restriction",
+            "g_editor_restriction_desc",
+            "g_editor_comments_restriction_desc",
+            "topic_redirect_prune"
+        ],
+        "removed": [
+            "editor_r__external_image_desc",
+            "editor_embeds",
+            "editor_embeds_desc",
+            "remote_images",
+            "allow_remote_images",
+            "allow_remote_images_desc",
+            "allow_only_https_remote_images",
+            "allow_only_https_remote_images_desc"
+        ]
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

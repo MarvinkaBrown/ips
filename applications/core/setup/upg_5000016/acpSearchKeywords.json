@@ -1,0 +1,9 @@
+{
+    "added": [
+        "app=core&module=settings&controller=posting&tab=simplifiedMode&searchResult=form_editor_r__external_media"
+    ],
+    "edited": [],
+    "removed": [
+        "app=core&module=settings&controller=posting&tab=simplifiedMode&searchResult=form_editor_r__external_image"
+    ]
+}

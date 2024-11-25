@@ -1,0 +1,27 @@
+{
+    "1": {
+        "method": "addColumn",
+        "params": [
+            "core_groups",
+            {
+                "name": "g_view_followers",
+                "type": "tinyint",
+                "length": 1,
+                "default": 0
+            }
+        ]
+    },
+    "2": {
+        "method": "update",
+        "params": [
+            "core_groups",
+            {
+                "g_view_followers": 1
+            },
+            [
+                "g_id <> ?",
+                2
+            ]
+        ]
+    }
+}

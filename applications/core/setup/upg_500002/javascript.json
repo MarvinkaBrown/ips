@@ -1,0 +1,27 @@
+{
+    "files": {
+        "added": [],
+        "edited": [
+            "global\/library\/app.js",
+            "global\/framework\/common\/ui\/ips.ui.carousel.js",
+            "global\/framework\/common\/ui\/ips.ui.js",
+            "global\/framework\/common\/ui\/ips.ui.menu.js",
+            "global\/framework\/common\/ui\/ips.ui.pageAction.js",
+            "global\/framework\/common\/utils\/ips.utils.iconpicker.js",
+            "core\/admin\/controllers\/customization\/ips.customization.themeForm.js",
+            "core\/front\/controllers\/messages\/ips.messages.main.js",
+            "core\/front\/controllers\/widgets\/ips.widgets.carouselControls.js",
+            "core\/front\/controllers\/widgets\/ips.widgets.sidebar.js",
+            "global\/front\/mixins\/ips.core.table.js",
+            "global\/framework\/templates\/ips.core.templates.js"
+        ],
+        "removed": [
+            "core\/front\/controllers\/promote\/ips.system.promote.js"
+        ]
+    },
+    "orders": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

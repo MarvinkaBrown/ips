@@ -1,0 +1,19 @@
+{
+    "normal": {
+        "added": [
+            "no_pending_items",
+            "acpsearch__nexus_customers_fields",
+            "acpsearch__nexus_store_fields",
+            "acpsearch__nexus_payments_paymentsettings",
+            "acpsearch__nexus_store_settings",
+            "acpsearch__nexus_reports_donations"
+        ],
+        "edited": [],
+        "removed": []
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

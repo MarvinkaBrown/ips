@@ -1,0 +1,14 @@
+{
+    "added": [],
+    "edited": [
+        "textLogo",
+        "imageLogoDesktop",
+        "imageLogoMobile",
+        "desktopHeader",
+        "mobileHeader",
+        "body",
+        "contentBoxes",
+        "desktopFooter"
+    ],
+    "removed": []
+}

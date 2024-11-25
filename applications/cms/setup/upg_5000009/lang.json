@@ -1,0 +1,52 @@
+{
+    "normal": {
+        "added": [
+            "category_listing_layout",
+            "content_database_form_options_layouts",
+            "cms_database_import_info",
+            "database_index_type",
+            "database_index_type_featured",
+            "database_index_type_categories",
+            "database_index_type_all",
+            "database_index_layout",
+            "database_layout_custom",
+            "database_categories_layout",
+            "database_listing_layout",
+            "database_template_index",
+            "block_Blocks_custom_link",
+            "block_Blocks_custom_link_desc",
+            "block_Blocks_desc_default"
+        ],
+        "edited": [
+            "content_edit_page",
+            "page_type_builder",
+            "page_type_manual_desc",
+            "content_launch_page_builder",
+            "page_template_desc",
+            "content_database_form_templates",
+            "block_Blocks_desc",
+            "block_pagebuildertext",
+            "block_pagebuilderoembed",
+            "block_pagebuilderupload"
+        ],
+        "removed": [
+            "database_cat_index_type",
+            "database_display_index_as_categories",
+            "database_display_index_as_articles",
+            "database_display_index_as_articles_desc",
+            "database_template_featured",
+            "database_featured_perpage",
+            "database_featured_pagination",
+            "database_featured_pagination_desc",
+            "database_featured_sort",
+            "database_featured_direction",
+            "database_featured_featured",
+            "database_featured_categories"
+        ]
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

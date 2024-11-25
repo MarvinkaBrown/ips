@@ -1,0 +1,20 @@
+{
+    "added": [
+        "notification_donation_goal_reached",
+        "notification_new_topics_to_review"
+    ],
+    "edited": [
+        "activity_stream_subscription",
+        "contact_form",
+        "emailWrapper",
+        "advertisement",
+        "notification_new_badge",
+        "warning",
+        "digests__areaWrapper"
+    ],
+    "removed": [
+        "notification_profile_comment",
+        "notification_new_status",
+        "notification_profile_reply"
+    ]
+}

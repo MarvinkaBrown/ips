@@ -1,0 +1,38 @@
+{
+    "1": {
+        "method": "addColumn",
+        "params": [
+            "core_profile_steps",
+            {
+                "name": "step_registration",
+                "type": "BIT",
+                "length": 1,
+                "decimals": null,
+                "values": null,
+                "allow_null": true,
+                "default": "0",
+                "comment": "",
+                "unsigned": false,
+                "auto_increment": false
+            }
+        ]
+    },
+    "2": {
+        "method": "addColumn",
+        "params": [
+            "core_widgets",
+            {
+                "name": "searchterms",
+                "type": "TEXT",
+                "length": null,
+                "decimals": null,
+                "values": null,
+                "allow_null": true,
+                "default": null,
+                "comment": "",
+                "unsigned": false,
+                "auto_increment": false
+            }
+        ]
+    }
+}

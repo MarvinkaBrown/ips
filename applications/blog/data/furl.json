@@ -1,0 +1,46 @@
+{
+	"topLevel": "blogs",
+	"pages": {
+	    "blogs_rss": {
+		    "friendly": "blog/rss/{#id}-{?}",
+		    "real": "app=blog&module=blogs&controller=view&do=rss",
+			"alias": "blog/entry-{#id}-{?}"
+	    },
+		"blogs_blog_cat": {
+		  "friendly": "blog/{#id}-{?0}/{#cat}-{?1}",
+		  "real": "app=blog&module=blogs&controller=view",
+		  "seoPagination": true
+		},
+	    "blogs_blog": {
+		    "friendly": "blog/{#id}-{?}",
+		    "real": "app=blog&module=blogs&controller=view",
+		    "verify": "\\IPS\\blog\\Blog",
+		    "seoPagination": true
+	    },
+	    "blog_entry": {
+		    "friendly": "entry/{#id}-{?}", 
+		    "real": "app=blog&module=blogs&controller=entry",
+		    "verify": "\\IPS\\blog\\Entry",
+		    "alias": "blog/{!}/entry-{#id}-{?}",
+		    "seoPagination": true
+	    },
+	    "blog_submit": {
+	        "friendly": "submit",
+	        "real": "app=blog&module=blogs&controller=submit"
+	    },
+	    "blog_create": {
+	        "friendly": "create",
+	        "real": "app=blog&module=blogs&controller=create"
+	    },
+		"blog_category": {
+		  "friendly": "category/{#id}-{?}",
+		  "real": "app=blog&module=blogs&controller=browse",
+		  "verify": "\\IPS\\blog\\Category"
+		},
+	    "blogs": {
+	        "friendly": "",
+	        "real": "app=blog&module=blogs&controller=browse",
+	        "alias": "blog"
+	    }
+	}
+}

@@ -1,0 +1,7 @@
+{
+    "System": {
+        "type": "MemberListenerType",
+        "classname": "IPS\\core\\listeners\\System",
+        "extends": "IPS\\Member"
+    }
+}

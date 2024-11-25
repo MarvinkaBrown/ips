@@ -1,0 +1,7 @@
+{
+    "Downloads": {
+        "type": "MemberListenerType",
+        "classname": "IPS\\downloads\\listeners\\Downloads",
+        "extends": "IPS\\Member"
+    }
+}

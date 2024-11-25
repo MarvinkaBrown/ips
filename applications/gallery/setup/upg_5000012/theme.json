@@ -1,0 +1,20 @@
+{
+    "html": {
+        "added": [],
+        "edited": [
+            "front\/widgets\/albums",
+            "front\/widgets\/imageRow"
+        ],
+        "removed": []
+    },
+    "css": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

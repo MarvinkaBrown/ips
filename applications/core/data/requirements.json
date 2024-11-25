@@ -1,0 +1,10 @@
+{
+	"php": {
+		"required": "8.1.0",
+		"recommended": "8.2.0"
+	},
+	"mysql": {
+		"required": "8.0.13",
+		"recommended": "8.0.13"
+	}
+}

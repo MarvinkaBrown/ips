@@ -1,0 +1,14 @@
+{
+    "added": [
+        "advertStats",
+        "weeklyCleanup",
+        "cleartagpins"
+    ],
+    "edited": [
+        "sitemapgenerator"
+    ],
+    "removed": [
+        "pop",
+        "promote"
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "html": {
+        "added": [],
+        "edited": [
+            "front\/browse\/calendarDay",
+            "front\/browse\/calendarHeader",
+            "front\/browse\/calendarMonth",
+            "front\/browse\/calendarWeek"
+        ],
+        "removed": []
+    },
+    "css": {
+        "added": [],
+        "edited": [
+            "front\/calendar.css"
+        ],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

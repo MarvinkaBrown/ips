@@ -1,0 +1,11 @@
+{
+    "added": [
+        "report_capture_guest_details",
+        "report_content_mandatory",
+        "report_guest_details_name_mandatory",
+        "report_guest_details_store_days",
+        "seo_reduce_links"
+    ],
+    "edited": [],
+    "removed": []
+}

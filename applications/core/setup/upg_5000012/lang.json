@@ -1,0 +1,47 @@
+{
+    "normal": {
+        "added": [
+            "validate_invalid_security_key",
+            "lostpass_invalid_security_key",
+            "install_application",
+            "manifest_themecolor_none",
+            "api__log_blurb_change",
+            "api__log_blurb_change_cloud",
+            "api_log_prune_failures",
+            "api_log_prune_failures_desc",
+            "api__log_no_cloud",
+            "cookie_codeVerifier_description",
+            "mfa_recovery_verify",
+            "mfavalidate_invalid_security_key",
+            "dev_furl_seotitle_class",
+            "dev_furl_seotitle_id",
+            "dev_furl_seotitle_property",
+            "dev_furl_seotitle_class_info",
+            "err__dev_duplicate_alias",
+            "err__dev_equal_alias",
+            "tag_block_title",
+            "tag_block_limit",
+            "tag_block_tags",
+            "tag_block_tags_desc",
+            "block_tags",
+            "block_tags_desc"
+        ],
+        "edited": [
+            "applications_blurb",
+            "prune_member_history_desc",
+            "manifest_themecolor_desc",
+            "api_log_prune",
+            "cookie_member_id_description",
+            "cookie_guestTermsDismissed_description",
+            "clubs_visibility"
+        ],
+        "removed": [
+            "api_log_blurb_change"
+        ]
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

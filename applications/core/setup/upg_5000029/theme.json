@@ -1,0 +1,49 @@
+{
+    "html": {
+        "added": [],
+        "edited": [
+            "front\/global\/mobileFooterBar",
+            "front\/global\/mobileNavigationChildren",
+            "front\/profile\/hovercard",
+            "front\/staffdirectory\/layout_blocks",
+            "front\/staffdirectory\/layout_full",
+            "front\/staffdirectory\/layout_half",
+            "front\/staffdirectory\/template",
+            "front\/themeeditor\/editorPanel",
+            "front\/themeeditor\/settingCheckbox",
+            "front\/themeeditor\/settingRange",
+            "front\/themeeditor\/settingSelect",
+            "front\/themeeditor\/settingText",
+            "front\/themeeditor\/themeEditorTemplate",
+            "admin\/trees\/template",
+            "front\/widgets\/topContributorRows",
+            "front\/widgets\/topContributors"
+        ],
+        "removed": []
+    },
+    "css": {
+        "added": [],
+        "edited": [
+            "admin\/core\/trees.css",
+            "global\/framework\/1-2-settings.css",
+            "global\/framework\/1-3-variables.css",
+            "global\/framework\/1-4-colors.css",
+            "global\/framework\/3-buttons.css",
+            "global\/framework\/3-data-tables.css",
+            "global\/framework\/3-editor.css",
+            "global\/framework\/3-page-header.css",
+            "global\/framework\/3-post-content.css",
+            "global\/framework\/3-tabs.css",
+            "global\/framework\/3-typography.css",
+            "global\/framework\/4-layout.css",
+            "front\/styles\/embeds.css",
+            "front\/styles\/theme_editor.css"
+        ],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

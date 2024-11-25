@@ -1,0 +1,1 @@
+;(function($,_,undefined){"use strict";ips.controller.mixin('comment','core.front.core.comment',true,function(){this.after('saveEditCommentDone',function(){this.scope.find('[data-role="commentContent"]').addClass('i-padding-block_3').addClass('i-padding-inline_3').removeClass('i-padding-bottom_3')});});}(jQuery,_));;

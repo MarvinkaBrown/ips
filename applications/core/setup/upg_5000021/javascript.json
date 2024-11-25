@@ -1,0 +1,19 @@
+{
+    "files": {
+        "added": [],
+        "edited": [
+            "global\/framework\/common\/ui\/ips.ui.tableOfContents.js",
+            "global\/framework\/common\/utils\/ips.utils.position.js",
+            "global\/front\/controllers\/core\/ips.core.comment.js",
+            "global\/front\/controllers\/core\/ips.core.commentFeed.js",
+            "global\/framework\/controllers\/stockart\/ips.stockart.pixabay.js",
+            "global\/framework\/templates\/ips.core.templates.js"
+        ],
+        "removed": []
+    },
+    "orders": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

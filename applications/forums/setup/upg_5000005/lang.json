@@ -1,0 +1,31 @@
+{
+    "normal": {
+        "added": [
+            "acpsearch__mm_forums",
+            "acpsearch__mm_title"
+        ],
+        "edited": [],
+        "removed": [
+            "forums_popular_now",
+            "forums_popular_now_desc",
+            "popular_now",
+            "block_hotTopics",
+            "block_hotTopics_desc",
+            "topicactivity_popularposts",
+            "AchievementAction__TopicMarkedPopular",
+            "achievement_filter_TopicMarkedPopular_forum",
+            "achievement_filter_TopicMarkedPopular_forum_prefix",
+            "achievement_filter_TopicMarkedPopular_author",
+            "achievement_filter_TopicMarkedPopular_nth",
+            "achievement_filter_TopicMarkedPopular_nth_suffix",
+            "AchievementAction__TopicMarkedPopular_log_subject",
+            "AchievementAction__TopicMarkedPopular_log_deleted",
+            "AchievementAction__TopicMarkedPopular_title"
+        ]
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

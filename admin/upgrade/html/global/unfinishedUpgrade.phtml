@@ -1,0 +1,26 @@
+<ips:template parameters="$json, $time" />
+<section>
+	<h2 class="ipsTitle ipsTitle--h3">{lang="upgrade_unfinished"}</h2>
+	<ul class="i-padding_3 i-font-size_2 ipsList_checks">
+		<li class="advisory">{lang="unfinished_upgrade_info" sprintf="(string) \IPS\DateTime::ts($time)"}</li>
+		<li>
+			<strong>{lang="upgrade_applications"}</strong>
+			<ul>
+				{{foreach $json['session']['apps'] as $app => $data}}
+					<li>{expression="ucfirst( $app )"}</li>
+				{{endforeach}}
+			</ul>
+		</li>
+		<li>
+			<strong>{lang="upgrade_status"}</strong>
+			<ul>
+				<li>{lang="status"}: {$json['step']}</li>
+				<li>{lang="application"}: {{if isset( $json['data'][1] )}}{$json['data'][1]}{{else}}<em>{lang="continue_not_set"}</em>{{endif}}
+				<li>{lang="current_version"}: {{if isset( $json['data']['extra']['_current'] )}}{$json['data']['extra']['_current']}{{else}}<em>{lang="continue_not_set"}</em>{{endif}}
+			</ul>
+		</li>
+	</ul>
+</section>
+<div class='i-padding_4 i-text-align_center'>
+	<a href='{url="controller=continueupgrade&key={$_SESSION['uniqueKey']}"}' class='ipsButton ipsButton--large ipsButton--primary ipsButton--positive'>{lang="continue_upgrade"}</a>
+</div>

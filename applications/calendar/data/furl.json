@@ -1,0 +1,81 @@
+{
+	"topLevel": "events",
+	"pages": {
+		"featured": {
+			"friendly": "featured",
+			"real": "app=calendar&module=calendar&controller=view&view=overview&do=featured"
+		},
+	    "calendar_calweek": {
+	        "friendly": "{#id}-{?}/week/{@w}",
+	        "real": "app=calendar&module=calendar&controller=view&view=week"
+	    },
+	    "calendar_calstream": {
+	        "friendly": "{#id}-{?}/events/{#y}/{#m}",
+	        "real": "app=calendar&module=calendar&controller=view&view=stream"
+	    },
+	    "calendar_calicaldownload": {
+	        "friendly": "{#id}-{?}/download",
+	        "real": "app=calendar&module=calendar&controller=view&do=download"
+	    },
+	    "calendar_calday": {
+	        "friendly": "{#id}-{?}/{#y}/{#m}/{#d}",
+	        "real": "app=calendar&module=calendar&controller=view&view=day",
+	        "alias": "calendar/{#id}-{?}/day-{#y}-{#m}-{#d}"
+	    },
+	    "calendar_calmonth": {
+	        "friendly": "{#id}-{?}/{#y}/{#m}",
+	        "real": "app=calendar&module=calendar&controller=view&view=month"
+	    },
+	    "calendar_calendar": {
+	        "friendly": "{#id}-{?}",
+	        "real": "app=calendar&module=calendar&controller=view",
+	        "verify": "\\IPS\\calendar\\Calendar"
+	    },
+	    "calendar_day": {
+	        "friendly": "{#y}/{#m}/{#d}",
+	        "real": "app=calendar&module=calendar&controller=view&view=day"
+	    },
+	    "calendar_month": {
+	        "friendly": "{#y}/{#m}",
+	        "real": "app=calendar&module=calendar&controller=view&view=month"
+	    },
+	    "calendar_week": {
+	        "friendly": "week/{@w}",
+	        "real": "app=calendar&module=calendar&controller=view&view=week"
+	    },
+	    "calendar_rss": {
+            "friendly": "events.xml",
+            "real": "app=calendar&module=calendar&controller=view&do=rss"
+        },
+	    "calendar_stream": {
+	        "friendly": "events/{#y}/{#m}",
+	        "real": "app=calendar&module=calendar&controller=view&view=stream"
+	    },
+	    "calendar_icaldownload": {
+	        "friendly": "download",
+	        "real": "app=calendar&module=calendar&controller=view&do=download"
+	    },
+	    "calendar_event": {
+		    "friendly": "event/{#id}-{?}",
+		    "real": "app=calendar&module=calendar&controller=event",
+		    "verify": "\\IPS\\calendar\\Event"
+	    },
+	    "calendar_submit": {
+	        "friendly": "submit",
+	        "real": "app=calendar&module=calendar&controller=submit"
+	    },
+		"calendar_venue": {
+			"friendly": "venue/{#id}-{?}",
+			"real": "app=calendar&module=calendar&controller=venue",
+			"verify": "\\IPS\\calendar\\Venue"
+		},
+	    "calendar": {
+	        "friendly": "",
+	        "real": "app=calendar&module=calendar&controller=view"
+	    },
+        "calendar_event_search": {
+            "friendly": "event-search",
+            "real": "app=calendar&module=calendar&controller=view&do=search"
+        }
+	}
+}

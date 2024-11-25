@@ -1,0 +1,26 @@
+{
+    "files": {
+        "added": [],
+        "edited": [
+            "calendar\/front\/controllers\/browse\/ips.browse.main.js",
+            "calendar\/front\/controllers\/overview\/ips.overview.eventList.js",
+            "calendar\/front\/controllers\/overview\/ips.overview.nearMe.js",
+            "calendar\/front\/controllers\/overview\/ips.overview.search.js",
+            "calendar\/front\/controllers\/submit\/ips.submit.dates.js",
+            "calendar\/front\/controllers\/venue\/ips.venue.main.js",
+            "calendar\/front\/controllers\/view\/ips.view.reminderButton.js",
+            "calendar\/front\/templates\/ips.calendar.templates.js",
+            "calendar\/front\/templates\/ips.templates.overview.js"
+        ],
+        "removed": [
+            "calendar\/front\/controllers\/overview\/ips.overview.carousel.js"
+        ]
+    },
+    "orders": {
+        "added": [],
+        "edited": [
+            "global\/\/dev\/js\/\/library\/\/jquery"
+        ],
+        "removed": []
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "1": {
+        "method": "dropIndex",
+        "params": [
+            "forums_topics",
+            "popular_topics"
+        ]
+    }
+}

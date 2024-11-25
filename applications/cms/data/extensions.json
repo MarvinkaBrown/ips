@@ -1,0 +1,58 @@
+{
+    "core": {
+        "ContentRouter": {
+            "Pages": "IPS\\cms\\extensions\\core\\ContentRouter\\Pages",
+            "Records": "IPS\\cms\\extensions\\core\\ContentRouter\\Records"
+        },
+        "EditorLocations": {
+            "BlockContent": "IPS\\cms\\extensions\\core\\EditorLocations\\BlockContent",
+            "Records": "IPS\\cms\\extensions\\core\\EditorLocations\\Records",
+            "Widgets": "IPS\\cms\\extensions\\core\\EditorLocations\\Widgets"
+        },
+        "FileStorage": {
+            "Categories": "IPS\\cms\\extensions\\core\\FileStorage\\Categories",
+            "Media": "IPS\\cms\\extensions\\core\\FileStorage\\Media",
+            "Pages": "IPS\\cms\\extensions\\core\\FileStorage\\Pages",
+            "PagesImages": "IPS\\cms\\extensions\\core\\FileStorage\\PagesImages",
+            "Records": "IPS\\cms\\extensions\\core\\FileStorage\\Records"
+        },
+        "FrontNavigation": {
+            "Pages": "IPS\\cms\\extensions\\core\\FrontNavigation\\Pages"
+        },
+        "ModeratorPermissions": {
+            "Databases": "IPS\\cms\\extensions\\core\\ModeratorPermissions\\Databases"
+        },
+        "OutputPlugins": {
+            "Block": "IPS\\cms\\extensions\\core\\OutputPlugins\\Block",
+            "Database": "IPS\\cms\\extensions\\core\\OutputPlugins\\Database",
+            "Media": "IPS\\cms\\extensions\\core\\OutputPlugins\\Media",
+            "Pageurl": "IPS\\cms\\extensions\\core\\OutputPlugins\\Pageurl",
+            "Widget": "IPS\\cms\\extensions\\core\\OutputPlugins\\Widget"
+        },
+        "Queue": {
+            "FixCommentAttachments": "IPS\\cms\\extensions\\core\\Queue\\FixCommentAttachments",
+            "MoveComments": "IPS\\cms\\extensions\\core\\Queue\\MoveComments",
+            "RebuildReciprocalMaps": "IPS\\cms\\extensions\\core\\Queue\\RebuildReciprocalMaps",
+            "ResyncTopicContent": "IPS\\cms\\extensions\\core\\Queue\\ResyncTopicContent",
+            "UpdateHtmlPages": "IPS\\cms\\extensions\\core\\Queue\\UpdateHtmlPages"
+        },
+        "RssImport": {
+            "RssImport": "IPS\\cms\\extensions\\core\\RssImport\\RssImport"
+        },
+        "SearchContent": {
+            "Pages": "IPS\\cms\\extensions\\core\\SearchContent\\Pages",
+            "Records": "IPS\\cms\\extensions\\core\\SearchContent\\Records"
+        },
+        "Sitemap": {
+            "Databases": "IPS\\cms\\extensions\\core\\Sitemap\\Databases",
+            "Pages": "IPS\\cms\\extensions\\core\\Sitemap\\Pages"
+        },
+        "UIItem": {
+            "CopyTopicToDatabase": "IPS\\cms\\extensions\\core\\UIItem\\CopyTopicToDatabase"
+        },
+        "Uninstall": {
+            "Databases": "IPS\\cms\\extensions\\core\\Uninstall\\Databases",
+            "Widgets": "IPS\\cms\\extensions\\core\\Uninstall\\Widgets"
+        }
+    }
+}

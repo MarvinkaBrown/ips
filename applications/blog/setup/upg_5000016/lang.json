@@ -1,0 +1,17 @@
+{
+    "normal": {
+        "added": [],
+        "edited": [
+            "entry_posted",
+            "entry_future_posted",
+            "entry_posted_with_cat",
+            "entry_future_posted_with_cat"
+        ],
+        "removed": []
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

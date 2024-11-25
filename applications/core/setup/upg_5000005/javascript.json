@@ -1,0 +1,27 @@
+{
+    "files": {
+        "added": [
+            "global\/framework\/common\/ui\/ips.ui.alertMessage.js"
+        ],
+        "edited": [
+            "global\/framework\/common\/ui\/ips.ui.codebox.js",
+            "global\/framework\/common\/ui\/ips.ui.codehighlighting.js",
+            "global\/framework\/common\/ui\/ips.ui.form.js",
+            "global\/framework\/common\/ui\/ips.ui.js",
+            "global\/framework\/common\/ui\/ips.ui.pageAction.js",
+            "global\/framework\/common\/ui\/ips.ui.wizard.js",
+            "global\/framework\/common\/utils\/ips.utils.iconpicker.js",
+            "core\/admin\/controllers\/badgepreview\/ips.core.badgepreview.js",
+            "global\/front\/controllers\/core\/ips.core.app.js",
+            "core\/global\/controllers\/core\/ips.core.coverPhoto.js",
+            "core\/admin\/controllers\/customization\/ips.customization.designerCore.js",
+            "core\/front\/controllers\/widgets\/ips.widgets.manager.js"
+        ],
+        "removed": []
+    },
+    "orders": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

@@ -1,0 +1,69 @@
+{
+    "html": {
+        "added": [
+            "admin\/developer\/duplicateSearchKeywords",
+            "front\/menu\/button"
+        ],
+        "edited": [
+            "admin\/achievements\/ruleAwards",
+            "admin\/achievements\/rulesListRows",
+            "front\/alerts\/alertModal",
+            "global\/forms\/color",
+            "global\/global\/dynamicChart",
+            "front\/global\/footer",
+            "front\/global\/globalTemplate",
+            "global\/global\/includeCSS",
+            "front\/global\/mobileNavHeader",
+            "front\/global\/navColumn",
+            "front\/global\/searchDialog",
+            "front\/global\/searchDialogTrigger",
+            "front\/menu\/menu",
+            "front\/modcp\/announcementRow",
+            "front\/themeeditor\/editorPanel",
+            "front\/themeeditor\/settingCheckbox",
+            "front\/themeeditor\/settingColor",
+            "front\/themeeditor\/settingImage",
+            "front\/themeeditor\/settingRange",
+            "front\/themeeditor\/settingSelect",
+            "front\/themeeditor\/settingText",
+            "front\/themeeditor\/themeEditorTemplate",
+            "front\/widgets\/achievements",
+            "front\/widgets\/advertisements",
+            "front\/widgets\/promoted",
+            "front\/widgets\/stats"
+        ],
+        "removed": [
+            "front\/global\/mobileNavBar"
+        ]
+    },
+    "css": {
+        "added": [],
+        "edited": [
+            "front\/core.css",
+            "admin\/core\/misc.css",
+            "admin\/customization\/themes.css",
+            "global\/framework\/1-4-colors.css",
+            "global\/framework\/3-data-tables.css",
+            "global\/framework\/3-editor.css",
+            "global\/framework\/3-forms.css",
+            "global\/framework\/3-images.css",
+            "global\/framework\/3-inputs.css",
+            "global\/framework\/3-menus.css",
+            "global\/framework\/3-richtext.css",
+            "global\/framework\/3-streams.css",
+            "global\/framework\/3-typography.css",
+            "global\/framework\/4-breadcrumb.css",
+            "global\/framework\/4-layout.css",
+            "global\/framework\/4-width.css",
+            "front\/styles\/alerts.css",
+            "front\/styles\/streams.css",
+            "front\/styles\/theme_editor.css"
+        ],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

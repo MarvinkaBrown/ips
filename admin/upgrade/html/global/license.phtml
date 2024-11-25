@@ -1,0 +1,12 @@
+<ips:template parameters="$form, $active" />
+<section>
+	<h2 class="ipsTitle ipsTitle--h3">{lang="license"}</h2>
+	<ul class="i-padding_3 i-font-size_2 ipsList_checks">
+		{{if $active === NULL}}
+			<li class="fail">{lang="lkey_not_providen"}</li>
+			<li>{$form|raw}</li>
+		{{else}}
+			<li class="fail">{lang="license_inactive"}</li>
+		{{endif}}
+	</ul>
+</section>

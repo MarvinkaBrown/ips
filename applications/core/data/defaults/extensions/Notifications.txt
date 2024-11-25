@@ -1,0 +1,95 @@
+<?php
+/**
+ * @brief		Notification Options
+ * @author		<a href='https://www.invisioncommunity.com'>Invision Power Services, Inc.</a>
+ * @copyright	(c) Invision Power Services, Inc.
+ * @license		https://www.invisioncommunity.com/legal/standards/
+ * @package		Invision Community
+{subpackage}
+ * @since		{date}
+ */
+
+namespace IPS\{app}\extensions\core\Notifications;
+
+use IPS\Extensions\NotificationsAbstract;
+use IPS\Http\Url;
+use IPS\Member as MemberClass;
+use IPS\Notification\Inline;
+use function defined;
+
+/* To prevent PHP errors (extending class does not exist) revealing path */
+if ( !defined( '\IPS\SUITE_UNIQUE_KEY' ) )
+{
+	header( ( $_SERVER['SERVER_PROTOCOL'] ?? 'HTTP/1.0' ) . ' 403 Forbidden' );
+	exit;
+}
+
+/**
+ * Notification Options
+ */
+class {class} extends NotificationsAbstract
+{
+	/**
+	 * Get fields for configuration
+	 *
+	 * @param	MemberClass|null	$member		The member (to take out any notification types a given member will never see) or NULL if this is for the ACP
+	 * @return	array
+	 */
+	public static function configurationOptions( ?MemberClass $member = NULL ): array
+	{
+		// Return an array defining each notification type, including the form elements necessary to allow its configuration
+		
+		return array(
+			'setting_key'		=> array(
+				'type'				=> 'custom',
+				'adminCanSetDefault'=> TRUE,
+				'field'				=> new \IPS\Helpers\Form\CheckboxSet( 'setting_key', null, FALSE, /*...*/ ),
+				'admin_lang'		=> array(
+					'header'			=> 'header_lang_key',
+					'title'				=> 'header_lang_title',
+				),
+			),
+			'other_setting_key'	=> array(
+				'type'				=> 'custom',
+				'adminCanSetDefault'=> FALSE,
+				'field'				=> new \IPS\Helpers\Form\CheckboxSet( 'other_setting_key', null, false ),
+			),
+			'separator1'	=> array(
+				'type'				=> 'separator',
+			),
+			//...
+		);
+	}
+	
+	// For each type of notification you need a method like this which controls what will be displayed when the user clicks on the notification icon in the header:
+	// Note that for each type of notification you must *also* create email templates. See documentation for details: https://remoteservices.invisionpower.com/docs/devdocs-notifications
+	
+	/**
+	 * Parse notification: key
+	 *
+	 * @param	Inline	$notification	The notification
+	 * @param	bool	$htmlEscape		TRUE to escape HTML in title
+	 * @return	array
+	 * @code
+	 return array(
+		 'title'		=> "Mark has replied to A Topic",	// The notification title
+		 'url'			=> Url::internal( ... ),	        // The URL the notification should link to
+		 'content'		=> "Lorem ipsum dolar sit",			// [Optional] Any appropriate content. Do not format this like an email where the text
+		 													// 	 explains what the notification is about - just include any appropriate content.
+		 													// 	 For example, if the notification is about a post, set this as the body of the post.
+		 'author'		=>  MemberClass::load( 1 ),	    		// [Optional] The user whose photo should be displayed for this notification
+	 );
+	 * @endcode
+	 */
+	public function parse_key( Inline $notification, bool $htmlEscape=TRUE ): array
+	{
+		return array(
+			'title'		=> "Mark has replied to A Topic",	// The notification title
+			'url'			=> Url::internal( '' ),	// The URL the notification should link to
+			'content'		=> "Lorem ipsum dolar sit",			// [Optional] Any appropriate content. Do not format this like an email where the text
+																// 	 explains what the notification is about - just include any appropriate content.
+																// 	 For example, if the notification is about a post, set this as the body of the post.
+			'author'		=>  MemberClass::load( 1 ),			// [Optional] The user whose photo should be displayed for this notification
+		);
+	}
+}

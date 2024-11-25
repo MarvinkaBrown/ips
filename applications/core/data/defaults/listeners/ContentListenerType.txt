@@ -1,0 +1,40 @@
+<?php
+/**
+ * @brief		Content Listener
+ * @author		<a href='https://www.invisioncommunity.com'>Invision Power Services, Inc.</a>
+ * @copyright	(c) Invision Power Services, Inc.
+ * @license		https://www.invisioncommunity.com/legal/standards/
+ * @package		Invision Community
+{subpackage}
+ * @since		{date}
+ */
+
+namespace IPS\{app}\listeners;
+
+/* To prevent PHP errors (extending class does not exist) revealing path */
+
+use IPS\Content as ContentClass;
+use IPS\Content\Comment as CommentClass;
+use IPS\Content\Item as ItemClass;
+use IPS\Db;
+use IPS\Events\ListenerType\ContentListenerType;
+use IPS\Node\Model;
+use function defined;
+
+if ( !defined( '\IPS\SUITE_UNIQUE_KEY' ) )
+{
+	header(($_SERVER['SERVER_PROTOCOL'] ?? 'HTTP/1.0') . ' 403 Forbidden');
+	exit;
+}
+
+/**
+ * Content Listener
+ */
+class {filename} extends ContentListenerType
+{
+ 	/**
+ 	 * @brief	[Required] The class that is handled by this listener
+ 	 * @var string
+ 	 */
+ 	public static string $class = {class};
+}

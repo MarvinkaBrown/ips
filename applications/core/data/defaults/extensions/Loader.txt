@@ -1,0 +1,22 @@
+<?php
+
+namespace IPS\{app}\extensions\core\Loader;
+
+use IPS\Extensions\LoaderAbstract;
+use IPS\Http\Url;
+use function defined;
+
+/* To prevent PHP errors (extending class does not exist) revealing path */
+if ( !defined( '\IPS\SUITE_UNIQUE_KEY' ) )
+{
+	header( ( $_SERVER['SERVER_PROTOCOL'] ?? 'HTTP/1.0' ) . ' 403 Forbidden' );
+	exit;
+}
+
+/**
+ * @brief	Loader extension: {class}
+ */
+class {class} extends LoaderAbstract
+{
+
+}

@@ -1,0 +1,79 @@
+<?php
+/**
+ * @brief		IP Address Lookup extension
+ * @author		<a href='https://www.invisioncommunity.com'>Invision Power Services, Inc.</a>
+ * @copyright	(c) Invision Power Services, Inc.
+ * @license		https://www.invisioncommunity.com/legal/standards/
+ * @package		Invision Community
+{subpackage}
+ * @since		{date}
+ */
+
+namespace IPS\{app}\extensions\core\IpAddresses;
+
+/* To prevent PHP errors (extending class does not exist) revealing path */
+
+use IPS\Db;
+use IPS\Db\Select;
+use IPS\Extensions\IpAddressesAbstract;
+use IPS\Helpers\Table\Db as TableDb;
+use IPS\Http\Url;
+use IPS\Member as MemberClass;
+use function defined;
+
+if ( !defined( '\IPS\SUITE_UNIQUE_KEY' ) )
+{
+	header( ( $_SERVER['SERVER_PROTOCOL'] ?? 'HTTP/1.0' ) . ' 403 Forbidden' );
+	exit;
+}
+
+/**
+ * IP Address Lookup extension
+ */
+class {class} extends IpAddressesAbstract
+{
+	/**
+	 * Find Records by IP
+	 *
+	 * @param	string			$ip			The IP Address
+	 * @param	Url|null	$baseUrl	URL table will be displayed on or NULL to return a count
+	 * @return	string|int|null
+	 */
+	public function findByIp( string $ip, ?Url $baseUrl = NULL ): string|int|null
+	{
+		/* Return count */
+		if ( $baseUrl === NULL )
+		{
+			return Db::i()->select( 'COUNT(*)', 'database_table_name', array( "ip_address LIKE ?", $ip ) )->first();
+		}
+		
+		/* Init Table */
+		// Replace database_table_name with the database table
+		$table = new TableDb( 'database_table_name', $baseUrl, array( "ip_address LIKE ?", $ip ) );
+		
+		/* Return */
+		return (string) $table;
+	}
+	
+	/**
+	 * Find IPs by Member
+	 *
+	 * @code
+	 	return array(
+	 		'::1' => array(
+	 			'ip'		=> '::1'// string (IP Address)
+		 		'count'		=> ...	// int (number of times this member has used this IP)
+		 		'first'		=> ... 	// int (timestamp of first use)
+		 		'last'		=> ... 	// int (timestamp of most recent use)
+		 	),
+		 	...
+	 	);
+	 * @endcode
+	 * @param	MemberClass	$member	The member
+	 * @return	array|Select
+	 */
+	public function findByMember( MemberClass $member ): array|Select
+	{
+		return array();
+	}	
+}

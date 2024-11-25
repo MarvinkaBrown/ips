@@ -1,0 +1,130 @@
+<?php
+/**
+ * @brief		Community Enhancements
+ * @author		<a href='https://www.invisioncommunity.com'>Invision Power Services, Inc.</a>
+ * @copyright	(c) Invision Power Services, Inc.
+ * @license		https://www.invisioncommunity.com/legal/standards/
+ * @package		Invision Community
+{subpackage}
+ * @since		{date}
+ */
+
+namespace IPS\{app}\extensions\core\CommunityEnhancements;
+
+/* To prevent PHP errors (extending class does not exist) revealing path */
+
+use IPS\Extensions\CommunityEnhancementsAbstract;
+use IPS\Helpers\Form;
+use IPS\Http\Url;
+use IPS\Member as MemberClass;
+use IPS\Output;
+use IPS\Theme;
+use IPS\Settings;
+use LogicException;
+use function defined;
+
+if ( !defined( '\IPS\SUITE_UNIQUE_KEY' ) )
+{
+	header( ( $_SERVER['SERVER_PROTOCOL'] ?? 'HTTP/1.0' ) . ' 403 Forbidden' );
+	exit;
+}
+
+/**
+ * Community Enhancement
+ */
+class {class} extends CommunityEnhancementsAbstract
+{
+	/**
+	 * @brief	Enhancement is enabled?
+	 */
+	public bool $enabled	= FALSE;
+
+	/**
+	 * @brief	IPS-provided enhancement?
+	 */
+	public bool $ips	= FALSE;
+
+	/**
+	 * @brief	Enhancement has configuration options?
+	 */
+	public bool $hasOptions	= TRUE;
+
+	/**
+	 * @brief	Icon data
+	 */
+	public string $icon	= "";
+	
+	/**
+	 * Constructor
+	 *
+	 * @return	void
+	 */
+	public function __construct()
+	{
+		//$this->enabled = Settings::i()->xxxxxx;
+	}
+	
+	/**
+	 * Edit
+	 *
+	 * @return	void
+	 */
+	public function edit() : void
+	{
+		$form = new Form;
+		//$form->add( ... );
+		if ( $form->values() )
+		{
+			try
+			{
+				$this->testSettings();
+				$form->saveAsSettings();
+
+				Output::i()->inlineMessage	= MemberClass::loggedIn()->language()->addToStack('saved');
+			}
+			catch ( LogicException $e )
+			{
+				$form->error = $e->getMessage();
+			}
+		}
+		
+		Output::i()->sidebar['actions'] = array(
+			'help'	=> array(
+				'title'		=> 'help',
+				'icon'		=> 'question-circle',
+				'link'		=> Url::internal( "http://www.example.com" ),
+				'target'	=> '_blank'
+			),
+		);
+		
+		Output::i()->output = Theme::i()->getTemplate( 'global' )->block( 'enhancements__{app}_{class}', $form );
+	}
+	
+	/**
+	 * Enable/Disable
+	 *
+	 * @param	$enabled	bool	Enable/Disable
+	 * @return	void
+	 * @throws	LogicException
+	 */
+	public function toggle( bool $enabled ) : void
+	{
+		if ( $enabled )
+		{
+			$this->testSettings();
+		}
+		
+		//Settings::i()->changeValues( array( 'xxxxxx' => $enabled ) );
+	}
+	
+	/**
+	 * Test Settings
+	 *
+	 * @return	void
+	 * @throws	LogicException
+	 */
+	protected function testSettings() : void
+	{
+		throw new LogicException( 'error' );
+	}
+}

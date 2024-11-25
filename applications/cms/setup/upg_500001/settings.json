@@ -1,0 +1,11 @@
+{
+    "added": [],
+    "edited": [],
+    "removed": [
+        "cms_promote_cat",
+        "cms_promote_enabled",
+        "cms_promote_groups",
+        "cms_root_path",
+        "page_extension"
+    ]
+}

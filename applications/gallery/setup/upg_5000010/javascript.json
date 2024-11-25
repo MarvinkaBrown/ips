@@ -1,0 +1,15 @@
+{
+    "files": {
+        "added": [],
+        "edited": [
+            "gallery\/front\/controllers\/submit\/ips.submit.chooseCategory.js",
+            "gallery\/front\/templates\/ips.templates.submit.js"
+        ],
+        "removed": []
+    },
+    "orders": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

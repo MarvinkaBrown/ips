@@ -1,0 +1,32 @@
+{
+    "files": {
+        "added": [],
+        "edited": [
+            "global\/library\/app.js",
+            "global\/framework\/common\/ui\/ips.ui.autocomplete.js",
+            "global\/framework\/common\/ui\/ips.ui.editorv5.js",
+            "global\/framework\/common\/ui\/ips.ui.form.js",
+            "global\/framework\/common\/ui\/ips.ui.menu.js",
+            "global\/framework\/common\/ui\/ips.ui.tooltip.js",
+            "global\/framework\/common\/ui\/ips.ui.truncate.js",
+            "global\/framework\/common\/ui\/ips.ui.uploader.js",
+            "global\/framework\/common\/utils\/ips.utils.db.js",
+            "global\/framework\/common\/utils\/ips.utils.iconpicker.js",
+            "global\/framework\/common\/utils\/ips.utils.position.js",
+            "global\/front\/controllers\/core\/ips.core.comment.js",
+            "global\/front\/controllers\/core\/ips.core.commentFeed.js",
+            "core\/global\/controllers\/core\/ips.core.coverPhoto.js",
+            "core\/front\/controllers\/helpful\/ips.helpful.helpful.js",
+            "global\/framework\/controllers\/stockart\/ips.stockart.pixabay.js",
+            "core\/front\/controllers\/widgets\/ips.widgets.manager.js",
+            "global\/front\/mixins\/ips.core.table.js",
+            "global\/framework\/templates\/ips.core.templates.js"
+        ],
+        "removed": []
+    },
+    "orders": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

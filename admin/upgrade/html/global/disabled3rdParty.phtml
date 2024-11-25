@@ -1,0 +1,17 @@
+<ips:template parameters="$disabledApps, $showMessage=true" />
+<div class="i-padding_3 i-text-align_start ipsPos_center">
+    {{if $showMessage}}
+	    <p>{lang="third_party_stuff_disabled"}</p>
+    {{endif}}
+	{{if \count( $disabledApps )}}
+		<p>{lang="third_party_stuff_disabled_apps"}</p>
+		<ul class='ipsList_bullets i-text-align_start'>
+			{{foreach $disabledApps as $app}}
+				<li>{$app}</li>
+			{{endforeach}}
+		</ul>
+	{{endif}}
+    {{if $showMessage}}
+	    <p>{lang="third_party_stuff_disabled_end"}</p>
+    {{endif}}
+</div>

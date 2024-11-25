@@ -1,0 +1,17 @@
+{
+    "added": [
+        "forums_helpful_highlight",
+        "forums_solved_nudge_experts",
+        "forums_topic_summary_post_count"
+    ],
+    "edited": [],
+    "removed": [
+        "forums_answers_downvote",
+        "forums_default_view",
+        "forums_default_view_choose",
+        "forums_new_questions",
+        "forums_questions_downvote",
+        "forums_view_list_choose",
+        "forums_view_list_method"
+    ]
+}

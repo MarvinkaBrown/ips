@@ -1,0 +1,38 @@
+{
+    "1": {
+        "method": "addColumn",
+        "params": [
+            "core_advertisements",
+            {
+                "name": "ad_daily_impressions",
+                "type": "BIGINT",
+                "length": null,
+                "decimals": null,
+                "values": null,
+                "allow_null": false,
+                "default": 0,
+                "comment": "",
+                "unsigned": true,
+                "auto_increment": false
+            }
+        ]
+    },
+    "2": {
+        "method": "addColumn",
+        "params": [
+            "core_pfields_data",
+            {
+                "name": "pf_contains_pii",
+                "type": "TINYINT",
+                "length": null,
+                "decimals": null,
+                "values": null,
+                "allow_null": false,
+                "default": 0,
+                "comment": "Can be used to use it while the pii data export",
+                "unsigned": false,
+                "auto_increment": false
+            }
+        ]
+    }
+}

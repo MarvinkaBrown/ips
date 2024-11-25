@@ -1,0 +1,140 @@
+{
+    "core": {
+        "AchievementAction": {
+            "Donation": "IPS\\nexus\\extensions\\core\\AchievementAction\\Donation",
+            "Package": "IPS\\nexus\\extensions\\core\\AchievementAction\\Package",
+            "Subscription": "IPS\\nexus\\extensions\\core\\AchievementAction\\Subscription"
+        },
+        "AdminNotifications": {
+            "Advertisement": "IPS\\nexus\\extensions\\core\\AdminNotifications\\Advertisement",
+            "ConfigurationError": "IPS\\nexus\\extensions\\core\\AdminNotifications\\ConfigurationError",
+            "Maxmind": "IPS\\nexus\\extensions\\core\\AdminNotifications\\Maxmind",
+            "Transaction": "IPS\\nexus\\extensions\\core\\AdminNotifications\\Transaction",
+            "Withdrawal": "IPS\\nexus\\extensions\\core\\AdminNotifications\\Withdrawal"
+        },
+        "CommunityEnhancements": {
+            "MaxMind": "IPS\\nexus\\extensions\\core\\CommunityEnhancements\\MaxMind"
+        },
+        "ContentRouter": {
+            "Reviews": "IPS\\nexus\\extensions\\core\\ContentRouter\\Reviews"
+        },
+        "Dashboard": {
+            "Income": "IPS\\nexus\\extensions\\core\\Dashboard\\Income",
+            "PendingActions": "IPS\\nexus\\extensions\\core\\Dashboard\\PendingActions"
+        },
+        "EditorLocations": {
+            "Admin": "IPS\\nexus\\extensions\\core\\EditorLocations\\Admin",
+            "Customer": "IPS\\nexus\\extensions\\core\\EditorLocations\\Customer",
+            "Purchases": "IPS\\nexus\\extensions\\core\\EditorLocations\\Purchases",
+            "Store": "IPS\\nexus\\extensions\\core\\EditorLocations\\Store"
+        },
+        "FileStorage": {
+            "Ads": "IPS\\nexus\\extensions\\core\\FileStorage\\Ads",
+            "Customer": "IPS\\nexus\\extensions\\core\\FileStorage\\Customer",
+            "Gateways": "IPS\\nexus\\extensions\\core\\FileStorage\\Gateways",
+            "PackageGroups": "IPS\\nexus\\extensions\\core\\FileStorage\\PackageGroups",
+            "Products": "IPS\\nexus\\extensions\\core\\FileStorage\\Products",
+            "PurchaseFields": "IPS\\nexus\\extensions\\core\\FileStorage\\PurchaseFields"
+        },
+        "FrontNavigation": {
+            "Addresses": "IPS\\nexus\\extensions\\core\\FrontNavigation\\Addresses",
+            "Alternatives": "IPS\\nexus\\extensions\\core\\FrontNavigation\\Alternatives",
+            "BillingAgreements": "IPS\\nexus\\extensions\\core\\FrontNavigation\\BillingAgreements",
+            "Cards": "IPS\\nexus\\extensions\\core\\FrontNavigation\\Cards",
+            "Credit": "IPS\\nexus\\extensions\\core\\FrontNavigation\\Credit",
+            "Donations": "IPS\\nexus\\extensions\\core\\FrontNavigation\\Donations",
+            "Gifts": "IPS\\nexus\\extensions\\core\\FrontNavigation\\Gifts",
+            "Info": "IPS\\nexus\\extensions\\core\\FrontNavigation\\Info",
+            "Orders": "IPS\\nexus\\extensions\\core\\FrontNavigation\\Orders",
+            "Purchases": "IPS\\nexus\\extensions\\core\\FrontNavigation\\Purchases",
+            "Store": "IPS\\nexus\\extensions\\core\\FrontNavigation\\Store",
+            "Subscriptions": "IPS\\nexus\\extensions\\core\\FrontNavigation\\Subscriptions"
+        },
+        "GroupForm": {
+            "PreventDeletion": "IPS\\nexus\\extensions\\core\\GroupForm\\PreventDeletion"
+        },
+        "IpAddresses": {
+            "Payouts": "IPS\\nexus\\extensions\\core\\IpAddresses\\Payouts",
+            "Transactions": "IPS\\nexus\\extensions\\core\\IpAddresses\\Transactions"
+        },
+        "LiveSearch": {
+            "Nexus": "IPS\\nexus\\extensions\\core\\LiveSearch\\Nexus"
+        },
+        "MFAArea": {
+            "AccountCredit": "IPS\\nexus\\extensions\\core\\MFAArea\\AccountCredit",
+            "Addresses": "IPS\\nexus\\extensions\\core\\MFAArea\\Addresses",
+            "Alternatives": "IPS\\nexus\\extensions\\core\\MFAArea\\Alternatives",
+            "BillingAgreements": "IPS\\nexus\\extensions\\core\\MFAArea\\BillingAgreements",
+            "BillingInfo": "IPS\\nexus\\extensions\\core\\MFAArea\\BillingInfo",
+            "Cards": "IPS\\nexus\\extensions\\core\\MFAArea\\Cards"
+        },
+        "MemberACPProfileBlocks": {
+            "AccountInformation": "IPS\\nexus\\extensions\\core\\MemberACPProfileBlocks\\AccountInformation",
+            "Invoices": "IPS\\nexus\\extensions\\core\\MemberACPProfileBlocks\\Invoices",
+            "Notes": "IPS\\nexus\\extensions\\core\\MemberACPProfileBlocks\\Notes",
+            "ParentAccounts": "IPS\\nexus\\extensions\\core\\MemberACPProfileBlocks\\ParentAccounts",
+            "Purchases": "IPS\\nexus\\extensions\\core\\MemberACPProfileBlocks\\Purchases",
+            "Statistics": "IPS\\nexus\\extensions\\core\\MemberACPProfileBlocks\\Statistics"
+        },
+        "MemberACPProfileTabs": {
+            "Main": "IPS\\nexus\\extensions\\core\\MemberACPProfileTabs\\Main"
+        },
+        "MemberExportPersonalInformation": {
+            "Customer": "IPS\\nexus\\extensions\\core\\MemberExportPersonalInformation\\Customer"
+        },
+        "MemberFilter": {
+            "Donations": "IPS\\nexus\\extensions\\core\\MemberFilter\\Donations",
+            "Purchases": "IPS\\nexus\\extensions\\core\\MemberFilter\\Purchases",
+            "Subscriptions": "IPS\\nexus\\extensions\\core\\MemberFilter\\Subscriptions",
+            "TotalSpend": "IPS\\nexus\\extensions\\core\\MemberFilter\\TotalSpend"
+        },
+        "MemberHistory": {
+            "Nexus": "IPS\\nexus\\extensions\\core\\MemberHistory\\Nexus"
+        },
+        "OutputPlugins": {
+            "Money": "IPS\\nexus\\extensions\\core\\OutputPlugins\\Money"
+        },
+        "OverviewStatistics": {
+            "Products": "IPS\\nexus\\extensions\\core\\OverviewStatistics\\Products",
+            "Subscriptions": "IPS\\nexus\\extensions\\core\\OverviewStatistics\\Subscriptions"
+        },
+        "ProfileSteps": {
+            "CustomerFields": "IPS\\nexus\\extensions\\core\\ProfileSteps\\CustomerFields"
+        },
+        "Queue": {
+            "DeletePaymentMethod": "IPS\\nexus\\extensions\\core\\Queue\\DeletePaymentMethod",
+            "DeleteSubscriptions": "IPS\\nexus\\extensions\\core\\Queue\\DeleteSubscriptions",
+            "FixMissingSubscriptionPurchases": "IPS\\nexus\\extensions\\core\\Queue\\FixMissingSubscriptionPurchases",
+            "MassChangePurchases": "IPS\\nexus\\extensions\\core\\Queue\\MassChangePurchases",
+            "RecountTotalSpend": "IPS\\nexus\\extensions\\core\\Queue\\RecountTotalSpend"
+        },
+        "SearchContent": {
+            "Packages": "IPS\\nexus\\extensions\\core\\SearchContent\\Packages"
+        },
+        "Statistics": {
+            "Income": "IPS\\nexus\\extensions\\core\\Statistics\\Income",
+            "Market": "IPS\\nexus\\extensions\\core\\Statistics\\Market",
+            "Sales": "IPS\\nexus\\extensions\\core\\Statistics\\Sales"
+        },
+        "Uninstall": {
+            "DisablePOP": "IPS\\nexus\\extensions\\core\\Uninstall\\DisablePOP"
+        },
+        "UserMenu": {
+            "Store": "IPS\\nexus\\extensions\\core\\UserMenu\\Store"
+        }
+    },
+    "nexus": {
+        "Item": {
+            "AccountCreditIncrease": "IPS\\nexus\\extensions\\nexus\\Item\\AccountCreditIncrease",
+            "CouponDiscount": "IPS\\nexus\\extensions\\nexus\\Item\\CouponDiscount",
+            "CustomPackage": "IPS\\nexus\\extensions\\nexus\\Item\\CustomPackage",
+            "Donation": "IPS\\nexus\\extensions\\nexus\\Item\\Donation",
+            "GiftVoucher": "IPS\\nexus\\extensions\\nexus\\Item\\GiftVoucher",
+            "MiscellaneousCharge": "IPS\\nexus\\extensions\\nexus\\Item\\MiscellaneousCharge",
+            "Package": "IPS\\nexus\\extensions\\nexus\\Item\\Package",
+            "Subscription": "IPS\\nexus\\extensions\\nexus\\Item\\Subscription",
+            "SubscriptionUpgrade": "IPS\\nexus\\extensions\\nexus\\Item\\SubscriptionUpgrade",
+            "UpgradeCharge": "IPS\\nexus\\extensions\\nexus\\Item\\UpgradeCharge"
+        }
+    }
+}

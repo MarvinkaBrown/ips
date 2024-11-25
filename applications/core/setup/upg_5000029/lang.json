@@ -1,0 +1,17 @@
+{
+    "normal": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    },
+    "js": {
+        "added": [
+            "core_pagebuilder_wrap__minimal-carousel"
+        ],
+        "edited": [
+            "core_pagebuilder_wrap__mini-grid",
+            "core_pagebuilder_wrap__mini-grid-carousel"
+        ],
+        "removed": []
+    }
+}

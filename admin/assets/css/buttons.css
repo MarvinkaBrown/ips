@@ -1,0 +1,71 @@
+.ipsButtons{
+	display: flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	justify-content: center;
+}
+
+/* Base button style */
+.ipsButton {
+	--_co: currentcolor;
+	background: #c0ccdb;
+	background: color-mix(in srgb, var(--_co) 15%, transparent);
+	text-align: center;
+	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	gap: .8em;
+	vertical-align: middle;
+	padding: .8em 1.7em;
+	font-weight: 600;
+	border-radius: 5px;
+	cursor: pointer;
+	color: inherit;
+	position: relative;
+}
+
+	.ipsButton:hover {
+		background: color-mix(in srgb, var(--_co) 22%, transparent);
+	}
+
+	.ipsButton:active {
+		top: 1px;
+	}
+
+/* BUTTON STYLES */
+.ipsButton--primary {
+	background: var(--i-primary);
+	color: var(--i-primary-contrast);
+}
+
+	.ipsButton--primary:hover {
+		background: color-mix(in srgb, var(--i-primary), #fff 15%);
+	}
+
+/* Link button - works like a button, but looks like text */
+.ipsButton--text {
+	background: transparent;
+	color: inherit;
+	border: 1px solid transparent;
+	font-weight: normal;
+}
+
+	.ipsButton--text:active {
+		border: 0;
+		box-shadow: none;
+		background-image: none;
+	}
+
+/* BUTTON STATES */
+.ipsButton:disabled {
+	opacity: .6;
+	font-style: italic;
+	cursor: default;
+}
+
+.ipsButton svg{
+	height: .9em;
+	width: auto;
+	fill: currentColor;
+	opacity: .8;
+}

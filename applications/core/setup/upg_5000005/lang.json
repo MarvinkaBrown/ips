@@ -1,0 +1,34 @@
+{
+    "normal": {
+        "added": [
+            "widget_ad_package",
+            "widget_ad_package_desc",
+            "widget_ad_limit",
+            "alert_response_prefix",
+            "acpsearch_group_formatting_type",
+            "acpsearch__core_activitystats_emailstats",
+            "acpsearch__core_activitystats_overview",
+            "acpsearch__core_stats_overview",
+            "acpsearch__core_stats_badges",
+            "acpsearch__core_stats_spam",
+            "acpsearch__core_stats_warnings",
+            "acpsearch__core_clubs_fields",
+            "dev_widget_default_layout",
+            "devscan__dupe_search_keywords",
+            "devscan__dupe_search_keywords_title"
+        ],
+        "edited": [
+            "byline",
+            "ad_location_desc"
+        ],
+        "removed": []
+    },
+    "js": {
+        "added": [
+            "moderator_alert_reply_ready",
+            "moderator_alert_reply_view"
+        ],
+        "edited": [],
+        "removed": []
+    }
+}

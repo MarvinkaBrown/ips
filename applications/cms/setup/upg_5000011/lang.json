@@ -1,0 +1,18 @@
+{
+    "normal": {
+        "added": [
+            "cms_db_feed_block_with_name_desc",
+            "cms_rf_database_description"
+        ],
+        "edited": [
+            "cms_show_categories",
+            "cms_widget_filters_remember_text"
+        ],
+        "removed": []
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

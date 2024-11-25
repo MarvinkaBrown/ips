@@ -1,0 +1,21 @@
+{
+    "normal": {
+        "added": [
+            "byline_name_date",
+            "acp_badge_unknown"
+        ],
+        "edited": [],
+        "removed": [
+            "page_editor_cta"
+        ]
+    },
+    "js": {
+        "added": [
+            "page_editor_cta"
+        ],
+        "edited": [
+            "quote"
+        ],
+        "removed": []
+    }
+}

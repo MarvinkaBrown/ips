@@ -1,0 +1,17 @@
+<ips:template parameters="$langKey, $element, $desc, $warning, $required = FALSE, $error=NULL, $prefix=NULL, $suffix=NULL, $id=NULL, $object=NULL, $form=NULL" />
+<li {{if $id !== NULL}}id="{$id}"{{endif}} class='ipsFieldRow'>
+	<div class='ipsFieldRow__label {{if $error}}error{{endif}}'>
+		{lang="$langKey"} {{if $required}}<span class='ipsFieldRow__required'>{lang="required"}</span>{{endif}}
+	</div>
+		{$prefix|raw}
+		{$element|raw}
+		{$suffix|raw}
+		{$desc|raw}
+		{$warning|raw}
+		{{if $error}}
+			<div class='ipsFieldRow__warning'>{lang="$error"}</div>
+		{{else}}
+			<div class='ipsFieldRow__warning'></div>
+		{{endif}}
+	
+</li>

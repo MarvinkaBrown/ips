@@ -1,0 +1,67 @@
+<?php
+/**
+ * @brief		Background Task
+ * @author		<a href='https://www.invisioncommunity.com'>Invision Power Services, Inc.</a>
+ * @copyright	(c) Invision Power Services, Inc.
+ * @license		https://www.invisioncommunity.com/legal/standards/
+ * @package		Invision Community
+{subpackage}
+ * @since		{date}
+ */
+
+namespace IPS\{app}\extensions\core\Queue;
+
+use IPS\Extensions\QueueAbstract;
+use IPS\Task\Queue\OutOfRangeException as QueueOutOfRangeException;
+use OutOfRangeException;
+use function defined;
+
+/* To prevent PHP errors (extending class does not exist) revealing path */
+if ( !defined( '\IPS\SUITE_UNIQUE_KEY' ) )
+{
+	header( ( $_SERVER['SERVER_PROTOCOL'] ?? 'HTTP/1.0' ) . ' 403 Forbidden' );
+	exit;
+}
+
+/**
+ * Background Task
+ */
+class {class} extends QueueAbstract
+{
+	/**
+	 * Parse data before queuing
+	 *
+	 * @param	array	$data
+	 * @return	array|null
+	 */
+	public function preQueueData( array $data ): ?array
+	{
+		return $data;
+	}
+
+	/**
+	 * Run Background Task
+	 *
+	 * @param	array						$data	Data as it was passed to \IPS\Task::queue()
+	 * @param	int							$offset	Offset
+	 * @return	int							New offset
+	 * @throws	QueueOutOfRangeException	        Indicates offset doesn't exist and thus task is complete
+	 */
+	public function run( array &$data, int $offset ): int
+	{
+		return $offset;
+	}
+	
+	/**
+	 * Get Progress
+	 *
+	 * @param	array					$data	Data as it was passed to \IPS\Task::queue()
+	 * @param	int						$offset	Offset
+	 * @return	array( 'text' => 'Doing something...', 'complete' => 50 )	Text explaining task and percentage complete
+	 * @throws	OutOfRangeException	Indicates offset doesn't exist and thus task is complete
+	 */
+	public function getProgress( array $data, int $offset ): array
+	{
+		return array( 'text' => 'Doing something...', 'complete' => 50 );
+	}
+}

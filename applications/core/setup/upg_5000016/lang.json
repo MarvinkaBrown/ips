@@ -1,0 +1,30 @@
+{
+    "normal": {
+        "added": [
+            "follows",
+            "g_view_followers",
+            "empty_perms_no_apps",
+            "editor_r__external_media",
+            "editor_r__external_media__desc",
+            "editor_r__external_video",
+            "editor_r__external_video__desc",
+            "perm_club_field_perm__label",
+            "perm_club_field_perm__view",
+            "perm_club_field_perm__edit",
+            "dev_acpsearch_controller_desc"
+        ],
+        "edited": [
+            "editor_r__external_image",
+            "editor_r__external_image__desc",
+            "dev_acpsearch_controller"
+        ],
+        "removed": []
+    },
+    "js": {
+        "added": [
+            "edit_show_more"
+        ],
+        "edited": [],
+        "removed": []
+    }
+}

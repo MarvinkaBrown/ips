@@ -1,0 +1,24 @@
+{
+    "html": {
+        "added": [],
+        "edited": [
+            "admin\/customers\/accountInformation",
+            "admin\/customers\/purchases",
+            "admin\/invoices\/view",
+            "admin\/purchases\/advertisement"
+        ],
+        "removed": []
+    },
+    "css": {
+        "added": [],
+        "edited": [
+            "admin\/customer.css"
+        ],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

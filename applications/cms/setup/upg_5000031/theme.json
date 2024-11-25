@@ -1,0 +1,25 @@
+{
+    "html": {
+        "added": [],
+        "edited": [
+            "admin\/media\/media",
+            "front\/submit\/createRecordForm",
+            "admin\/templates\/editor",
+            "admin\/templates\/templates",
+            "front\/widgets\/pagebuilderupload"
+        ],
+        "removed": []
+    },
+    "css": {
+        "added": [],
+        "edited": [
+            "admin\/templates\/templates.css"
+        ],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

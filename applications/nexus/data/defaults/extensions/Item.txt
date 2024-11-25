@@ -1,0 +1,88 @@
+<?php
+/**
+ * @brief		{class}
+ * @author		<a href='https://www.invisioncommunity.com'>Invision Power Services, Inc.</a>
+ * @copyright	(c) Invision Power Services, Inc.
+ * @license		https://www.invisioncommunity.com/legal/standards/
+ * @package		Invision Community
+{subpackage}
+ * @since		{date}
+ */
+
+namespace IPS\{app}\extensions\nexus\Item;
+
+/* To prevent PHP errors (extending class does not exist) revealing path */
+
+use IPS\Helpers\Form;
+use IPS\nexus\Invoice;
+use IPS\nexus\Invoice\Item;
+use function defined;
+
+if ( !defined( '\IPS\SUITE_UNIQUE_KEY' ) )
+{
+	header( ( $_SERVER['SERVER_PROTOCOL'] ?? 'HTTP/1.0' ) . ' 403 Forbidden' );
+	exit;
+}
+
+/**
+ * {class}
+ */
+class {class} extends Item\{itemType}
+{
+	/**
+	 * @brief	Application
+	 */
+	public static string $application = '{app}';
+	
+	/**
+	 * @brief	Application
+	 */
+	public static string $type = '{type}';
+	
+	/**
+	 * @brief	Icon
+	 */
+	public static string $icon = '';
+	
+	/**
+	 * @brief	Title
+	 */
+	public static string $title = '';
+	
+	/**
+	 * Generate Invoice Form
+	 *
+	 * @param	Form	$form		The form
+	 * @param	Invoice	$invoice	The invoice
+	 * @return	void
+	 */
+	public static function form( Form $form, Invoice $invoice ) : void
+	{
+		
+	}
+	
+	/**
+	 * Create From Form
+	 *
+	 * @param	array				$values	Values from form
+	 * @param	Invoice	$invoice	The invoice
+	 * @return	static
+	 */
+	public static function createFromForm( array $values, Invoice $invoice ) : static
+	{		
+		
+	}
+	
+	/**
+	 * On Paid
+	 *
+	 * @param	Invoice	$invoice	The invoice
+	 * @return	void
+	 */
+	public function onPaid( Invoice $invoice ): void
+	{
+		
+	}
+	
+	// Other actions available. See the class you are extending for more information
+}

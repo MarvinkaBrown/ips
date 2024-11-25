@@ -1,0 +1,22 @@
+{
+    "html": {
+        "added": [],
+        "edited": [
+            "front\/widgets\/donations",
+            "front\/widgets\/pendingActions",
+            "front\/widgets\/recentCommerceReviews",
+            "front\/widgets\/subscriptions"
+        ],
+        "removed": []
+    },
+    "css": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

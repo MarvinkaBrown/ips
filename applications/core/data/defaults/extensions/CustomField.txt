@@ -1,0 +1,79 @@
+<?php
+/**
+ * @brief		Custom Field Extension
+ * @author		<a href='https://www.invisioncommunity.com'>Invision Power Services, Inc.</a>
+ * @copyright	(c) Invision Power Services, Inc.
+ * @license		https://www.invisioncommunity.com/legal/standards/
+{subpackage}
+ * @since		{date}
+ */
+
+namespace IPS\{app}\extensions\core\CustomField;
+
+/* To prevent PHP errors (extending class does not exist) revealing path */
+
+use IPS\CustomField;
+use IPS\Extensions\CustomFieldAbstract;
+use IPS\Helpers\Form;
+
+if ( !defined( '\IPS\SUITE_UNIQUE_KEY' ) )
+{
+	header( ( $_SERVER['SERVER_PROTOCOL'] ?? 'HTTP/1.0' ) . ' 403 Forbidden' );
+	exit;
+}
+
+/**
+ * CustomField Extension
+ */
+class {class} extends CustomFieldAbstract
+{
+	/**
+	 * The value that will be used for the "field type"
+	 * This must be unique
+	 *
+	 * @return string
+	 */
+	public static function fieldType() : string
+	{
+	    return '';
+	}
+
+	/**
+	 * Language string for the title of the field type.
+	 * Will be displayed in the "Field Type" dropdown list when
+	 * creating a custom field
+	 *
+	 * @return string
+	 */
+	public static function fieldTypeTitle() : string
+	{
+	    return '';
+	}
+
+	/**
+	 * The class that should be called to render the field
+	 * in a form. This class should extend FormAbstract (or an existing field)
+	 * @see CustomField::buildHelper()
+	 *
+	 * @return string
+	 */
+	public static function formClass() : string
+	{
+	    return '';
+	}
+
+	/**
+	 * Display Value
+	 * @see CustomField::displayValue()
+	 *
+	 * @param CustomField $field
+	 * @param mixed|null $value The value
+	 * @param bool $showSensitiveInformation If TRUE, potentially sensitive data (like passwords) will be displayed - otherwise will be blanked out
+	 * @param string|null $separator Used to separate items when displaying a field with multiple values.
+	 * @return string|null
+	 */
+	public static function displayValue( CustomField $field, mixed $value=NULL, bool $showSensitiveInformation=FALSE, string $separator=NULL ): ?string
+	{
+	    return $value;
+	}
+}

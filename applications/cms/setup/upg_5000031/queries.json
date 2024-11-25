@@ -1,0 +1,9 @@
+{
+    "1": {
+        "method": "dropColumn",
+        "params": [
+            "cms_pages",
+            "page_show_sidebar"
+        ]
+    }
+}

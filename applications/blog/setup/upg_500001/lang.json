@@ -1,0 +1,21 @@
+{
+    "normal": {
+        "added": [
+            "modlog__action_delete_blog_stats",
+            "latest_entry_by",
+            "can_view_reports_blog_entry"
+        ],
+        "edited": [
+            "entry_actions",
+            "blog_comments",
+            "blog_entries",
+            "blog_views"
+        ],
+        "removed": []
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

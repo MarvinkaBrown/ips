@@ -1,0 +1,17 @@
+<ips:template parameters="$apps, $selected" />
+<input type="hidden" name="apps[core]" value="1">
+<ul class='ipsFieldList'>
+{{foreach $apps as $key => $data}}
+	<li>
+		<input type="checkbox" id='app_{$key}' {{if $key !== 'core'}}name="apps[{$key}]"{{endif}} {{if \in_array( $key, $selected )}}checked{{endif}} {{if $data['disabled']}}disabled{{endif}} value='1'>
+		<div class='ipsFieldList__content'>
+			<label for='app_{$key}' class='ipsFieldRow__label'>{$data['name']}</label>
+			{{if !empty( $data['errors'] )}}
+				<p class="ipsMessage ipsMessage--error">
+					{expression="implode( '<br />', $data['errors'] )" raw="true"}
+				</p>
+			{{endif}}
+		</div>
+	</li>
+{{endforeach}}
+</ul>

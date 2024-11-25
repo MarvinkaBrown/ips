@@ -1,0 +1,68 @@
+.ipsMessage {
+	padding: 1em;
+	padding-inline-start: 3em;
+	border-radius: 5px;
+	position: relative;
+	margin-bottom: 1em;
+	color: #fff;
+	font-weight: 500;
+	font-size: .9em;
+}
+
+	.ipsMessage::before {
+		font-family: 'Font Awesome 6 Free';
+		font-weight: 900;
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		text-rendering: auto;
+		position: absolute;
+		top: 1em;
+		inset-inline-start: 1em;
+	}
+
+.ipsMessage--form{
+	margin: 1em;
+}
+
+.ipsMessage--error {
+	background: #b52b38;
+}
+
+	.ipsMessage--error::before {
+		content: '\f06a';
+	}
+
+.ipsMessage--success {
+	background: #53902f;
+}
+
+	.ipsMessage--success::before {
+		content: '\f00c';
+	}
+
+.ipsMessage--warning {
+	background: #c48712;
+}
+
+	.ipsMessage--warning::before {
+		content: '\f071';
+	}
+
+.ipsMessage--info {
+	background: #447a9a;
+}
+
+	.ipsMessage--info::before {
+		content: '\f05a';
+	}
+
+.ipsMessage--code {
+	padding: 7px;
+	display: inline-block;
+	background: rgba(0,0,0,0.2);
+	border-radius: 5px;
+	float: right;
+	margin-top: -7px;
+	margin-right: -7px;
+	color: rgba(255,255,255,0.8);
+}

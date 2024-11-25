@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/applications" isTestSource="false" packagePrefix="IPS" />
+      <sourceFolder url="file://$MODULE_DIR$/applications/blog/sources" isTestSource="false" packagePrefix="IPS" />
+      <sourceFolder url="file://$MODULE_DIR$/applications/calendar/sources" isTestSource="false" packagePrefix="IPS" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

@@ -1,0 +1,10 @@
+{
+    "added": [],
+    "edited": [],
+    "removed": [
+        "app=gallery&module=gallery&controller=categories&searchResult=category_can_tag",
+        "app=gallery&module=gallery&controller=categories&searchResult=category_tag_prefixes",
+        "app=gallery&module=gallery&controller=categories&subnode=0&parent=1&searchResult=category_can_tag",
+        "app=gallery&module=gallery&controller=categories&subnode=0&parent=1&searchResult=category_tag_prefixes"
+    ]
+}

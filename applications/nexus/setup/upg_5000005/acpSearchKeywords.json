@@ -1,0 +1,12 @@
+{
+    "added": [],
+    "edited": [
+        "app=nexus&module=customers&controller=fields",
+        "app=nexus&module=payments&controller=payouts&do=settings",
+        "app=nexus&module=store&controller=fields",
+        "app=nexus&module=payments&controller=paymentsettings",
+        "app=nexus&module=store&controller=settings",
+        "app=nexus&module=reports&controller=donations"
+    ],
+    "removed": []
+}

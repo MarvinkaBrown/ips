@@ -1,0 +1,77 @@
+<?php
+/**
+ * @brief		Front Navigation Extension: {class}
+ * @author		<a href='https://www.invisioncommunity.com'>Invision Power Services, Inc.</a>
+ * @copyright	(c) Invision Power Services, Inc.
+ * @license		https://www.invisioncommunity.com/legal/standards/
+ * @package		Invision Community
+{subpackage}
+ * @since		{date}
+ */
+
+namespace IPS\{app}\extensions\core\FrontNavigation;
+
+/* To prevent PHP errors (extending class does not exist) revealing path */
+
+use IPS\core\FrontNavigation\FrontNavigationAbstract;
+use IPS\Dispatcher;
+use IPS\Http\Url;
+use IPS\Member as MemberClass;
+use function defined;
+
+if ( !defined( '\IPS\SUITE_UNIQUE_KEY' ) )
+{
+	header( ( $_SERVER['SERVER_PROTOCOL'] ?? 'HTTP/1.0' ) . ' 403 Forbidden' );
+	exit;
+}
+
+/**
+ * Front Navigation Extension: {class}
+ */
+class {class} extends FrontNavigationAbstract
+{
+	/**
+	 * @var string Default icon
+	 */
+	public string $defaultIcon = '\f15c';
+
+	/**
+	 * Get Type Title which will display in the AdminCP Menu Manager
+	 *
+	 * @return	string
+	 */
+	public static function typeTitle(): string
+	{
+		return MemberClass::loggedIn()->language()->addToStack('frontnavigation_{app}');
+	}
+
+	/**
+	 * Get Title
+	 *
+	 * @return	string
+	 */
+	public function title(): string
+	{
+		return MemberClass::loggedIn()->language()->addToStack('frontnavigation_{app}');
+	}
+
+	/**
+	 * Get Link
+	 *
+	 * @return	Url
+	 */
+	public function link(): Url
+	{
+		return Url::internal( "app={app}" );
+	}
+
+	/**
+	 * Is Active?
+	 *
+	 * @return	bool
+	 */
+	public function active(): bool
+	{
+		return Dispatcher::i()->application->directory === '{app}';
+	}
+}

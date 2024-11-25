@@ -1,0 +1,23 @@
+{
+    "normal": {
+        "added": [
+            "emailtpl_account_deletion_confirmation",
+            "emailtpl_acp_notification_AccountDeletion",
+            "emailtpl_acp_notification_PiiDataRequest",
+            "emailtpl_notification_account_del_request_rejected",
+            "emailtpl_notification_pii_data",
+            "emailtpl_notification_pii_data_rejected",
+            "emailtpl_contact_verify",
+            "devscan__strings_emails",
+            "devscan__strings_filestorage",
+            "filestorage__core_Tags"
+        ],
+        "edited": [],
+        "removed": []
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

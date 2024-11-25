@@ -1,0 +1,15 @@
+{
+    "normal": {
+        "added": [
+            "forum_post_use_minimal_editor",
+            "forum_post_use_minimal_editor_desc"
+        ],
+        "edited": [],
+        "removed": []
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

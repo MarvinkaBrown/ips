@@ -1,0 +1,48 @@
+{
+    "normal": {
+        "added": [
+            "g_topic_rate_setting",
+            "g_topic_rate_change",
+            "announce_hide"
+        ],
+        "edited": [
+            "admin_csrf_error",
+            "acp_indev_on_blurb",
+            "download_upgrade_initial_resource_explain",
+            "task_manager_app",
+            "task__updatecheck",
+            "dashboard_tasks_broken_desc_thirdparty",
+            "support_third_party_blurb",
+            "support_third_party_apps_count",
+            "method_issue_security_desc",
+            "method_issue_final_desc",
+            "method_issue_parameters_desc",
+            "advise_removal_of_php8_incompatible_code"
+        ],
+        "removed": [
+            "r__plugins",
+            "r__plugins_manage",
+            "lang_word_plugin",
+            "support_third_party_plugins",
+            "support_third_party_no_plugins",
+            "support_third_party_plugins_link",
+            "support_third_party_plugins_enable",
+            "support_third_party_plugins_reenabled",
+            "acplog__support_tool_plugins_disabled",
+            "acplog__support_tool_plugins_enabled",
+            "disabled_plugins",
+            "recovery_plugins_disabled",
+            "health__thirdparty_hooks",
+            "health__thirdparty_pluginupdates",
+            "dev_plugin_not_writable",
+            "app_details_plugins"
+        ]
+    },
+    "js": {
+        "added": [
+            "themeUnsavedContent"
+        ],
+        "edited": [],
+        "removed": []
+    }
+}

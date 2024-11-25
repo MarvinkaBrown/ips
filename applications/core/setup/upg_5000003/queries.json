@@ -1,0 +1,27 @@
+{
+    "1": {
+        "method": "delete",
+        "params": [
+            "core_sys_conf_settings",
+            "conf_key IN ('hive_enabled', 'hive_key', 'hive_site_id', 'hive_site_key','hive_content')"
+        ]
+    },
+    "2": {
+        "method": "delete",
+        "params": [
+            "core_modules",
+            [
+                "sys_module_application=? AND sys_module_key=?",
+                "core",
+                "hive"
+            ]
+        ]
+    },
+    "3": {
+        "method": "dropTable",
+        "params": [
+            "core_hive_subscribers",
+            true
+        ]
+    }
+}

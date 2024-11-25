@@ -1,0 +1,24 @@
+{
+    "normal": {
+        "added": [
+            "blog_view",
+            "blog_view_mode_table"
+        ],
+        "edited": [
+            "blog_view_mode_grid"
+        ],
+        "removed": [
+            "blog_allow_grid",
+            "blog_allow_grid_desc",
+            "blog_view_mode",
+            "blog_view_mode_grid_desc",
+            "blog_view_mode_list",
+            "blog_view_mode_list_desc"
+        ]
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

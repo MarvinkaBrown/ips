@@ -1,0 +1,42 @@
+<?php
+/**
+ * @brief		Package Listener
+ * @author		<a href='https://www.invisioncommunity.com'>Invision Power Services, Inc.</a>
+ * @copyright	(c) Invision Power Services, Inc.
+ * @license		https://www.invisioncommunity.com/legal/standards/
+ * @package		Invision Community
+{subpackage}
+ * @since		{date}
+ */
+
+namespace IPS\{app}\listeners;
+
+/* To prevent PHP errors (extending class does not exist) revealing path */
+
+use IPS\Db;
+use IPS\Events\ListenerType\PackageListenerType;
+use IPS\Member as MemberClass;
+use IPS\nexus\Invoice as InvoiceClass;
+use IPS\nexus\Invoice\Item as InvoiceItem;
+use IPS\nexus\Package as PackageClass;
+use IPS\nexus\Purchase as PurchaseClass;
+use IPS\nexus\Purchase\RenewalTerm;
+use function defined;
+
+if ( !defined( '\IPS\SUITE_UNIQUE_KEY' ) )
+{
+	header(($_SERVER['SERVER_PROTOCOL'] ?? 'HTTP/1.0') . ' 403 Forbidden');
+	exit;
+}
+
+/**
+ * Package Listener
+ */
+class {filename} extends PackageListenerType
+{
+	/**
+	 * @brief	[Required] The class that is handled by this listener
+	 * @var string
+	 */
+	public static string $class = {class};
+}

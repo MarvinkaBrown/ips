@@ -1,0 +1,11 @@
+<ips:template parameters="$apps" />
+<p class="i-font-size_2">{lang="apps_will_be_disabled"}</p>
+<ul class="i-padding_3 i-font-size_2 ipsList_checks">
+	{{foreach $apps as $name}}
+		<li class="fail">{$name}</li>
+	{{endforeach}}
+</ul>
+<div class='i-padding_4 i-text-align_center'>
+	<a href='{url="controller=applications&key={$_SESSION['uniqueKey']}"}' class='ipsButton ipsButton--large ipsButton--primary'>{lang="go_back"}</a>
+	<a href='{url="controller=customoptions&key={$_SESSION['uniqueKey']}"}&disable={expression="\IPS\Request::i()->warnings"}' class='ipsButton ipsButton--large ipsButton--secondary'>{lang="continue_anyway"}</a>
+</div>

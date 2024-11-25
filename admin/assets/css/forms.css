@@ -1,0 +1,553 @@
+/*
+	----------------
+	- Form
+	----------------
+*/
+
+.ipsFieldRow{
+	display: grid;
+	gap: .8em;
+	padding: 2em;
+	border-bottom: 1px solid var(--i-background_4);
+}
+
+	.ipsFieldRow[style*="list-item"]{
+		display: grid !important;
+	}
+
+	:is(.ipsFieldRow:last-child, .ipsFieldRow:has(+ .ipsSubmitRow)){
+		border-bottom-width: 0;
+	}
+
+	.ipsFieldRow ~ li:has(> .ipsHr:only-child){
+		display: none;
+	}
+
+/* Form headers, eg in "Edit Profile" modal */
+.ipsFieldRow__section{
+	padding: 1em;
+	font-weight: 600;
+	background: var(--i-background_3);
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	z-index: 10;
+}
+
+/* Submit row */
+.ipsSubmitRow{
+	flex: 0 0 auto; /* Useful when in flex-direction:column layouts */
+	background: var(--i-background_2);
+	padding: 1em;
+	border-top: 1px solid var(--i-background_4);
+	border-bottom-left-radius: var(--i-box--bo-ra);
+	border-bottom-right-radius: var(--i-box--bo-ra);
+	text-align: center;
+}
+
+/* Apply submit row styles to alternate HTML markup */
+.ipsFieldRow:has(> .ipsFieldRow__content > button:only-child){
+	background: var(--i-background_2);
+	padding: 1em;
+	border-top: 1px solid var(--i-background_4);
+	border-bottom-left-radius: var(--i-box--bo-ra);
+	border-bottom-right-radius: var(--i-box--bo-ra);
+	text-align: center;
+	margin-top: -1px; /* This prevents a double border */
+}
+
+
+/* Labels */
+.ipsFieldRow__label{
+	font-weight: 600;
+	display: block;
+	font-size: 1.1em;
+	color: var(--i-color_hard);
+
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0em 2em;
+}
+
+	/* Hide labels on certain forms */
+	.ipsFieldRow--noLabel .ipsFieldRow__label,
+	.ipsForm--noLabels .ipsFieldRow:not(.ipsFieldRow--checkbox) .ipsFieldRow__label {
+		display: none;
+	}
+
+	/* ..or if they're empty */
+	.ipsFieldRow__label:has(span:only-child:empty){
+		display: none;
+	}
+	/* Hide empty labels, but keep parent visible incase it contains "Required". Topic content forms are an example */
+	.ipsFieldRow__label span:empty{
+		display: none;
+	}
+
+.ipsFieldRow__required {
+	font-size: max(.7em, 10px);
+	text-transform: uppercase;
+	color: #AA1414;
+	margin-inline-start: auto;
+}
+
+/* Descriptions */
+.ipsFieldRow__desc {
+	font-size: 0.9em;
+	margin-top: .75em;
+	color: var(--i-color_soft);
+}
+	.ipsFieldRow__label ~ .ipsFieldRow__desc{
+		margin-top: 0;
+	}
+
+/* Warning */
+.ipsFieldRow__warning{
+	color: var(--i-color_warning);
+	background: color-mix(in srgb, var(--i-color_warning) 15%, transparent);
+	border: 1px solid color-mix(in srgb, var(--i-color_warning) 40%, transparent);
+	padding: 0.8em 1em;
+	border-radius: 5px;
+	font-weight: 500;
+	margin-top: 1em;
+	font-size: .9em;
+}
+
+	.ipsFieldRow__warning .fa-circle-exclamation{
+		margin-inline-end: .4em;
+	}
+
+	.ipsFieldRow__warning:empty{
+		display: none;
+	}
+
+
+.ipsFieldRow__content{
+	flex: 999 1 55%;
+}
+
+/* Inline checkboxes */
+.ipsFieldRow__inlineCheckbox{
+	display: inline-flex;
+	align-items: center;
+	gap: .5em;
+}
+
+/* Stacked form: Used for addresses, poll options, etc */
+.ipsFieldListParent{
+	display: grid;
+	gap: 2em;
+}
+
+	.ipsFieldList > *{
+		display: flex;
+		align-items: center;
+		gap: .8em;
+		padding: .4em;
+	}
+
+	.ipsFieldList > li:has([disabled]){
+		opacity: .5;
+		filter: grayscale(1);
+		pointer-events: none;
+	}
+
+	.ipsFieldList > input{
+		flex: 0 0 auto;
+		align-self: baseline;
+		margin-top: .2em;
+	}
+
+	.ipsFieldList__content{
+		flex: 1 1 auto;
+	}
+
+	.ipsFieldRow label[for]{
+		cursor: pointer;
+	}
+
+	/* Highlight code tags (ACP > Content Discovery > Search) */
+	.ipsFieldList__content code{
+		background: var(--i-background_3);
+		color: var(--i-color_hard);
+		border-radius: 4px;
+		padding: .3em;
+		display: inline-block;
+	}
+
+/* Select menus: If they're followed by a label, set their width to auto */
+.ipsFieldRow__content select:has(+ span){
+	width: auto;
+	margin-inline-end: .6em;
+}
+
+
+
+
+
+/* Inputs */
+input:where(:not([type="checkbox"], [type="radio"])),
+select,
+textarea{
+	--i-outline-width: 0px;
+	background-color: var(--i-input--ba-co);
+	border-radius: var(--i-input--bo-ra);
+	border: 1px solid var(--i-input--bo-co);
+	box-shadow: var(--i-input--bo-sh, none);
+	color: var(--i-co);
+	display: inline-flex;
+	padding: var(--i-input--pa-bl) var(--i-input--pa-in);
+	/* width: 100%; */
+	max-width: 100%; /* Necessary if width is overwritten somewhere */
+	justify-self: start; /* Prevent inputs/selects from being 100% due to grid */
+	vertical-align: middle;
+}
+
+@media (any-hover:hover){
+	input:where(:not([type="checkbox"], [type="radio"])):where(:not([disabled])):hover,
+	select:where(:not([disabled])):hover,
+	textarea:where(:not([disabled])):hover{
+		border-color: var(--i-input-hover--bo-co);
+	}
+}
+
+/* Mobiles/tablets */
+@media (hover: none) and (max-width: 1024px) {
+	input:where(:not([type="checkbox"], [type="radio"])),
+	select,
+	textarea{
+		font-size: max(16px, 1em);
+	}
+}
+
+input:where(:not([type="checkbox"], [type="radio"])):focus,
+select:focus,
+textarea:focus{
+	outline: 2px solid var(--i-input-active--bo-co);
+	outline-offset: -1px;
+}
+	
+input::placeholder,
+textarea::placeholder{
+	color: inherit;
+	opacity: var(--i-placeholder--op, .75);
+}
+
+input:where([type="number"]){
+	width: auto;
+}
+
+/* Colors */
+input:where([type="color"]) {
+	min-width: 50px;
+	padding: 0;
+}
+
+/* Add arrow to select elements */
+select:where(:not([multiple])){
+	cursor: pointer;
+	padding: var(--i-input--pa-bl) var(--i-input--pa-in);
+	padding-inline-end: calc(var(--i-input--pa-in) * 3);
+	background-image: var(--i-select--dark-arrow);
+	background-size: auto 1em;
+	background-repeat: no-repeat;
+	background-position: calc(100% - 1em) 50%;
+}
+
+	:where([data-ips-scheme="dark"]) select:where(:not([multiple])){
+		background-image: var(--i-select--light-arrow);
+	}
+
+	[dir="rtl"] select:where(:not([multiple])){
+		background-position: 1em 50%;
+	}
+
+/* Hide 'x' in search input */
+input::-webkit-search-cancel-button{
+	display: none;
+}
+
+textarea{
+	height: auto;
+	line-height: inherit;
+	padding: var(--i-input--pa-bl) var(--i-input--pa-in);
+	resize: vertical;
+}
+
+	textarea[name="conf_global_error"] {
+		height: 200px;
+		font-family: monospace;
+	}
+
+/* Disabled */
+input:disabled{
+	opacity: .4;
+	font-style: italic;
+	pointer-events: none;
+}
+
+
+
+/*
+	----------------
+	- Checkbox and Radio inputs
+	----------------
+*/
+
+input:where([type="checkbox"], [type="radio"]){
+	-webkit-appearance: none;
+	appearance: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: var(--i-input-toggle--size, 1.2em);
+	position: relative;
+	vertical-align: middle;
+	width: var(--i-input-toggle--size, 1.2em);
+	cursor: pointer;
+	background-color: var(--i-input--ba-co);
+	border-width: var(--i-input--bo-wi);
+	border-style: solid;
+	border-color: var(--i-input-toggle--bo-co, var(--i-input--bo-co));
+	box-shadow: var(--i-input--bo-sh, none);
+	flex: 0 0 auto;
+}
+
+/* Hovered and Checked */
+@media (any-hover:hover){
+	input:where([type="checkbox"], [type="radio"]):hover{
+		border-color: var(--i-input-hover--bo-co);
+	}
+}
+
+/* Focus */
+input:where([type="checkbox"], [type="radio"]):focus-visible{
+	--i-outline-color: var(--i-primary);
+	border-color: var(--i-input-active--bo-co);
+	outline: var(--i-outline-width) var(--i-outline-style) var(--i-outline-color);
+	outline-offset: var(--i-outline-offset);
+}
+
+input:where([type="checkbox"], [type="radio"]):checked{
+	background-color: var(--i-primary);
+	color: var(--i-primary-contrast);
+	border-color: transparent;
+}
+
+input:where([type="checkbox"], [type="radio"])::before{
+	content: '';
+	visibility: hidden;
+}
+
+	input:where([type="checkbox"], [type="radio"]):checked::before{
+		visibility: visible;
+	}
+
+/* Checkbox */
+input:where([type="checkbox"]){
+	border-radius: var(--i-input-checkbox--bo-ra, max(4px, .2em));
+}
+
+	/* Checkbox: tick */
+	input:where([type="checkbox"])::before{
+		content: "\f00c";
+		font-family: "Font Awesome 6 Free";
+		font-weight: 900;
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		display: block;
+		font-style: normal;
+		font-variant: normal;
+		line-height: 1;
+		text-rendering: auto;
+		font-size: 0.75em;
+	}
+
+/* Radio */
+input:where([type="radio"]){
+	border-radius: var(--i-input-radio--bo-ra, 50%);
+}
+
+	/* Radio: dot */	
+	input:where([type="radio"])::before{
+		background: currentColor;
+		border-radius: inherit;
+		width: 40%;
+		height: 40%;
+	}
+
+/* Improved click/tap area */
+@media(hover:none) and (pointer:coarse){
+	input:where([type="checkbox"], [type="radio"])::after{
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		height: max(30px, 100%);
+		width: max(30px, 100%);
+		transform: translate(-50%,-50%);
+		cursor: pointer;
+		z-index: 1;
+	}
+}
+
+
+
+
+
+
+
+label[for],
+label:has(input){
+	cursor: pointer;
+}
+
+.ipsFieldRow__content textarea ~ label{
+	margin-top: 1em;
+	display: inline-block;
+}
+
+label input{
+	margin-inline-end: .6em;
+}
+
+.ipsFieldRow__warning:empty{
+	display: none;
+}
+
+
+
+
+/*
+	----------------
+	- Restyle certain forms/inputs
+	----------------
+*/
+
+/* Install: License key */
+#license_lkey [name="lkey"]{
+	margin-inline-end: 1em;
+}
+
+#license_lkey a{
+	justify-self: start;
+	color: var(--i-color_soft);
+}
+
+#license_lkey a svg{
+	height: .8em;
+	margin-inline-start: .3em;
+	opacity: .5;
+}
+
+/* Install: Fix "Send usage and diagnostics" checkbox alignment */
+#serverdetails_diagnostics_reporting{
+	grid-template-columns: auto 1fr;
+	position: relative;
+}
+
+	#serverdetails_diagnostics_reporting > *{
+		grid-column: 2;
+	}
+
+	#serverdetails_diagnostics_reporting > label{
+		grid-column: 1;
+		order: -1;
+	}
+
+	#serverdetails_diagnostics_reporting label::before{
+		content: '';
+		position: absolute;
+		inset: 0;
+	}
+
+/* Install: Admin username, password, email */
+.ipsFieldRow[id^="admin_admin_"] input{
+	justify-self: stretch;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@supports(display:ehren){
+
+
+
+
+
+.ipsFieldRow:not( :last-child ) {
+
+	margin-bottom: 15px;
+}
+
+/* FIELD LISTS (for stacks of radios/checkboxes) */
+.ipsFieldList {
+	padding-top: 7px;
+}
+
+.ipsFieldList > li {
+	margin-bottom: 10px;
+}
+
+.ipsFieldList input[type="radio"], .ipsFieldList input[type="checkbox"] {
+	float: left;
+	margin-top: 4px;
+}
+
+.ipsFieldList__content {
+	margin-left: 22px;
+}
+
+/* FORM TYPOGRAPHY */
+.ipsFieldRow__desc {
+	font-size: 12px;
+	color: #adadad;
+	margin-top: 3px;
+	display: inline-block;
+}
+
+.ipsFieldRow:not( .ipsFieldRow_checkbox ) .ipsFieldRow_label,
+.ipsFieldRow:not( .ipsFieldRow_checkbox ) .ipsFieldRow_title {
+	font-size: 15px;
+	font-weight: bold;
+	margin-bottom: 5px;
+	display: inline-block;
+	padding-top: 5px;
+}
+
+.ipsFieldRow__required {
+	font-size: 10px;
+	text-transform: uppercase;
+	color: #c02222;
+	margin-left: 10px;
+	font-weight: normal;
+}
+
+	
+
+.ipsFieldRow__content select {
+	margin-top: 6px;
+}
+
+.ipsFieldRow_section {
+	background: #f9f9f9;
+	color: #333;
+	padding: 15px;
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+
+
+}

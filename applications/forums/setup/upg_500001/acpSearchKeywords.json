@@ -1,0 +1,35 @@
+{
+    "added": [
+        "app=forums&module=forums&controller=forums&do=form&searchResult=forum_solved_mode",
+        "app=forums&module=forums&controller=forums&searchResult=forum_icon_choose",
+        "app=forums&module=forums&controller=forums&subnode=0&parent=2&searchResult=forum_icon_choose",
+        "app=forums&module=forums&controller=settings&searchResult=form_forums_helpful_highlight",
+        "app=forums&module=forums&controller=settings&searchResult=form_forums_solved_nudge_experts",
+        "app=forums&module=stats&controller=solvers"
+    ],
+    "edited": [
+        "app=forums&module=forums&controller=settings&searchResult=form_forums_topic_activity",
+        "app=forums&module=forums&controller=settings&searchResult=form_forums_topic_activity_features",
+        "app=forums&module=forums&controller=settings&searchResult=forums_topic_activity_desktop"
+    ],
+    "removed": [
+        "app=forums&module=forums&controller=forums&do=form&searchResult=bw_enable_answers__member",
+        "app=forums&module=forums&controller=forums&do=form&searchResult=forum_best_answer",
+        "app=forums&module=forums&controller=forums&searchResult=form_2_forum_min_posts_post",
+        "app=forums&module=forums&controller=forums&searchResult=form_new_forum_min_posts_post",
+        "app=forums&module=forums&controller=forums&searchResult=forum_allow_rating",
+        "app=forums&module=forums&controller=forums&searchResult=forum_icon",
+        "app=forums&module=forums&controller=forums&searchResult=forum_min_posts_view",
+        "app=forums&module=forums&controller=forums&subnode=0&parent=2&searchResult=form_new_forum_min_posts_post",
+        "app=forums&module=forums&controller=forums&subnode=0&parent=2&searchResult=forum_allow_rating",
+        "app=forums&module=forums&controller=forums&subnode=0&parent=2&searchResult=forum_icon",
+        "app=forums&module=forums&controller=forums&subnode=0&parent=2&searchResult=forum_min_posts_view",
+        "app=forums&module=forums&controller=settings&searchResult=form_forums_answers_downvote",
+        "app=forums&module=forums&controller=settings&searchResult=form_forums_new_questions",
+        "app=forums&module=forums&controller=settings&searchResult=form_forums_questions_downvote",
+        "app=forums&module=forums&controller=forums&searchResult=bw_disable_prefixes",
+        "app=forums&module=forums&controller=forums&searchResult=bw_disable_tagging",
+        "app=forums&module=forums&controller=forums&subnode=0&parent=2&searchResult=bw_disable_prefixes",
+        "app=forums&module=forums&controller=forums&subnode=0&parent=2&searchResult=bw_disable_tagging"
+    ]
+}

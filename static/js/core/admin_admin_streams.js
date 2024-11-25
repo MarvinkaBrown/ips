@@ -1,0 +1,3 @@
+;(function($,_,undefined){"use strict";ips.controller.register('core.admin.streams.form',{initialize:function(){this.checkReadStatus()
+this.elem.addEventListener('change',()=>this.checkReadStatus())},checkReadStatus(){if(this.elem.querySelector('input[name="stream_read"][value="unread"]').checked){this.elem.querySelector('input[name="stream_include_comments"][value="0"]')?.setAttribute('checked','')
+this.elem.querySelector('input[name="stream_include_comments"][value="1"]')?.setAttribute('disabled','')}else{this.elem.querySelector('input[name="stream_include_comments"][value="1"]')?.removeAttribute('disabled')}}});}(jQuery,_));;

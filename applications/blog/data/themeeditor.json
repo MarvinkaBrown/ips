@@ -1,0 +1,23 @@
+{
+    "settings": {
+        "layout_blog_view": {
+            "key": "layout_blog_view",
+            "type": "select",
+            "name": "Blog View",
+            "desc": "Change the default layout of the blog view",
+            "refresh": true,
+            "options": [
+                [
+                    "table",
+                    "Table"
+                ],
+                [
+                    "grid",
+                    "Grid"
+                ]
+            ],
+            "default": "grid",
+            "cat": "pageLayouts"
+        }
+    }
+}

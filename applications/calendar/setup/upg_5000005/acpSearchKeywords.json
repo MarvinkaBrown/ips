@@ -1,0 +1,22 @@
+{
+    "added": [],
+    "edited": [
+        "app=calendar&module=calendars&controller=calendars&searchResult=form_new_cal_allow_comments",
+        "app=calendar&module=calendars&controller=calendars&searchResult=form_new_cal_moderate",
+        "app=calendar&module=calendars&controller=calendars&searchResult=form_new_cal_title",
+        "app=calendar&module=calendars&controller=ical&do=add&searchResult=form_feed_calendar_id",
+        "app=calendar&module=calendars&controller=ical&do=add&searchResult=form_feed_member_id",
+        "app=calendar&module=calendars&controller=ical&do=add&searchResult=form_feed_title",
+        "app=calendar&module=calendars&controller=ical&do=upload&searchResult=form_feed_calendar_id",
+        "app=calendar&module=calendars&controller=ical&do=upload&searchResult=form_feed_member_id",
+        "app=calendar&module=calendars&controller=venues"
+    ],
+    "removed": [
+        "app=calendar&module=calendars&controller=calendars&do=permissions",
+        "app=calendar&module=calendars&controller=calendars&searchResult=form_1_cal_allow_comments",
+        "app=calendar&module=calendars&controller=calendars&searchResult=form_1_cal_allow_reviews",
+        "app=calendar&module=calendars&controller=calendars&searchResult=form_1_cal_color",
+        "app=calendar&module=calendars&controller=calendars&searchResult=form_1_cal_moderate",
+        "app=calendar&module=calendars&controller=calendars&searchResult=form_1_cal_title"
+    ]
+}

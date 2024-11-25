@@ -1,0 +1,32 @@
+[
+    {
+        "key": "cms_error_page",
+        "default": "0",
+        "report": "bool"
+    },
+    {
+        "key": "cms_root_page_url",
+        "default": "",
+        "report": "bool"
+    },
+    {
+        "key": "sitemap_databases_count",
+        "default": "-1",
+        "report": "full"
+    },
+    {
+        "key": "sitemap_databases_priority",
+        "default": "1",
+        "report": "full"
+    },
+    {
+        "key": "sitemap_pages_count",
+        "default": "-1",
+        "report": "full"
+    },
+    {
+        "key": "sitemap_pages_priority",
+        "default": "1",
+        "report": "full"
+    }
+]

@@ -1,0 +1,151 @@
+<?php
+/**
+ * @brief		Account Settings Extension
+ * @author		<a href='https://www.invisioncommunity.com'>Invision Power Services, Inc.</a>
+ * @copyright	(c) Invision Power Services, Inc.
+ * @license		https://www.invisioncommunity.com/legal/standards/
+{subpackage}
+ * @since		{date}
+ */
+
+namespace IPS\{app}\extensions\core\LoginHandler;
+
+use IPS\Login;
+use IPS\Login\Exception;
+use IPS\Login\Handler;
+use IPS\Login\Handler\ButtonHandler;
+use IPS\Login\Handler\UsernamePasswordHandler;
+use IPS\Member as MemberClass;
+use function defined;
+
+/* To prevent PHP errors (extending class does not exist) revealing path */
+if ( !defined( '\IPS\SUITE_UNIQUE_KEY' ) )
+{
+	header( ( $_SERVER['SERVER_PROTOCOL'] ?? 'HTTP/1.0' ) . ' 403 Forbidden' );
+	exit;
+}
+
+/**
+ * AccountSettings Extension
+ */
+class {class} extends Handler
+{
+	// @todo Uncomment one or both of the following
+	//use UsernamePasswordHandler; // Uncomment this to implement a username/password handler
+	//use ButtonHandler; // Uncomment this to implement a button handler
+
+	/**
+	 * Get type
+	 *
+	 * @return    int
+	 */
+	public function type(): int
+	{
+		return Login::TYPE_USERNAME_PASSWORD; // Login::TYPE_BUTTON;
+	}
+
+	/**
+	 * Get title
+	 *
+	 * @return	string
+	 */
+	public static function getTitle(): string
+	{
+		return '';
+	}
+
+	/**
+	 * ACP Settings Form
+	 *
+	 * @return	array	List of settings to save - settings will be stored to core_login_methods.login_settings DB field
+	 * @code
+	return array( 'savekey'	=> new \IPS\Helpers\Form\[Type]( ... ), ... );
+	 * @endcode
+	 */
+	public function acpForm(): array
+	{
+		return array();
+	}
+
+	/**
+	 * Save Handler Settings
+	 *
+	 * @param array $values	Values from form
+	 * @return	array
+	 */
+	public function acpFormSave( array &$values ): array
+	{
+		return parent::acpFormSave( $values );
+	}
+
+	/* !UsernamePassword Authentication */
+
+	/**
+	 * Authenticate
+	 *
+	 * @param Login $login The login object
+	 * @param string $usernameOrEmail The username or email address provided by the user
+	 * @param object $password The plaintext password provided by the user, wrapped in an object that can be cast to a string so it doesn't show in any logs
+	 * @return    MemberClass
+	 * @throws    Exception
+	 */
+	/*public function authenticateUsernamePassword(Login $login, string $usernameOrEmail, object $password): MemberClass
+	{
+		// TODO: Implement authenticateUsernamePassword() method.
+	}*/
+
+	/**
+	 * Authenticate
+	 *
+	 * @param MemberClass $member The member
+	 * @param object $password The plaintext password provided by the user, wrapped in an object that can be cast to a string so it doesn't show in any logs
+	 * @return    bool
+	 */
+	/*public function authenticatePasswordForMember(MemberClass $member, object $password): bool
+	{
+		// TODO: Implement authenticatePasswordForMember() method.
+	}*/
+
+	/* !Button Authentication */
+
+	/**
+	 * Authenticate
+	 *
+	 * @param Login $login The login object
+	 * @throws    Exception
+	 */
+	/*public function authenticateButton(Login $login)
+	{
+		// TODO: Implement authenticateButton() method.
+	}*/
+
+	/**
+	 * Get the button color
+	 *
+	 * @return    string
+	 */
+	/*public function buttonColor(): string
+	{
+		// TODO: Implement buttonColor() method.
+	}*/
+
+	/**
+	 * Get the button icon
+	 *
+	 * @return    string
+	 */
+	/*public function buttonIcon(): string
+	{
+		// TODO: Implement buttonIcon() method.
+	}*/
+
+	/**
+	 * Get button text
+	 *
+	 * @return    string
+	 */
+	/*public function buttonText(): string
+	{
+		// TODO: Implement buttonText() method.
+	}*/
+}

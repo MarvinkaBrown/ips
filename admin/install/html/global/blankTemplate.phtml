@@ -1,0 +1,25 @@
+<ips:template parameters="$html, $title=NULL" />
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>{$title}</title>
+		<link rel='stylesheet' href='../assets/css/reset.css'>
+		<link rel='stylesheet' href='../assets/fontawesome/css/all.min.css'>
+		<link rel='stylesheet' href='../assets/css/global.css'>
+		<link rel='stylesheet' href='../assets/css/layout.css'>
+		<link rel='stylesheet' href='../assets/css/messages.css'>
+		<link rel='stylesheet' href='../assets/css/misc.css'>
+		<link rel='stylesheet' href='../assets/css/forms.css'>
+		<link rel='stylesheet' href='../assets/css/typography.css'>
+		<link rel='stylesheet' href='../assets/css/buttons.css'>
+		<link rel='stylesheet' href='../assets/css/installer.css'>
+		<script type="text/javascript">
+			var IPS_TIMEOUT = 30;
+		</script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/multipleRedirect.js"></script>
+	</head>
+	<body class="ipsApp ipsApp_front ipsJS_none ipsLayout_noBackground">
+		{$html|raw}
+	</body>
+</html>

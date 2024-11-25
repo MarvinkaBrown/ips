@@ -1,0 +1,18 @@
+{
+    "added": [
+        "front\/activity",
+        "front\/dashboard",
+        "front\/promote",
+        "front\/referral",
+        "front\/status"
+    ],
+    "edited": [
+        "admin\/overview",
+        "front\/discover",
+        "front\/feature",
+        "front\/languages"
+    ],
+    "removed": [
+        "front\/hive"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "files": {
+        "added": [
+            "global\/framework\/common\/ui\/ips.ui.controls.js"
+        ],
+        "edited": [
+            "global\/framework\/common\/ui\/ips.ui.form.js",
+            "global\/framework\/common\/utils\/ips.utils.pagebuildericons.js",
+            "global\/front\/controllers\/core\/ips.core.comment.js",
+            "core\/front\/controllers\/widgets\/ips.widgets.carouselControls.js"
+        ],
+        "removed": [
+            "global\/framework\/common\/ui\/ips.ui.hidden.js"
+        ]
+    },
+    "orders": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

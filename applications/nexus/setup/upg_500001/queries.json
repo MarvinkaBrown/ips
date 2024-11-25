@@ -1,0 +1,334 @@
+{
+    "1": {
+        "method": "dropColumn",
+        "params": [
+            "nexus_alternate_contacts",
+            "support"
+        ]
+    },
+    "2": {
+        "method": "dropTable",
+        "params": [
+            [
+                "nexus_support_statuses",
+                "nexus_support_stock_actions",
+                "nexus_support_streams",
+                "nexus_support_tracker",
+                "nexus_support_views"
+            ],
+            true
+        ]
+    },
+    "3": {
+        "method": "dropColumn",
+        "params": [
+            "nexus_packages",
+            [
+                "p_support",
+                "p_support_department",
+                "p_support_severity"
+            ]
+        ]
+    },
+    "4": {
+        "method": "dropTable",
+        "params": [
+            "nexus_eom",
+            true
+        ]
+    },
+    "5": {
+        "method": "dropColumn",
+        "params": [
+            "core_members",
+            "cm_no_sev"
+        ]
+    },
+    "6": {
+        "method": "addColumn",
+        "params": [
+            "nexus_packages",
+            {
+                "name": "p_locked",
+                "type": "TINYINT",
+                "length": null,
+                "decimals": null,
+                "values": null,
+                "allow_null": true,
+                "default": "0",
+                "comment": "",
+                "unsigned": false,
+                "auto_increment": false
+            }
+        ]
+    },
+    "7": {
+        "method": "dropColumn",
+        "params": [
+            "nexus_customer_addresses",
+            "primary_shipping"
+        ]
+    },
+    "8": {
+        "method": "dropColumn",
+        "params": [
+            "nexus_invoices",
+            "i_shipaddress"
+        ]
+    },
+    "9": {
+        "method": "dropTable",
+        "params": [
+            "nexus_shipping",
+            true
+        ]
+    },
+    "10": {
+        "method": "dropTable",
+        "params": [
+            "nexus_ship_orders",
+            true
+        ]
+    },
+    "11": {
+        "method": "dropColumn",
+        "params": [
+            "nexus_packages_products",
+            [
+                "p_shipping",
+                "p_length",
+                "p_weight",
+                "p_width",
+                "p_height"
+            ]
+        ]
+    },
+    "12": {
+        "method": "delete",
+        "params": [
+            "core_member_history",
+            [
+                "log_app=? and log_type=?",
+                "nexus",
+                "support"
+            ]
+        ]
+    },
+    "13": {
+        "method": "delete",
+        "params": [
+            "core_sys_lang_words",
+            [
+                "word_app=? and word_key like 'nexus_status_%'",
+                "nexus"
+            ]
+        ]
+    },
+    "14": {
+        "method": "delete",
+        "params": [
+            "core_sys_lang_words",
+            [
+                "word_app=? and word_key like 'nexus_severity_%'",
+                "nexus"
+            ]
+        ]
+    },
+    "15": {
+        "method": "delete",
+        "params": [
+            "core_sys_lang_words",
+            [
+                "word_app=? and word_key like 'nexus_department_%'",
+                "nexus"
+            ]
+        ]
+    },
+    "16": {
+        "method": "delete",
+        "params": [
+            "core_sys_lang_words",
+            [
+                "word_app=? and word_key like 'nexus_stockaction_%'",
+                "nexus"
+            ]
+        ]
+    },
+    "17": {
+        "method": "delete",
+        "params": [
+            "core_acp_notifications",
+            [
+                "app=? and ext=?",
+                "nexus",
+                "Support"
+            ]
+        ]
+    },
+    "18": {
+        "method": "delete",
+        "params": [
+            "core_tasks",
+            [
+                [
+                    "app=?",
+                    "nexus"
+                ],
+                [
+                    "( `key` IN('supportAssignedReminder','supportAutoresolve') )"
+                ]
+            ]
+        ]
+    },
+    "19": {
+        "method": "delete",
+        "params": [
+            "core_menu",
+            [
+                "extension=? and config like '%module=support%'",
+                "CustomItem"
+            ]
+        ]
+    },
+    "20": {
+        "method": "delete",
+        "params": [
+            "core_menu",
+            [
+                "app=? and extension=?",
+                "nexus",
+                "Support"
+            ]
+        ]
+    },
+    "21": {
+        "method": "delete",
+        "params": [
+            "core_acp_notifications",
+            [
+                "app=? and ext=?",
+                "nexus",
+                "Shipment"
+            ]
+        ]
+    },
+    "22": {
+        "method": "delete",
+        "params": [
+            "core_member_history",
+            [
+                "log_app=? and log_type=?",
+                "nexus",
+                "shipping"
+            ]
+        ]
+    },
+    "23": {
+        "method": "addColumn",
+        "params": [
+            "nexus_donate_logs",
+            {
+                "name": "dl_anon",
+                "type": "TINYINT",
+                "length": null,
+                "decimals": null,
+                "values": null,
+                "allow_null": false,
+                "default": 0,
+                "comment": "",
+                "unsigned": true,
+                "auto_increment": false
+            }
+        ]
+    },
+    "24": {
+        "method": "addColumn",
+        "params": [
+            "nexus_donate_goals",
+            {
+                "name": "d_suggestions",
+                "type": "TEXT",
+                "length": null,
+                "decimals": null,
+                "values": null,
+                "allow_null": true,
+                "default": null,
+                "comment": "",
+                "unsigned": false,
+                "auto_increment": false
+            }
+        ]
+    },
+    "25": {
+        "method": "addColumn",
+        "params": [
+            "nexus_donate_goals",
+            {
+                "name": "d_suggestions_open",
+                "type": "TINYINT",
+                "length": null,
+                "decimals": null,
+                "values": null,
+                "allow_null": false,
+                "default": "1",
+                "comment": "",
+                "unsigned": true,
+                "auto_increment": false
+            }
+        ]
+    },
+    "26": {
+        "method": "addColumn",
+        "params": [
+            "nexus_donate_goals",
+            {
+                "name": "d_goal_reached",
+                "type": "TINYINT",
+                "length": null,
+                "decimals": null,
+                "values": null,
+                "allow_null": false,
+                "default": 0,
+                "comment": "",
+                "unsigned": true,
+                "auto_increment": false
+            }
+        ]
+    },
+    "27": {
+        "method": "addIndex",
+        "params": [
+            "nexus_transactions",
+            {
+                "type": "key",
+                "name": "transaction-lookup",
+                "columns": [
+                    "t_gw_id",
+                    "t_method"
+                ],
+                "length": [
+                    190,
+                    null
+                ]
+            }
+        ]
+    },
+    "28": {
+        "method": "addColumn",
+        "params": [
+            "nexus_packages_ads",
+            {
+                "name": "p_settings",
+                "type": "TEXT",
+                "length": null,
+                "decimals": null,
+                "values": null,
+                "allow_null": true,
+                "default": null,
+                "comment": "",
+                "unsigned": false,
+                "auto_increment": false
+            }
+        ]
+    }
+}

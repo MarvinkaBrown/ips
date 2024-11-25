@@ -1,0 +1,28 @@
+<?php
+
+namespace IPS\{app}\extensions\core\UIComment;
+
+use IPS\Content\Comment as BaseComment;
+use IPS\Content\Item as BaseItem;
+use IPS\Helpers\Form\FormAbstract;
+use IPS\Helpers\Menu\MenuItem;
+use IPS\Output\UI\Comment as UIComment;
+use function defined;
+
+/* To prevent PHP errors (extending class does not exist) revealing path */
+if ( !defined( '\IPS\SUITE_UNIQUE_KEY' ) )
+{
+	header( ( $_SERVER['SERVER_PROTOCOL'] ?? 'HTTP/1.0' ) . ' 403 Forbidden' );
+	exit;
+}
+
+/**
+ * @brief	Content UI extension: {class}
+ */
+class {class} extends UIComment
+{
+	/**
+	 * @brief	Class to extend
+	 */
+	 public static ?string $class = '{comment}';
+}

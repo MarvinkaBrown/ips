@@ -1,0 +1,21 @@
+{
+    "1": {
+        "method": "changeColumn",
+        "params": [
+            "core_api_webhook_fires",
+            "event",
+            {
+                "name": "event",
+                "type": "VARCHAR",
+                "length": 255,
+                "decimals": null,
+                "values": null,
+                "allow_null": false,
+                "default": null,
+                "comment": "The event being fired",
+                "unsigned": false,
+                "auto_increment": false
+            }
+        ]
+    }
+}

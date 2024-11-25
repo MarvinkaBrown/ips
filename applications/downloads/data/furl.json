@@ -1,0 +1,41 @@
+{
+	"topLevel": "files",
+	"pages": {
+	    "downloads_submit": {
+	        "friendly": "submit",
+	        "real": "app=downloads&module=downloads&controller=submit"
+	    },
+	    "downloads_cat": {
+		    "friendly": "category/{#id}-{?}",
+		    "real": "app=downloads&module=downloads&controller=browse",
+		    "verify": "\\IPS\\downloads\\Category",
+		    "seoPagination": true
+	    },
+	    "downloads_clubs": {
+		    "friendly": "category/clubs",
+		    "real": "app=downloads&module=downloads&controller=browse&id=clubs"
+	    },
+	    "downloads_categories": {
+		    "friendly": "categories",
+		    "real": "app=downloads&module=downloads&controller=browse&do=categories"
+	    },
+		"downloads_file_pending": {
+			"friendly": "file/{#file_id}-{?}/pending",
+			"real": "app=downloads&module=downloads&controller=pending"
+		},
+	    "downloads_file": {
+		    "friendly": "file/{#id}-{?}",
+		    "real": "app=downloads&module=downloads&controller=view",
+		    "verify": "\\IPS\\downloads\\File",
+		    "seoPagination": true
+	    },
+	    "downloads_rss": {
+		    "friendly": "files.xml",
+		    "real": "app=downloads&module=downloads&controller=browse&do=rss"
+	    },
+	    "downloads": {
+	        "friendly": "",
+	        "real": "app=downloads&module=downloads&controller=browse"
+	    }
+	  }
+}

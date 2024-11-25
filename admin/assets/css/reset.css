@@ -1,0 +1,92 @@
+*, *::before, *::after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	min-width: 0;
+	min-height: 0;
+}
+
+ul, ol{
+	list-style-type: none;
+}
+
+article, aside, details, figcaption, figure, footer,
+header, hgroup, nav, section, main {
+	display: block;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	accent-color: var(--i-primary);
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizelegibility;
+}
+
+:focus{
+	outline-color: transparent;
+}
+
+:focus-visible{
+	outline: var(--i-outline-width) var(--i-outline-style) var(--i-outline-color);
+	outline-offset: var(--i-outline-offset);
+}
+
+img {
+	vertical-align: middle;
+	border: 0;
+}
+
+:where(input, textarea, select, button){
+	background: none;
+	border: 0;
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	text-align: inherit;
+}
+
+textarea, select{
+	-webkit-appearance: none;
+	appearance: none;
+	box-shadow: none;
+}
+
+textarea{
+	display: block;
+	width: 100%;
+}
+
+select{
+	cursor: inherit;
+}
+
+[type="search"]{
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+button, [type="submit"], summary{
+	-webkit-appearance: none;
+	appearance: none;
+	cursor: pointer;
+	user-select: none;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+
+svg{
+	height: 1em;
+	width: auto;
+	fill: currentColor;
+}

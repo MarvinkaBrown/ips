@@ -1,0 +1,16 @@
+{
+    "normal": {
+        "added": [
+            "theme_editor_custom_css_message"
+        ],
+        "edited": [],
+        "removed": []
+    },
+    "js": {
+        "added": [
+            "editor_code--ipscss"
+        ],
+        "edited": [],
+        "removed": []
+    }
+}

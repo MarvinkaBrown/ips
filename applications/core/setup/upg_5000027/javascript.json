@@ -1,0 +1,23 @@
+{
+    "files": {
+        "added": [
+            "global\/framework\/common\/utils\/ips.utils.fileDownload.js"
+        ],
+        "edited": [
+            "global\/framework\/common\/ui\/ips.ui.dialog.js",
+            "global\/framework\/common\/ui\/ips.ui.editorv5.js",
+            "global\/framework\/common\/utils\/ips.utils.iconpicker.js",
+            "core\/front\/controllers\/core\/ips.core.onlineUsersWidget.js",
+            "global\/admin\/templates\/ips.core.templates.js",
+            "global\/framework\/templates\/ips.core.templates.js"
+        ],
+        "removed": [
+            "global\/framework\/common\/ui\/ips.ui.toggle.js"
+        ]
+    },
+    "orders": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

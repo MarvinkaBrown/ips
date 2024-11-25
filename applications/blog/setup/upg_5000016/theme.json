@@ -1,0 +1,34 @@
+{
+    "html": {
+        "added": [],
+        "edited": [
+            "front\/browse\/index",
+            "front\/browse\/indexButtons",
+            "front\/browse\/indexGrid",
+            "front\/browse\/rows",
+            "front\/global\/categoryLink",
+            "front\/submit\/submitFormTemplate",
+            "front\/view\/blogHeader",
+            "front\/view\/blogTable",
+            "front\/view\/blogViewLarge",
+            "front\/view\/coverPhotoOverlay",
+            "front\/view\/entry",
+            "front\/view\/view",
+            "front\/widgets\/blogs",
+            "front\/widgets\/entryRow"
+        ],
+        "removed": []
+    },
+    "css": {
+        "added": [],
+        "edited": [
+            "front\/blog.css"
+        ],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

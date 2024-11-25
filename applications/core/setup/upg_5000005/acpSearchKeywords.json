@@ -1,0 +1,40 @@
+{
+    "added": [],
+    "edited": [
+        "app=core&module=achievements&controller=settings",
+        "app=core&module=applications&controller=enhancements&do=edit&id=core_FacebookPixel",
+        "app=core&module=applications&controller=enhancements&do=edit&id=core_ImageScanner",
+        "app=core&module=applications&controller=enhancements&do=edit&id=core_Pixabay",
+        "app=core&module=clubs&controller=settings",
+        "app=core&module=membersettings&controller=profiles&tab=profilesettings&searchResult=form_group_formatting_type",
+        "app=core&module=membersettings&controller=profiles&tab=profilesettings&searchResult=user_name_length",
+        "app=core&module=membersettings&controller=reputation&tab=leaderboard&searchResult=reputation_show_days_won_trophy",
+        "app=core&module=overview&controller=files&do=settings",
+        "app=core&module=settings&controller=posting&tab=general&searchResult=attachment_image_size",
+        "app=core&module=settings&controller=posting&tab=general&searchResult=form_attach_allowed_types",
+        "app=core&module=settings&controller=posting&tab=general&searchResult=form_max_title_length",
+        "app=core&module=settings&controller=securityquestions",
+        "app=core&module=staff&controller=admin&do=loginLogs",
+        "app=core&module=activitystats&controller=overview",
+        "app=core&module=activitystats&controller=emailstats",
+        "app=core&module=stats&controller=overview",
+        "app=core&module=stats&controller=badges",
+        "app=core&module=stats&controller=spam",
+        "app=core&module=stats&controller=warnings",
+        "app=core&module=clubs&controller=fields"
+    ],
+    "removed": [
+        "app=core&module=editor&controller=settings",
+        "app=core&module=editor&controller=settings&searchResult=form_editor_paragraph_padding",
+        "app=core&module=membersettings&controller=profiles&tab=profilesettings&searchResult=form_user_name_length",
+        "app=core&module=membersettings&controller=reputation&searchResult=reputation_show_days_won_trophy",
+        "app=core&module=membersettings&controller=reputation&tab=leaderboard&searchResult=reputation_leaderboard_on",
+        "app=core&module=settings&controller=posting&searchResult=attachment_image_size",
+        "app=core&module=settings&controller=posting&searchResult=form_attach_allowed_types",
+        "app=core&module=settings&controller=posting&searchResult=form_edit_log",
+        "app=core&module=settings&controller=posting&searchResult=form_flood_control",
+        "app=core&module=settings&controller=posting&searchResult=form_max_title_length",
+        "app=core&module=settings&controller=posting&searchResult=form_reviews_rating_out_of",
+        "app=core&module=settings&controller=posting&searchResult=form_topic_redirect_prune"
+    ]
+}

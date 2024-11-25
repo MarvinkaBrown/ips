@@ -1,0 +1,10 @@
+{
+    "added": [],
+    "edited": [],
+    "removed": [
+        "app=core&module=applications&controller=enhancements&do=edit&id=core_ImageScanner",
+        "app=core&module=settings&controller=posting&searchResult=allow_only_https_remote_images",
+        "app=core&module=settings&controller=posting&searchResult=form_editor_embeds",
+        "app=core&module=settings&controller=posting&tab=general&searchResult=form_allow_remote_images"
+    ]
+}

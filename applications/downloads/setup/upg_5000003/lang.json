@@ -1,0 +1,18 @@
+{
+    "normal": {
+        "added": [
+            "downloads_categories_view",
+            "downloads_updating_views"
+        ],
+        "edited": [],
+        "removed": [
+            "idm_default_view",
+            "idm_default_view_choose"
+        ]
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

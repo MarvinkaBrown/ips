@@ -1,0 +1,27 @@
+{
+    "normal": {
+        "added": [
+            "core_pagebuilder_wrap__wrap",
+            "core_pagebuilder_wrap__grid",
+            "core_pagebuilder_wrap__center",
+            "core_pagebuilder_wrap__carousel",
+            "core_pagebuilder_wrap__columnLeft",
+            "core_pagebuilder_wrap__columnRight",
+            "core_pagebuilder_wrap__minimal",
+            "core_pagebuilder_wrap__featured",
+            "core_pagebuilder_wrap__mini-grid",
+            "core_pagebuilder_wrap__table",
+            "core_pagebuilder_wrap__wallpaper"
+        ],
+        "edited": [],
+        "removed": [
+            "cms_rf_database_desc",
+            "cms_rf_database_description"
+        ]
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

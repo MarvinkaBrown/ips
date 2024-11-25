@@ -1,0 +1,54 @@
+{
+    "html": {
+        "added": [
+            "admin\/applications\/menuManagerHeader"
+        ],
+        "edited": [
+            "global\/forms\/itemResult",
+            "front\/global\/globalTemplate",
+            "global\/global\/includeCSS",
+            "front\/global\/navBar",
+            "global\/global\/poll",
+            "front\/myAttachments\/rows",
+            "front\/profile\/userBadgeOverview",
+            "front\/sharelinks\/shareButton",
+            "front\/system\/ignore",
+            "front\/system\/ignoreEditForm",
+            "front\/system\/ignoreTable",
+            "front\/system\/ignoreTableRows",
+            "admin\/trees\/row",
+            "front\/widgets\/relatedContent"
+        ],
+        "removed": [
+            "admin\/applications\/menuItem",
+            "admin\/applications\/menuItemTools",
+            "admin\/applications\/menuManager",
+            "admin\/applications\/menuManagerDropdown",
+            "admin\/applications\/menuManagerDropdownItem",
+            "admin\/applications\/menuManagerForm",
+            "admin\/applications\/menuManagerTypeColumn",
+            "front\/widgets\/twitter"
+        ]
+    },
+    "css": {
+        "added": [],
+        "edited": [
+            "admin\/core\/trees.css",
+            "global\/framework\/1-3-variables.css",
+            "global\/framework\/3-buttons.css",
+            "global\/framework\/3-data-tables.css",
+            "global\/framework\/3-entries.css",
+            "global\/framework\/3-inputs.css",
+            "global\/framework\/3-menus.css",
+            "global\/framework\/3-richtext.css",
+            "global\/framework\/4-header.css",
+            "global\/framework\/5-other.css"
+        ],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

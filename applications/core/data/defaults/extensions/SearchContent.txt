@@ -1,0 +1,40 @@
+<?php
+/**
+ * @brief		SearchContent extension: {class}
+ * @author		<a href='https://www.invisioncommunity.com'>Invision Power Services, Inc.</a>
+ * @copyright	(c) Invision Power Services, Inc.
+ * @license		https://www.invisioncommunity.com/legal/standards/
+ * @package		Invision Community
+{subpackage}
+ * @since		{date}
+ */
+
+namespace IPS\{app}\extensions\core\SearchContent;
+
+/* To prevent PHP errors (extending class does not exist) revealing path */
+
+use IPS\Content\Search\SearchContentAbstract;
+use function defined;
+
+if ( !defined( '\IPS\SUITE_UNIQUE_KEY' ) )
+{
+	header( ( $_SERVER['SERVER_PROTOCOL'] ?? 'HTTP/1.0' ) . ' 403 Forbidden' );
+	exit;
+}
+
+/**
+ * @brief	SearchContent extension: {class}
+ */
+class {class} extends SearchContentAbstract
+{
+	/**
+	 * Return all searchable classes in your application,
+	 * including comments and/or reviews
+	 *
+	 * @return array
+	 */
+	public static function supportedClasses() : array
+	{
+		return array();
+	}
+}

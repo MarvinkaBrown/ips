@@ -1,0 +1,48 @@
+<?php
+/**
+ * @brief		Profile extension: {class}
+ * @author		<a href='https://www.invisioncommunity.com'>Invision Power Services, Inc.</a>
+ * @copyright	(c) Invision Power Services, Inc.
+ * @license		https://www.invisioncommunity.com/legal/standards/
+ * @package		Invision Community
+{subpackage}
+ * @since		{date}
+ */
+
+namespace IPS\{app}\extensions\core\Profile;
+
+use IPS\Extensions\ProfileAbstract;
+use function defined;
+
+/* To prevent PHP errors (extending class does not exist) revealing path */
+if ( !defined( '\IPS\SUITE_UNIQUE_KEY' ) )
+{
+	header( ( $_SERVER['SERVER_PROTOCOL'] ?? 'HTTP/1.0' ) . ' 403 Forbidden' );
+	exit;
+}
+
+/**
+ * @brief	Profile extension: {class}
+ */
+class {class} extends ProfileAbstract
+{
+	/**
+	 * Is there content to display?
+	 *
+	 * @return	bool
+	 */
+	public function showTab(): bool
+	{
+		return TRUE;
+	}
+	
+	/**
+	 * Display
+	 *
+	 * @return	string
+	 */
+	public function render(): string
+	{
+		return 'content to display';
+	}
+}

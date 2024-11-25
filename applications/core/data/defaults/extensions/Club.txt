@@ -1,0 +1,52 @@
+<?php
+/**
+ * @brief		Club plugin
+ * @author		<a href='https://www.invisioncommunity.com'>Invision Power Services, Inc.</a>
+ * @copyright	(c) Invision Power Services, Inc.
+ * @license		https://www.invisioncommunity.com/legal/standards/
+ * @package		Invision Community
+{subpackage}
+ * @since		{date}
+ */
+
+namespace IPS\{app}\extensions\core\Club;
+
+/* To prevent PHP errors (extending class does not exist) revealing path */
+
+use IPS\Member\Club;
+use IPS\Extensions\ClubAbstract;
+use IPS\Http\Url;
+use IPS\Member;
+use IPS\Node\Model;
+use function defined;
+
+if ( !defined( '\IPS\SUITE_UNIQUE_KEY' ) )
+{
+	header( ( $_SERVER['SERVER_PROTOCOL'] ?? 'HTTP/1.0' ) . ' 403 Forbidden' );
+	exit;
+}
+
+/**
+ * Club Menu plugin
+ */
+class {class} extends ClubAbstract
+{
+	/**
+	 * Tabs
+	 *
+	 * @param	Club	        $club		The club
+	 * @param	Model|null		$container	Container
+	 * @return	array
+	 */
+	public function tabs( Club $club, ?Model $container = NULL ): array
+	{
+		return array(
+			'unique_id' => array(
+				'href'		=> '',
+				'title'		=> '',
+				'isActive'	=> FALSE,
+				'show'		=> FALSE
+			)
+		);
+	}
+}

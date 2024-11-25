@@ -1,0 +1,64 @@
+{
+    "core": {
+        "AchievementAction": {
+            "AnswerMarkedBest": "IPS\\forums\\extensions\\core\\AchievementAction\\AnswerMarkedBest"
+        },
+        "AdvertisementLocations": {
+            "ForumListing": "IPS\\forums\\extensions\\core\\AdvertisementLocations\\ForumListing",
+            "IndexView": "IPS\\forums\\extensions\\core\\AdvertisementLocations\\IndexView",
+            "TopicView": "IPS\\forums\\extensions\\core\\AdvertisementLocations\\TopicView"
+        },
+        "Announcements": {
+            "Forums": "IPS\\forums\\extensions\\core\\Announcements\\Forums"
+        },
+        "ContentRouter": {
+            "Topics": "IPS\\forums\\extensions\\core\\ContentRouter\\Topics"
+        },
+        "EditorLocations": {
+            "Forums": "IPS\\forums\\extensions\\core\\EditorLocations\\Forums"
+        },
+        "FileStorage": {
+            "Cards": "IPS\\forums\\extensions\\core\\FileStorage\\Cards",
+            "Icons": "IPS\\forums\\extensions\\core\\FileStorage\\Icons"
+        },
+        "FrontNavigation": {
+            "Forums": "IPS\\forums\\extensions\\core\\FrontNavigation\\Forums"
+        },
+        "LiveSearch": {
+            "Forums": "IPS\\forums\\extensions\\core\\LiveSearch\\Forums"
+        },
+        "MobileNavigation": {
+            "Forums": "IPS\\forums\\extensions\\core\\MobileNavigation\\Forums",
+            "Topics": "IPS\\forums\\extensions\\core\\MobileNavigation\\Topics"
+        },
+        "ModeratorPermissions": {
+            "Topic": "IPS\\forums\\extensions\\core\\ModeratorPermissions\\Topic"
+        },
+        "OverviewStatistics": {
+            "Solved": "IPS\\forums\\extensions\\core\\OverviewStatistics\\Solved"
+        },
+        "Permissions": {
+            "Permissions": "IPS\\forums\\extensions\\core\\Permissions\\Permissions"
+        },
+        "Queue": {
+            "RebuildSolvedIndex": "IPS\\forums\\extensions\\core\\Queue\\RebuildSolvedIndex",
+            "RebuildSolvedStats": "IPS\\forums\\extensions\\core\\Queue\\RebuildSolvedStats"
+        },
+        "RssImport": {
+            "RssImport": "IPS\\forums\\extensions\\core\\RssImport\\RssImport"
+        },
+        "SearchContent": {
+            "Posts": "IPS\\forums\\extensions\\core\\SearchContent\\Posts"
+        },
+        "Statistics": {
+            "PercentageSolved": "IPS\\forums\\extensions\\core\\Statistics\\PercentageSolved",
+            "Posts": "IPS\\forums\\extensions\\core\\Statistics\\Posts",
+            "PostsByForum": "IPS\\forums\\extensions\\core\\Statistics\\PostsByForum",
+            "SolvedByForum": "IPS\\forums\\extensions\\core\\Statistics\\SolvedByForum",
+            "SolvedByGroup": "IPS\\forums\\extensions\\core\\Statistics\\SolvedByGroup",
+            "TimeSolved": "IPS\\forums\\extensions\\core\\Statistics\\TimeSolved",
+            "Topics": "IPS\\forums\\extensions\\core\\Statistics\\Topics",
+            "TopicsByForum": "IPS\\forums\\extensions\\core\\Statistics\\TopicsByForum"
+        }
+    }
+}

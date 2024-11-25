@@ -1,0 +1,31 @@
+{
+    "added": [],
+    "edited": [
+        "app=gallery&module=gallery&controller=categories&searchResult=category_approve_com",
+        "app=gallery&module=gallery&controller=categories&searchResult=form_new_category_show_rules",
+        "app=gallery&module=gallery&controller=categories&searchResult=form_new_category_approve_img"
+    ],
+    "removed": [
+        "app=gallery&module=gallery&controller=categories&do=form",
+        "app=gallery&module=gallery&controller=categories&searchResult=form_1_category_allow_albums",
+        "app=gallery&module=gallery&controller=categories&searchResult=form_1_category_allow_reviews",
+        "app=gallery&module=gallery&controller=categories&searchResult=form_1_category_approve_img",
+        "app=gallery&module=gallery&controller=categories&searchResult=form_1_category_description",
+        "app=gallery&module=gallery&controller=categories&searchResult=form_1_category_name",
+        "app=gallery&module=gallery&controller=categories&searchResult=form_1_category_show_rules",
+        "app=gallery&module=gallery&controller=categories&searchResult=form_1_gcategory_allow_rating",
+        "app=gallery&module=gallery&controller=categories&searchResult=form_1_gcategory_parent_id",
+        "app=gallery&module=gallery&controller=categories&subnode=0&parent=1&searchResult=category_allow_comments",
+        "app=gallery&module=gallery&controller=categories&subnode=0&parent=1&searchResult=category_approve_com",
+        "app=gallery&module=gallery&controller=categories&subnode=0&parent=1&searchResult=category_sort_options",
+        "app=gallery&module=gallery&controller=categories&subnode=0&parent=1&searchResult=form_new_category_allow_albums",
+        "app=gallery&module=gallery&controller=categories&subnode=0&parent=1&searchResult=form_new_category_allow_reviews",
+        "app=gallery&module=gallery&controller=categories&subnode=0&parent=1&searchResult=form_new_category_approve_img",
+        "app=gallery&module=gallery&controller=categories&subnode=0&parent=1&searchResult=form_new_category_description",
+        "app=gallery&module=gallery&controller=categories&subnode=0&parent=1&searchResult=form_new_category_name",
+        "app=gallery&module=gallery&controller=categories&subnode=0&parent=1&searchResult=form_new_category_show_rules",
+        "app=gallery&module=gallery&controller=categories&subnode=0&parent=1&searchResult=form_new_gcategory_allow_rating",
+        "app=gallery&module=gallery&controller=categories&subnode=0&parent=1&searchResult=form_new_gcategory_parent_id",
+        "app=gallery&module=gallery&controller=categories&subnode=0&parent=1&searchResult=gallery_permission_custom_error"
+    ]
+}

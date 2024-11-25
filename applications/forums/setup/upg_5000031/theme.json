@@ -1,0 +1,27 @@
+{
+    "html": {
+        "added": [],
+        "edited": [
+            "front\/forums\/topicHover",
+            "front\/submit\/createTopicForm",
+            "front\/topics\/postHeader",
+            "front\/widgets\/postFeed",
+            "front\/widgets\/topicFeedRow"
+        ],
+        "removed": [
+            "front\/forums\/popularQuestionRow",
+            "front\/forums\/qaForum",
+            "front\/forums\/questionRow"
+        ]
+    },
+    "css": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

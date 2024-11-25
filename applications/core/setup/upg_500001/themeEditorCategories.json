@@ -1,0 +1,23 @@
+{
+    "added": [
+        "lightDarkMode",
+        "textLogo",
+        "desktopHeader",
+        "body",
+        "desktopFooter",
+        "logos",
+        "imageLogoDesktop",
+        "mobileHeader",
+        "contentBoxes",
+        "imageLogoMobile",
+        "pageLayouts",
+        "typography",
+        "header",
+        "sidePanel",
+        "content",
+        "footer",
+        "mobileNavigation"
+    ],
+    "edited": [],
+    "removed": []
+}

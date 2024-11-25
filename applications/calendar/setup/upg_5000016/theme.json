@@ -1,0 +1,27 @@
+{
+    "html": {
+        "added": [],
+        "edited": [
+            "front\/browse\/calendarHeader",
+            "front\/overview\/header",
+            "front\/view\/coverPhotoOverlay",
+            "front\/view\/eventBlock",
+            "front\/view\/eventStreamBlock",
+            "front\/view\/rsvpControls",
+            "front\/view\/view"
+        ],
+        "removed": []
+    },
+    "css": {
+        "added": [],
+        "edited": [
+            "front\/calendar.css"
+        ],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

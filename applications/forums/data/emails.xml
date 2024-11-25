@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emails><template><template_app>forums</template_app><template_name>digests__comment</template_name><template_content_html><![CDATA[<tr style='border-bottom: 1px solid #eeeeee'>
+	<td dir='{dir}' width='40' align='center' valign='top' class=' '>
+		<img src='{$comment->author()->get_photo( true, true )}' width='32' height='32' style='border: 1px solid #000; vertical-align: middle;'>
+	</td>
+	<td dir='{dir}' align='left'>
+		<p style='font-family: "Helvetica Neue", helvetica, sans-serif; margin: 0; font-size: 13px; font-weight: bold'>
+		{$email->language->addToStack("x_replied_to_a_topic", FALSE, array( 'sprintf' => array( $comment->author()->name ) ) )}
+		</p>
+		<h2 style="font-family: 'Helvetica Neue', helvetica, sans-serif; font-size: 15px; font-weight: 500 !important; margin: 0;">
+			<a href='{$comment->url()}' style='text-decoration: none;'>{$comment->item()->mapped('title')}</a>
+		</h2>
+		<div style='font-family: "Helvetica Neue", helvetica, sans-serif; line-height: 22px; margin-top: 5px; margin-bottom: 5px; border-left: 3px solid #8c8c8c; padding-left: 15px; font-size: 14px; margin-left: 15px'>
+			{$email->parseTextForEmail( $comment->content(), $email->language, ( \IPS\Settings::i()->email_truncate ? 150 : NULL ) )|raw}
+		</div>
+	</td>
+</tr>]]></template_content_html><template_data>$comment, $email</template_data><template_content_plaintext><![CDATA[{$email->language->addToStack("x_replied_to_a_topic", FALSE, array( 'htmlsprintf' => array( $comment->author()->name ) ) )}: {$comment->item()->mapped('title')} ({$comment->url()})
+]]></template_content_plaintext><template_pinned>0</template_pinned></template><template><template_app>forums</template_app><template_name>digests__item</template_name><template_content_html><![CDATA[<tr style='border-bottom: 1px solid #eeeeee'>
+	<td dir='{dir}' width='40' align='center' valign='top' class=' '>
+		<img src='{$topic->author()->get_photo( true, true )}' width='32' height='32' style='border: 1px solid #000; vertical-align: middle;'>
+	</td>
+	<td dir='{dir}' align='left'>
+		<p style='font-family: "Helvetica Neue", helvetica, sans-serif; margin: 0; font-size: 13px; font-weight: bold'>
+				{$email->language->addToStack("x_created_topic_in", FALSE, array( 'sprintf' => array( $topic->author()->name, $topic->container()->getTitleForLanguage( $email->language ) ) ) )}
+		</p>
+		<h2 style="font-family: 'Helvetica Neue', helvetica, sans-serif; font-size: 20px; font-weight: 500 !important; margin: 0;">
+			<a href='{$topic->url()}' style='text-decoration: none;'>{$topic->title}</a>
+			{{if $topic->mapped('featured')}}&nbsp;&nbsp;<span style='color: #68a72f; font-weight: bold; font-size: 12px; text-transform: uppercase;'>{$email->language->addToStack("featured", FALSE)}</span>{{endif}}
+		</h2>
+		<div style="font-family: 'Helvetica Neue', helvetica, sans-serif; line-height: 22px; margin-top: 10px; margin-bottom: 10px;">
+			{$email->parseTextForEmail( $topic->content(), $email->language, ( \IPS\Settings::i()->email_truncate ? 150 : NULL ) )|raw}
+		</div>
+		<p style="font-family: 'Helvetica Neue', helvetica, sans-serif; margin: 0; font-size: 13px;">
+			<strong>
+				<img src='{resource="email/comment.png" location="interface" app="core"}' width='13' height='12' style='vertical-align: middle'>&nbsp;
+					{$email->language->addToStack("replies_number", FALSE, array( 'pluralize' => array( ( $topic->posts ) ? $topic->posts - 1 : 0 ) ) )}
+			</strong>
+		</p>
+	</td>
+</tr>]]></template_content_html><template_data>$topic, $email</template_data><template_content_plaintext><![CDATA[{$email->language->addToStack("x_created_topic_in", FALSE, array( 'htmlsprintf' => array( $topic->author()->name, $topic->container()->getTitleForLanguage( $email->language ) ) ) )}: {$topic->title} ({$topic->url()})
+]]></template_content_plaintext><template_pinned>0</template_pinned></template></emails>

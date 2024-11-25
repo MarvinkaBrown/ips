@@ -1,0 +1,28 @@
+{
+    "html": {
+        "added": [],
+        "edited": [
+            "front\/global\/htmlDataAttributes",
+            "front\/modcp\/warnHovercard"
+        ],
+        "removed": []
+    },
+    "css": {
+        "added": [],
+        "edited": [
+            "front\/core.css",
+            "global\/framework\/3-data-tables.css",
+            "global\/framework\/3-inputs.css",
+            "global\/framework\/3-misc.css",
+            "global\/framework\/3-page-header.css",
+            "global\/framework\/3-richtext.css",
+            "global\/framework\/4-global.css"
+        ],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

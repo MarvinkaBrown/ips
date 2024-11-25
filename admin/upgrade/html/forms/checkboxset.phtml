@@ -1,0 +1,48 @@
+<ips:template parameters="$name, $value, $required, $options, $multiple=FALSE, $class='', $disabled=FALSE, $toggles=array(), $id=NULL, $unlimited=NULL, $unlimitedLang='all', $unlimitedToggles=array(), $toggleOn=TRUE, $descriptions=array()" />
+{{if $multiple}}
+	<input type="hidden" name="{$name}[__EMPTY]" value="__EMPTY">
+{{endif}}
+{{if $unlimited !== NULL}}
+	<div data-control="granularCheckboxset">
+		<div data-role="checkboxsetUnlimited" class="{{if !\is_array( $value )}}ipsJS_show{{else}}ipsHide{{endif}}">
+			<input
+				type='checkbox'
+				name="{expression="trim( $name, '[]' )"}_unlimited"
+				value='{$unlimited}'
+				id="{expression="trim( $id ?: $name, '[]' )"}_unlimited"
+				{{if $unlimited === $value}}checked{{endif}}
+				{{if $disabled}}disabled aria-disabled='true'{{endif}}
+				class="ipsSwitch"
+				data-role="checkboxsetUnlimitedToggle"
+			>
+			&nbsp;
+			{lang="or"}
+			&nbsp;
+			<a class="ipsCursor_pointer" data-action="checkboxsetCustomize">{lang="customize"}</a>
+		</div>
+{{endif}}
+		<div data-role="checkboxsetGranular" class="{{if $unlimited !== NULL and !\is_array( $value )}}ipsJS_hide{{endif}}">
+			<ul class="ipsFieldList">
+			{{foreach $options as $k => $v}}
+				<li>
+					<input type="checkbox" class="ipsInputToggle {{if $class}}{$class}{{endif}}" name="{$name}[{$k}]" value="1" {{if ( $unlimited !== NULL AND $unlimited === $value ) or ( \is_array( $value ) AND \in_array( $k, $value ) )}}checked{{endif}} {{if $disabled === TRUE or ( \is_array( $disabled ) and \in_array( $k, $disabled ) )}}disabled{{endif}} {{if isset( $toggles[ $k ] ) and !empty( $toggles[ $k ] )}}data-control="toggle" {{if $toggleOn === FALSE}}data-togglesOff{{else}}data-togglesOn{{endif}}="{expression="implode( ',', $toggles[ $k ] )"}"{{endif}} id="elCheckbox_{$name}_{$k}">
+					<div class='ipsFieldList__content'>
+						<label for='elCheckbox_{$name}_{$k}' id='elField_{$name}_label'>{$v|raw}</label>
+						{{if isset( $descriptions[ $k ] )}}
+							<div class='ipsFieldRow__desc'>
+								{$descriptions[ $k ]|raw}
+							</div>
+						{{endif}}
+					</div>
+				</li>
+			{{endforeach}}
+			</ul>
+			{{if $unlimited !== NULL}}
+				<div class="i-margin-top_1">
+					{lang="or"}
+					&nbsp;
+					<a class="ipsCursor_pointer" data-action="checkboxsetAll">{lang="all"}</a> / <a class="ipsCursor_pointer" data-action="checkboxsetNone">{lang="none"}</a>
+				</div>
+		</div>
+			{{endif}}
+	</div>

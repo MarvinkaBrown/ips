@@ -1,0 +1,46 @@
+<?php
+/**
+ * @brief		Announcements Extension
+ * @author		<a href='https://www.invisioncommunity.com'>Invision Power Services, Inc.</a>
+ * @copyright	(c) Invision Power Services, Inc.
+ * @license		https://www.invisioncommunity.com/legal/standards/
+ * @package		Invision Community
+ {subpackage}
+ * @since		{date}
+ */
+
+namespace IPS\{app}\extensions\core\Announcements;
+
+use IPS\core\Announcements\Announcement as AnnouncementClass;
+use IPS\Extensions\AnnouncementsAbstract;
+use IPS\Helpers\Form\FormAbstract;
+use IPS\Helpers\Form\Node;
+use function defined;
+
+/* To prevent PHP errors (extending class does not exist) revealing path */
+if ( !defined( '\IPS\SUITE_UNIQUE_KEY' ) )
+{
+	header( ( $_SERVER['SERVER_PROTOCOL'] ?? 'HTTP/1.0' ) . ' 403 Forbidden' );
+	exit;
+}
+
+/**
+ * Announcements Extension
+ */
+class {class} extends AnnouncementsAbstract
+{
+	public static string $idField = "id";
+	
+	public static array $controllers = array();
+	
+	/**
+	 * Get Setting Field
+	 *
+	 * @param	AnnouncementClass|null	$announcement
+	 * @return	FormAbstract Form element
+	 */
+	public function getSettingField( ?AnnouncementClass $announcement ): FormAbstract
+	{
+		return new Node( 'announce_download_categories', ( $announcement ) ? explode( ",", $announcement->ids ) : NULL, FALSE, array( 'class' => 'IPS\downloads\Category', 'zeroVal' => 'any', 'multiple' => TRUE ), NULL, NULL, NULL, 'announce_download_categories' );
+	}
+}

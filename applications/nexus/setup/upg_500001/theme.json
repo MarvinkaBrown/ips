@@ -1,0 +1,51 @@
+{
+    "html": {
+        "added": [],
+        "edited": [
+            "front\/store\/categorySidebar",
+            "front\/store\/category",
+            "front\/store\/index",
+            "front\/store\/package",
+            "front\/store\/register",
+            "front\/subscription\/table",
+            "admin\/customers\/accountInformation",
+            "admin\/customers\/purchases",
+            "admin\/purchases\/advertisement",
+            "front\/purchases\/package",
+            "front\/store\/cartReview",
+            "front\/store\/index",
+            "front\/store\/package",
+            "front\/store\/packageBlock",
+            "front\/store\/packageBlockWidget",
+            "front\/store\/register",
+            "front\/subscription\/row",
+            "front\/widgets\/bestSellers",
+            "front\/widgets\/donations",
+            "front\/widgets\/featuredProduct",
+            "front\/widgets\/latestProducts",
+            "front\/widgets\/pendingActions",
+            "front\/widgets\/recentCommerceReviews",
+            "front\/widgets\/subscriptions"
+        ],
+        "removed": []
+    },
+    "css": {
+        "added": [],
+        "edited": {
+            "1": "front\/nexus.css",
+            "2": "admin\/customer.css"
+        },
+        "removed": [
+            "front\/global.css",
+            "front\/subscriptions.css"
+        ]
+    },
+    "resources": {
+        "added": [],
+        "edited": [
+            "front\/cards\/venmo_white.svg",
+            "front\/cards\/venmo.svg"
+        ],
+        "removed": []
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "files": {
+        "added": [],
+        "edited": [
+            "cms\/front\/controllers\/blocks\/ips.blocks.navigation.js",
+            "cms\/admin\/controllers\/fields\/ips.fields.form.js"
+        ],
+        "removed": []
+    },
+    "orders": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

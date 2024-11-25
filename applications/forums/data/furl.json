@@ -1,0 +1,41 @@
+{
+	"topLevel": "forums",
+	"pages": {
+	    "forums_rss": {
+		    "friendly": "forum/{#id}-{?}.xml",
+		    "real": "app=forums&module=forums&controller=forums&rss=1"
+	    },
+	    "forums_forum": {
+		    "friendly": "forum/{#id}-{?}",
+		    "real": "app=forums&module=forums&controller=forums",
+		    "verify": "\\IPS\\forums\\Forum",
+		    "seoPagination": true
+	    },
+	    "forums_clubs": {
+		    "friendly": "forum/clubs",
+		    "real": "app=forums&module=forums&controller=forums&do=clubs"
+	    },
+	    "topic_copy": {
+	        "friendly": "topic/{#id}-{?}/copy",
+	        "real": "app=cms&module=database&controller=topic"
+	    },
+	    "forums_topic": {
+		    "friendly": "topic/{#id}-{?}",
+		    "real": "app=forums&module=forums&controller=topic",
+		    "verify": "\\IPS\\forums\\Topic",
+		    "seoPagination": true
+	    },
+	    "forums": {
+	        "friendly": "",
+	        "real": "app=forums&module=forums&controller=index"
+	    },
+		"topic_create": {
+		  "friendly": "submit",
+		  "real": "app=forums&module=forums&controller=forums&do=createMenu"
+		},
+		"topic_non_forum_add_button": {
+		  "friendly": "startTopic",
+		  "real": "app=forums&module=forums&controller=forums&do=add"
+		}
+	}
+}

@@ -1,0 +1,40 @@
+{
+    "1": {
+        "method": "changeColumn",
+        "params": [
+            "core_groups",
+            "g_editor_comments_restriction",
+            {
+                "name": "g_editor_comments_restriction",
+                "type": "TINYINT",
+                "length": null,
+                "decimals": null,
+                "values": null,
+                "allow_null": true,
+                "default": null,
+                "comment": "The editor restriction level of this group while editing\/creating posts",
+                "unsigned": true,
+                "auto_increment": false
+            }
+        ]
+    },
+    "2": {
+        "method": "changeColumn",
+        "params": [
+            "core_groups",
+            "g_editor_restriction",
+            {
+                "name": "g_editor_restriction",
+                "type": "TINYINT",
+                "length": null,
+                "decimals": null,
+                "values": null,
+                "allow_null": true,
+                "default": null,
+                "comment": "The restriction level of this group when editing normal content",
+                "unsigned": true,
+                "auto_increment": false
+            }
+        ]
+    }
+}

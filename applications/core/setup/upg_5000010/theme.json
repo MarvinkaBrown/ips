@@ -1,0 +1,40 @@
+{
+    "html": {
+        "added": [],
+        "edited": [
+            "global\/embed\/video",
+            "admin\/memberprofile\/loginMethods",
+            "front\/themeeditor\/settingCheckbox",
+            "front\/themeeditor\/settingRange",
+            "front\/themeeditor\/themeEditorTemplate",
+            "front\/widgets\/builderWrapper"
+        ],
+        "removed": []
+    },
+    "css": {
+        "added": [],
+        "edited": [
+            "front\/core.css",
+            "global\/framework\/1-1-reset.css",
+            "global\/framework\/1-2-settings.css",
+            "global\/framework\/3-cover-photo.css",
+            "global\/framework\/3-data-tables.css",
+            "global\/framework\/3-entries.css",
+            "global\/framework\/3-forms.css",
+            "global\/framework\/3-images.css",
+            "global\/framework\/3-inputs.css",
+            "global\/framework\/3-menus.css",
+            "global\/framework\/3-misc.css",
+            "global\/framework\/3-post-content.css",
+            "global\/framework\/3-streams.css",
+            "global\/framework\/4-header.css",
+            "front\/styles\/theme_editor.css"
+        ],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

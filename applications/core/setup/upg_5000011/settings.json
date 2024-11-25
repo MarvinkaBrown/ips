@@ -1,0 +1,10 @@
+{
+    "added": [],
+    "edited": [
+        "editor_mode_restrictions"
+    ],
+    "removed": [
+        "allow_only_https_remote_images",
+        "allow_remote_images"
+    ]
+}

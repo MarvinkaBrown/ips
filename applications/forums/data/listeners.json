@@ -1,0 +1,7 @@
+{
+    "Forums": {
+        "type": "MemberListenerType",
+        "classname": "IPS\\forums\\listeners\\Forums",
+        "extends": "IPS\\Member"
+    }
+}

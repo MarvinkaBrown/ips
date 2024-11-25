@@ -1,0 +1,42 @@
+{
+    "html": {
+        "added": [],
+        "edited": [
+            "front\/browse\/album",
+            "front\/browse\/categories",
+            "front\/browse\/category",
+            "front\/browse\/imageTable",
+            "front\/browse\/index",
+            "front\/global\/manageFollowRow",
+            "front\/view\/image",
+            "front\/view\/imageInfo",
+            "front\/widgets\/imageRow",
+            "front\/browse\/index",
+            "front\/view\/image",
+            "front\/widgets\/albums",
+            "front\/widgets\/galleryStats",
+            "front\/widgets\/imageFeed",
+            "front\/widgets\/imageRow",
+            "front\/widgets\/latestImage",
+            "front\/widgets\/recentComments",
+            "front\/widgets\/recentImageReviews"
+        ],
+        "removed": []
+    },
+    "css": {
+        "added": [],
+        "edited": {
+            "1": "front\/global.css",
+            "2": "front\/gallery.css",
+            "3": "front\/gallery.css"
+        },
+        "removed": [
+            "front\/global.css"
+        ]
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

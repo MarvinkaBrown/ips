@@ -1,0 +1,11 @@
+{
+    "added": [],
+    "edited": [],
+    "removed": [
+        "app=downloads&module=downloads&controller=settings&searchResult=form_idm_gridview",
+        "app=downloads&module=downloads&controller=categories&searchResult=ctags_disabled",
+        "app=downloads&module=downloads&controller=categories&searchResult=ctags_noprefixes",
+        "app=downloads&module=downloads&controller=categories&subnode=0&parent=1&searchResult=ctags_disabled",
+        "app=downloads&module=downloads&controller=categories&subnode=0&parent=1&searchResult=ctags_noprefixes"
+    ]
+}

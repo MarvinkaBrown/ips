@@ -1,0 +1,218 @@
+:root{
+
+	--i-background_1: hsl(215 32% 100%);
+	--i-background_2: hsl(215 32% 98.5%);
+	--i-background_3: hsl(215 32% 95%);
+	--i-background_4: hsl(215 32% 92%);
+	--i-background_5: hsl(215 32% 88%);
+
+	--i-color_root: hsl(215 32% 30%);
+	--i-color_soft: hsl(215 24% 49%);
+	--i-color_hard: hsl(215 60% 5%);
+	--i-color_positive: hsl(129 90% 25%);
+	--i-color_negative: hsl(0 95% 45%);
+	--i-color_warning: hsl(351 63% 40%);
+
+	--i-background_root: hsl(217 40% 96%);
+	--i-link--co: hsl(215 46% 14%);
+	--i-link-hover--co: hsl(215 84% 33%);
+
+	--i-header--ba-co: hsl(215 39% 20%);
+	--i-header--co: hsl(0 0% 100%);
+
+	--i-box--bo-ra: 6px;
+	--i-box--ba-co: hsl(0 0% 100%);
+	--i-box--bo-sh: hsla(215 41% 10% / 0.12) 0px 8px 7px -3px;
+	--i-box--bo-co: hsl(215 60% 30% / .1);
+
+	--i-primary: hsl(215 85% 50%);
+	--i-primary-contrast: hsl(0 0% 100%);
+
+	--i-secondary: hsl(215 48% 13%);
+	--i-secondary-contrast: hsl(0 0% 100%);
+
+	--i-outline-width: 2px;
+	--i-outline-style: solid;
+	--i-outline-color: var(--i-primary);
+
+	--i-input--ba-co: var(--i-background_1);
+	--i-input--pa-bl: .7em;
+	--i-input--pa-in: 1em;
+	--i-input--bo-wi: 1px;
+	--i-input--bo-ra: .4em;
+	--i-input--bo-co: color-mix(in srgb, currentColor 40%, transparent);
+	--i-input--bo-sh: hsl(0 0% 0% / .05) 0px 2px 1px;
+	--i-input-hover--bo-co: color-mix(in srgb, currentColor 40%, transparent);
+	--i-input-active--bo-co: var(--i-primary);
+	--i-placeholder--op: .75;
+	--i-select--dark-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3Cpath d='M169.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 274.7 54.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z' fill='hsl(0,0%25,0%25,.5)'/%3E%3C/svg%3E");
+	--i-select--light-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3Cpath d='M169.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 274.7 54.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z' fill='hsl(0,0%25,100%25,.5)'/%3E%3C/svg%3E");
+}
+
+
+html {
+	background: var(--i-background_root);
+	position: relative;
+}
+
+body {
+	font-family: system-ui, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	font-size: calc(1rem / 16 * 15);
+	line-height: 1.5;
+	color: var(--i-color_root);	
+	min-height: 100vh;
+	min-height: 100svh;
+	padding: 50px 0;
+}
+
+pre {
+	white-space: pre-wrap;
+	text-align: start;
+}
+
+:where(a) {
+	color: var(--i-link--co);
+	text-decoration: none;
+}
+
+	:where(a:hover) {
+		color: var(--i-link-hover--co);
+	}
+
+#ipsInstaller {
+	margin: 0 auto;
+	max-width: min(95vw, 1200px);
+	border-radius: var(--i-box--bo-ra);
+	background-color: var(--i-box--ba-co);
+	background-clip: padding-box;
+	border: 1px solid var(--i-box--bo-co);
+}
+
+.ipsInstaller__header {
+	background: var(--i-header--ba-co);
+	color: var(--i-header--co);
+	border-radius: var(--i-box--bo-ra) var(--i-box--bo-ra) 0 0;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 1em;
+	padding: 1.3em;
+}
+
+.ipsInstaller__logo{
+	display: flex;
+	align-items: center;
+	gap: .8em;
+	font-size: 22px;
+	color: inherit;
+	text-decoration: none;
+	font-weight: 300;
+}
+
+	.ipsInstaller__logo svg {
+		width: auto;
+		height: 1em;
+		fill: currentColor;
+	}
+
+/* .ipsInstaller__page-title{
+	padding: 1.4em;
+	background: var(--i-background_3);
+} */
+
+.ipsInstaller__padding{
+	padding: 3em;
+}
+
+@keyframes progress-bar-stripes  {
+	from {
+		background-position: 40px 0;
+	}
+  	to {
+		background-position: 0 0;
+	}
+}
+
+.ipsProgressBar {
+	margin: auto;
+	height: 30px;
+	overflow: hidden;
+	background: var(--i-background_5);
+	border-radius: 8px;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+	
+	.ipsProgressBar_animated .ipsProgressBar_progress  {
+		background-color: var(--i-primary);
+		background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+		background-size: 40px 40px;
+		animation: progress-bar-stripes 2s linear infinite;
+	}
+
+.ipsProgressBar_progress {
+	float: left;
+	width: 0;
+	height: 100%;
+	font-size: 12px;
+	color: #ffffff;
+	text-align: center;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background: var(--i-primary);
+	position: relative;
+	padding-left: 6px;
+}
+
+	.ipsProgressBar_progress[data-progress]:after {
+		position: absolute;
+		right: 5px;
+		top: 0;
+		line-height: 32px;
+		color: #fff;
+		content: attr(data-progress);
+		display: block;
+		font-weight: bold;
+	}
+
+/* Redirector */
+.ipsRedirect {
+	text-align: center;
+}
+	.ipsRedirect_loading {
+		height: 100px;
+	}
+	.ipsRedirect_progress {
+		margin-bottom: 20px;
+	}
+
+.ipsRedirect_message {
+	display: block;
+	text-align: center;
+	font-size: .9em;
+	color: var(--i-color_soft);
+}
+
+.ipsRedirect_message.custom_message {
+	text-align: start;
+	color: var(--i-color_root);
+}
+
+/* Code */
+.ipsCode {
+	background: var(--i-background_2);
+	padding: 1em;
+	border: 0;
+	border-inline-start: 4px solid var(--i-color_soft);
+	clear: both;
+}
+
+/* Multi redirect */
+.ipsMultipleRedirect{
+	padding: 3em;
+}
+
+/* Footer */
+.ipsInstaller__ip{
+	text-align: center;
+	margin-top: 2em;
+	color: var(--i-color_soft);
+}

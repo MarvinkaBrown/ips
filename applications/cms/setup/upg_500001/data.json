@@ -1,0 +1,22 @@
+{
+    "id": 500001,
+    "name": "5.0.0 Alpha 1",
+    "steps": {
+        "queries": true,
+        "lang": true,
+        "theme": true,
+        "themeeditor": false,
+        "javascript": true,
+        "emailTemplates": false,
+        "acpSearchKeywords": false,
+        "settings": true,
+        "tasks": false,
+        "modules": false,
+        "widgets": true,
+        "customOptions": false,
+        "customRoutines": true
+    },
+    "forceMainUpgrader": false,
+    "forceManualDownloadNoCiC": false,
+    "forceManualDownloadCiC": false
+}

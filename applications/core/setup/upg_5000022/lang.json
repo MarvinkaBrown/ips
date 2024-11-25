@@ -1,0 +1,38 @@
+{
+    "normal": {
+        "added": [
+            "mailsub__core_acp_notification_AccountDeletion",
+            "mailsub__core_acp_notification_ManualInterventionMessage",
+            "mailsub__core_acp_notification_PiiDataRequest",
+            "email_notification_pii_data_request",
+            "email_notification_pii_accout_delete_request",
+            "pii_review",
+            "mf_expert",
+            "mf_expert_expert",
+            "mf_expert_not_expert",
+            "moderation_warnings_blurb",
+            "moderation_reporttypes_desc",
+            "storage_engine_run",
+            "support_db_engine_title",
+            "cheev_rules_blurb",
+            "cheev_ranks_blurb",
+            "cheev_badges_blurb",
+            "copy_tag_text"
+        ],
+        "edited": [
+            "automaticmoderation_type_desc"
+        ],
+        "removed": [
+            "sitemap_ping_google_fail",
+            "sitemap_ping_google_success",
+            "sitemap_ping_bing_fail",
+            "sitemap_ping_bing_success",
+            "sitemap_ping_already24"
+        ]
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

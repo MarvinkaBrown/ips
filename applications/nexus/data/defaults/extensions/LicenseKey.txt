@@ -1,0 +1,41 @@
+<?php
+/**
+ * @brief		{class}
+ * @author		<a href='https://www.invisioncommunity.com'>Invision Power Services, Inc.</a>
+ * @copyright	(c) Invision Power Services, Inc.
+ * @license		https://www.invisioncommunity.com/legal/standards/
+ * @package		Invision Community
+{subpackage}
+ * @since		{date}
+ */
+
+namespace IPS\{app}\extensions\nexus\LicenseKey;
+
+/* To prevent PHP errors (extending class does not exist) revealing path */
+
+use IPS\nexus\Purchase\LicenseKey;
+use function defined;
+
+if ( !defined( '\IPS\SUITE_UNIQUE_KEY' ) )
+{
+	header( ( $_SERVER['SERVER_PROTOCOL'] ?? 'HTTP/1.0' ) . ' 403 Forbidden' );
+	exit;
+}
+
+/**
+ * {class}
+ */
+class {class} extends LicenseKey
+{
+    public static string $keyType = '{class}';
+
+    /**
+     * Generates a License Key
+     *
+     * @return	string
+     */
+    public static function generateKey() : string
+    {
+        return '';
+    }
+}

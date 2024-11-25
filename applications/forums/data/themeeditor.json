@@ -1,0 +1,78 @@
+{
+    "settings": {
+        "layout_forums_forum": {
+            "key": "layout_forums_forum",
+            "type": "select",
+            "name": "Forum Index",
+            "desc": "Change the default layout of the forum index.",
+            "refresh": true,
+            "options": [
+                [
+                    "table",
+                    "Table"
+                ],
+                [
+                    "grid",
+                    "Grid"
+                ],
+                [
+                    "fluid",
+                    "Fluid"
+                ],
+                [
+                    "modern",
+                    "Feed"
+                ]
+            ],
+            "default": "grid",
+            "cat": "pageLayouts"
+        },
+        "layout_forums_topic": {
+            "key": "layout_forums_topic",
+            "type": "select",
+            "name": "Topic list",
+            "desc": "Change the default layout of the topic list.",
+            "refresh": true,
+            "options": [
+                [
+                    "list",
+                    "Classic"
+                ],
+                [
+                    "snippet",
+                    "Snippet"
+                ]
+            ],
+            "default": "snippet",
+            "cat": "pageLayouts"
+        },
+        "layout_forums_post": {
+            "key": "layout_forums_post",
+            "type": "select",
+            "name": "Topic view",
+            "desc": "Change the default layout of topics.",
+            "refresh": true,
+            "options": [
+                [
+                    "classic",
+                    "Normal"
+                ],
+                [
+                    "modern",
+                    "Compact"
+                ]
+            ],
+            "default": "classic",
+            "cat": "pageLayouts"
+        },
+        "layout_forum_topic_view_firstpost": {
+            "key": "layout_forum_topic_view_firstpost",
+            "type": "checkbox",
+            "name": "Feature first post?",
+            "desc": "Feature the first post by showing it at the top of every page in the topic?",
+            "refresh": true,
+            "default": "0",
+            "cat": "pageLayouts"
+        }
+    }
+}

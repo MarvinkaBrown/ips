@@ -1,0 +1,77 @@
+<?php
+/**
+ * @brief		{class}
+ * @author		<a href='https://www.invisioncommunity.com'>Invision Power Services, Inc.</a>
+ * @copyright	(c) Invision Power Services, Inc.
+ * @license		https://www.invisioncommunity.com/legal/standards/
+ * @package		Invision Community
+{subpackage}
+ * @since		{date}
+ */
+
+namespace IPS\{app}\extensions\nexus\Payout;
+
+/* To prevent PHP errors (extending class does not exist) revealing path */
+
+use IPS\nexus\Payout;
+use DomainException;
+use Exception;
+use function defined;
+
+if ( !defined( '\IPS\SUITE_UNIQUE_KEY' ) )
+{
+	header( ( $_SERVER['SERVER_PROTOCOL'] ?? 'HTTP/1.0' ) . ' 403 Forbidden' );
+	exit;
+}
+
+/**
+ * {class}
+ */
+class {class} extends Payout
+{
+    public static string $gatewayKey = '{class}';
+
+    /**
+	 * ACP Settings
+	 *
+	 * @return	array
+	 */
+	public static function settings() : array
+	{
+		return array();
+	}
+
+	/**
+	 * Payout Form
+	 *
+	 * @return	array
+	 */
+	public static function form() :array
+	{
+		return array();
+	}
+
+	/**
+	 * Get data and validate
+	 *
+	 * @param	array	$values	Values from form
+	 * @return	mixed
+	 * @throws	DomainException
+	 */
+	public function getData( array $values ) : mixed
+	{
+		return NULL;
+	}
+
+    /**
+	 * Process the payout
+	 * Return the new status for this payout record
+	 *
+	 * @return	string
+	 * @throws	Exception
+	 */
+	public function process() : string
+	{
+
+	}
+}

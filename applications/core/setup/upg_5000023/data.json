@@ -1,0 +1,22 @@
+{
+    "id": 5000023,
+    "name": "5.0.0 Alpha 15",
+    "steps": {
+        "queries": false,
+        "lang": true,
+        "theme": true,
+        "themeeditor": true,
+        "javascript": true,
+        "emailTemplates": false,
+        "acpSearchKeywords": true,
+        "settings": false,
+        "tasks": false,
+        "modules": false,
+        "widgets": false,
+        "customOptions": false,
+        "customRoutines": false
+    },
+    "forceMainUpgrader": true,
+    "forceManualDownloadNoCiC": false,
+    "forceManualDownloadCiC": false
+}

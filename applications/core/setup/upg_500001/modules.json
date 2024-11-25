@@ -1,0 +1,18 @@
+{
+    "added": {
+        "0": "admin\/developer",
+        "3": "front\/feature",
+        "7": "front\/languages"
+    },
+    "edited": [
+        "admin\/overview"
+    ],
+    "removed": [
+        "admin\/livesearch",
+        "admin\/logs",
+        "admin\/logsettings",
+        "admin\/diagnostics",
+        "front\/promote",
+        "front\/status"
+    ]
+}

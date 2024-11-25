@@ -1,0 +1,32 @@
+{
+    "normal": {
+        "added": [
+            "filestorage__downloads_Icons",
+            "filestorage__downloads_Cards",
+            "modlog__action_restorebackup_stats",
+            "modlog__action_visibilitybackup_stats",
+            "modlog__action_deletebackup_stats",
+            "modlog__action_purchasestatus_stats",
+            "modlog__action_newversion_reject_stats",
+            "modlog__action_newversion_approved_stats",
+            "cicon_choose",
+            "cicon_choose_desc",
+            "cicon_choose_icon",
+            "cicon_choose_upload",
+            "cicon_picker",
+            "cicon_upload",
+            "cicon_choose_icon_none",
+            "ccard_image",
+            "ccard_image_desc",
+            "can_view_reports_downloads_file",
+            "file_container"
+        ],
+        "edited": [],
+        "removed": []
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

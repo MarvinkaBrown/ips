@@ -1,0 +1,7 @@
+{
+    "Blog": {
+        "type": "MemberListenerType",
+        "classname": "IPS\\blog\\listeners\\Blog",
+        "extends": "IPS\\Member"
+    }
+}

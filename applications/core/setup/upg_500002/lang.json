@@ -1,0 +1,57 @@
+{
+    "normal": {
+        "added": [],
+        "edited": [
+            "promoted_by",
+            "promote_thing_in_thing",
+            "block_achievements_earned_badge",
+            "block_achievements_earned_rank"
+        ],
+        "removed": [
+            "menu__core_communityhive",
+            "menu__core_communityhive_settings",
+            "enhancements__core_HiveCommunityEnhancement",
+            "enhancements__core_HiveCommunityEnhancement_desc",
+            "communityhive_enhancements_configure",
+            "module__core_hive",
+            "hive_enable_hive_title",
+            "hive_enable_hive_blurb",
+            "hive_community_name",
+            "hive_community_name_desc",
+            "hive_email_address",
+            "hive_email_address_desc",
+            "hive_choose_content",
+            "hive_choose_content_blurb",
+            "hive_content_classes",
+            "hive_activated_blurb",
+            "hive_continue_activation",
+            "hive_subscribe_to_hive",
+            "hive_subscribe_blurb",
+            "hive_subscribe_blurb2",
+            "hive_subscribe_button",
+            "hive_subscriber_email_address",
+            "hive_follow_anonymously",
+            "hive_anonymously_desc",
+            "hive_anonymous_button",
+            "hive_privacy_policy",
+            "hive_link",
+            "block_communityHiveFollow",
+            "block_communityHiveFollow_desc",
+            "block_communityhive",
+            "block_communityhive_display",
+            "block_communityhive_follow",
+            "block_communityhive_follow_short",
+            "block_communityhive_admin_message",
+            "tags_content_order",
+            "tags_content_order_desc"
+        ]
+    },
+    "js": {
+        "added": [
+            "editor_tool--highlight",
+            "editor_tool--remove-highlight"
+        ],
+        "edited": [],
+        "removed": []
+    }
+}

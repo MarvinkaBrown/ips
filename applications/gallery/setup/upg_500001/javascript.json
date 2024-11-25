@@ -1,0 +1,25 @@
+{
+    "files": {
+        "added": [],
+        "edited": [
+            "gallery\/front\/controllers\/global\/ips.global.nsfw.js",
+            "gallery\/front\/controllers\/submit\/ips.submit.existingAlbums.js",
+            "gallery\/front\/controllers\/submit\/ips.submit.uploadImages.js",
+            "gallery\/front\/controllers\/submit\/ips.submit.wrapper.js",
+            "gallery\/front\/templates\/ips.templates.submit.js",
+            "gallery\/front\/templates\/ips.templates.view.js",
+            "gallery\/front\/controllers\/view\/ips.view.note.js"
+        ],
+        "removed": [
+            "gallery\/front\/controllers\/browse\/ips.browse.carousel.js",
+            "gallery\/front\/controllers\/browse\/ips.browse.list.js"
+        ]
+    },
+    "orders": {
+        "added": [],
+        "edited": [
+            "global\/\/dev\/js\/\/library\/\/jquery"
+        ],
+        "removed": []
+    }
+}

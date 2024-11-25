@@ -1,0 +1,51 @@
+/* HEADINGS */
+.ipsType_pageTitle {
+	font-size: 1.8em;
+	color: var(--i-color_hard);
+	font-weight: 500;
+	line-height: 1.2;
+}
+
+	.ipsType_pageTitle .fa{
+		font-size: .75em;
+	}
+
+	.ipsType_pageTitle a {
+		color: inherit;
+	}
+
+	.ipsType_pageTitle + p{
+		margin-top: 1em;
+	}
+
+.ipsType_sectionHead {
+	font-size: 1.3em;
+	color: var(--i-color_hard);
+	font-weight: 500;
+	margin-bottom: 1em;
+}
+
+.ipsList_checks + .ipsType_sectionHead{
+	margin-top: 3em;
+}
+
+/* ALIGNMENT */
+.i-text-align_center { text-align: center; }
+
+/* SIZING */
+.i-font-size_small {
+	font-size: max(11px, .8em);
+}
+
+.i-font-size_large {
+	font-size: 1.2em;
+}
+
+/* COLORS */
+.i-color_soft {
+	color: var(--i-color_soft);
+}
+
+.i-color_warning {
+	color: var(--i-color_warning);
+}

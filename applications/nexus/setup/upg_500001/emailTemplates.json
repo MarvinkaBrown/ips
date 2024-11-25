@@ -1,0 +1,32 @@
+{
+    "added": [],
+    "edited": [
+        "newInvoice",
+        "invoiceMarkedPaid",
+        "transactionGatewayPending",
+        "transactionApproved",
+        "invoiceTrackExpired",
+        "transactionHeld",
+        "transactionWaiting",
+        "transactionFailed",
+        "transactionRefunded",
+        "invoiceNotify",
+        "acp_notification_Transaction",
+        "giftVoucher"
+    ],
+    "removed": [
+        "staffReplyPending",
+        "unsubscribeStaffNotify",
+        "acp_notification_Shipment",
+        "staffNotifyNew",
+        "staffNotifyNote",
+        "staffAssignedReminder",
+        "replyRequestLocked",
+        "staffNotifyReply",
+        "staffReply",
+        "emailConfirmation",
+        "autoresolveWarning",
+        "shipment",
+        "staffReplyNoChrome"
+    ]
+}

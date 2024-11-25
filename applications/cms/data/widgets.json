@@ -1,0 +1,157 @@
+{
+    "Database": {
+        "class": "\\IPS\\Widget",
+        "restrict": [
+            "cms"
+        ],
+        "default_area": "",
+        "allow_reuse": false,
+        "menu_style": "menu",
+        "embeddable": false
+    },
+    "Wysiwyg": {
+        "class": "\\IPS\\Widget\\StaticCache",
+        "restrict": [
+            "sidebar",
+            "cms"
+        ],
+        "default_area": "",
+        "allow_reuse": true,
+        "menu_style": "modal",
+        "layouts": "",
+        "embeddable": false,
+        "padding": false,
+        "default_layout": null,
+        "searchterms": "rich text,editor,content"
+    },
+    "DatabaseFilters": {
+        "class": "\\IPS\\Widget",
+        "restrict": [
+            "cms"
+        ],
+        "default_area": "",
+        "allow_reuse": false,
+        "menu_style": "menu",
+        "embeddable": false
+    },
+    "Categories": {
+        "class": "\\IPS\\Widget\\PermissionCache",
+        "restrict": [
+            "cms"
+        ],
+        "default_area": "",
+        "allow_reuse": false,
+        "menu_style": "menu",
+        "embeddable": false
+    },
+    "Blocks": {
+        "class": "\\IPS\\Widget",
+        "restrict": [],
+        "default_area": "",
+        "allow_reuse": true,
+        "menu_style": "modal",
+        "embeddable": false
+    },
+    "RecordFeed": {
+        "class": "\\IPS\\Widget\\PermissionCache",
+        "restrict": [
+            "sidebar",
+            "cms"
+        ],
+        "default_area": "",
+        "allow_reuse": true,
+        "menu_style": "menu",
+        "embeddable": true,
+        "padding": false
+    },
+    "Rss": {
+        "class": "\\IPS\\Widget\\StaticCache",
+        "restrict": [
+            "cms"
+        ],
+        "default_area": "",
+        "allow_reuse": true,
+        "menu_style": "modal",
+        "embeddable": true
+    },
+    "pagebuildertext": {
+        "class": "\\IPS\\Widget\\StaticCache",
+        "restrict": [
+            "sidebar",
+            "cms"
+        ],
+        "default_area": "",
+        "allow_reuse": true,
+        "menu_style": "modal",
+        "layouts": "",
+        "embeddable": true,
+        "padding": false,
+        "default_layout": null,
+        "searchterms": "plaintext,plain"
+    },
+    "pagebuilderoembed": {
+        "class": "\\IPS\\Widget\\StaticCache",
+        "restrict": [
+            "sidebar",
+            "cms"
+        ],
+        "default_area": "",
+        "allow_reuse": true,
+        "menu_style": "modal",
+        "embeddable": true
+    },
+    "pagebuilderupload": {
+        "class": "\\IPS\\Widget\\StaticCache",
+        "restrict": [
+            "sidebar",
+            "cms"
+        ],
+        "default_area": "",
+        "allow_reuse": true,
+        "menu_style": "modal",
+        "layouts": "wallpaper",
+        "embeddable": true,
+        "padding": false,
+        "default_layout": "wallpaper",
+        "searchterms": "carousel,slideshow,autoplay"
+    },
+    "Codemirror": {
+        "class": "\\IPS\\Widget",
+        "restrict": [
+            "sidebar",
+            "cms"
+        ],
+        "default_area": "",
+        "allow_reuse": true,
+        "menu_style": "modal",
+        "layouts": "",
+        "embeddable": true,
+        "padding": false,
+        "default_layout": null,
+        "searchterms": "code,rich,plain,editor"
+    },
+    "DatabaseNavigation": {
+        "class": "\\IPS\\Widget",
+        "restrict": [
+            "sidebar",
+            "cms"
+        ],
+        "default_area": "",
+        "allow_reuse": false,
+        "menu_style": "menu",
+        "layouts": "wrap,grid,start,center,end,columnLeft,columnRight,stack",
+        "embeddable": true
+    },
+    "FolderNavigation": {
+        "class": "\\IPS\\Widget",
+        "restrict": [
+            "sidebar",
+            "cms"
+        ],
+        "default_area": "",
+        "allow_reuse": true,
+        "menu_style": "menu",
+        "layouts": "wrap,grid,start,center,end,columnLeft,columnRight,stack",
+        "embeddable": true
+    }
+}

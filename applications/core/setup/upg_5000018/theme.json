@@ -1,0 +1,36 @@
+{
+    "html": {
+        "added": [],
+        "edited": [
+            "front\/global\/blankTemplate",
+            "front\/global\/comment",
+            "front\/global\/mobileFooterBar",
+            "global\/global\/poll",
+            "front\/global\/review",
+            "front\/tags\/coverPhotoOverlay",
+            "front\/tags\/view"
+        ],
+        "removed": []
+    },
+    "css": {
+        "added": [],
+        "edited": [
+            "global\/framework\/1-2-settings.css",
+            "global\/framework\/3-cover-photo.css",
+            "global\/framework\/3-data-tables.css",
+            "global\/framework\/3-entries.css",
+            "global\/framework\/3-images.css",
+            "global\/framework\/3-menus.css",
+            "global\/framework\/3-page-header.css",
+            "global\/framework\/3-richtext.css",
+            "front\/styles\/profiles.css",
+            "front\/styles\/tags_page.css"
+        ],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "normal": {
+        "added": [
+            "convert_calendar_rsvps",
+            "_convert_calendar_rsvps"
+        ],
+        "edited": [],
+        "removed": [
+            "convert_statuses",
+            "convert_status_replies",
+            "_convert_statuses",
+            "_convert_status_replies",
+            "status_update_missing_ids",
+            "status_update_no_member",
+            "status_update_no_author",
+            "status_update_no_content"
+        ]
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

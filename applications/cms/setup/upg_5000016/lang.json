@@ -1,0 +1,16 @@
+{
+    "normal": {
+        "added": [
+            "cms_show_categories_short"
+        ],
+        "edited": [
+            "cms_show_categories"
+        ],
+        "removed": []
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

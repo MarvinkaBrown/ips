@@ -1,0 +1,27 @@
+{
+    "added": [],
+    "edited": [
+        "notification_new_private_message",
+        "notification_private_message_added",
+        "notification_referral",
+        "notification_automatic_moderation",
+        "notification_new_rank",
+        "unsubscribeDigest",
+        "acp_notification_Error",
+        "_genericContent",
+        "unsubscribeAcpNotification",
+        "activity_stream_subscription",
+        "contact_form",
+        "unsubscribeNotification",
+        "unsubscribeStream",
+        "emailWrapper",
+        "notification_new_recognize",
+        "notification_member_follow",
+        "unsubscribeBulk",
+        "notification_new_badge",
+        "unsubscribeNotNeeded",
+        "notification_report_center",
+        "unsubscribeFollow"
+    ],
+    "removed": []
+}

@@ -1,0 +1,15 @@
+{
+    "normal": {
+        "added": [],
+        "edited": [
+            "helpful_all_n_replies",
+            "helpful_only_n_helpful"
+        ],
+        "removed": []
+    },
+    "js": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

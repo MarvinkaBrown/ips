@@ -1,0 +1,27 @@
+{
+    "html": {
+        "added": [],
+        "edited": [
+            "front\/clients\/address",
+            "front\/clients\/addresses",
+            "front\/clients\/alternatives",
+            "front\/clients\/donations",
+            "front\/clients\/info",
+            "front\/clients\/invoiceList",
+            "front\/clients\/invoices",
+            "front\/clients\/purchases",
+            "front\/subscription\/table"
+        ],
+        "removed": []
+    },
+    "css": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    },
+    "resources": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}

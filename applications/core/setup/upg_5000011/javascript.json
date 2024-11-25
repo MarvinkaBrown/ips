@@ -1,0 +1,22 @@
+{
+    "files": {
+        "added": [],
+        "edited": [
+            "global\/framework\/common\/ips.controller.js",
+            "global\/framework\/common\/ui\/ips.ui.editorv5.js",
+            "global\/framework\/common\/utils\/ips.utils.sockets.js",
+            "global\/front\/controllers\/core\/ips.core.app.js",
+            "global\/front\/controllers\/core\/ips.core.comment.js",
+            "core\/front\/controllers\/widgets\/ips.widgets.area.js",
+            "core\/front\/controllers\/widgets\/ips.widgets.manager.js"
+        ],
+        "removed": [
+            "core\/front\/controllers\/profile\/ips.profile.body.js"
+        ]
+    },
+    "orders": {
+        "added": [],
+        "edited": [],
+        "removed": []
+    }
+}
